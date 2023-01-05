@@ -12,3 +12,4 @@ Runs the app in the development mode and automatically runs `eslint + prettier` 
 - `React: ^18.2.0`
 - `Eslint: ^8.31.0`
 - `Prettier: ^2.8.1`
+- `node: 16.14.0`
