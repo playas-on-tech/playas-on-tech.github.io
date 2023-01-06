@@ -6,7 +6,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header>
+      <header className="icons-container">
         <img src={appIcon} className="App-icon" alt="app icon" />
         <img src={appLogo} className="App-logo" alt="app logo" />
       </header>
@@ -36,7 +36,7 @@ function App() {
       </main>
 
       <footer>
-        <span>
+        <span className="Copyright">
           Powered by <a href="https://magmalabs.io">magmalabs.io</a>
         </span>
       </footer>
