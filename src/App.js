@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <header className="icons-container">
-        <img src={appIcon} className="App-icon" alt="app icon" />
-        <img src={appLogo} className="App-logo" alt="app logo" />
+        <img width="auto" height="auto" src={appIcon} className="App-icon" alt="app icon" />
+        <img width="auto" height="auto" src={appLogo} className="App-logo" alt="app logo" />
       </header>
 
       <main>
@@ -18,18 +18,18 @@ function App() {
         </p>
         <ul className="App-social-networks">
           <li>
-            <a href="https://www.facebook.com/playasontech">
-              <img src={logos.facebook} />
+            <a href="https://www.facebook.com/playasontech" aria-label="Social media icon">
+              <img alt="Social media icon" src={logos.facebook} />
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/Playas.OnTech">
-              <img src={logos.instagram} />
+            <a href="https://www.instagram.com/Playas.OnTech" aria-label="Social media icon">
+              <img alt="Social media icon" src={logos.instagram} />
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/PlayasOnTech">
-              <img src={logos.twitter} />
+            <a href="https://twitter.com/PlayasOnTech" aria-label="Social media icon">
+              <img alt="Social media icon" src={logos.twitter} />
             </a>
           </li>
         </ul>
