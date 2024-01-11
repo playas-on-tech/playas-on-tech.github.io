@@ -23,7 +23,7 @@ function App() {
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/Playas.OnTech" aria-label="Social media icon">
+            <a href="https://www.instagram.com/playasontech_mzo" aria-label="Social media icon">
               <img alt="Social media icon" src={logos.instagram} />
             </a>
           </li>
