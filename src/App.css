@@ -15,7 +15,6 @@
 
 .App-icon {
   height: 25vh;
-  margin-top: 17vh;
 }
 
 .App-logo {
@@ -56,8 +55,13 @@
     flex-direction: column;
   }
 
+  .icons-container img:nth-child(1n) {
+    margin-bottom: 1.5rem;
+
+  }
+
   .App-icon {
-    margin: 15vh auto 0;
+    margin: 4rem auto 0;
   }
 
   .App-logo {
@@ -72,5 +76,10 @@
 
   .Copyright {
     font-size: 1.4rem;
+  }
+
+  main p {
+    margin: 0 auto;
+    width: 70%;
   }
 }
