@@ -1,5 +1,5 @@
-import appIcon from './app-icon.png';
-import appLogo from './app-logo.png';
+import appIcon from './app-icon.webp';
+import appLogo from './app-logo.webp';
 import logos from './logos';
 import './App.css';
 
@@ -34,12 +34,6 @@ function App() {
           </li>
         </ul>
       </main>
-
-      <footer>
-        <span className="Copyright">
-          Powered by <a href="https://magmalabs.io">magmalabs.io</a>
-        </span>
-      </footer>
     </div>
   );
 }
