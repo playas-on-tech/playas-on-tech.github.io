@@ -34,7 +34,8 @@
 }
 
 @keyframes attackBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
   25% {
@@ -46,19 +47,28 @@
 }
 
 @keyframes shake {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateX(0);
   }
-  10%, 30%, 50%, 70%, 90% {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
     transform: translateX(-5px);
   }
-  20%, 40%, 60%, 80% {
+  20%,
+  40%,
+  60%,
+  80% {
     transform: translateX(5px);
   }
 }
 
 @keyframes damage {
-  0%, 100% {
+  0%,
+  100% {
     filter: brightness(100%);
   }
   50% {
@@ -99,10 +109,12 @@
 }
 
 @keyframes cursorBlink {
-  0%, 50% {
+  0%,
+  50% {
     opacity: 1;
   }
-  51%, 100% {
+  51%,
+  100% {
     opacity: 0;
   }
 }
@@ -120,7 +132,8 @@
   animation: shake 0.8s ease-in-out;
 }
 
-.enemy-damage, .player-damage {
+.enemy-damage,
+.player-damage {
   animation: damage 0.5s ease-in-out;
 }
 
@@ -241,8 +254,8 @@
     45deg,
     transparent,
     transparent 2px,
-    rgba(255,255,255,0.1) 2px,
-    rgba(255,255,255,0.1) 4px
+    rgba(255, 255, 255, 0.1) 2px,
+    rgba(255, 255, 255, 0.1) 4px
   );
 }
 
@@ -447,43 +460,43 @@
   .pokemon-game {
     font-size: 12px;
   }
-  
+
   .pokemon-battle {
     padding: 15px;
     height: 85vh;
   }
-  
+
   .overworld-map {
     max-width: 300px;
   }
-  
+
   .tile {
     font-size: 16px;
   }
-  
+
   .enemy-sprite img {
     width: 90px;
     height: 90px;
   }
-  
+
   .player-sprite {
     font-size: 40px;
   }
-  
+
   .player-sprite img {
     width: 70px;
     height: 70px;
   }
-  
+
   .hp-bar {
     width: 100px;
   }
-  
+
   .battle-button {
     padding: 12px 15px;
     font-size: 12px;
   }
-  
+
   .pokemon-name {
     font-size: 14px;
   }
@@ -494,34 +507,34 @@
     padding: 10px;
     height: 90vh;
   }
-  
+
   .overworld-map {
     max-width: 250px;
   }
-  
+
   .enemy-sprite img {
     width: 70px;
     height: 70px;
   }
-  
+
   .player-sprite {
     font-size: 30px;
   }
-  
+
   .player-sprite img {
     width: 50px;
     height: 50px;
   }
-  
+
   .hp-bar {
     width: 80px;
   }
-  
+
   .battle-text {
     padding: 10px;
     font-size: 12px;
   }
-  
+
   .battle-button {
     padding: 10px;
     font-size: 11px;

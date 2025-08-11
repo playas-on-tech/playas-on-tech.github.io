@@ -14,22 +14,22 @@ const CANVAS_HEIGHT = 300;
 
 // Simple map: 1 = wall
 const worldMap = [
-  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,1,1,1,1,1,0,0,0,0,0,1],
-  [1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1],
-  [1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1],
-  [1,0,0,0,0,1,0,0,0,1,0,0,0,0,0,1],
-  [1,0,0,0,0,1,1,1,1,1,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
-  [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
 export default function DoomMini({ onClose }) {
@@ -46,7 +46,6 @@ export default function DoomMini({ onClose }) {
   // Proyectiles (bolas de fuego)
   const projectilesRef = useRef([]);
   const lastShotRef = useRef(0);
-  const fireballTextureRef = useRef(null);
 
   // Constantes de combate
   const FIRE_COOLDOWN = 0.25; // s
@@ -57,7 +56,15 @@ export default function DoomMini({ onClose }) {
   // Audio 8-bit (WebAudio)
   const audioContextRef = useRef(null);
   const audioReadyRef = useRef(false);
-  const musicRef = useRef({ started: false, intervals: [], leadOsc: null, leadGain: null, bassOsc: null, bassGain: null, masterGain: null });
+  const musicRef = useRef({
+    started: false,
+    intervals: [],
+    leadOsc: null,
+    leadGain: null,
+    bassOsc: null,
+    bassGain: null,
+    masterGain: null
+  });
 
   const initAudioIfNeeded = () => {
     if (audioContextRef.current) return;
@@ -284,30 +291,40 @@ export default function DoomMini({ onClose }) {
       leadGain,
       bassOsc: bass,
       bassGain,
-      masterGain: master,
+      masterGain: master
     };
   };
 
   const stopMusic = () => {
-    const ctx = audioContextRef.current;
+    // const ctx = audioContextRef.current;
     const m = musicRef.current;
     if (!m.started) return;
     m.intervals.forEach((id) => clearInterval(id));
     try {
       m.leadOsc?.stop();
       m.bassOsc?.stop();
-    } catch (_) {}
+    } catch (_) {
+      // Error handled
+    }
     m.leadGain?.disconnect();
     m.bassGain?.disconnect();
     m.masterGain?.disconnect();
-    musicRef.current = { started: false, intervals: [], leadOsc: null, leadGain: null, bassOsc: null, bassGain: null, masterGain: null };
+    musicRef.current = {
+      started: false,
+      intervals: [],
+      leadOsc: null,
+      leadGain: null,
+      bassOsc: null,
+      bassGain: null,
+      masterGain: null
+    };
     // no cerramos el contexto para permitir sonidos SFX
   };
 
   // Sprite (enemy) state
   const enemyRef = useRef([
     // Posición inicial visible cerca del jugador en el pasillo superior
-    { x: 6.5, y: 3.5, texture: null, hitTexture: null, loaded: false, waypointIdx: 0 },
+    { x: 6.5, y: 3.5, texture: null, hitTexture: null, loaded: false, waypointIdx: 0 }
   ]);
 
   // Patrol waypoints (square loop inside the central room)
@@ -322,8 +339,8 @@ export default function DoomMini({ onClose }) {
       { x: 3.5, y: 12.5 },
       { x: 3.5, y: 8.5 },
       { x: 3.5, y: 6.5 },
-      { x: 3.5, y: 3.5 },
-    ],
+      { x: 3.5, y: 3.5 }
+    ]
   ]);
 
   // Player state
@@ -333,7 +350,7 @@ export default function DoomMini({ onClose }) {
     dirX: 1, // facing east
     dirY: 0,
     planeX: 0,
-    planeY: 0.66, // FOV (~66 degrees)
+    planeY: 0.66 // FOV (~66 degrees)
   });
 
   const mapWidth = worldMap[0].length;
@@ -348,8 +365,9 @@ export default function DoomMini({ onClose }) {
       return;
     }
     // prevent page scroll with arrows / space or WASD
-    const prevent = ['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key) ||
-      ['w','a','s','d','q','e'].includes(key);
+    const prevent =
+      ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', ' '].includes(e.key) ||
+      ['w', 'a', 's', 'd', 'q', 'e'].includes(key);
     if (prevent) e.preventDefault();
     keysRef.current[key] = true;
 
@@ -424,7 +442,7 @@ export default function DoomMini({ onClose }) {
       vy: p.dirY * FIRE_SPEED,
       alive: true,
       age: 0,
-      maxAge: 2.0, // segundos de vida
+      maxAge: 2.0 // segundos de vida
     };
     projectilesRef.current.push(projectile);
     playShootSound();
@@ -515,20 +533,20 @@ export default function DoomMini({ onClose }) {
 
   const createHitTexture = (originalTexture) => {
     if (!originalTexture) return null;
-    
+
     const canvas = document.createElement('canvas');
     canvas.width = originalTexture.width;
     canvas.height = originalTexture.height;
     const ctx = canvas.getContext('2d');
-    
+
     // Dibujar la imagen original
     ctx.drawImage(originalTexture, 0, 0);
-    
+
     // Aplicar el tinte rojo
     ctx.globalCompositeOperation = 'source-atop';
     ctx.fillStyle = 'rgba(255,0,0,0.6)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
+
     return canvas;
   };
 
@@ -695,13 +713,29 @@ export default function DoomMini({ onClose }) {
 
       for (let stripe = drawStartX; stripe <= drawEndX; stripe += 1) {
         // Comparación con pequeña tolerancia para evitar parpadeo por empate con la pared
-        if (transformY > 0 && stripe >= 0 && stripe < CANVAS_WIDTH && transformY <= zBufferRef.current[stripe] + 0.01) {
+        if (
+          transformY > 0 &&
+          stripe >= 0 &&
+          stripe < CANVAS_WIDTH &&
+          transformY <= zBufferRef.current[stripe] + 0.01
+        ) {
           const texX = Math.floor(((stripe - spriteLeft) * img.width) / spriteWidth);
           // draw one-pixel wide vertical slice scaled
           const destHeight = drawEndY - drawStartY;
           if (destHeight > 0) {
-            const textureToUse = (spr.hitTimer && spr.hitTimer > 0 && spr.hitTexture) ? spr.hitTexture : img;
-            ctx.drawImage(textureToUse, texX, 0, 1, textureToUse.height, stripe, drawStartY, 1, destHeight);
+            const textureToUse =
+              spr.hitTimer && spr.hitTimer > 0 && spr.hitTexture ? spr.hitTexture : img;
+            ctx.drawImage(
+              textureToUse,
+              texX,
+              0,
+              1,
+              textureToUse.height,
+              stripe,
+              drawStartY,
+              1,
+              destHeight
+            );
           }
         }
       }
@@ -759,14 +793,7 @@ export default function DoomMini({ onClose }) {
       canvas.height = CANVAS_HEIGHT;
     }
     // Load wall textures (staff faces)
-    const staffSources = [
-      dannyPng,
-      frankyPng,
-      hPng,
-      juanequePng,
-      kevPng,
-      unpaidDevPng,
-    ];
+    const staffSources = [dannyPng, frankyPng, hPng, juanequePng, kevPng, unpaidDevPng];
     const staffImages = staffSources.map((src) => {
       const im = new Image();
       im.src = src;
@@ -826,7 +853,14 @@ export default function DoomMini({ onClose }) {
           <div className="doom-controls">
             <span className="doom-stat">FPS: {fps}</span>
             <span className="doom-help-short">WASD/E/Q/Arrows, Shift: correr, Esc: cerrar</span>
-            <button className="doom-btn doom-close" onClick={onClose} title="Cerrar (Esc)" aria-label="Cerrar">✕</button>
+            <button
+              className="doom-btn doom-close"
+              onClick={onClose}
+              title="Cerrar (Esc)"
+              aria-label="Cerrar"
+            >
+              ✕
+            </button>
           </div>
         </div>
         <div className="doom-canvas-wrapper">
@@ -836,5 +870,3 @@ export default function DoomMini({ onClose }) {
     </div>
   );
 }
-
-

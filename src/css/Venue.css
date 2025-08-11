@@ -8,7 +8,7 @@
   color: #222;
   backdrop-filter: blur(8px);
   text-align: center;
-  animation: fadeIn 0.7s cubic-bezier(.39, .575, .565, 1) both;
+  animation: fadeIn 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   border: 1.5px solid #fffbe7;
   margin-top: 3rem;
 }

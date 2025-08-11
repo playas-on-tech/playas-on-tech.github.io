@@ -29,9 +29,16 @@ function App() {
   // Konami code easter egg + "vida" easter egg
   useEffect(() => {
     const KONAMI = [
-      'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-      'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
-      'b', 'a'
+      'ArrowUp',
+      'ArrowUp',
+      'ArrowDown',
+      'ArrowDown',
+      'ArrowLeft',
+      'ArrowRight',
+      'ArrowLeft',
+      'ArrowRight',
+      'b',
+      'a'
     ];
 
     const VIDA = ['v', 'i', 'd', 'a'];
@@ -134,7 +141,10 @@ function App() {
       {showDoom && <DoomMini onClose={() => setShowDoom(false)} />}
       {showFlappy && <FlappyBird onClose={() => setShowFlappy(false)} />}
       {showPokemon && <PokemonGame onClose={() => setShowPokemon(false)} />}
-      <Header onLogoTripleClick={() => setShowDoom(true)} onDarkModeLongPress={() => setShowFlappy(true)} />
+      <Header
+        onLogoTripleClick={() => setShowDoom(true)}
+        onDarkModeLongPress={() => setShowFlappy(true)}
+      />
 
       <Routes>
         <Route

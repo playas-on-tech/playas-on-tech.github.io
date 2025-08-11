@@ -76,7 +76,7 @@ function PokemonGame({ onClose }) {
   const [shakeEffect, setShakeEffect] = useState('');
   const mapRef = useRef(null);
   const audioContextRef = useRef(null);
-  const oscillatorRef = useRef(null);
+
   const currentMusicRef = useRef(null);
   const textTimeoutRef = useRef(null);
 
@@ -111,12 +111,11 @@ function PokemonGame({ onClose }) {
     if (textTimeoutRef.current) {
       clearTimeout(textTimeoutRef.current);
     }
-    
+
     setBattleText('');
     setTextAnimation('typing');
     let currentIndex = 0;
     const textString = String(text || ''); // Ensure text is a string
-    
     const typeChar = () => {
       if (currentIndex < textString.length) {
         setBattleText(textString.slice(0, currentIndex + 1));
@@ -129,7 +128,7 @@ function PokemonGame({ onClose }) {
         }
       }
     };
-    
+
     typeChar();
   }, []);
 
@@ -142,7 +141,7 @@ function PokemonGame({ onClose }) {
       setAnimationState('enemy-attack');
       setShakeEffect('player-shake');
     }
-    
+
     setTimeout(() => {
       setAnimationState('');
       setShakeEffect('');
@@ -156,7 +155,7 @@ function PokemonGame({ onClose }) {
     } else {
       setAnimationState('player-damage');
     }
-    
+
     setTimeout(() => {
       setAnimationState('');
       if (callback) callback();
@@ -178,7 +177,7 @@ function PokemonGame({ onClose }) {
     } else if (gameState === 'battle') {
       playBattleMusic();
     }
-  }, [gameState]);
+  }, [gameState, playOverworldMusic, playBattleMusic]);
 
   const playOverworldMusic = useCallback(() => {
     if (!audioContextRef.current) return;
@@ -191,11 +190,14 @@ function PokemonGame({ onClose }) {
     gainNode.connect(ctx.destination);
 
     // Peaceful overworld melody (Pallet Town style)
-    const overworldNotes = [261.63, 329.63, 392.00, 349.23, 293.66, 261.63, 293.66, 329.63]; // C-E-G-F-D-C-D-E
+    const overworldNotes = [261.63, 329.63, 392.0, 349.23, 293.66, 261.63, 293.66, 329.63]; // C-E-G-F-D-C-D-E
     let noteIndex = 0;
 
     const playNote = () => {
-      oscillator.frequency.setValueAtTime(overworldNotes[noteIndex % overworldNotes.length], ctx.currentTime);
+      oscillator.frequency.setValueAtTime(
+        overworldNotes[noteIndex % overworldNotes.length],
+        ctx.currentTime
+      );
       noteIndex++;
       if (noteIndex >= overworldNotes.length * 4) noteIndex = 0;
     };
@@ -226,11 +228,14 @@ function PokemonGame({ onClose }) {
     gainNode.connect(ctx.destination);
 
     // Intense battle melody (wild Pokemon battle style)
-    const battleNotes = [329.63, 392.00, 440.00, 523.25, 493.88, 440.00, 392.00, 349.23]; // E-G-A-C5-B-A-G-F
+    const battleNotes = [329.63, 392.0, 440.0, 523.25, 493.88, 440.0, 392.0, 349.23]; // E-G-A-C5-B-A-G-F
     let noteIndex = 0;
 
     const playNote = () => {
-      oscillator.frequency.setValueAtTime(battleNotes[noteIndex % battleNotes.length], ctx.currentTime);
+      oscillator.frequency.setValueAtTime(
+        battleNotes[noteIndex % battleNotes.length],
+        ctx.currentTime
+      );
       noteIndex++;
       if (noteIndex >= battleNotes.length * 6) noteIndex = 0;
     };
@@ -275,7 +280,8 @@ function PokemonGame({ onClose }) {
 
     const handleKeyPress = (e) => {
       const { x, y } = playerPos;
-      let newX = x, newY = y;
+      let newX = x,
+        newY = y;
 
       switch (e.key) {
         case 'ArrowUp':
@@ -321,13 +327,13 @@ function PokemonGame({ onClose }) {
         pokemon.currentHp = pokemon.maxHp;
         setWildPokemon(pokemon);
         setGameState('battle');
-        
+
         // Animated Pokemon entrance
         setShowEnemyPokemon(false);
         setAnimationState('enemy-enter');
         setShowBattleMenu(false);
         setBattleStep('intro');
-        
+
         // Animate the appearance text
         animateText(`A wild ${pokemon.name} appeared!`, () => {
           setShowEnemyPokemon(true);
@@ -349,27 +355,27 @@ function PokemonGame({ onClose }) {
     if (battleStep !== 'menu') return;
 
     switch (action) {
-      case 'FIGHT':
+      case 'FIGHT': {
         setBattleStep('attacking');
         setShowBattleMenu(false);
         const damage = Math.floor(Math.random() * 8) + 3;
         const newWildHp = Math.max(0, wildPokemon.currentHp - damage);
-        
+
         // Animate attack text
         animateText(`${playerPokemon.name} used TACKLE!`, () => {
           // Play attack animation
           playAttackAnimation('player', () => {
             // Apply damage with animation
             playDamageAnimation('enemy', () => {
-              setWildPokemon(prev => ({ ...prev, currentHp: newWildHp }));
-              
+              setWildPokemon((prev) => ({ ...prev, currentHp: newWildHp }));
+
               if (newWildHp <= 0) {
                 animateText(`${wildPokemon.name} fainted!`, () => {
                   setAnimationState('enemy-faint');
                   setTimeout(() => {
                     setGameState('overworld');
                     setWildPokemon(null);
-                    setPlayerPokemon(prev => ({ ...prev, currentHp: prev.maxHp }));
+                    setPlayerPokemon((prev) => ({ ...prev, currentHp: prev.maxHp }));
                     setShowEnemyPokemon(false);
                     setAnimationState('');
                   }, 1000);
@@ -380,12 +386,12 @@ function PokemonGame({ onClose }) {
                 setTimeout(() => {
                   const enemyDamage = Math.floor(Math.random() * 6) + 2;
                   const newPlayerHp = Math.max(0, playerPokemon.currentHp - enemyDamage);
-                  
+
                   animateText(`${wildPokemon.name} used SCRATCH!`, () => {
                     playAttackAnimation('enemy', () => {
                       playDamageAnimation('player', () => {
-                        setPlayerPokemon(prev => ({ ...prev, currentHp: newPlayerHp }));
-                        
+                        setPlayerPokemon((prev) => ({ ...prev, currentHp: newPlayerHp }));
+
                         if (newPlayerHp <= 0) {
                           animateText(`${playerPokemon.name} fainted!`, () => {
                             setTimeout(() => {
@@ -412,12 +418,13 @@ function PokemonGame({ onClose }) {
           });
         });
         break;
+      }
 
       case 'RUN':
         animateText('Got away safely!', () => {
           setGameState('overworld');
           setWildPokemon(null);
-          setPlayerPokemon(prev => ({ ...prev, currentHp: prev.maxHp }));
+          setPlayerPokemon((prev) => ({ ...prev, currentHp: prev.maxHp }));
           setShowEnemyPokemon(false);
           setAnimationState('');
         });
@@ -433,7 +440,7 @@ function PokemonGame({ onClose }) {
 
   const renderOverworld = () => {
     const tiles = [];
-    
+
     // Define a more complex map layout
     const mapLayout = [
       ['🏠', '🏠', '🏠', '⬜', '⬜', '⬜', '🏠', '🏠', '🏠', '⬜'],
@@ -453,23 +460,29 @@ function PokemonGame({ onClose }) {
         const isPlayer = playerPos.x === x && playerPos.y === y;
         const tileType = mapLayout[y][x];
         let className = 'tile ';
-        
+
         switch (tileType) {
-          case '🏠': className += 'house'; break;
-          case '🏪': className += 'building'; break;
-          case '🌿': className += 'grass'; break;
-          case '🌊': className += 'water'; break;
-          default: className += 'path'; break;
+          case '🏠':
+            className += 'house';
+            break;
+          case '🏪':
+            className += 'building';
+            break;
+          case '🌿':
+            className += 'grass';
+            break;
+          case '🌊':
+            className += 'water';
+            break;
+          default:
+            className += 'path';
+            break;
         }
-        
+
         if (isPlayer) className += ' player';
-        
+
         tiles.push(
-          <div
-            key={`${x}-${y}`}
-            className={className}
-            data-tile={tileType}
-          >
+          <div key={`${x}-${y}`} className={className} data-tile={tileType}>
             {isPlayer ? '●' : tileType === '⬜' ? '' : tileType}
           </div>
         );
@@ -488,7 +501,9 @@ function PokemonGame({ onClose }) {
         <div className="pokemon-overworld">
           <div className="overworld-header">
             <h2>POKEMON PLAYASON</h2>
-            <button onClick={onClose} className="pokemon-close">×</button>
+            <button onClick={onClose} className="pokemon-close">
+              ×
+            </button>
           </div>
           <div className="overworld-map" ref={mapRef}>
             {renderOverworld()}
@@ -509,9 +524,11 @@ function PokemonGame({ onClose }) {
         <div className="pokemon-battle">
           <div className="battle-header">
             <h2>POKEMON BATTLE</h2>
-            <button onClick={onClose} className="pokemon-close">×</button>
+            <button onClick={onClose} className="pokemon-close">
+              ×
+            </button>
           </div>
-          
+
           <div className="battle-area">
             <div className="enemy-section">
               <div className="enemy-info">
@@ -520,18 +537,24 @@ function PokemonGame({ onClose }) {
                 <div className="hp-container">
                   <div className="hp-label">HP:</div>
                   <div className="hp-bar">
-                    <div 
+                    <div
                       className={`hp-fill ${animationState === 'enemy-damage' ? 'hp-damage' : ''}`}
-                      style={{ width: `${getHpBarWidth(wildPokemon.currentHp, wildPokemon.maxHp)}%` }}
+                      style={{
+                        width: `${getHpBarWidth(wildPokemon.currentHp, wildPokemon.maxHp)}%`
+                      }}
                     ></div>
                   </div>
                 </div>
               </div>
-              <div className={`enemy-sprite ${animationState} ${shakeEffect === 'enemy-shake' ? 'shake' : ''}`}>
+              <div
+                className={`enemy-sprite ${animationState} ${
+                  shakeEffect === 'enemy-shake' ? 'shake' : ''
+                }`}
+              >
                 {showEnemyPokemon && (
-                  <img 
-                    src={wildPokemon.sprite} 
-                    alt={wildPokemon.name} 
+                  <img
+                    src={wildPokemon.sprite}
+                    alt={wildPokemon.name}
                     className={animationState === 'enemy-enter' ? 'pokemon-enter' : ''}
                   />
                 )}
@@ -539,9 +562,13 @@ function PokemonGame({ onClose }) {
             </div>
 
             <div className="player-section">
-              <div className={`player-sprite ${animationState} ${shakeEffect === 'player-shake' ? 'shake' : ''}`}>
-                <img 
-                  src={playerPokemon.sprite} 
+              <div
+                className={`player-sprite ${animationState} ${
+                  shakeEffect === 'player-shake' ? 'shake' : ''
+                }`}
+              >
+                <img
+                  src={playerPokemon.sprite}
                   alt={playerPokemon.name}
                   className={animationState === 'player-attack' ? 'attack-bounce' : ''}
                 />
@@ -552,9 +579,11 @@ function PokemonGame({ onClose }) {
                 <div className="hp-container">
                   <div className="hp-label">HP:</div>
                   <div className="hp-bar">
-                    <div 
+                    <div
                       className={`hp-fill ${animationState === 'player-damage' ? 'hp-damage' : ''}`}
-                      style={{ width: `${getHpBarWidth(playerPokemon.currentHp, playerPokemon.maxHp)}%` }}
+                      style={{
+                        width: `${getHpBarWidth(playerPokemon.currentHp, playerPokemon.maxHp)}%`
+                      }}
                     ></div>
                   </div>
                   <div className="hp-numbers">
@@ -572,7 +601,7 @@ function PokemonGame({ onClose }) {
                 {textAnimation === 'typing' && <span className="cursor">|</span>}
               </div>
             )}
-            
+
             {showBattleMenu && battleStep === 'menu' && (
               <div className="battle-menu">
                 <button onClick={() => handleBattleAction('FIGHT')} className="battle-button">

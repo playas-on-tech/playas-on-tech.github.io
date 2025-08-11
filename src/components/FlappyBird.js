@@ -25,7 +25,7 @@ export default function FlappyBird({ onClose }) {
   });
   const [isGameOver, setIsGameOver] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [started, setStarted] = useState(false);
+  const [, setStarted] = useState(false);
   const startedRef = useRef(false);
   const isGameOverRef = useRef(false);
 
@@ -80,8 +80,14 @@ export default function FlappyBird({ onClose }) {
       // Upper pipe rect
       const up = { left: p.x, right: p.x + PIPE_WIDTH, top: 0, bottom: gapTop };
       // Lower pipe rect
-      const low = { left: p.x, right: p.x + PIPE_WIDTH, top: gapBottom, bottom: CANVAS_HEIGHT - GROUND_HEIGHT };
-      const overlap = (r1, r2) => !(r1.right <= r2.left || r1.left >= r2.right || r1.bottom <= r2.top || r1.top >= r2.bottom);
+      const low = {
+        left: p.x,
+        right: p.x + PIPE_WIDTH,
+        top: gapBottom,
+        bottom: CANVAS_HEIGHT - GROUND_HEIGHT
+      };
+      const overlap = (r1, r2) =>
+        !(r1.right <= r2.left || r1.left >= r2.right || r1.bottom <= r2.top || r1.top >= r2.bottom);
       if (overlap(birdRect, up) || overlap(birdRect, low)) return true;
     }
     return false;
@@ -295,21 +301,32 @@ export default function FlappyBird({ onClose }) {
         <div className="flappy-topbar">
           <div className="flappy-title">Flappy</div>
           <div className="flappy-controls">
-            <span className="flappy-score" aria-live="polite">Puntos: {score}</span>
+            <span className="flappy-score" aria-live="polite">
+              Puntos: {score}
+            </span>
             <button className="flappy-btn" onClick={() => setIsPaused((p) => !p)}>
               {isPaused ? 'Reanudar' : 'Pausa'}
             </button>
-            <button className="flappy-btn" onClick={handleRestart}>Reiniciar</button>
-            <button className="flappy-btn flappy-close" onClick={onClose} title="Cerrar (Esc)" aria-label="Cerrar">✕</button>
+            <button className="flappy-btn" onClick={handleRestart}>
+              Reiniciar
+            </button>
+            <button
+              className="flappy-btn flappy-close"
+              onClick={onClose}
+              title="Cerrar (Esc)"
+              aria-label="Cerrar"
+            >
+              ✕
+            </button>
           </div>
         </div>
         <div className="flappy-canvas-wrapper">
           <canvas ref={canvasRef} className="flappy-canvas" />
-          <div className="flappy-help">Clic/Toque/Espacio: Saltar. P: Pausa. R: Reiniciar. Esc: Cerrar.</div>
+          <div className="flappy-help">
+            Clic/Toque/Espacio: Saltar. P: Pausa. R: Reiniciar. Esc: Cerrar.
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-

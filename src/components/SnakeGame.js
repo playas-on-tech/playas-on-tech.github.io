@@ -7,12 +7,18 @@ const CELL_SIZE = 20; // pixels per cell (canvas size will be 400x400)
 const INITIAL_SPEED_MS = 140;
 
 function getRandomFoodPosition(excludePositions) {
-  while (true) {
+  let attempts = 0;
+  const maxAttempts = GRID_SIZE * GRID_SIZE;
+  while (attempts < maxAttempts) {
     const x = Math.floor(Math.random() * GRID_SIZE);
     const y = Math.floor(Math.random() * GRID_SIZE);
     const conflict = excludePositions.some((p) => p.x === x && p.y === y);
     if (!conflict) return { x, y };
+    attempts++;
   }
+
+  // Fallback if all positions somehow occupied
+  return { x: 0, y: 0 };
 }
 
 export default function SnakeGame({ onClose }) {
@@ -24,14 +30,22 @@ export default function SnakeGame({ onClose }) {
 
   const directionRef = useRef({ x: 1, y: 0 });
   const nextDirectionRef = useRef({ x: 1, y: 0 });
-  const snakeRef = useRef([{ x: 8, y: 10 }, { x: 9, y: 10 }, { x: 10, y: 10 }]);
+  const snakeRef = useRef([
+    { x: 8, y: 10 },
+    { x: 9, y: 10 },
+    { x: 10, y: 10 }
+  ]);
   const foodRef = useRef(getRandomFoodPosition(snakeRef.current));
   const speedRef = useRef(INITIAL_SPEED_MS);
   const intervalRef = useRef(null);
   const foodImageRef = useRef({ img: null, loaded: false });
 
   const resetGame = () => {
-    snakeRef.current = [{ x: 8, y: 10 }, { x: 9, y: 10 }, { x: 10, y: 10 }];
+    snakeRef.current = [
+      { x: 8, y: 10 },
+      { x: 9, y: 10 },
+      { x: 10, y: 10 }
+    ];
     directionRef.current = { x: 1, y: 0 };
     nextDirectionRef.current = { x: 1, y: 0 };
     foodRef.current = getRandomFoodPosition(snakeRef.current);
@@ -260,24 +274,44 @@ export default function SnakeGame({ onClose }) {
             <span>🐍 Snake</span>
           </div>
           <div className="snake-controls">
-            <span className="snake-score" aria-live="polite">Puntuación: {score}</span>
+            <span className="snake-score" aria-live="polite">
+              Puntuación: {score}
+            </span>
             <button className="snake-btn" onClick={() => setIsPaused((p) => !p)}>
               {isPaused ? 'Reanudar' : 'Pausa'}
             </button>
-            <button className="snake-btn" onClick={handleRestart}>Reiniciar</button>
-            <button className="snake-btn snake-close" aria-label="Cerrar" title="Cerrar (Esc)" onClick={onClose}>✕</button>
+            <button className="snake-btn" onClick={handleRestart}>
+              Reiniciar
+            </button>
+            <button
+              className="snake-btn snake-close"
+              aria-label="Cerrar"
+              title="Cerrar (Esc)"
+              onClick={onClose}
+            >
+              ✕
+            </button>
           </div>
         </div>
         <div className="snake-canvas-wrapper">
-          <canvas ref={canvasRef} className="snake-canvas" width={GRID_SIZE * CELL_SIZE} height={GRID_SIZE * CELL_SIZE} />
+          <canvas
+            ref={canvasRef}
+            className="snake-canvas"
+            width={GRID_SIZE * CELL_SIZE}
+            height={GRID_SIZE * CELL_SIZE}
+          />
           {(isGameOver || isWin) && (
             <div className="snake-overlay-message">
               <div className="snake-message-box">
                 <div className="snake-message-title">{isWin ? '¡Ganaste!' : 'Game Over'}</div>
                 <div className="snake-message-body">Puntuación: {score}</div>
                 <div className="snake-message-actions">
-                  <button className="snake-btn" onClick={handleRestart}>Jugar de nuevo</button>
-                  <button className="snake-btn" onClick={onClose}>Salir</button>
+                  <button className="snake-btn" onClick={handleRestart}>
+                    Jugar de nuevo
+                  </button>
+                  <button className="snake-btn" onClick={onClose}>
+                    Salir
+                  </button>
                 </div>
               </div>
             </div>
@@ -290,5 +324,3 @@ export default function SnakeGame({ onClose }) {
     </div>
   );
 }
-
-

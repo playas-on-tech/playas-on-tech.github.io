@@ -21,7 +21,8 @@ function Venue() {
         allowFullScreen=""
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        title="Ubicación del Venue"></iframe>
+        title="Ubicación del Venue"
+      ></iframe>
     </div>
   );
 }

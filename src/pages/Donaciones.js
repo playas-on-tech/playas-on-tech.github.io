@@ -3,8 +3,6 @@ import { ReactComponent as Paypal } from '../svg/Paypal.svg';
 import Patreon from '../img/Patreon.png';
 
 function Donaciones() {
-  const userPaypalId = process.env.REACT_APP_CLIENT_ID;
-
   return (
     <div className="donaciones-wrapper">
       <p className="donaciones-text">
@@ -14,10 +12,11 @@ function Donaciones() {
       <div className="donaciones-flex">
         <div className="donacion-card paypal-card surface">
           <a
-            href={`https://www.paypal.me/${userPaypalId}/10`}
+            href={`https://www.paypal.com/paypalme/kevindperezm/100`}
             target="_blank"
             rel="noopener noreferrer"
-            className="donar-link">
+            className="donar-link"
+          >
             <Paypal className="paypal-svg" />
             Donar con PayPal
           </a>
@@ -25,10 +24,11 @@ function Donaciones() {
 
         <div className="donacion-card patreon-card surface">
           <a
-            href={`https://www.patreon.com/${userPaypalId}`}
+            href={`https://patreon.com/PlayasOnTech`}
             target="_blank"
             rel="noopener noreferrer"
-            className="donar-link">
+            className="donar-link"
+          >
             <img src={Patreon} alt="Patreon" className="patreon-png" />
             Apóyanos en Patreon
           </a>

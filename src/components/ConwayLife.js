@@ -15,14 +15,7 @@ const SPEED_MIN_MS = 40;
 const SPEED_MAX_MS = 400;
 
 // Staff sprite assets
-const SPRITE_URLS = [
-  dannyUrl,
-  frankyUrl,
-  hUrl,
-  juanequeUrl,
-  kevUrl,
-  unpaidDevUrl,
-];
+const SPRITE_URLS = [dannyUrl, frankyUrl, hUrl, juanequeUrl, kevUrl, unpaidDevUrl];
 const SPRITE_COUNT = SPRITE_URLS.length;
 
 function createEmptyGrid() {
@@ -36,9 +29,8 @@ function getRandomSpriteIndex(maxExclusive) {
 
 function randomizeGrid(density = 0.33, spriteCount = 1) {
   return Array.from({ length: ROWS }, () =>
-    Array.from(
-      { length: COLS },
-      () => (Math.random() < density ? getRandomSpriteIndex(spriteCount) : 0)
+    Array.from({ length: COLS }, () =>
+      Math.random() < density ? getRandomSpriteIndex(spriteCount) : 0
     )
   );
 }
@@ -212,10 +204,15 @@ export default function ConwayLife({ onClose }) {
   );
 
   return (
-    <div className="life-overlay" role="dialog" aria-modal="true" aria-label="Conway's Game of Life">
+    <div
+      className="life-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Conway's Game of Life"
+    >
       <div className="life-container">
         <div className="life-topbar">
-          <div className="life-title">Conway's Game of Life</div>
+          <div className="life-title">Conway&apos;s Game of Life</div>
           <div className="life-controls">
             <span className="life-stat">Gen: {generationRef.current}</span>
             <span className="life-stat">Vivas: {aliveCount}</span>
@@ -234,21 +231,50 @@ export default function ConwayLife({ onClose }) {
             <button className="life-btn" onClick={() => setIsRunning((r) => !r)}>
               {isRunning ? 'Pausa' : 'Reanudar'}
             </button>
-            <button className="life-btn" onClick={() => setGrid(randomizeGrid(0.3))}>Aleatorio</button>
-            <button className="life-btn" onClick={() => { setIsRunning(false); setGrid(createEmptyGrid()); }}>Limpiar</button>
-            <button className="life-btn" onClick={() => { setIsRunning(false); step(); }}>Paso</button>
-            <button className="life-btn life-close" onClick={onClose} title="Cerrar (Esc)" aria-label="Cerrar">✕</button>
+            <button className="life-btn" onClick={() => setGrid(randomizeGrid(0.3))}>
+              Aleatorio
+            </button>
+            <button
+              className="life-btn"
+              onClick={() => {
+                setIsRunning(false);
+                setGrid(createEmptyGrid());
+              }}
+            >
+              Limpiar
+            </button>
+            <button
+              className="life-btn"
+              onClick={() => {
+                setIsRunning(false);
+                step();
+              }}
+            >
+              Paso
+            </button>
+            <button
+              className="life-btn life-close"
+              onClick={onClose}
+              title="Cerrar (Esc)"
+              aria-label="Cerrar"
+            >
+              ✕
+            </button>
           </div>
         </div>
         <div className="life-canvas-wrapper">
-          <canvas ref={canvasRef} className="life-canvas" width={COLS * CELL_SIZE} height={ROWS * CELL_SIZE} />
+          <canvas
+            ref={canvasRef}
+            className="life-canvas"
+            width={COLS * CELL_SIZE}
+            height={ROWS * CELL_SIZE}
+          />
         </div>
         <div className="life-help">
-          Click para alternar células (en pausa). Barra espaciadora: Pausa/Reanudar. R: Aleatorio. C: Limpiar. N: Paso. Esc: Cerrar.
+          Click para alternar células (en pausa). Barra espaciadora: Pausa/Reanudar. R: Aleatorio.
+          C: Limpiar. N: Paso. Esc: Cerrar.
         </div>
       </div>
     </div>
   );
 }
-
-

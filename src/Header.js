@@ -115,7 +115,11 @@ function Header({ onLogoTripleClick, onDarkModeLongPress }) {
           <span className={`hamburger ${menuOpen ? 'open' : ''}`}></span>
         </button>
 
-        <nav id="primary-navigation" className={`App-nav-wrapper ${menuOpen ? 'open' : ''}`} aria-hidden={!menuOpen}>
+        <nav
+          id="primary-navigation"
+          className={`App-nav-wrapper ${menuOpen ? 'open' : ''}`}
+          aria-hidden={!menuOpen}
+        >
           <nav className="App-nav">
             <Link to="/sobre-nosotros" onClick={handleLinkClick}>
               Sobre nosotros
@@ -129,8 +133,8 @@ function Header({ onLogoTripleClick, onDarkModeLongPress }) {
             <Link to="/donaciones" onClick={handleLinkClick}>
               Donaciones
             </Link>
-            <button 
-              className="toggle-darkmode" 
+            <button
+              className="toggle-darkmode"
               onClick={toggleDarkMode}
               onMouseDown={onDarkPressStart}
               onMouseUp={onDarkPressEnd}
@@ -140,7 +144,11 @@ function Header({ onLogoTripleClick, onDarkModeLongPress }) {
               aria-label={darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
               title={darkMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
             >
-              {darkMode ? <Sun className="theme-icon" aria-hidden="true" /> : <Moon className="theme-icon" aria-hidden="true" />}
+              {darkMode ? (
+                <Sun className="theme-icon" aria-hidden="true" />
+              ) : (
+                <Moon className="theme-icon" aria-hidden="true" />
+              )}
             </button>
           </nav>
           <div className="social-buttons">
