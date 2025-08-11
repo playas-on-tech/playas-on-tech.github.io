@@ -1,0 +1,491 @@
+
+body {
+  background-image: url("../bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+}
+
+.App-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.App-title {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: white;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.App-logo {
+  display: block;
+  height: 36px;
+  width: auto;
+  margin: 0 0.5rem;
+  max-width: min(42vw, 280px);
+}
+
+.App-nav-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.App-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.App-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  padding: 0.4rem 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.App-nav a:hover {
+  color: #00bfff;
+}
+
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: white;
+  min-height: calc(100vh - 64px);
+}
+
+/* (Removido override de margenes/paddings para evitar saltos al finalizar la intro) */
+
+.App-description {
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+main p {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.App-icon-body {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.App-logo-body {
+  width: 300px;
+  height: auto;
+}
+
+/* Intro animation: icon grows a bit and lifts into header area; logo/text fade in */
+
+.intro-playing .App-logo-body,
+.intro-playing .App-description {
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: fadeInUp 2600ms ease forwards;
+  animation-delay: 2200ms;
+}
+
+.intro-playing .App-description {
+  animation-delay: 2600ms;
+}
+
+.intro-icon {
+  will-change: transform, opacity;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  animation: iconIntro 4800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes iconIntro {
+  0% {
+    transform: scale(0.82);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  28% {
+    transform: scale(2) rotate(-10deg);
+  }
+  36% {
+    transform: scale(2) rotate(10deg);
+  }
+  50% {
+    transform: scale(2) rotate(0deg);
+  }
+  /* Pausa ~0.5s al máximo tamaño (con duración total 2400ms, ~21% ≈ 500ms) */
+  61% {
+    transform: scale(2) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-12px) scale(1.08);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.icons-container {
+  display: block;
+}
+
+.App-social-networks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.App-social-networks li {
+  padding: 0 0.6rem;
+}
+
+.App-social-networks img {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.App-social-networks img:hover {
+  transform: scale(1.08);
+  opacity: 1;
+  filter: invert(39%) sepia(91%) saturate(525%) hue-rotate(170deg) brightness(95%) contrast(92%);
+}
+
+.toggle-darkmode {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-darkmode:hover {
+  color: #00bfff;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.toggle-darkmode .theme-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.toggle-darkmode:hover .theme-icon {
+  transform: scale(1.1);
+}
+
+body.dark .toggle-darkmode {
+  color: #00bfff;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px;
+  margin-left: auto;
+  border-radius: 10px;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.menu-toggle .hamburger.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle .hamburger.open:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle .hamburger.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5.5px, -6px);
+}
+
+@media (min-width: 2560px) {
+  .App-description {
+    font-size: 2rem;
+  }
+
+  .App-icon-body {
+    width: 180px;
+    padding-top: 30rem;
+  }
+
+  .App-logo-body {
+    width: 460px;
+  }
+
+  .App-title {
+    font-size: 4rem;
+  }
+
+  .App-social-networks img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+  }
+
+  .App-nav {
+    gap: 2rem;
+  }
+
+  .App-nav a {
+    font-size: 1.2rem;
+  }
+
+  .toggle-darkmode {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .App-header {
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .App-nav-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0.75rem 0.75rem 1rem;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.5);
+    border-radius: 0 0 12px 12px;
+    z-index: 1000;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .App-nav-wrapper.open {
+    display: flex;
+  }
+
+  .App-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .App-logo {
+    margin: 0;
+    height: 30px;
+    width: auto;
+  }
+
+  .App-social-networks {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 0.25rem;
+  }
+
+  .App-main {
+    padding-top: 2rem;
+    min-height: 85vh;
+  }
+
+  .App-icon-body {
+    width: 300px;
+    margin-top: -8rem;
+  }
+
+  .App-logo-body {
+    width: 25rem;
+  }
+
+  .App-description {
+    font-size: 1rem;
+  }
+
+  .toggle-darkmode {
+    margin-left: 0;
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+    align-self: flex-start;
+  }
+
+  .toggle-darkmode .theme-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-logo {
+    height: 28px;
+  }
+
+  .App-nav a {
+    font-size: 0.95rem;
+  }
+
+  .App-social-networks img {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+  }
+
+  .App-icon-body {
+    width: 70px;
+    padding-top: 1rem;
+  }
+
+  .App-logo-body {
+    width: 180px;
+  }
+
+  .App-description {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .App-title {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .toggle-darkmode {
+    margin-left: 0;
+    margin-top: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .toggle-darkmode .theme-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+body.dark {
+  background: linear-gradient(135deg, #121212, #222222);
+  color: #eee;
+}
+
+body.dark .container {
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #eee;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+body.dark .sobre-nosotros-img {
+  box-shadow: 0 4px 10px rgba(255 255 255 / 0.15);
+}
+
+body.dark .sponsors-section {
+  background: #111;
+  color: #ccc;
+}
+
+body.dark .sponsors-subtext {
+  color: #bbb;
+}
+
+body.dark .sponsor-card {
+  background: #222;
+  color: #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+}
+
+body.dark .sponsor-card:hover {
+  background-color: rgba(50, 50, 50, 0.95);
+}
+
+body.dark .sponsor-card h3 {
+  color: #00bfff;
+}
+
+body.dark .sponsor-card p {
+  color: #ccc;
+}
+
+body.dark .Altavoz-svg,
+body.dark .Monetario-svg,
+body.dark .EnEspecie-svg,
+body.dark .Venue-svg {
+  fill: #00bfff;
+}

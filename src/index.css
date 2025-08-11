@@ -5,3 +5,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-display: swap;
 }
+/* Usar el modelo de caja de borde para que padding/border no expandan el ancho */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Evitar scroll de fondo cuando el menú móvil está abierto */
+body.no-scroll {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  touch-action: none;
+}

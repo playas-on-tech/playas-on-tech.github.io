@@ -1,0 +1,61 @@
+.doom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.doom-container {
+  width: min(94vw, 760px);
+  border-radius: 14px;
+  background: #0b1220;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.doom-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.doom-title { font-weight: 700; }
+.doom-controls { display: flex; align-items: center; gap: 8px; }
+.doom-stat { opacity: 0.85; margin-right: 6px; }
+
+.doom-btn {
+  background: #1f2937;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.doom-btn:hover { background: #374151; }
+.doom-close { background: #7f1d1d; }
+.doom-close:hover { background: #991b1b; }
+
+.doom-canvas-wrapper {
+  position: relative;
+  padding: 14px;
+  display: grid;
+  place-items: center;
+}
+.doom-canvas {
+  width: 480px;
+  height: 300px;
+  image-rendering: pixelated;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+@media (max-width: 540px) {
+  .doom-canvas { width: 360px; height: 225px; }
+}
+
+
