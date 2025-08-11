@@ -1,18 +1,33 @@
 {
   "files": {
-    "main.css": "/static/css/main.4c2123c5.css",
-    "main.js": "/static/js/main.5f8b1195.js",
+    "main.css": "/static/css/main.97a9954d.css",
+    "main.js": "/static/js/main.3d19b01f.js",
+    "static/media/kev.png": "/static/media/kev.314bfb8f79aeb1611e47.png",
+    "static/media/community.jpg": "/static/media/community.24376abe19f7a3931574.jpg",
+    "static/media/h.png": "/static/media/h.cf3d25b60f2d16cc24ac.png",
+    "static/media/danny.png": "/static/media/danny.f30ac2a5a68357b2fad5.png",
+    "static/media/Patreon.png": "/static/media/Patreon.c3ab23cdb1cb1c4f640a.png",
+    "static/media/juaneque.png": "/static/media/juaneque.3407a827fb88c668810e.png",
     "static/media/x.png": "/static/media/x.faa648123c05d06fdebd.png",
+    "static/media/franky.png": "/static/media/franky.a48e2f358effb7209522.png",
     "static/media/app-logo.webp": "/static/media/app-logo.5e691fc6c78d9816158b.webp",
     "static/media/app-icon.webp": "/static/media/app-icon.ea98e805ab40df30843c.webp",
-    "static/media/bg.svg": "/static/media/bg.b070d7df156f9788429b.svg",
+    "static/media/unpaid dev.png": "/static/media/unpaid dev.d9f1f81fe7531a7d70d8.png",
+    "static/media/Paypal.svg": "/static/media/Paypal.1b0bcfbb0b1639fd0a5f017da96c5a4b.svg",
+    "static/media/bg.svg": "/static/media/bg.50a0ccb2c6794b3d85ab.svg",
     "static/media/instagram.svg": "/static/media/instagram.018ab7f813e35887d0baf29d349d615d.svg",
     "index.html": "/index.html",
-    "main.4c2123c5.css.map": "/static/css/main.4c2123c5.css.map",
-    "main.5f8b1195.js.map": "/static/js/main.5f8b1195.js.map"
+    "static/media/Sun.svg": "/static/media/Sun.aad551a54bc09c5933f5a10bdf775340.svg",
+    "static/media/Venue.svg": "/static/media/Venue.242e10eca4df23683ccb3e263424f6fe.svg",
+    "static/media/Gift.svg": "/static/media/Gift.b6e135f49645fa2d05c71928e3d7780a.svg",
+    "static/media/Altavoz.svg": "/static/media/Altavoz.3ab26d034f5fbe5cff3900218f08a890.svg",
+    "static/media/Money.svg": "/static/media/Money.c985b722aba66d2106f38ca504ae07fc.svg",
+    "static/media/Moon.svg": "/static/media/Moon.4a9d48482802089e6d466ec063c3d74e.svg",
+    "main.97a9954d.css.map": "/static/css/main.97a9954d.css.map",
+    "main.3d19b01f.js.map": "/static/js/main.3d19b01f.js.map"
   },
   "entrypoints": [
-    "static/css/main.4c2123c5.css",
-    "static/js/main.5f8b1195.js"
+    "static/css/main.97a9954d.css",
+    "static/js/main.3d19b01f.js"
   ]
 }
