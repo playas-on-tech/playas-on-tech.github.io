@@ -21,7 +21,7 @@ function App() {
   const [showFlappy, setShowFlappy] = useState(false);
   const [showPokemon, setShowPokemon] = useState(false);
   // Animación de entrada siempre en Home
-  const [playIntro, setPlayIntro] = useState(location.pathname === '/');
+  const [playIntro, setPlayIntro] = useState(location.pathname === '/' || location.pathname === '');
   const konamiIndexRef = useRef(0);
   const vidaIndexRef = useRef(0);
   const pokemonIndexRef = useRef(0);
@@ -89,7 +89,7 @@ function App() {
 
   // Controlar animación de entrada en Home en cada visita
   useEffect(() => {
-    if (location.pathname === '/') {
+    if (location.pathname === '/' || location.pathname === '') {
       setPlayIntro(true);
     } else {
       setPlayIntro(false);
