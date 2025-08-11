@@ -22,7 +22,7 @@ function SobreNosotros() {
           conocimiento, la inspiración y la colaboración fluyen libremente impulsando el crecimiento
           personal y colaborativo.
         </p>
-        <p className="Listado">🔹 +20 charlas realizadas</p>
+        <p className="Listado">🔹 6+ años realizando eventos</p>
         <p className="Listado">🔹 +30 asistentes en cada encuentro</p>
         <p className="Listado">🔹 Ambiente relajado con networking y pizza gratis 🍕</p>
         <p className="Listado">🔹 Ubicados en el bello puerto de Manzanillo, Colima 🌊</p>
