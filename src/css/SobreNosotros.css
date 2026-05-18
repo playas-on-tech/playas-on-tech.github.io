@@ -39,7 +39,7 @@
   line-height: 1.8;
   margin-bottom: 1.2rem;
   font-weight: 300;
-  text-align: justify;
+  text-align: left;
 }
 
 .sponsors-section {
@@ -163,7 +163,7 @@
 
   .sponsors-subtext {
     font-size: 1.1rem;
-    text-align: justify;
+    text-align: left;
   }
 
   .sponsor-options {
@@ -194,7 +194,7 @@
   }
 
   .sponsors-subtext {
-    text-align: justify;
+    text-align: left;
   }
 }
 
