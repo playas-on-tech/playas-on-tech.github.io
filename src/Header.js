@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import appLogo from './app-logo.webp';
 import logos from './logos';
@@ -10,6 +10,7 @@ import './css/Header.css';
 function Header({ onLogoTripleClick, onDarkModeLongPress }) {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const tripleClickTimesRef = useRef([]);
 
   // Inicializa el tema desde localStorage
   useEffect(() => {
@@ -54,7 +55,7 @@ function Header({ onLogoTripleClick, onDarkModeLongPress }) {
   };
 
   // Long-press detector for the dark mode button (hidden trigger)
-  const longPressRef = React.useRef({ timer: 0, start: 0 });
+  const longPressRef = useRef({ timer: 0, start: 0 });
   const LONG_MS = 900;
   const onDarkPressStart = () => {
     const ref = longPressRef.current;
@@ -88,16 +89,15 @@ function Header({ onLogoTripleClick, onDarkModeLongPress }) {
             src={appLogo}
             className="App-logo"
             alt="PlayasOnTech"
-            onClick={(e) => {
-              // naive triple-click detector (within 600ms)
-              const img = e.currentTarget;
+            onClick={() => {
               const now = Date.now();
-              if (!img._clicks) img._clicks = [];
-              img._clicks.push(now);
-              img._clicks = img._clicks.filter((t) => now - t < 600);
-              if (img._clicks.length >= 3) {
-                img._clicks = [];
-                onLogoTripleClick && onLogoTripleClick();
+              tripleClickTimesRef.current.push(now);
+              tripleClickTimesRef.current = tripleClickTimesRef.current.filter(
+                (t) => now - t < 600
+              );
+              if (tripleClickTimesRef.current.length >= 3) {
+                tripleClickTimesRef.current = [];
+                onLogoTripleClick?.();
               }
             }}
           />

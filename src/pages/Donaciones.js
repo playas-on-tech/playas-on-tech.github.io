@@ -12,7 +12,7 @@ function Donaciones() {
       <div className="donaciones-flex">
         <div className="donacion-card paypal-card surface">
           <a
-            href={`https://www.paypal.com/paypalme/kevindperezm/100`}
+            href="https://www.paypal.com/paypalme/kevindperezm/100"
             target="_blank"
             rel="noopener noreferrer"
             className="donar-link"
@@ -24,7 +24,7 @@ function Donaciones() {
 
         <div className="donacion-card patreon-card surface">
           <a
-            href={`https://patreon.com/PlayasOnTech`}
+            href="https://patreon.com/PlayasOnTech"
             target="_blank"
             rel="noopener noreferrer"
             className="donar-link"

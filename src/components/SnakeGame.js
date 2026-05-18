@@ -262,10 +262,6 @@ export default function SnakeGame({ onClose }) {
     if (intervalRef.current) clearInterval(intervalRef.current);
   }, [isWin]);
 
-  const handleRestart = () => {
-    resetGame();
-  };
-
   return (
     <div className="snake-overlay" role="dialog" aria-modal="true" aria-label="Snake Game">
       <div className="snake-container">
@@ -280,7 +276,7 @@ export default function SnakeGame({ onClose }) {
             <button className="snake-btn" onClick={() => setIsPaused((p) => !p)}>
               {isPaused ? 'Reanudar' : 'Pausa'}
             </button>
-            <button className="snake-btn" onClick={handleRestart}>
+            <button className="snake-btn" onClick={resetGame}>
               Reiniciar
             </button>
             <button
@@ -306,7 +302,7 @@ export default function SnakeGame({ onClose }) {
                 <div className="snake-message-title">{isWin ? '¡Ganaste!' : 'Game Over'}</div>
                 <div className="snake-message-body">Puntuación: {score}</div>
                 <div className="snake-message-actions">
-                  <button className="snake-btn" onClick={handleRestart}>
+                  <button className="snake-btn" onClick={resetGame}>
                     Jugar de nuevo
                   </button>
                   <button className="snake-btn" onClick={onClose}>
