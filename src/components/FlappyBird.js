@@ -291,10 +291,6 @@ export default function FlappyBird({ onClose }) {
     });
   }, [isGameOver, score]);
 
-  const handleRestart = () => {
-    resetGame();
-  };
-
   return (
     <div className="flappy-overlay" role="dialog" aria-modal="true" aria-label="Flappy Bird">
       <div className="flappy-container">
@@ -307,7 +303,7 @@ export default function FlappyBird({ onClose }) {
             <button className="flappy-btn" onClick={() => setIsPaused((p) => !p)}>
               {isPaused ? 'Reanudar' : 'Pausa'}
             </button>
-            <button className="flappy-btn" onClick={handleRestart}>
+            <button className="flappy-btn" onClick={resetGame}>
               Reiniciar
             </button>
             <button

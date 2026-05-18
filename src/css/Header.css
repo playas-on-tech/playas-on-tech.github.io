@@ -25,13 +25,6 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-.App-title {
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  color: white;
-  font-weight: 600;
-  margin-left: 0.5rem;
-}
-
 .App-logo {
   display: block;
   height: 36px;
@@ -70,7 +63,14 @@ body {
   color: #00bfff;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .App-main {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -78,10 +78,7 @@ body {
   text-align: center;
   padding: 3rem 1rem;
   color: white;
-  min-height: calc(100vh - 64px);
 }
-
-/* (Removido override de margenes/paddings para evitar saltos al finalizar la intro) */
 
 .App-description {
   color: white;
@@ -91,13 +88,9 @@ body {
   padding: 0 1rem;
 }
 
-main p {
-  margin: 0 auto;
-  width: 70%;
-}
 
 .App-icon-body {
-  width: 120px;
+  width: 13vw;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -278,16 +271,11 @@ body.dark .toggle-darkmode {
   }
 
   .App-icon-body {
-    width: 180px;
-    padding-top: 30rem;
+    width: 10vw;
   }
 
   .App-logo-body {
     width: 460px;
-  }
-
-  .App-title {
-    font-size: 4rem;
   }
 
   .App-social-networks img {
@@ -354,6 +342,7 @@ body.dark .toggle-darkmode {
     margin: 0;
     height: 30px;
     width: auto;
+    max-width: none;
   }
 
   .App-social-networks {
@@ -364,16 +353,14 @@ body.dark .toggle-darkmode {
 
   .App-main {
     padding-top: 2rem;
-    min-height: 85vh;
   }
 
   .App-icon-body {
-    width: 300px;
-    margin-top: -8rem;
+    width: 25vw;
   }
 
   .App-logo-body {
-    width: 25rem;
+    width: min(25rem, 80vw);
   }
 
   .App-description {
@@ -409,8 +396,8 @@ body.dark .toggle-darkmode {
   }
 
   .App-icon-body {
-    width: 70px;
-    padding-top: 1rem;
+    width: 40vw;
+    margin-top: 0;
   }
 
   .App-logo-body {
@@ -420,12 +407,6 @@ body.dark .toggle-darkmode {
   .App-description {
     font-size: 0.95rem;
     padding: 0 1rem;
-  }
-
-  .App-title {
-    font-size: 1.2rem;
-    text-align: center;
-    margin-left: 0;
   }
 
   .toggle-darkmode {

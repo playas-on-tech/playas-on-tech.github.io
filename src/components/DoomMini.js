@@ -55,7 +55,6 @@ export default function DoomMini({ onClose }) {
 
   // Audio 8-bit (WebAudio)
   const audioContextRef = useRef(null);
-  const audioReadyRef = useRef(false);
   const musicRef = useRef({
     started: false,
     intervals: [],
@@ -73,7 +72,6 @@ export default function DoomMini({ onClose }) {
       if (!Ctx) return;
       const ctx = new Ctx();
       audioContextRef.current = ctx;
-      audioReadyRef.current = true;
       if (ctx.state === 'suspended') ctx.resume();
       // arrancar música si no está
       startMusic();
@@ -296,7 +294,6 @@ export default function DoomMini({ onClose }) {
   };
 
   const stopMusic = () => {
-    // const ctx = audioContextRef.current;
     const m = musicRef.current;
     if (!m.started) return;
     m.intervals.forEach((id) => clearInterval(id));
@@ -405,14 +402,14 @@ export default function DoomMini({ onClose }) {
     const strafeX = -player.dirY;
     const strafeY = player.dirX;
     if (keysRef.current['a']) {
-      const nx = player.x + strafeX * speed;
-      const ny = player.y + strafeY * speed;
+      const nx = player.x - strafeX * speed;
+      const ny = player.y - strafeY * speed;
       if (worldMap[Math.floor(player.y)][Math.floor(nx)] === 0) player.x = nx;
       if (worldMap[Math.floor(ny)][Math.floor(player.x)] === 0) player.y = ny;
     }
     if (keysRef.current['d']) {
-      const nx = player.x - strafeX * speed;
-      const ny = player.y - strafeY * speed;
+      const nx = player.x + strafeX * speed;
+      const ny = player.y + strafeY * speed;
       if (worldMap[Math.floor(player.y)][Math.floor(nx)] === 0) player.x = nx;
       if (worldMap[Math.floor(ny)][Math.floor(player.x)] === 0) player.y = ny;
     }

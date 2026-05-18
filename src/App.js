@@ -13,13 +13,24 @@ import DoomMini from './components/DoomMini';
 import FlappyBird from './components/FlappyBird';
 import PokemonGame from './components/PokemonGame';
 
+const KONAMI = [
+  'ArrowUp',
+  'ArrowUp',
+  'ArrowDown',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+  'ArrowLeft',
+  'ArrowRight',
+  'b',
+  'a'
+];
+const VIDA = ['v', 'i', 'd', 'a'];
+const POKEMON = ['p', 'o', 'k', 'e', 'm', 'o', 'n'];
+
 function App() {
   const location = useLocation();
-  const [showSnake, setShowSnake] = useState(false);
-  const [showLife, setShowLife] = useState(false);
-  const [showDoom, setShowDoom] = useState(false);
-  const [showFlappy, setShowFlappy] = useState(false);
-  const [showPokemon, setShowPokemon] = useState(false);
+  const [activeGame, setActiveGame] = useState(null);
   // Animación de entrada siempre en Home
   const [playIntro, setPlayIntro] = useState(location.pathname === '/' || location.pathname === '');
   const konamiIndexRef = useRef(0);
@@ -28,54 +39,33 @@ function App() {
 
   // Konami code easter egg + "vida" easter egg
   useEffect(() => {
-    const KONAMI = [
-      'ArrowUp',
-      'ArrowUp',
-      'ArrowDown',
-      'ArrowDown',
-      'ArrowLeft',
-      'ArrowRight',
-      'ArrowLeft',
-      'ArrowRight',
-      'b',
-      'a'
-    ];
-
-    const VIDA = ['v', 'i', 'd', 'a'];
-    const POKEMON = ['p', 'o', 'k', 'e', 'm', 'o', 'n'];
-
     const onKeyDown = (e) => {
-      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key; // normalize letters
-      const expected = KONAMI[konamiIndexRef.current];
-      if (key === expected) {
+      const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
+
+      if (key === KONAMI[konamiIndexRef.current]) {
         konamiIndexRef.current += 1;
         if (konamiIndexRef.current === KONAMI.length) {
-          setShowSnake(true);
+          setActiveGame('snake');
           konamiIndexRef.current = 0;
         }
       } else {
-        // reset or check if this key could be the start of the sequence
         konamiIndexRef.current = key === KONAMI[0] ? 1 : 0;
       }
 
-      // VIDA secret word
-      const expectedVida = VIDA[vidaIndexRef.current];
-      if (key === expectedVida) {
+      if (key === VIDA[vidaIndexRef.current]) {
         vidaIndexRef.current += 1;
         if (vidaIndexRef.current === VIDA.length) {
-          setShowLife(true);
+          setActiveGame('life');
           vidaIndexRef.current = 0;
         }
       } else {
         vidaIndexRef.current = key === VIDA[0] ? 1 : 0;
       }
 
-      // POKEMON secret word
-      const expectedPokemon = POKEMON[pokemonIndexRef.current];
-      if (key === expectedPokemon) {
+      if (key === POKEMON[pokemonIndexRef.current]) {
         pokemonIndexRef.current += 1;
         if (pokemonIndexRef.current === POKEMON.length) {
-          setShowPokemon(true);
+          setActiveGame('pokemon');
           pokemonIndexRef.current = 0;
         }
       } else {
@@ -136,14 +126,14 @@ function App() {
 
   return (
     <div className="App">
-      {showSnake && <SnakeGame onClose={() => setShowSnake(false)} />}
-      {showLife && <ConwayLife onClose={() => setShowLife(false)} />}
-      {showDoom && <DoomMini onClose={() => setShowDoom(false)} />}
-      {showFlappy && <FlappyBird onClose={() => setShowFlappy(false)} />}
-      {showPokemon && <PokemonGame onClose={() => setShowPokemon(false)} />}
+      {activeGame === 'snake' && <SnakeGame onClose={() => setActiveGame(null)} />}
+      {activeGame === 'life' && <ConwayLife onClose={() => setActiveGame(null)} />}
+      {activeGame === 'doom' && <DoomMini onClose={() => setActiveGame(null)} />}
+      {activeGame === 'flappy' && <FlappyBird onClose={() => setActiveGame(null)} />}
+      {activeGame === 'pokemon' && <PokemonGame onClose={() => setActiveGame(null)} />}
       <Header
-        onLogoTripleClick={() => setShowDoom(true)}
-        onDarkModeLongPress={() => setShowFlappy(true)}
+        onLogoTripleClick={() => setActiveGame('doom')}
+        onDarkModeLongPress={() => setActiveGame('flappy')}
       />
 
       <Routes>
@@ -162,8 +152,8 @@ function App() {
               />
               <img src={appLogo} className="App-logo-body" alt="PlayasOnTech" />
               <p className="App-description">
-                Somos una comunidad de entusiastas de la tecnología que se reúnen para compartir
-                conocimientos y experiencias
+                Una comunidad de tecnología en Manzanillo, Colima. Nos reunimos cada dos meses para
+                compartir ideas, aprender y conectar.
               </p>
             </main>
           }

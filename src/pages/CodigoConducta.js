@@ -6,53 +6,53 @@ function CodigoConducta() {
       <h1 className="coc-title">Código de Conducta</h1>
 
       <section className="coc-section">
-        <h2>Nuestra promesa</h2>
+        <h2>Nuestro compromiso</h2>
         <p>
-          En este evento, estamos comprometidos a proporcionar una experiencia libre de acoso para
-          todos, sin importar género, orientación sexual, discapacidad, apariencia física, tamaño,
-          raza, edad o religión.
+          Queremos que cada evento sea un espacio seguro y acogedor para todas las personas. No
+          toleramos ninguna forma de acoso o discriminación por motivos de género, orientación
+          sexual, discapacidad, apariencia, raza, edad o religión.
         </p>
       </section>
 
       <section className="coc-section">
         <h2>Comportamiento esperado</h2>
         <ul>
-          <li>Respeto y consideración hacia los demás.</li>
-          <li>Fomentar un ambiente amigable y colaborativo.</li>
-          <li>Escuchar y valorar diferentes opiniones y experiencias.</li>
+          <li>Tratar a los demás con respeto y consideración.</li>
+          <li>Contribuir a un ambiente amigable y colaborativo.</li>
+          <li>Escuchar y valorar distintos puntos de vista y experiencias.</li>
         </ul>
       </section>
 
       <section className="coc-section">
         <h2>Comportamiento inaceptable</h2>
         <ul>
-          <li>Acoso o intimidación de cualquier tipo.</li>
-          <li>Lenguaje o imágenes sexualmente explícitas o inapropiadas.</li>
-          <li>Discriminación o trato despectivo basado en características personales.</li>
-          <li>Interrupción o sabotaje de charlas, actividades o discusiones.</li>
+          <li>Acoso o intimidación en cualquier forma.</li>
+          <li>Lenguaje o imágenes de contenido sexual o inapropiado.</li>
+          <li>Comentarios discriminatorios o despectivos hacia otras personas.</li>
+          <li>Interrumpir o sabotear charlas, actividades o conversaciones.</li>
         </ul>
       </section>
 
       <section className="coc-section">
         <h2>Cómo reportar</h2>
         <p>
-          Si experimentas o presencias un comportamiento inapropiado, te invitamos a acercarte a
-          cualquier persona del staff o colaborador identificado. También puedes reportarlo de forma
-          confidencial a través del siguiente medio
-          <a href="https://www.instagram.com/playasontech_mzo"> PlayasOntech</a>
+          Si presencias o experimentas algún comportamiento que infrinja este código, acércate a
+          cualquier miembro del equipo organizador. También puedes reportarlo de forma confidencial
+          a través de nuestro Instagram:{' '}
+          <a href="https://www.instagram.com/playasontech_mzo">@playasontech_mzo</a>.
         </p>
       </section>
 
       <section className="coc-section">
         <h2>Consecuencias</h2>
         <p>
-          Los organizadores se reservan el derecho de tomar acciones apropiadas que pueden incluir
-          advertencias, expulsión del evento y prohibición de futuras participaciones.
+          El equipo organizador tomará las medidas que considere necesarias, que pueden incluir una
+          advertencia, la expulsión del evento o la prohibición de participar en futuros eventos.
         </p>
       </section>
 
       <footer className="coc-footer">
-        <p>Gracias por ayudarnos a crear un evento seguro y acogedor para todos.</p>
+        <p>Gracias por ayudarnos a mantener un espacio seguro y agradable para todos.</p>
       </footer>
     </main>
   );

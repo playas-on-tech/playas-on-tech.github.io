@@ -12,55 +12,50 @@ function SobreNosotros() {
         <img src={community} alt="Sobre Nosotros" className="sobre-nosotros-img" />
         <h1>Sobre Nosotros</h1>
         <p>
-          Somos una Comudidad de estusiastas y apasionado por la tecnología y la innovación. Que se
-          reunen para compartir conocimientos y experiencias.
+          PlayasOnTech es una comunidad de personas interesadas en tecnología e innovación, con sede
+          en Manzanillo, Colima. Nos reunimos de forma bimestral para compartir charlas,
+          experiencias y proyectos en un ambiente abierto y sin costo.
         </p>
         <p>
-          En PlayasOnTech, creemos que las grandes ideas nacen cuando las personas correctas se
-          reúnen. Por eso, organizamos charlas bimestrales gratuitas abiertas a todos los sectores:
-          ya seas estudiante, profesional o empresario, este espacio es para ti. Aquí, el
-          conocimiento, la inspiración y la colaboración fluyen libremente impulsando el crecimiento
-          personal y colaborativo.
+          El espacio está pensado para todo tipo de perfiles: estudiantes, profesionales y
+          emprendedores son igualmente bienvenidos. La idea es sencilla: aprender juntos, hacer
+          contactos y pasar un buen rato.
         </p>
         <p className="Listado">🔹 6+ años realizando eventos</p>
         <p className="Listado">🔹 +30 asistentes en cada encuentro</p>
-        <p className="Listado">🔹 Ambiente relajado con networking y pizza gratis 🍕</p>
-        <p className="Listado">🔹 Ubicados en el bello puerto de Manzanillo, Colima 🌊</p>
+        <p className="Listado">🔹 Ambiente relajado con networking y pizza 🍕</p>
+        <p className="Listado">🔹 En el puerto de Manzanillo, Colima 🌊</p>
       </div>
 
       <section className="sponsors-section">
         <h2>
-          <strong>Estamos buscando Patrocinadores</strong>
+          <strong>¿Quieres patrocinar?</strong>
         </h2>
         <p className="sponsors-subtext">
-          Puedes ser <strong>patrocinador</strong> y <strong>apoyar a la comunidad</strong> de
-          distintas maneras.
-          <br />
-          <em>
-            Tu logotipo o marca estará en nuestro flyer del mes en todas nuestras redes sociales
-          </em>
+          Apoya a la comunidad y aparece en nuestros materiales y redes sociales. Hay varias formas
+          de participar.
         </p>
 
         <div className="sponsor-options">
           <div className="sponsor-card">
             <Altavoz className="Altavoz-svg" />
             <h3>Speaker</h3>
-            <p>Compartiendo una charla con la comunidad</p>
+            <p>Da una charla y comparte tu conocimiento con la comunidad</p>
           </div>
           <div className="sponsor-card">
             <Venue className="Venue-svg" />
             <h3>Venue</h3>
-            <p>Como anfitrión de la sede bimestral</p>
+            <p>Ofrece el espacio para uno de nuestros eventos bimestrales</p>
           </div>
           <div className="sponsor-card">
             <Gift className="EnEspecie-svg" />
             <h3>En especie</h3>
-            <p>Souvenirs para la comunidad, para rifar o regalar</p>
+            <p>Dona productos o artículos para sortear o regalar entre los asistentes</p>
           </div>
           <div className="sponsor-card">
             <Money className="Monetario-svg" />
-            <h3>Apoyo Económico</h3>
-            <p>Aportaciones económicas de forma bimestral</p>
+            <h3>Apoyo económico</h3>
+            <p>Contribuye con un aporte monetario bimestral</p>
           </div>
         </div>
       </section>
