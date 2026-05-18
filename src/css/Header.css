@@ -94,7 +94,7 @@ main p {
 }
 
 .App-icon-body {
-  width: 120px;
+  width: 13vw;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -275,8 +275,7 @@ body.dark .toggle-darkmode {
   }
 
   .App-icon-body {
-    width: 180px;
-    padding-top: 30rem;
+    width: 10vw;
   }
 
   .App-logo-body {
@@ -360,8 +359,7 @@ body.dark .toggle-darkmode {
   }
 
   .App-icon-body {
-    width: 300px;
-    margin-top: -8rem;
+    width: 25vw;
   }
 
   .App-logo-body {
@@ -401,9 +399,8 @@ body.dark .toggle-darkmode {
   }
 
   .App-icon-body {
-    width: 70px;
+    width: 40vw;
     margin-top: 0;
-    padding-top: 1rem;
   }
 
   .App-logo-body {
