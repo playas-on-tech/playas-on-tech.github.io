@@ -13,8 +13,8 @@ function SobreNosotros() {
         <h1>Sobre Nosotros</h1>
         <p>
           PlayasOnTech es una comunidad de personas interesadas en tecnología e innovación, con sede
-          en Manzanillo, Colima. Nos reunimos de forma bimestral para compartir charlas, experiencias
-          y proyectos en un ambiente abierto y sin costo.
+          en Manzanillo, Colima. Nos reunimos de forma bimestral para compartir charlas,
+          experiencias y proyectos en un ambiente abierto y sin costo.
         </p>
         <p>
           El espacio está pensado para todo tipo de perfiles: estudiantes, profesionales y
