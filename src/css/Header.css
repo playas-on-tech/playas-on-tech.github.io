@@ -373,7 +373,7 @@ body.dark .toggle-darkmode {
   }
 
   .App-logo-body {
-    width: 25rem;
+    width: min(25rem, 80vw);
   }
 
   .App-description {
@@ -410,6 +410,7 @@ body.dark .toggle-darkmode {
 
   .App-icon-body {
     width: 70px;
+    margin-top: 0;
     padding-top: 1rem;
   }
 

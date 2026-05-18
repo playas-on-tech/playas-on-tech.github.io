@@ -139,7 +139,12 @@
   }
 }
 
-@media screen and (max-width: 600px) and (min-width: 320px) {
+@media screen and (max-width: 600px) {
+  .container {
+    margin: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1rem;
+  }
+
   .container h1 {
     font-size: 2rem;
   }
@@ -148,8 +153,26 @@
     font-size: 1.1rem;
   }
 
+  .sponsors-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .sponsors-section h2 {
+    font-size: 2rem;
+  }
+
   .sponsors-subtext {
+    font-size: 1.1rem;
     text-align: justify;
+  }
+
+  .sponsor-options {
+    gap: 1rem;
+  }
+
+  .sponsor-card {
+    width: 100%;
+    max-width: 320px;
   }
 }
 
