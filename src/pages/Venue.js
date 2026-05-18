@@ -8,11 +8,9 @@ function Venue() {
         Aquí tienes toda la información sobre el lugar donde se llevará a cabo el próximo evento.
       </p>
       <div className="venue-details">
-        <strong>Dirección:</strong> rootDevLab, Primavera 15, Arboledas, 28869 Manzanillo
+        <strong>rootDevLab</strong>
         <br />
-        <strong>Fecha:</strong> 18 de septiembre, 2025
-        <br />
-        <strong>Hora:</strong> 20:00 hrs
+        <span>Primavera 15, Arboledas, 28869 Manzanillo</span>
       </div>
       <iframe
         className="venue-map"
