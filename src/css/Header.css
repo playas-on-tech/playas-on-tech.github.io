@@ -346,6 +346,7 @@ body.dark .toggle-darkmode {
     margin: 0;
     height: 30px;
     width: auto;
+    max-width: none;
   }
 
   .App-social-networks {
