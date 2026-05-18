@@ -3,10 +3,9 @@ import '../css/Venue.css';
 function Venue() {
   return (
     <div className="venue-container">
-      <h1 className="venue-title">Venue del Evento</h1>
+      <h1 className="venue-title">Lugar del evento</h1>
       <p className="venue-description">
-        ¡Te esperamos en nuestro próximo evento! Aquí tienes toda la información sobre el lugar
-        donde se llevará a cabo.
+        Aquí tienes toda la información sobre el lugar donde se llevará a cabo el próximo evento.
       </p>
       <div className="venue-details">
         <strong>Dirección:</strong> rootDevLab, Primavera 15, Arboledas, 28869 Manzanillo

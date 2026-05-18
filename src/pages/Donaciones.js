@@ -6,8 +6,8 @@ function Donaciones() {
   return (
     <div className="donaciones-wrapper">
       <p className="donaciones-text">
-        Si deseas apoyar a la comunidad, puedes hacerlo mediante una donación a través de Patreon o
-        PayPal.
+        Si quieres apoyar a PlayasOnTech, puedes hacerlo a través de Patreon o PayPal. Cada
+        aportación nos ayuda a seguir organizando eventos gratuitos para la comunidad.
       </p>
       <div className="donaciones-flex">
         <div className="donacion-card paypal-card surface">

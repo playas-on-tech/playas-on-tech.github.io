@@ -152,8 +152,8 @@ function App() {
               />
               <img src={appLogo} className="App-logo-body" alt="PlayasOnTech" />
               <p className="App-description">
-                Somos una comunidad de entusiastas de la tecnología que se reúnen para compartir
-                conocimientos y experiencias
+                Una comunidad de tecnología en Manzanillo, Colima. Nos reunimos cada dos meses para
+                compartir ideas, aprender y conectar.
               </p>
             </main>
           }
