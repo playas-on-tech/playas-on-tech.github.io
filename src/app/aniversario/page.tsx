@@ -4,7 +4,7 @@ import AnivHero from "@/components/aniversario/AnivHero";
 import Agenda from "@/components/aniversario/Agenda";
 import Ponentes from "@/components/aniversario/Ponentes";
 import Ubicacion from "@/components/aniversario/Ubicacion";
-import Patrocinadores from "@/components/aniversario/Patrocinadores";
+import PatrocinadoresCta from "@/components/aniversario/PatrocinadoresCta";
 import Registro from "@/components/aniversario/Registro";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
@@ -31,7 +31,7 @@ export default function AniversarioPage() {
         <Agenda />
         <Ponentes />
         <Ubicacion />
-        <Patrocinadores />
+        <PatrocinadoresCta />
         <Registro />
       </main>
       <Footer />

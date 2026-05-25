@@ -14,14 +14,14 @@ export default function StatsStrip() {
         {stats.map((stat) => (
           <div key={stat.label} className="pop px-6 py-12 text-center">
             <div
-              className={`text-[clamp(2.4rem,5vw,3.4rem)] font-700 tracking-tightest ${stat.color}`}
+              className={`text-[clamp(2.4rem,5vw,3.4rem)] font-bold tracking-tightest ${stat.color}`}
               data-count={stat.count}
               data-prefix={stat.prefix}
               data-suffix={stat.suffix}
             >
               0
             </div>
-            <div className="mt-1 text-sm font-500 text-navy/60">{stat.label}</div>
+            <div className="mt-1 text-sm font-medium text-navy/60">{stat.label}</div>
           </div>
         ))}
       </div>

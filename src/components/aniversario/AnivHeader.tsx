@@ -11,30 +11,30 @@ export default function AnivHeader() {
           <Link href="/" className="flex items-center gap-2 pl-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/app-icon.webp" alt="" className="h-9 w-9 object-contain drop-shadow" />
-            <span className="text-[17px] font-700 tracking-tight text-white drop-shadow">
+            <span className="text-[17px] font-bold tracking-tight text-white drop-shadow">
               Playas<span className="text-ocean-300">On</span>Tech
             </span>
           </Link>
           {/* Section links */}
-          <ul className="hidden items-center gap-7 text-[15px] font-500 text-white/90 lg:flex">
+          <ul className="hidden items-center gap-7 text-[15px] font-medium text-white/90 lg:flex">
             {ANIV_NAV.map((link) => (
               <li key={link.href}>
-                <a className="transition hover:text-white" href={link.href}>
+                <Link className="transition hover:text-white" href={link.href}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
           {/* Reservar */}
-          <a
-            href="#registro"
-            className="group flex items-center gap-2 rounded-full bg-sunset py-1.5 pl-4 pr-1.5 text-[15px] font-600 text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400"
+          <Link
+            href="/aniversario#registro"
+            className="group flex items-center gap-2 rounded-full bg-sunset py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             Reservar
             <span className="grid h-7 w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
               <ArrowUpRight size={14} />
             </span>
-          </a>
+          </Link>
         </div>
       </nav>
     </header>

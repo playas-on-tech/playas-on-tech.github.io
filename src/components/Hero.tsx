@@ -13,9 +13,9 @@ export default function Hero() {
         id="hero-content"
         className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pb-36 text-center lg:pb-40"
       >
-        <h1 className="cine cine-1 max-w-[15ch] text-[clamp(2.6rem,7vw,6.2rem)] font-600 leading-[0.98] tracking-tightest text-white">
+        <h1 className="cine cine-1 max-w-[15ch] text-[clamp(2.6rem,7vw,6.2rem)] font-semibold leading-[0.98] tracking-tightest text-white">
           La comunidad tech{" "}
-          <span className="shimmer bg-gradient-to-r from-ocean-300 via-sunset-300 to-ocean-300 bg-clip-text text-transparent">
+          <span className="text-ocean-300">
             frente al mar.
           </span>
         </h1>
@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
           <a
             href="#donaciones"
-            className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-600 text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400"
+            className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             Únete a la comunidad
             <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45">
@@ -35,7 +35,7 @@ export default function Hero() {
           </a>
           <a
             href="#eventos"
-            className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-600 text-white glass transition hover:bg-white/10"
+            className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
             Ver próximo evento
             <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5">
@@ -71,7 +71,7 @@ export default function Hero() {
 
       {/* Scroll cue */}
       <div className="cine cine-5 pointer-events-none absolute inset-x-0 bottom-[clamp(128px,14vw,168px)] z-[6] flex flex-col items-center gap-2 text-white/55">
-        <span className="text-[11px] font-500 uppercase tracking-[0.3em]">Desliza</span>
+        <span className="text-[11px] font-medium uppercase tracking-[0.3em]">Desliza</span>
         <ChevronDown size={16} className="animate-bounce" />
       </div>
 

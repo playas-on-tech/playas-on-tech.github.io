@@ -12,7 +12,7 @@ function Track({ ariaHidden }: { ariaHidden?: boolean }) {
       {words.map((word, i) => (
         <Fragment key={`${word}-${i}`}>
           <span
-            className={`mx-7 text-[clamp(1.6rem,3.4vw,2.8rem)] font-700 ${
+            className={`mx-7 text-[clamp(1.6rem,3.4vw,2.8rem)] font-bold ${
               i % 2 === 0 ? "text-white" : "text-outline-light"
             }`}
           >

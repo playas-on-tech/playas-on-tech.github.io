@@ -19,29 +19,24 @@ export default function AnivHero() {
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pb-40 pt-32 text-center">
-        <span className="cine cine-1 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[13px] font-600 text-ocean-300 glass">
-          <span className="h-1.5 w-1.5 rounded-full bg-ocean-400" />
-          {ANIV_EVENT.editionTag}
-        </span>
-
-        <h1 className="cine cine-2 mt-7 max-w-[16ch] text-[clamp(2.6rem,7vw,6rem)] font-600 leading-[0.98] tracking-tightest text-white">
+        <h1 className="cine cine-1 max-w-[16ch] text-[clamp(2.6rem,7vw,6rem)] font-semibold leading-[0.98] tracking-tightest text-white">
           Celebramos nuestro 7º aniversario{" "}
-          <span className="shimmer bg-gradient-to-r from-ocean-300 via-sunset-300 to-ocean-300 bg-clip-text text-transparent">
+          <span className="text-ocean-300">
             frente al mar.
           </span>
         </h1>
 
-        <p className="cine cine-3 mt-7 max-w-[48ch] text-lg leading-relaxed text-white/80 md:text-xl">
+        <p className="cine cine-2 mt-7 max-w-[48ch] text-lg leading-relaxed text-white/80 md:text-xl">
           Siete ediciones de comunidad, charlas y olas. Esta es la noche que lo celebra — una tarde
           especial de talks, networking y un brindis bajo el atardecer de Manzanillo.
         </p>
 
         {/* Date / time / venue */}
-        <div className="cine cine-3 mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="cine cine-2 mt-8 flex flex-wrap items-center justify-center gap-3">
           {facts.map((fact) => (
             <span
               key={fact.text}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-500 text-white/85 glass"
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 glass"
             >
               <fact.icon size={16} className="text-ocean-300" />
               {fact.text}
@@ -49,10 +44,10 @@ export default function AnivHero() {
           ))}
         </div>
 
-        <div className="cine cine-4 mt-10 flex flex-col items-center gap-3 sm:flex-row">
+        <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
           <a
             href="#registro"
-            className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-600 text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400"
+            className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             Reservar mi lugar
             <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45">
@@ -61,7 +56,7 @@ export default function AnivHero() {
           </a>
           <a
             href="#programa"
-            className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-600 text-white glass transition hover:bg-white/10"
+            className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
             Ver programa
             <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5">
@@ -71,8 +66,8 @@ export default function AnivHero() {
         </div>
 
         {/* Countdown */}
-        <div className="cine cine-5 mt-14 w-full">
-          <p className="mb-4 text-[11px] font-500 uppercase tracking-[0.3em] text-white/55">
+        <div className="cine cine-4 mt-14 w-full">
+          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.3em] text-white/55">
             Faltan
           </p>
           <Countdown />

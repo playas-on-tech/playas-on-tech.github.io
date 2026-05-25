@@ -17,12 +17,12 @@ export default function Header() {
           <a href="#top" className="flex items-center gap-2 pl-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/app-icon.webp" alt="" className="h-9 w-9 object-contain drop-shadow" />
-            <span className="text-[17px] font-700 tracking-tight text-white drop-shadow">
+            <span className="text-[17px] font-bold tracking-tight text-white drop-shadow">
               Playas<span className="text-ocean-300">On</span>Tech
             </span>
           </a>
           {/* Links */}
-          <ul className="hidden items-center gap-7 text-[15px] font-500 text-white/90 lg:flex">
+          <ul className="hidden items-center gap-7 text-[15px] font-medium text-white/90 lg:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a className="transition hover:text-white" href={link.href}>
@@ -33,13 +33,13 @@ export default function Header() {
           </ul>
           {/* Right */}
           <div className="flex items-center gap-2.5">
-            <div className="hidden items-center rounded-full border border-white/20 p-0.5 text-[13px] font-600 sm:flex">
+            <div className="hidden items-center rounded-full border border-white/20 p-0.5 text-[13px] font-semibold sm:flex">
               <span className="rounded-full bg-white px-2.5 py-1 text-navy">ES</span>
               <span className="px-2.5 py-1 text-white/70">EN</span>
             </div>
             <a
               href="#donaciones"
-              className="group flex items-center gap-2 rounded-full bg-navy py-1.5 pl-4 pr-1.5 text-[15px] font-600 text-white"
+              className="group flex items-center gap-2 rounded-full bg-navy py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white"
             >
               Únete
               <span className="grid h-7 w-7 place-items-center rounded-full bg-ocean text-white transition group-hover:rotate-45">

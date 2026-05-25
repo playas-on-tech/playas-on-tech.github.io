@@ -259,3 +259,96 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
+
+/* ---- Editions timeline (the "story of the editions" signature) ---- */
+.edition-scroll {
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 94%, transparent);
+}
+.edition-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.edition-track {
+  position: relative;
+  display: flex;
+  gap: 1.25rem;
+  min-width: min-content;
+  padding: 0 0.5rem 0.5rem;
+}
+/* the connector line the dots sit on */
+.edition-track::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0.5rem;
+  right: 0.5rem;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(10, 18, 48, 0.12), rgba(21, 166, 188, 0.55));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.edition-timeline.is-in .edition-track::before {
+  transform: scaleX(1);
+}
+
+.edition-node {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(184px, 22vw, 216px);
+  scroll-snap-align: start;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease-out, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i) * 110ms + 0.3s);
+}
+.edition-timeline.is-in .edition-node {
+  opacity: 1;
+  transform: none;
+}
+
+.edition-dot {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: #15a6bc;
+  box-shadow: 0 0 0 4px #fbf6ee;
+}
+.edition-node--next .edition-dot {
+  background: #ff6b4a;
+}
+.edition-node--next .edition-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 2px solid #ff6b4a;
+  animation: edition-ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes edition-ping {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .edition-track::before {
+    transform: none;
+    transition: none;
+  }
+  .edition-node {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .edition-node--next .edition-dot::after {
+    animation: none;
+  }
+}

@@ -19,10 +19,10 @@ export default function Venue() {
           />
         </div>
         <div className="reveal">
-          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-600 text-white">
+          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
             Venue
           </span>
-          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-600 leading-[1.05] tracking-tightest">
+          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
             Donde sucede la magia.
           </h2>
           <p className="mt-5 max-w-[44ch] text-lg leading-relaxed text-navy/60">

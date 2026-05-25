@@ -32,10 +32,10 @@ export default function Ponentes() {
       <div className="mx-auto max-w-[1200px]">
         <div className="reveal mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-600 text-white">
+            <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
               Ponentes
             </span>
-            <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-600 leading-[1.05] tracking-tightest">
+            <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
               Las voces de la noche.
             </h2>
           </div>
@@ -56,8 +56,8 @@ export default function Ponentes() {
               >
                 <PersonIcon />
               </span>
-              <div className="mt-5 text-lg font-600 tracking-tight">Por anunciar</div>
-              <span className="mt-3 inline-block rounded-full bg-navy/5 px-3 py-1 text-[12px] font-600 text-navy/60">
+              <div className="mt-5 text-lg font-semibold tracking-tight">Por anunciar</div>
+              <span className="mt-3 inline-block rounded-full bg-navy/5 px-3 py-1 text-[12px] font-semibold text-navy/60">
                 {slot.tag}
               </span>
             </div>
@@ -66,12 +66,14 @@ export default function Ponentes() {
 
         <div className="reveal mt-10 flex flex-col items-center justify-between gap-5 rounded-3xl border border-navy/10 bg-navy px-8 py-8 text-white sm:flex-row">
           <div>
-            <h3 className="text-xl font-600 tracking-tight">¿Quieres subir al escenario?</h3>
+            <h3 className="text-xl font-semibold tracking-tight">¿Quieres subir al escenario?</h3>
             <p className="mt-1 text-white/70">Propón una charla para el 7º aniversario.</p>
           </div>
           <a
-            href="#"
-            className="group flex shrink-0 items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-600 text-white transition hover:bg-sunset-400"
+            href="https://www.instagram.com/playasontech_mzo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex shrink-0 items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             Propón tu charla
             <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">

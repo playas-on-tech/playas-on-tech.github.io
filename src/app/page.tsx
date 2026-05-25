@@ -6,8 +6,11 @@ import StatsStrip from "@/components/StatsStrip";
 import Comunidad from "@/components/Comunidad";
 import CodeOfConduct from "@/components/CodeOfConduct";
 import Eventos from "@/components/Eventos";
+import EditionsTimeline from "@/components/EditionsTimeline";
 import Venue from "@/components/Venue";
 import Videos from "@/components/Videos";
+import Organizadores from "@/components/Organizadores";
+import SobreNosotros from "@/components/SobreNosotros";
 import Donaciones from "@/components/Donaciones";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
@@ -24,8 +27,11 @@ export default function Home() {
         <Comunidad />
         <CodeOfConduct />
         <Eventos />
+        <EditionsTimeline />
         <Venue />
         <Videos />
+        <Organizadores />
+        <SobreNosotros />
         <Donaciones />
       </main>
       <Footer />

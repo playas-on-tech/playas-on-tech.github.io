@@ -26,10 +26,10 @@ export default function Comunidad() {
       <div className="mx-auto max-w-[1200px]">
         <div className="reveal mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-600 text-white">
+            <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
               La comunidad
             </span>
-            <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-600 leading-[1.05] tracking-tightest">
+            <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
               Un lugar para crecer, juntos.
             </h2>
           </div>
@@ -61,7 +61,7 @@ export default function Comunidad() {
                   <path d={card.iconPath} />
                 </svg>
               </span>
-              <h3 className="mt-6 text-2xl font-600 tracking-tight">{card.title}</h3>
+              <h3 className="mt-6 text-2xl font-semibold tracking-tight">{card.title}</h3>
               <p className="mt-3 leading-relaxed text-navy/60">{card.text}</p>
             </div>
           ))}

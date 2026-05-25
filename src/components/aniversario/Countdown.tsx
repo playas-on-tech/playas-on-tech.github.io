@@ -39,8 +39,8 @@ export default function Countdown() {
 
   if (mounted && remaining === null) {
     return (
-      <p className="text-[clamp(1.4rem,3vw,2rem)] font-600 tracking-tight text-white">
-        ¡Hoy es el día! 🌊
+      <p className="text-[clamp(1.4rem,3vw,2rem)] font-semibold tracking-tight text-white">
+        ¡Hoy es el día!
       </p>
     );
   }
@@ -52,10 +52,10 @@ export default function Countdown() {
           key={unit.key}
           className="glass min-w-[68px] rounded-2xl border border-white/15 bg-white/10 px-3 py-4 text-center sm:min-w-[88px] sm:px-5"
         >
-          <div className="text-[clamp(1.8rem,5vw,3rem)] font-700 leading-none tracking-tightest text-white tabular-nums">
+          <div className="text-[clamp(1.8rem,5vw,3rem)] font-bold leading-none tracking-tightest text-white tabular-nums">
             {mounted && remaining ? String(remaining[unit.key]).padStart(2, "0") : "--"}
           </div>
-          <div className="mt-2 text-[11px] font-500 uppercase tracking-[0.2em] text-white/60">
+          <div className="mt-2 text-[11px] font-medium uppercase tracking-[0.2em] text-white/60">
             {unit.label}
           </div>
         </div>

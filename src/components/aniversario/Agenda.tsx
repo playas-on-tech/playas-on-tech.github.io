@@ -32,7 +32,7 @@ const agenda = [
   },
   {
     time: "20:20",
-    title: "Brindis de aniversario 🥂",
+    title: "Brindis de aniversario",
     desc: "Celebramos siete ediciones juntos, bajo el atardecer.",
     highlight: true,
   },
@@ -44,10 +44,10 @@ export default function Agenda() {
     <section id="programa" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[820px]">
         <div className="reveal mb-14 text-center">
-          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-600 text-white">
+          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
             Programa
           </span>
-          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-600 leading-[1.05] tracking-tightest">
+          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
             La noche, hora por hora.
           </h2>
           <p className="mx-auto mt-4 max-w-[46ch] text-lg leading-relaxed text-navy/60">
@@ -72,8 +72,8 @@ export default function Agenda() {
                 }`}
               >
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <span className="text-sm font-700 tabular-nums text-ocean">{item.time}</span>
-                  <h3 className="text-lg font-600 tracking-tight">{item.title}</h3>
+                  <span className="text-sm font-bold tabular-nums text-ocean">{item.time}</span>
+                  <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>
                 </div>
                 <p className="mt-1.5 leading-relaxed text-navy/60">{item.desc}</p>
               </div>

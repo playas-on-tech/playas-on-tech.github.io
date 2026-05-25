@@ -19,10 +19,10 @@ export default function Ubicacion() {
     <section id="ubicacion" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2">
         <div className="reveal">
-          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-600 text-white">
+          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
             Ubicación
           </span>
-          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-600 leading-[1.05] tracking-tightest">
+          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
             {ANIV_EVENT.venue}.
           </h2>
           <p className="mt-3 flex items-start gap-2 text-lg text-navy/60">
@@ -47,7 +47,7 @@ export default function Ubicacion() {
             href={mapLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-navy py-2 pl-6 pr-2 text-[15px] font-600 text-white transition hover:bg-navy-700"
+            className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-navy py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-navy-700"
           >
             Cómo llegar
             <span className="grid h-8 w-8 place-items-center rounded-full bg-ocean text-white transition group-hover:rotate-45">
