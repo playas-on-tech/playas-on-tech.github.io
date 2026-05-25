@@ -1,40 +1,82 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code / contributors working in this repository.
+
+> **Stack migration (this branch):** the site moved from Create React App
+> (react-scripts + React Router + plain CSS) to **Next.js 15 (App Router) +
+> TypeScript + Tailwind CSS**, exported as a static site for GitHub Pages. The
+> old CRA pages (`sobre-nosotros`, `codigo-conducta`, `venue`, `donaciones`) and
+> the hidden mini-games are **not yet ported** — see "Follow-ups" below.
 
 ## Commands
 
 ```bash
-npm start          # Dev server (http://localhost:3000)
-npm run build      # Production build
-npm run lint       # ESLint check
-npm run lint:fix   # ESLint auto-fix
-npm run format     # Prettier formatting
-npm run deploy     # Build + publish to GitHub Pages (gh-pages)
+npm install
+npm run dev        # Dev server — http://localhost:3000
+npm run build      # Static export → ./out  (type-checks + lints)
+npm run lint       # ESLint (next/core-web-vitals)
+npm run deploy     # Build, then publish ./out to the gh-pages branch
 ```
-
-No test suite is configured beyond CRA defaults — `npm test` opens Jest in watch mode.
 
 ## Architecture
 
-**Stack:** React 18 + Create React App (no ejected config), React Router DOM 7 with `HashRouter` (required for GitHub Pages static hosting).
+**Stack:** Next.js 15 App Router, TypeScript, Tailwind CSS v3. Output is a fully
+static export (`output: 'export'` in `next.config.mjs`) — no server, no API
+routes — so it can be hosted on GitHub Pages.
 
-**Routing** lives in `src/App.js` with 5 routes (`/`, `/sobre-nosotros`, `/codigo-conducta`, `/venue`, `/donaciones`). All state is local `useState`/`useRef` — no Context or external store.
+**Routing** is file-based under `src/app`:
 
-**Easter egg system:** `App.js` registers a global `keydown` listener for three sequences (Konami code, `"vida"`, `"pokemon"`), plus a triple-click on the logo and a long-press on the dark mode toggle. Each unlocks one of five mini-game modals rendered as overlays:
+- `src/app/page.tsx` — home (the long single-page landing) composed from section
+  components in `src/components/`.
+- `src/app/aniversario/page.tsx` — the 7º Aniversario event page, composed from
+  `src/components/aniversario/`.
+- `src/app/layout.tsx` — `<html>`, metadata, and the Manrope font (`next/font`).
 
-- `src/components/SnakeGame.js` — canvas-based
-- `src/components/ConwayLife.js` — Game of Life
-- `src/components/DoomMini.js`
-- `src/components/FlappyBird.js`
-- `src/components/PokemonGame.js`
+**Client behaviour:** sections are server components by default. Browser-only
+logic lives in `"use client"` components:
 
-**Styling:** One `.css` file per component, co-located under `src/css/`. Dark mode is toggled via a class on `<body>` and persisted in `localStorage`. No CSS framework or CSS-in-JS.
+- `src/components/SiteEffects.tsx` — scroll-reveal, count-up stats, hero parallax
+  for the home page. Markup stays declarative and opts in via the `.reveal` class
+  and `data-count` attributes. Always clean up listeners/observers (React Strict
+  Mode double-invokes effects in dev).
+- `src/components/aniversario/Countdown.tsx` and `Registro.tsx` — the live
+  countdown and the RSVP form.
 
-**Assets:** SVGs in `src/svg/`, WebP images in `src/img/`, logos in `src/logos/`. The Google Fonts `Montserrat` load is declared in `public/index.html`.
+**Styling:** Tailwind with a custom theme in `tailwind.config.ts` — use the
+`navy` / `sunset` / `ocean` / `cream` tokens instead of hardcoding hex. The
+animation/effect CSS (mesh gradients, blobs, marquee, reveal, glass, grain) is
+plain CSS in `src/app/globals.css`, intentionally outside Tailwind layers so it
+is never purged.
 
-## Code style
+**Content** (events, videos, stats, agenda, sponsor tiers, nav, footer links) is
+defined as local arrays at the top of each section component — edit there, not in
+the JSX.
 
-- Prettier: 2-space indent, 100-char line width, single quotes, no trailing commas (`.prettierrc.js`)
-- ESLint extends `eslint:recommended` + `plugin:react/recommended` + `plugin:prettier/recommended`
-- All content is in Spanish (the community is based in Manzanillo, Colima, Mexico)
+**Assets:** in `public/` (referenced as `/assets/...`). `public/CNAME` pins the
+custom domain and `public/.nojekyll` stops GitHub Pages from stripping the
+`_next/` build folder.
+
+## Deploying (GitHub Pages)
+
+`npm run deploy` runs `next build` (producing `./out`, including `CNAME` and
+`.nojekyll`) and publishes it to the `gh-pages` branch via the `gh-pages`
+package. The live site (`playasontech.com`) is served from `gh-pages`, so
+merging to `main` does **not** change the live site until someone runs
+`npm run deploy`.
+
+## Conventions
+
+- All content is in Spanish (community based in Manzanillo, Colima, Mexico).
+- `npm run build` must pass (type-check + lint) before opening a PR.
+- Branch from `main` per feature; keep PRs focused.
+- **Never push to `main` or deploy without explicit approval.**
+
+## Follow-ups (not in this migration)
+
+- Port the old pages into the new design: `código de conducta` (full text),
+  plus dedicated `sobre nosotros` / `venue` / `donaciones` pages if still wanted
+  (home currently covers these as sections).
+- Re-port the easter-egg mini-games (Snake, Conway's Life, Doom, Flappy,
+  Pokémon) and their key-sequence / logo / dark-mode triggers.
+- Re-add the dark-mode toggle if desired (the new design is single-theme).
+- Wire the RSVP form and the sponsor/"propón una charla" CTAs to a real backend.
