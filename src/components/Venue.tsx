@@ -13,8 +13,8 @@ export default function Venue() {
         <div className="reveal relative overflow-hidden rounded-[2rem]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=1600&auto=format&fit=crop"
-            alt=""
+            src="/assets/venue.webp"
+            alt="Venue de Playas on Tech"
             className="h-full w-full object-cover transition duration-700 hover:scale-105"
           />
         </div>
