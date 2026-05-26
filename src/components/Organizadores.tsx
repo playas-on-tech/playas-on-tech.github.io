@@ -6,7 +6,7 @@ const organizers = [
   { name: "H", img: "/assets/staff/h.png" },
   { name: "Juaneque", img: "/assets/staff/juaneque.png" },
   { name: "Kev", img: "/assets/staff/kev.png" },
-  { name: "Dev sin sueldo", img: "/assets/staff/unpaid-dev.png" },
+  { name: "Mane", img: "/assets/staff/unpaid-dev.png" },
 ];
 
 export default function Organizadores() {
