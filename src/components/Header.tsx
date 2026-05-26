@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { ArrowUpRight } from "./Icons";
 
 const navLinks = [
@@ -9,10 +12,28 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <header className="fixed top-0 inset-x-0 z-50">
       <nav className="mx-auto max-w-[1400px] px-6 lg:px-10 mt-4">
-        <div className="glass flex items-center justify-between rounded-full border border-white/15 bg-white/10 px-4 py-2.5 shadow-lg shadow-navy/5">
+        <div
+          className={`glass flex items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300 ${
+            scrolled
+              ? "border-white/20 bg-navy-900/90 shadow-2xl shadow-navy-900/40"
+              : "border-white/15 bg-white/10 shadow-lg shadow-navy/5"
+          }`}
+        >
           {/* Logo */}
           <a href="#top" className="flex items-center gap-2 pl-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -33,10 +54,6 @@ export default function Header() {
           </ul>
           {/* Right */}
           <div className="flex items-center gap-2.5">
-            <div className="hidden items-center rounded-full border border-white/20 p-0.5 text-[13px] font-semibold sm:flex">
-              <span className="rounded-full bg-white px-2.5 py-1 text-navy">ES</span>
-              <span className="px-2.5 py-1 text-white/70">EN</span>
-            </div>
             <a
               href="#donaciones"
               className="group flex items-center gap-2 rounded-full bg-navy py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white"
