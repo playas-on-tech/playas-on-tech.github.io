@@ -15,7 +15,7 @@ npm install
 npm run dev        # Dev server — http://localhost:3000
 npm run build      # Static export → ./out  (type-checks + lints)
 npm run lint       # ESLint (next/core-web-vitals)
-npm run deploy     # Build, then publish ./out to the gh-pages branch
+npm run deploy-ci  # Sync commits, trigger GitHub Actions build/deploy, and verify online status
 ```
 
 ## Architecture
@@ -58,11 +58,10 @@ custom domain and `public/.nojekyll` stops GitHub Pages from stripping the
 
 ## Deploying (GitHub Pages)
 
-`npm run deploy` runs `next build` (producing `./out`, including `CNAME` and
-`.nojekyll`) and publishes it to the `gh-pages` branch via the `gh-pages`
-package. The live site (`playasontech.com`) is served from `gh-pages`, so
-merging to `main` does **not** change the live site until someone runs
-`npm run deploy`.
+`npm run deploy-ci` ensures all local commits are pushed, triggers the remote GitHub Actions build workflow (injecting environment variables securely via GitHub Secrets), lints and compiles the static export, deploys it to the `gh-pages` branch, and verifies the site's online status.
+
+The live site (`playasontech.com`) is served from `gh-pages`, so merging to `main` does **not** change the live site until someone runs `npm run deploy-ci`.
+
 
 ## Conventions
 

@@ -22,7 +22,7 @@ npm run dev        # http://localhost:3000
 ```bash
 npm run build      # static export → ./out (type-checks + lints)
 npm run lint       # ESLint
-npm run deploy     # build + publish ./out to the gh-pages branch
+npm run deploy-ci  # build + deploy via GitHub Actions CI (on-demand)
 ```
 
 ## Structure
@@ -48,5 +48,19 @@ public/
 
 ## Deploying
 
-The live site is served from the `gh-pages` branch. Run `npm run deploy` to
-build and publish. Merging to `main` does not change the live site on its own.
+The live site is served from the `gh-pages` branch. We build and deploy the site using a GitHub Actions workflow on-demand via the following command:
+
+```bash
+npm run deploy-ci
+```
+
+This triggers the remote workflow using your GitHub Secrets for environment variables (like `NEXT_PUBLIC_WEB3FORMS_KEY`), ensures your local commits are pushed, monitors the remote build status in your terminal, and pings the site once complete to verify it is online.
+
+**Requirements:**
+- Ensure `NEXT_PUBLIC_WEB3FORMS_KEY` is added to your repository's GitHub Secrets (**Settings > Secrets and variables > Actions**).
+- Authenticate locally by running `gh auth login` (GitHub CLI) once, or by setting a `GITHUB_TOKEN` environment variable.
+
+> [!NOTE]
+> Merging to `main` does not change the live site on its own; you must trigger a deployment using the command above.
+
+
