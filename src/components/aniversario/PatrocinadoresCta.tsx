@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowRight } from "../Icons";
-import { SPONSORSHIP } from "./event";
 
 const tiers = ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"];
 
@@ -17,8 +16,7 @@ export default function PatrocinadoresCta() {
           Lleva tu marca al 7º aniversario.
         </h2>
         <p className="mx-auto mt-4 max-w-[52ch] text-lg leading-relaxed text-white/70">
-          Paquetes desde $5,000 MXN — ayúdanos a reunir ${SPONSORSHIP.goalMXN.toLocaleString("es-MX")}{" "}
-          MXN para la edición de aniversario.
+          Paquetes desde $5,000 MXN — ayúdanos a hacer de esta edición de aniversario una noche memorable.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2">
           {tiers.map((tier) => (

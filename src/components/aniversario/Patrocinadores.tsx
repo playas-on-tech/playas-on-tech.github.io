@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "../Icons";
-import { SPONSORSHIP } from "./event";
+import { ArrowUpRight, Check } from "../Icons";
 
 // Sponsorship inquiries go through the community's Instagram DMs.
 const CONTACT_URL = "https://www.instagram.com/playasontech_mzo";
@@ -56,13 +55,6 @@ const tiers: Tier[] = [
   },
 ];
 
-const mxn = (n: number) => "$" + n.toLocaleString("es-MX") + " MXN";
-const goalPct = Math.min(
-  100,
-  Math.round((SPONSORSHIP.raisedMXN / SPONSORSHIP.goalMXN) * 100)
-);
-const detailsExternal = SPONSORSHIP.detailsUrl.startsWith("http");
-
 const mediaPartnerPerks = [
   "Difusión cruzada del evento",
   "Cobertura y entrevistas",
@@ -88,55 +80,6 @@ export default function Patrocinadores({ withHeader = true }: { withHeader?: boo
             </p>
           </div>
         )}
-
-        {/* Fundraising goal */}
-        <div className="reveal mx-auto mb-12 max-w-[760px] rounded-3xl border border-navy/10 bg-cream p-7 text-center sm:p-8">
-          <span className="text-[13px] font-semibold uppercase tracking-[0.15em] text-ocean">
-            Meta de recaudación
-          </span>
-          <div className="mt-2 text-[clamp(2rem,5vw,3rem)] font-bold tracking-tightest text-navy">
-            {mxn(SPONSORSHIP.goalMXN)}
-          </div>
-          <p className="mx-auto mt-2 max-w-[50ch] leading-relaxed text-navy/60">
-            Entre todos los patrocinios buscamos reunir al menos {mxn(SPONSORSHIP.goalMXN)} para
-            cubrir el venue, audio/video, café y la producción de la noche.
-          </p>
-          <div className="mt-6">
-            <div className="h-3 w-full overflow-hidden rounded-full bg-navy/10">
-              <div
-                className="h-full rounded-full bg-gradient-to-r from-ocean to-sunset"
-                style={{ width: goalPct + "%" }}
-              />
-            </div>
-            <div className="mt-2 flex items-center justify-between text-sm font-medium text-navy/60">
-              <span>
-                {SPONSORSHIP.raisedMXN > 0
-                  ? `${mxn(SPONSORSHIP.raisedMXN)} recaudados`
-                  : "¡Sé el primer patrocinador!"}
-              </span>
-              <span>{goalPct}%</span>
-            </div>
-          </div>
-          {detailsExternal ? (
-            <a
-              href={SPONSORSHIP.detailsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-ocean underline-offset-4 hover:underline"
-            >
-              Ver el desglose completo de compromisos
-              <ArrowRight size={15} />
-            </a>
-          ) : (
-            <Link
-              href={SPONSORSHIP.detailsUrl}
-              className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-ocean underline-offset-4 hover:underline"
-            >
-              Ver el desglose completo de compromisos
-              <ArrowRight size={15} />
-            </Link>
-          )}
-        </div>
 
         <div className="grid items-start gap-5 lg:grid-cols-3">
           {tiers.map((tier) => (
