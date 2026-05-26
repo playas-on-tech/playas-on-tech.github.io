@@ -81,11 +81,11 @@ export default function Patrocinadores({ withHeader = true }: { withHeader?: boo
           </div>
         )}
 
-        <div className="grid items-start gap-5 lg:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-3 pb-28">
           {tiers.map((tier) => (
             <div
               key={tier.name}
-              className={`reveal relative rounded-3xl border p-8 ${
+              className={`reveal relative rounded-3xl border p-8 flex flex-col h-full ${
                 tier.featured
                   ? "border-sunset/40 bg-cream shadow-2xl shadow-sunset/10 lg:-mt-4 lg:pb-12"
                   : "border-navy/10 bg-cream"
@@ -116,7 +116,7 @@ export default function Patrocinadores({ withHeader = true }: { withHeader?: boo
               </ul>
               <Link
                 href={`/?category=Sponsor&package=${tier.name}#contacto`}
-                className={`group mt-8 inline-flex w-full items-center justify-center gap-2.5 rounded-full py-3 text-[15px] font-semibold transition ${
+                className={`group mt-6 inline-flex w-full items-center justify-center gap-2.5 rounded-full py-3 text-[15px] font-semibold transition ${
                   tier.featured
                     ? "bg-sunset text-white hover:bg-sunset-400 active:scale-[0.98]"
                     : "border border-navy/15 text-navy hover:bg-navy hover:text-white"

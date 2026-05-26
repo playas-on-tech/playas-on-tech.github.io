@@ -1,0 +1,43 @@
+# Shared aliases (sourced from ~/.zshrc and Git Bash fallback)
+
+alias zshconfig="vim ~/.zshrc"
+alias gss="git status"
+alias gs="git status --short"
+alias gpf="git push --force-with-lease"
+alias gfp="git fetch --prune"
+alias gpp="git pull --prune"
+alias gchp="git cherry-pick"
+alias gd="git diff"
+alias gdca="git diff --cached"
+alias grb="git rebase"
+alias grbc="git rebase --continue"
+alias grbi="git rebase -i"
+alias gco="git checkout"
+alias gp="git push"
+alias gpf"git push --force-with-lease"
+alias ga="git add"
+alias gc="git commit"
+alias glo="git log --oneline"
+alias dc=docker-compose
+alias npm=pnpm
+alias npx="pnpm dlx"
+
+if command -v ls >/dev/null 2>&1; then
+  if ls --color >/dev/null 2>&1; then
+    alias ls='ls --color -Flh -lha'
+  elif ls -G >/dev/null 2>&1; then
+    alias ls='ls -GFlh -lha'
+  fi
+fi
+
+if command -v glo >/dev/null 2>&1; then
+  alias glog="glo --graph"
+fi
+
+# Ruby & Rails development helpers
+alias be="bundle exec"
+alias art=artisan
+alias brails=bin/rails
+alias brake=bin/rake
+alias brspec=bin/rspec
+
