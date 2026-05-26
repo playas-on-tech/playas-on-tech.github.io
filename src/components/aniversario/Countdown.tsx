@@ -31,6 +31,7 @@ export default function Countdown() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     setRemaining(getRemaining());
     const id = setInterval(() => setRemaining(getRemaining()), 1000);
