@@ -266,6 +266,7 @@ export default function Contacto() {
                       <option value="General">General / Dudas</option>
                       <option value="Sponsor">Sponsor / Patrocinios</option>
                       <option value="Speaker">Speaker / Charlas</option>
+                      <option value="Staff">Staff / Voluntario</option>
                       <option value="Otro">Otro asunto</option>
                     </select>
                   </div>

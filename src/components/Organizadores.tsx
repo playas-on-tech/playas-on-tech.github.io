@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUpRight } from "./Icons";
 
 const organizers = [
@@ -50,17 +51,15 @@ export default function Organizadores() {
               experiencia, solo ganas de aportar a la comunidad.
             </p>
           </div>
-          <a
-            href="https://www.instagram.com/playasontech_mzo"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/?category=Staff#contacto"
             className="group inline-flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             Quiero ser voluntario
             <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
               <ArrowUpRight size={16} />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
