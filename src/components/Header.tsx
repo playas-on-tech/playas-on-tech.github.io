@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ArrowUpRight } from "./Icons";
 
 const navLinks = [
@@ -9,6 +10,7 @@ const navLinks = [
   { href: "#venue", label: "Venue" },
   { href: "#videos", label: "Videos" },
   { href: "#donaciones", label: "Donaciones" },
+  { href: "#contacto", label: "Contacto" },
 ];
 
 export default function Header() {
@@ -18,6 +20,7 @@ export default function Header() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -35,26 +38,26 @@ export default function Header() {
           }`}
         >
           {/* Logo */}
-          <a href="#top" className="flex items-center gap-2 pl-1">
+          <Link href="#top" className="flex items-center gap-2 pl-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/app-icon.webp" alt="" className="h-9 w-9 object-contain drop-shadow" />
             <span className="text-[17px] font-bold tracking-tight text-white drop-shadow">
               Playas<span className="text-ocean-300">On</span>Tech
             </span>
-          </a>
+          </Link>
           {/* Links */}
           <ul className="hidden items-center gap-7 text-[15px] font-medium text-white/90 lg:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a className="transition hover:text-white" href={link.href}>
+                <Link className="transition hover:text-white" href={link.href}>
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
           {/* Right */}
           <div className="flex items-center gap-2.5">
-            <a
+            <Link
               href="#donaciones"
               className="group flex items-center gap-2 rounded-full bg-navy py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white"
             >
@@ -62,7 +65,7 @@ export default function Header() {
               <span className="grid h-7 w-7 place-items-center rounded-full bg-ocean text-white transition group-hover:rotate-45">
                 <ArrowUpRight size={14} />
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

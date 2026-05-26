@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "7º Aniversario · Playas on Tech",
     description:
-      "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Una noche para celebrar siete ediciones frente al mar.",
+      "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un encuentro para celebrar siete ediciones frente al mar.",
     locale: "es_MX",
     type: "website",
   },

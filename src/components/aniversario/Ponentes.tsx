@@ -36,7 +36,7 @@ export default function Ponentes() {
               Ponentes
             </span>
             <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-              Las voces de la noche.
+              Las voces del evento.
             </h2>
           </div>
           <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">
@@ -70,7 +70,7 @@ export default function Ponentes() {
             <p className="mt-1 text-white/70">Propón una charla para el 7º aniversario.</p>
           </div>
           <a
-            href="https://www.instagram.com/playasontech_mzo"
+            href="https://forms.gle/XwvZK3BVu2KdaNfWA"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex shrink-0 items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"

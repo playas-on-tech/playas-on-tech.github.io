@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check } from "../Icons";
 import { SPONSORSHIP } from "./event";
 
@@ -116,14 +117,25 @@ export default function Patrocinadores({ withHeader = true }: { withHeader?: boo
               <span>{goalPct}%</span>
             </div>
           </div>
-          <a
-            href={SPONSORSHIP.detailsUrl}
-            {...(detailsExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-ocean underline-offset-4 hover:underline"
-          >
-            Ver el desglose completo de compromisos
-            <ArrowRight size={15} />
-          </a>
+          {detailsExternal ? (
+            <a
+              href={SPONSORSHIP.detailsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-ocean underline-offset-4 hover:underline"
+            >
+              Ver el desglose completo de compromisos
+              <ArrowRight size={15} />
+            </a>
+          ) : (
+            <Link
+              href={SPONSORSHIP.detailsUrl}
+              className="mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-ocean underline-offset-4 hover:underline"
+            >
+              Ver el desglose completo de compromisos
+              <ArrowRight size={15} />
+            </Link>
+          )}
         </div>
 
         <div className="grid items-start gap-5 lg:grid-cols-3">
@@ -159,8 +171,8 @@ export default function Patrocinadores({ withHeader = true }: { withHeader?: boo
                   </li>
                 ))}
               </ul>
-              <a
-                href={CONTACT_URL} target="_blank" rel="noopener noreferrer"
+              <Link
+                href={`/?category=Sponsor&package=${tier.name}#contacto`}
                 className={`group mt-8 inline-flex w-full items-center justify-center gap-2.5 rounded-full py-3 text-[15px] font-semibold transition ${
                   tier.featured
                     ? "bg-sunset text-white hover:bg-sunset-400 active:scale-[0.98]"
@@ -169,7 +181,7 @@ export default function Patrocinadores({ withHeader = true }: { withHeader?: boo
               >
                 Elegir {tier.name}
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
             </div>
           ))}
         </div>
@@ -196,22 +208,22 @@ export default function Patrocinadores({ withHeader = true }: { withHeader?: boo
               ))}
             </ul>
           </div>
-          <a
-            href={CONTACT_URL} target="_blank" rel="noopener noreferrer"
+          <Link
+            href="/?category=Sponsor&package=MediaPartner#contacto"
             className="group inline-flex shrink-0 items-center gap-2.5 rounded-full bg-white py-2 pl-6 pr-2 text-[15px] font-semibold text-navy transition hover:bg-cream"
           >
             Ser media partner
             <span className="grid h-8 w-8 place-items-center rounded-full bg-ocean text-white transition group-hover:rotate-45">
               <ArrowUpRight size={15} />
             </span>
-          </a>
+          </Link>
         </div>
 
         <p className="reveal mt-8 text-center text-navy/60">
           ¿Quieres un paquete a la medida?{" "}
-          <a href={CONTACT_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-ocean underline-offset-4 hover:underline">
+          <Link href="/?category=Sponsor&package=Custom#contacto" className="font-semibold text-ocean underline-offset-4 hover:underline">
             Escríbenos
-          </a>{" "}
+          </Link>{" "}
           y lo armamos juntos.
         </p>
       </div>

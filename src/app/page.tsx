@@ -12,6 +12,7 @@ import Videos from "@/components/Videos";
 import Organizadores from "@/components/Organizadores";
 import SobreNosotros from "@/components/SobreNosotros";
 import Donaciones from "@/components/Donaciones";
+import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
 
@@ -33,6 +34,7 @@ export default function Home() {
         <Organizadores />
         <SobreNosotros />
         <Donaciones />
+        <Contacto />
       </main>
       <Footer />
       {/* Wires up the prototype's scroll-reveal, count-up and hero parallax. */}
@@ -40,3 +42,4 @@ export default function Home() {
     </>
   );
 }
+

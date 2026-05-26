@@ -9,9 +9,7 @@
    CSS (outside Tailwind layers) on purpose: they are referenced from the JSX
    exactly as in the prototype and must never be purged.
    ========================================================================== */
-
 html {
-  scroll-behavior: smooth;
 }
 body {
   background: #fbf6ee;

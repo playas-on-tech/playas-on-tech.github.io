@@ -3,7 +3,7 @@ import { ArrowUpRight } from "./Icons";
 
 const nextEventDetails = [
   { label: "Fecha", value: "Sáb 18 jul 2026" },
-  { label: "Hora", value: "17:00 hrs" },
+  { label: "Hora", value: "10:00 a 18:00 hrs" },
   { label: "Lugar", value: "Hotel Marbella" },
 ];
 
@@ -29,7 +29,7 @@ export default function Eventos() {
                 7º Aniversario · Edición #7
               </h3>
               <p className="mt-4 max-w-[42ch] leading-relaxed text-white/70">
-                Celebramos siete ediciones con una tarde especial de charlas, networking y un brindis
+                Celebramos siete ediciones con un día especial de charlas, networking y un brindis
                 frente al mar. Cupo limitado: aparta tu lugar y trae a alguien que quiera aprender.
               </p>
               <div className="mt-8 flex flex-wrap gap-6 text-sm">

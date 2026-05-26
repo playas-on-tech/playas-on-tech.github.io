@@ -10,6 +10,7 @@ const footerColumns = [
       { href: "/#venue", label: "Venue" },
       { href: "/#videos", label: "Videos" },
       { href: "/#sobre-nosotros", label: "Sobre nosotros" },
+      { href: "/#contacto", label: "Contacto" },
     ],
   },
   {
@@ -17,7 +18,7 @@ const footerColumns = [
     links: [
       { href: "/codigo-conducta", label: "Código de conducta" },
       { href: "/#donaciones", label: "Donaciones" },
-      { href: "https://www.instagram.com/playasontech_mzo", label: "Propón una charla" },
+      { href: "https://forms.gle/XwvZK3BVu2KdaNfWA", label: "Propón una charla" },
       { href: "/#organizadores", label: "Sé voluntario" },
       { href: "/aniversario", label: "7º Aniversario" },
     ],

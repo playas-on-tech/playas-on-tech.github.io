@@ -3,9 +3,9 @@
 export const ANIV_EVENT = {
   edition: "7º Aniversario",
   editionTag: "Edición especial · 7ª edición",
-  dateISO: "2026-07-18T17:00:00-06:00",
+  dateISO: "2026-07-18T10:00:00-06:00",
   dateLabel: "Sábado 18 de julio, 2026",
-  timeLabel: "17:00 hrs",
+  timeLabel: "10:00 a 18:00 hrs",
   venue: "Hotel Marbella",
   venueCity: "Manzanillo, Colima",
   venueAddress: "Marbella 7, Playa Azul Salagua, 28218 Manzanillo, Col.",

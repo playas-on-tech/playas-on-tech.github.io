@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUpRight, ArrowRight, ChevronDown } from "./Icons";
 
 export default function Hero() {
@@ -24,7 +25,7 @@ export default function Hero() {
           corbatas. Con olas.
         </p>
         <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
-          <a
+          <Link
             href="#donaciones"
             className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
@@ -32,8 +33,8 @@ export default function Hero() {
             <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45">
               <ArrowUpRight size={16} />
             </span>
-          </a>
-          <a
+          </Link>
+          <Link
             href="#eventos"
             className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
@@ -41,7 +42,7 @@ export default function Hero() {
             <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5">
               <ArrowRight size={16} />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
 

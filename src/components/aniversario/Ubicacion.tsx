@@ -10,7 +10,7 @@ const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 
 const amenities = [
   "Salón frente al mar",
-  "Terraza para el brindis al atardecer",
+  "Terraza para el brindis frente al mar",
   "Estacionamiento en el hotel",
 ];
 

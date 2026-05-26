@@ -27,8 +27,8 @@ export default function AnivHero() {
         </h1>
 
         <p className="cine cine-2 mt-7 max-w-[48ch] text-lg leading-relaxed text-white/80 md:text-xl">
-          Siete ediciones de comunidad, charlas y olas. Esta es la noche que lo celebra — una tarde
-          especial de talks, networking y un brindis bajo el atardecer de Manzanillo.
+          Siete ediciones de comunidad, charlas y olas. Esta es la edición que lo celebra — un día
+          especial de talks, networking y un brindis frente al mar de Manzanillo.
         </p>
 
         {/* Date / time / venue */}

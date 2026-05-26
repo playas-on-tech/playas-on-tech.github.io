@@ -83,10 +83,50 @@ export default function SiteEffects() {
       window.addEventListener("scroll", onScrollRequest, { passive: true });
     }
 
+    // 4. Same-page hash smooth scrolling interceptor
+    const handleSamePageLinkClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest("a");
+      if (!target) return;
+
+      const href = target.getAttribute("href");
+      if (!href) return;
+
+      // Same-page hashes start with "#", or "/#" when on the homepage, or "/current-path#"
+      const currentPath = window.location.pathname;
+      const isSamePageHash =
+        href.startsWith("#") ||
+        (href.startsWith("/#") && (currentPath === "/" || currentPath === "/index.html")) ||
+        href.startsWith(currentPath + "#");
+
+      if (isSamePageHash) {
+        // Temporarily enable smooth scrolling on document element
+        document.documentElement.style.scrollBehavior = "smooth";
+
+        // Reset it back to auto after the scroll completes (1000ms is safe and standard)
+        setTimeout(() => {
+          document.documentElement.style.scrollBehavior = "";
+        }, 1000);
+      }
+    };
+
+    // 5. Smooth scroll to hash on mount if present
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      }
+    }
+
+    document.addEventListener("click", handleSamePageLinkClick);
+
     return () => {
       revealIO.disconnect();
       countIO.disconnect();
       window.removeEventListener("scroll", onScrollRequest);
+      document.removeEventListener("click", handleSamePageLinkClick);
     };
   }, []);
 

@@ -52,7 +52,7 @@ export default function PatrocinadoresPage() {
               frente a la comunidad tech del Pacífico mexicano — elige el paquete que mejor se adapte.
             </p>
             <div className="cine cine-4 mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-              <a
+              <Link
                 href="#patrocinadores"
                 className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
               >
@@ -60,7 +60,7 @@ export default function PatrocinadoresPage() {
                 <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:translate-x-0.5">
                   <ArrowRight size={16} />
                 </span>
-              </a>
+              </Link>
               <Link
                 href="/aniversario#registro"
                 className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
