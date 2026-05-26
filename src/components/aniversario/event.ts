@@ -14,8 +14,8 @@ export const ANIV_EVENT = {
   // Paste the numeric Eventbrite event ID here (from the event's URL,
   // e.g. .../e/mi-evento-1234567890 → "1234567890"). While empty, the
   // "Reservar" button falls back to linking out to `eventbriteUrl`.
-  eventbriteEventId: "",
-  eventbriteUrl: "https://www.eventbrite.com/o/playas-on-tech",
+  eventbriteEventId: "1990369949097",
+  eventbriteUrl: "https://www.eventbrite.com.mx/e/playasontech-7o-aniversario-tickets-1990369949097?aff=oddtdtcreator",
 } as const;
 
 // Absolute links so the nav works from both /aniversario and its sub-pages.
