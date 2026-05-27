@@ -131,3 +131,19 @@ export function MapPin(props: IconProps) {
     </StrokeIcon>
   );
 }
+
+export function Users(props: IconProps) {
+  return (
+    <StrokeIcon {...props}>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+    </StrokeIcon>
+  );
+}
+
+export function Gift(props: IconProps) {
+  return (
+    <StrokeIcon {...props}>
+      <path d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+    </StrokeIcon>
+  );
+}
