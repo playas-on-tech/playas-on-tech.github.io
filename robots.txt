@@ -1,3 +1,41 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
+User-Agent: *
+Allow: /
+
+User-Agent: GPTBot
+Allow: /
+
+User-Agent: OAI-SearchBot
+Allow: /
+
+User-Agent: ChatGPT-User
+Allow: /
+
+User-Agent: PerplexityBot
+Allow: /
+
+User-Agent: Perplexity-User
+Allow: /
+
+User-Agent: ClaudeBot
+Allow: /
+
+User-Agent: Claude-Web
+Allow: /
+
+User-Agent: Claude-SearchBot
+Allow: /
+
+User-Agent: Google-Extended
+Allow: /
+
+User-Agent: Applebot-Extended
+Allow: /
+
+User-Agent: Bytespider
+Allow: /
+
+User-Agent: CCBot
+Allow: /
+
+Host: https://playasontech.com
+Sitemap: https://playasontech.com/sitemap.xml
