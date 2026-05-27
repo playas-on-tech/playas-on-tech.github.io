@@ -9,7 +9,7 @@ const COPY = {
     soonTag: "Próximo encuentro",
     cardTitle: "7º Aniversario · Edición #7",
     cardBody:
-      "El próximo meetup de Playas on Tech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Entrada gratuita, cupo limitado.",
+      "El próximo meetup de Playas on Tech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Cupo limitado, requiere boleto.",
     details: [
       { label: "Fecha", value: "Sáb 18 jul 2026" },
       { label: "Hora", value: "10:00 a 18:00 hrs" },
@@ -24,7 +24,7 @@ const COPY = {
     soonTag: "Upcoming",
     cardTitle: "7th Anniversary · Edition #7",
     cardBody:
-      "The next Playas on Tech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Free admission, limited seats.",
+      "The next Playas on Tech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Limited seats, ticket required.",
     details: [
       { label: "Date", value: "Sat, Jul 18, 2026" },
       { label: "Time", value: "10:00 to 18:00" },

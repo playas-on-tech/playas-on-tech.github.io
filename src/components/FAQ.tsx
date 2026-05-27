@@ -24,7 +24,7 @@ export const faqItems = {
     },
     {
       q: "¿Cómo me registro?",
-      a: "El registro se hace en playasontech.com, en la sección del próximo evento. Para el 7º aniversario gestionamos el registro vía Eventbrite — es gratuito, pero el cupo es limitado.",
+      a: "El registro se hace en playasontech.com, en la sección del próximo evento. Para el 7º aniversario, el registro se gestiona vía Eventbrite con una cuota de recuperación de $150 MXN, y el cupo es limitado.",
     },
     {
       q: "¿Qué tipo de charlas se dan?",
@@ -74,7 +74,7 @@ export const faqItems = {
     },
     {
       q: "How do I register?",
-      a: "Registration is done on playasontech.com, in the next event section. For the 7th anniversary, we are managing registration via Eventbrite — it is free, but space is limited.",
+      a: "Registration is done on playasontech.com, in the next event section. For the 7th anniversary, registration is managed via Eventbrite with a $150 MXN recovery fee, and space is limited.",
     },
     {
       q: "What kind of talks are given?",
