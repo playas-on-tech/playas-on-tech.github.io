@@ -1,23 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "../Icons";
-import { ANIV_NAV } from "./event";
+import { anivNav } from "./event";
+import { type Lang, altLangHref } from "@/i18n/lang";
 
-export default function AnivHeader() {
+const COPY = {
+  es: { reserve: "Reservar", homeHref: "/", registroHref: "/aniversario#registro" },
+  en: { reserve: "Reserve", homeHref: "/en", registroHref: "/en/aniversario#registro" },
+} as const;
+
+export default function AnivHeader({ lang = "es" }: { lang?: Lang }) {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname() ?? "/";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const t = COPY[lang];
+  const nav = anivNav(lang);
+  const switchHref = altLangHref(pathname, lang);
+  const switchLabel = lang === "es" ? "EN" : "ES";
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
@@ -29,17 +38,15 @@ export default function AnivHeader() {
               : "border-white/15 bg-white/10 shadow-lg shadow-navy/5"
           }`}
         >
-          {/* Logo → back home */}
-          <Link href="/" className="flex items-center gap-2 pl-1">
+          <Link href={t.homeHref} className="flex items-center gap-2 pl-1">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/app-icon.webp" alt="" className="h-9 w-9 object-contain drop-shadow" />
             <span className="text-[17px] font-bold tracking-tight text-white drop-shadow">
               Playas<span className="text-ocean-300">On</span>Tech
             </span>
           </Link>
-          {/* Section links */}
           <ul className="hidden items-center gap-7 text-[15px] font-medium text-white/90 lg:flex">
-            {ANIV_NAV.map((link) => (
+            {nav.map((link) => (
               <li key={link.href}>
                 <Link className="transition hover:text-white" href={link.href}>
                   {link.label}
@@ -47,16 +54,24 @@ export default function AnivHeader() {
               </li>
             ))}
           </ul>
-          {/* Reservar */}
-          <Link
-            href="/aniversario#registro"
-            className="group flex items-center gap-2 rounded-full bg-sunset py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
-          >
-            Reservar
-            <span className="grid h-7 w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
-              <ArrowUpRight size={14} />
-            </span>
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link
+              href={switchHref}
+              aria-label={lang === "es" ? "Switch to English" : "Cambiar a Español"}
+              className="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-white/80 transition hover:bg-white/10 hover:text-white"
+            >
+              {switchLabel}
+            </Link>
+            <Link
+              href={t.registroHref}
+              className="group flex items-center gap-2 rounded-full bg-sunset py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
+            >
+              {t.reserve}
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
+                <ArrowUpRight size={14} />
+              </span>
+            </Link>
+          </div>
         </div>
       </nav>
     </header>

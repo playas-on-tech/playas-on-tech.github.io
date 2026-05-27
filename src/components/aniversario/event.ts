@@ -1,3 +1,5 @@
+import type { Lang } from "@/i18n/lang";
+
 // Single source of truth for the 7th-anniversary event details.
 // Target timestamp is pinned to Manzanillo time (UTC-6, no DST in Colima).
 export const ANIV_EVENT = {
@@ -10,21 +12,56 @@ export const ANIV_EVENT = {
   venueCity: "Manzanillo, Colima",
   venueAddress: "Marbella 7, Playa Azul Salagua, 28218 Manzanillo, Col.",
   mapQuery: "Hotel Marbella Manzanillo Colima",
-  // Registration is handled by Eventbrite Embedded Checkout.
-  // Paste the numeric Eventbrite event ID here (from the event's URL,
-  // e.g. .../e/mi-evento-1234567890 → "1234567890"). While empty, the
-  // "Reservar" button falls back to linking out to `eventbriteUrl`.
   eventbriteEventId: "1990369949097",
   eventbriteUrl: "https://www.eventbrite.com.mx/e/playasontech-7o-aniversario-tickets-1990369949097?aff=oddtdtcreator",
 } as const;
 
+// English-localized labels for the same event. Static data (dateISO, venue,
+// venueAddress, URLs) is shared above.
+export const ANIV_EVENT_EN = {
+  edition: "7th Anniversary",
+  editionTag: "Special edition · 7th meetup",
+  dateLabel: "Saturday, July 18, 2026",
+  timeLabel: "10:00 to 18:00",
+  venueCity: "Manzanillo, Colima",
+} as const;
+
+// Lang-aware accessor — returns merged copy for the requested locale.
+export function anivEvent(lang: Lang) {
+  if (lang === "en") {
+    return {
+      ...ANIV_EVENT,
+      edition: ANIV_EVENT_EN.edition,
+      editionTag: ANIV_EVENT_EN.editionTag,
+      dateLabel: ANIV_EVENT_EN.dateLabel,
+      timeLabel: ANIV_EVENT_EN.timeLabel,
+      venueCity: ANIV_EVENT_EN.venueCity,
+    };
+  }
+  return ANIV_EVENT;
+}
+
 // Absolute links so the nav works from both /aniversario and its sub-pages.
-export const ANIV_NAV = [
+const ANIV_NAV_ES = [
   { href: "/aniversario#programa", label: "Programa" },
   { href: "/aniversario#ponentes", label: "Ponentes" },
   { href: "/aniversario#ubicacion", label: "Ubicación" },
   { href: "/aniversario/patrocinadores", label: "Patrocinadores" },
 ] as const;
+
+const ANIV_NAV_EN = [
+  { href: "/en/aniversario#programa", label: "Program" },
+  { href: "/en/aniversario#ponentes", label: "Speakers" },
+  { href: "/en/aniversario#ubicacion", label: "Location" },
+  { href: "/en/aniversario/sponsors", label: "Sponsors" },
+] as const;
+
+// Legacy export kept for components that haven't been refactored yet.
+export const ANIV_NAV = ANIV_NAV_ES;
+
+export function anivNav(lang: Lang) {
+  return lang === "en" ? ANIV_NAV_EN : ANIV_NAV_ES;
+}
 
 // Sponsorship fundraising goal + link to the full breakdown of commitments.
 export const SPONSORSHIP = {

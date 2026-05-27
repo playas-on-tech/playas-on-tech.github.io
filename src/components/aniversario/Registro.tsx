@@ -1,8 +1,28 @@
 import { ArrowUpRight } from "../Icons";
-import { ANIV_EVENT } from "./event";
+import { anivEvent } from "./event";
 import EventbriteCheckout from "./EventbriteCheckout";
+import type { Lang } from "@/i18n/lang";
 
-export default function Registro() {
+const COPY = {
+  es: {
+    pill: "Cupo limitado",
+    h2: "Aparta tu lugar.",
+    accessLine: "El acceso es gratuito, pero el espacio es limitado.",
+    cta: "Reservar mi lugar",
+    fineprint: "Registro gratuito gestionado por Eventbrite.",
+  },
+  en: {
+    pill: "Limited seats",
+    h2: "Reserve your seat.",
+    accessLine: "Admission is free, but space is limited.",
+    cta: "Reserve my seat",
+    fineprint: "Free registration managed by Eventbrite.",
+  },
+} as const;
+
+export default function Registro({ lang = "es" }: { lang?: Lang }) {
+  const t = COPY[lang];
+  const ev = anivEvent(lang);
   return (
     <section id="registro" className="px-6 py-10">
       <div className="mesh-cta grain relative mx-auto max-w-[1100px] overflow-hidden rounded-[2.5rem] px-6 py-20 text-center lg:py-24">
@@ -15,27 +35,24 @@ export default function Registro() {
 
         <div className="relative z-10 mx-auto max-w-[560px]">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[13px] font-semibold text-ocean-300 glass">
-            Cupo limitado
+            {t.pill}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4.6vw,3.4rem)] font-semibold leading-[1.06] tracking-tightest text-white">
-            Aparta tu lugar.
+            {t.h2}
           </h2>
           <p className="mx-auto mt-4 max-w-[42ch] text-lg leading-relaxed text-white/80">
-            {ANIV_EVENT.dateLabel} · {ANIV_EVENT.timeLabel} · {ANIV_EVENT.venue}. El acceso es
-            gratuito, pero el espacio es limitado.
+            {ev.dateLabel} · {ev.timeLabel} · {ev.venue}. {t.accessLine}
           </p>
 
           <div className="mt-9 flex justify-center">
             <EventbriteCheckout className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]">
-              Reservar mi lugar
+              {t.cta}
               <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45">
                 <ArrowUpRight size={16} />
               </span>
             </EventbriteCheckout>
           </div>
-          <p className="mt-4 text-center text-xs text-white/45">
-            Registro gratuito gestionado por Eventbrite.
-          </p>
+          <p className="mt-4 text-center text-xs text-white/45">{t.fineprint}</p>
         </div>
       </div>
     </section>

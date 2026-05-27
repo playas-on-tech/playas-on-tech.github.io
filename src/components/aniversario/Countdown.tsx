@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ANIV_EVENT } from "./event";
+import type { Lang } from "@/i18n/lang";
 
 type Remaining = { days: number; hours: number; minutes: number; seconds: number };
 
@@ -18,15 +19,12 @@ function getRemaining(): Remaining | null {
   };
 }
 
-const UNITS: { key: keyof Remaining; label: string }[] = [
-  { key: "days", label: "días" },
-  { key: "hours", label: "horas" },
-  { key: "minutes", label: "min" },
-  { key: "seconds", label: "seg" },
-];
+const LABELS = {
+  es: { days: "días", hours: "horas", minutes: "min", seconds: "seg", today: "¡Hoy es el día!" },
+  en: { days: "days", hours: "hours", minutes: "min", seconds: "sec", today: "Today is the day!" },
+} as const;
 
-export default function Countdown() {
-  // Start null so SSR and first client render match; fill in after mount.
+export default function Countdown({ lang = "es" }: { lang?: Lang }) {
   const [remaining, setRemaining] = useState<Remaining | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -38,17 +36,25 @@ export default function Countdown() {
     return () => clearInterval(id);
   }, []);
 
+  const l = LABELS[lang];
+  const units: { key: keyof Remaining; label: string }[] = [
+    { key: "days", label: l.days },
+    { key: "hours", label: l.hours },
+    { key: "minutes", label: l.minutes },
+    { key: "seconds", label: l.seconds },
+  ];
+
   if (mounted && remaining === null) {
     return (
       <p className="text-[clamp(1.4rem,3vw,2rem)] font-semibold tracking-tight text-white">
-        ¡Hoy es el día!
+        {l.today}
       </p>
     );
   }
 
   return (
     <div className="flex items-stretch justify-center gap-3 sm:gap-4">
-      {UNITS.map((unit) => (
+      {units.map((unit) => (
         <div
           key={unit.key}
           className="glass min-w-[68px] rounded-2xl border border-white/15 bg-white/10 px-3 py-4 text-center sm:min-w-[88px] sm:px-5"
