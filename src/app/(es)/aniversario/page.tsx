@@ -38,7 +38,7 @@ const eventSchema = {
     price: "0",
     priceCurrency: "MXN",
     availability: "https://schema.org/LimitedAvailability",
-    url: "https://www.eventbrite.com.mx/e/playasontech-7o-aniversario-tickets-1990369949097",
+    url: "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315",
     validFrom: "2026-05-01T00:00:00-06:00",
   },
   organizer: {

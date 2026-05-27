@@ -12,8 +12,8 @@ export const ANIV_EVENT = {
   venueCity: "Manzanillo, Colima",
   venueAddress: "Marbella 7, Playa Azul Salagua, 28218 Manzanillo, Col.",
   mapQuery: "Hotel Marbella Manzanillo Colima",
-  eventbriteEventId: "1990369949097",
-  eventbriteUrl: "https://www.eventbrite.com.mx/e/playasontech-7o-aniversario-tickets-1990369949097?aff=oddtdtcreator",
+  eventbriteEventId: "1990496734315",
+  eventbriteUrl: "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315?aff=oddtdtcreator",
 } as const;
 
 // English-localized labels for the same event. Static data (dateISO, venue,
