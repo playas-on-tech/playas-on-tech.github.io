@@ -92,10 +92,11 @@ export default function EditionsTimeline({ lang = "es" }: { lang?: Lang }) {
     let isDown = false;
     let startX = 0;
     let scrollLeft = 0;
+    let dragThresholdPassed = false;
 
     const handleMouseDown = (e: MouseEvent) => {
       isDown = true;
-      setIsDragging(true);
+      dragThresholdPassed = false;
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
     };
@@ -112,16 +113,29 @@ export default function EditionsTimeline({ lang = "es" }: { lang?: Lang }) {
 
     const handleMouseMove = (e: MouseEvent) => {
       if (!isDown) return;
-      e.preventDefault();
       const x = e.pageX - slider.offsetLeft;
       const walk = (x - startX) * 1.5;
-      slider.scrollLeft = scrollLeft - walk;
+
+      if (Math.abs(x - startX) > 5) {
+        dragThresholdPassed = true;
+        setIsDragging(true);
+        e.preventDefault();
+        slider.scrollLeft = scrollLeft - walk;
+      }
+    };
+
+    const handleClick = (e: MouseEvent) => {
+      if (dragThresholdPassed) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
     };
 
     slider.addEventListener("mousedown", handleMouseDown);
     slider.addEventListener("mouseleave", handleMouseLeave);
     slider.addEventListener("mouseup", handleMouseUp);
     slider.addEventListener("mousemove", handleMouseMove);
+    slider.addEventListener("click", handleClick, true);
 
     return () => {
       clearTimeout(timer);
@@ -129,6 +143,7 @@ export default function EditionsTimeline({ lang = "es" }: { lang?: Lang }) {
       slider.removeEventListener("mouseleave", handleMouseLeave);
       slider.removeEventListener("mouseup", handleMouseUp);
       slider.removeEventListener("mousemove", handleMouseMove);
+      slider.removeEventListener("click", handleClick, true);
     };
   }, []);
 
