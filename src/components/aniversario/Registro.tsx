@@ -7,14 +7,14 @@ const COPY = {
   es: {
     pill: "Cupo limitado",
     h2: "Aparta tu lugar.",
-    accessLine: "El acceso es gratuito, pero el espacio es limitado.",
+    accessLine: "El espacio es limitado, reserva tu lugar con anticipación.",
     cta: "Reservar mi lugar",
     fineprint: "Registro gestionado por Eventbrite.",
   },
   en: {
     pill: "Limited seats",
     h2: "Reserve your seat.",
-    accessLine: "Admission is free, but space is limited.",
+    accessLine: "Space is limited, reserve your seat in advance.",
     cta: "Reserve my seat",
     fineprint: "Registration managed by Eventbrite.",
   },

@@ -21,7 +21,7 @@ import JsonLd from "@/components/JsonLd";
 const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.map((item) => ({
+  mainEntity: faqItems.es.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {
