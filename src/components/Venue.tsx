@@ -14,7 +14,7 @@ export default function Venue() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/venue.webp"
-            alt="Venue de Playas on Tech"
+            alt="Espacio donde se realizan los meetups de Playas on Tech en Manzanillo, Colima — frente al mar"
             className="h-full w-full object-cover transition duration-700 hover:scale-105"
           />
         </div>
@@ -26,8 +26,9 @@ export default function Venue() {
             Donde sucede la magia.
           </h2>
           <p className="mt-5 max-w-[44ch] text-lg leading-relaxed text-navy/60">
-            Un espacio cómodo, con buen internet y mejor ambiente, a unos pasos del mar. El lugar
-            exacto se anuncia con cada edición.
+            Un espacio cómodo en Manzanillo, con buen internet y mejor ambiente, a unos pasos del
+            mar. Cada edición se realiza en un venue local; el lugar exacto se anuncia con cada
+            meetup. WiFi rápido, café y estacionamiento incluidos.
           </p>
           <ul className="mt-8 space-y-3 text-navy/70">
             {features.map((feature) => (

@@ -13,7 +13,7 @@ export default function CodeOfConduct() {
       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/30" />
       <div className="reveal relative z-10 mx-auto max-w-[900px] text-center">
         <h2 className="text-[clamp(2rem,4.6vw,3.6rem)] font-semibold leading-[1.06] tracking-tightest text-white">
-          Una comunidad abierta, segura y para todos.
+          Una comunidad tech abierta, segura e inclusiva — para todas las personas.
         </h2>
         <p className="mx-auto mt-6 max-w-[48ch] text-lg leading-relaxed text-white/75">
           Nos tomamos en serio que cada persona se sienta bienvenida. Por eso tenemos un código de

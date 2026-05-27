@@ -15,30 +15,30 @@ export default function Hero() {
         className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pb-36 text-center lg:pb-40"
       >
         <h1 className="cine cine-1 max-w-[15ch] text-[clamp(2.6rem,7vw,6.2rem)] font-semibold leading-[0.98] tracking-tightest text-white">
-          La comunidad tech{" "}
+          La comunidad tech de Manzanillo —{" "}
           <span className="text-ocean-300">
             frente al mar.
           </span>
         </h1>
         <p className="cine cine-2 mt-7 max-w-[46ch] text-lg leading-relaxed text-white/80 md:text-xl">
-          Nos reunimos cada dos meses en Manzanillo para compartir ideas, aprender y conectar. Sin
-          corbatas. Con olas.
+          Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos
+          meses, frente al mar de Colima. Sin corbatas. Con olas.
         </p>
         <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
           <Link
-            href="#donaciones"
+            href="#eventos"
             className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
-            Únete a la comunidad
+            Reserva tu lugar en el próximo meetup
             <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45">
               <ArrowUpRight size={16} />
             </span>
           </Link>
           <Link
-            href="#eventos"
+            href="#videos"
             className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
-            Ver próximo evento
+            Ver charlas anteriores
             <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5">
               <ArrowRight size={16} />
             </span>
@@ -60,7 +60,7 @@ export default function Hero() {
             letterSpacing="2.5"
           >
             <textPath href="#badge" startOffset="0">
-              GRATIS · CADA 2 MESES · FRENTE AL MAR ·{" "}
+              GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR ·{" "}
             </textPath>
           </text>
         </svg>
