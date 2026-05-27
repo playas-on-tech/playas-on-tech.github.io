@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "./Icons";
+import type { Lang } from "@/i18n/lang";
 
 const organizers = [
   { name: "Danny", img: "/assets/staff/danny.png" },
@@ -10,22 +11,42 @@ const organizers = [
   { name: "Mane", img: "/assets/staff/unpaid-dev.png" },
 ];
 
-export default function Organizadores() {
+const COPY = {
+  es: {
+    pill: "Organizadores",
+    h2: "Hecho por voluntarios.",
+    sub: "Cada edición de Playas on Tech la organiza un grupo de voluntarios en su tiempo libre, por amor a la comunidad. Sin fines de lucro: solo ganas de juntar a quienes construyen tecnología en la costa.",
+    ctaH3: "¿Te gustaría ser parte del equipo?",
+    ctaBody:
+      "Buscamos manos para organizar, dar charlas, conseguir venue y mucho más. No necesitas experiencia, solo ganas de aportar a la comunidad.",
+    cta: "Quiero ser voluntario",
+    ctaHref: "/?category=Staff#contacto",
+  },
+  en: {
+    pill: "Organizers",
+    h2: "Made by volunteers.",
+    sub: "Every Playas on Tech edition is put together by volunteers in their spare time, out of love for the community. Non-profit: just the desire to bring together those building tech on the coast.",
+    ctaH3: "Want to join the team?",
+    ctaBody:
+      "We're looking for hands to organize, give talks, find venues and much more. No experience required, just the will to give back to the community.",
+    cta: "I want to volunteer",
+    ctaHref: "/en?category=Staff#contacto",
+  },
+} as const;
+
+export default function Organizadores({ lang = "es" }: { lang?: Lang }) {
+  const t = COPY[lang];
   return (
     <section id="organizadores" className="bg-cream-100 px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
         <div className="reveal mx-auto max-w-[640px] text-center">
           <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            Organizadores
+            {t.pill}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            Hecho por voluntarios.
+            {t.h2}
           </h2>
-          <p className="mx-auto mt-4 text-lg leading-relaxed text-navy/60">
-            Cada edición de Playas on Tech la organiza un grupo de voluntarios en su tiempo libre,
-            por amor a la comunidad. Sin fines de lucro: solo ganas de juntar a quienes construyen
-            tecnología en la costa.
-          </p>
+          <p className="mx-auto mt-4 text-lg leading-relaxed text-navy/60">{t.sub}</p>
         </div>
 
         <ul className="reveal mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
@@ -45,17 +66,14 @@ export default function Organizadores() {
 
         <div className="reveal mt-16 flex flex-col items-center gap-6 rounded-3xl border border-navy/10 bg-navy px-8 py-10 text-center text-white">
           <div>
-            <h3 className="text-2xl font-semibold tracking-tight">¿Te gustaría ser parte del equipo?</h3>
-            <p className="mx-auto mt-2 max-w-[52ch] text-white/70">
-              Buscamos manos para organizar, dar charlas, conseguir venue y mucho más. No necesitas
-              experiencia, solo ganas de aportar a la comunidad.
-            </p>
+            <h3 className="text-2xl font-semibold tracking-tight">{t.ctaH3}</h3>
+            <p className="mx-auto mt-2 max-w-[52ch] text-white/70">{t.ctaBody}</p>
           </div>
           <Link
-            href="/?category=Staff#contacto"
+            href={t.ctaHref}
             className="group inline-flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
           >
-            Quiero ser voluntario
+            {t.cta}
             <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
               <ArrowUpRight size={16} />
             </span>

@@ -1,12 +1,33 @@
 import { Check } from "./Icons";
+import type { Lang } from "@/i18n/lang";
 
-const features = [
-  "WiFi rápido y enchufes de sobra",
-  "Estacionamiento cercano",
-  "Café, snacks y buena vibra",
-];
+const COPY = {
+  es: {
+    pill: "Venue",
+    h2: "Donde sucede la magia.",
+    body: "Un espacio cómodo, con buen internet y mejor ambiente, a unos pasos del mar. El lugar exacto se anuncia con cada edición.",
+    alt: "Venue de Playas on Tech",
+    features: [
+      "WiFi rápido y enchufes de sobra",
+      "Estacionamiento cercano",
+      "Café, snacks y buena vibra",
+    ],
+  },
+  en: {
+    pill: "Venue",
+    h2: "Where the magic happens.",
+    body: "A comfortable space with great internet and even better vibes, steps from the sea. The exact venue is announced with each edition.",
+    alt: "Playas on Tech venue",
+    features: [
+      "Fast WiFi and plenty of outlets",
+      "Parking nearby",
+      "Coffee, snacks and good vibes",
+    ],
+  },
+} as const;
 
-export default function Venue() {
+export default function Venue({ lang = "es" }: { lang?: Lang }) {
+  const t = COPY[lang];
   return (
     <section id="venue" className="bg-cream-100 px-6 py-28 lg:py-36">
       <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2">
@@ -14,23 +35,20 @@ export default function Venue() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/venue.webp"
-            alt="Venue de Playas on Tech"
+            alt={t.alt}
             className="h-full w-full object-cover transition duration-700 hover:scale-105"
           />
         </div>
         <div className="reveal">
           <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            Venue
+            {t.pill}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            Donde sucede la magia.
+            {t.h2}
           </h2>
-          <p className="mt-5 max-w-[44ch] text-lg leading-relaxed text-navy/60">
-            Un espacio cómodo, con buen internet y mejor ambiente, a unos pasos del mar. El lugar
-            exacto se anuncia con cada edición.
-          </p>
+          <p className="mt-5 max-w-[44ch] text-lg leading-relaxed text-navy/60">{t.body}</p>
           <ul className="mt-8 space-y-3 text-navy/70">
-            {features.map((feature) => (
+            {t.features.map((feature) => (
               <li key={feature} className="flex items-center gap-3">
                 <span className="grid h-7 w-7 place-items-center rounded-full bg-ocean/15 text-ocean">
                   <Check size={14} />

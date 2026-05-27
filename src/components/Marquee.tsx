@@ -1,13 +1,25 @@
 import { Fragment } from "react";
+import type { Lang } from "@/i18n/lang";
 
-const words = ["Aprender", "Conectar", "Compartir", "Crear", "Reír", "Repetir"];
+const WORDS = {
+  es: ["Aprender", "Conectar", "Compartir", "Crear", "Reír", "Repetir"],
+  en: ["Learn", "Connect", "Share", "Create", "Laugh", "Repeat"],
+} as const;
 
-function Track({ ariaHidden }: { ariaHidden?: boolean }) {
+function Track({
+  words,
+  ariaLabel,
+  ariaHidden,
+}: {
+  words: readonly string[];
+  ariaLabel: string;
+  ariaHidden?: boolean;
+}) {
   return (
     <div
       className="marquee__track"
       aria-hidden={ariaHidden || undefined}
-      aria-label={ariaHidden ? undefined : "Aprender, conectar, compartir, crear, reír, repetir"}
+      aria-label={ariaHidden ? undefined : ariaLabel}
     >
       {words.map((word, i) => (
         <Fragment key={`${word}-${i}`}>
@@ -25,12 +37,14 @@ function Track({ ariaHidden }: { ariaHidden?: boolean }) {
   );
 }
 
-export default function Marquee() {
+export default function Marquee({ lang = "es" }: { lang?: Lang }) {
+  const words = WORDS[lang];
+  const ariaLabel = words.map((w) => w.toLowerCase()).join(", ");
   return (
     <section className="overflow-hidden border-y border-navy/10 bg-navy py-7 lg:py-9">
       <div className="marquee">
-        <Track />
-        <Track ariaHidden />
+        <Track words={words} ariaLabel={ariaLabel} />
+        <Track words={words} ariaLabel={ariaLabel} ariaHidden />
       </div>
     </section>
   );

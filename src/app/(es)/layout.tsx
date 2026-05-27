@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 // Manrope is a variable font; next/font self-hosts it and exposes every weight
 // through the --font-manrope CSS variable consumed by tailwind's `font-sans`.
