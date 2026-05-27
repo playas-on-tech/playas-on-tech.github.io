@@ -50,20 +50,36 @@ export default function Organizadores({ lang = "es" }: { lang?: Lang }) {
           <p className="mx-auto mt-4 text-lg leading-relaxed text-navy/60">{t.sub}</p>
         </div>
 
-        <ul className="reveal mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-          {organizers.map((person) => (
-            <li key={person.name} className="flex flex-col items-center text-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={person.img}
-                alt={person.name}
-                loading="lazy"
-                className="h-24 w-24 rounded-full object-cover ring-2 ring-white shadow-lg shadow-navy/10 transition duration-300 hover:-translate-y-1"
-              />
-              <span className="mt-4 font-semibold text-navy">{person.name}</span>
-            </li>
-          ))}
-        </ul>
+        <div className="reveal mt-14 flex flex-col gap-y-10">
+          <ul className="flex flex-wrap justify-center gap-x-12 gap-y-10">
+            {organizers.slice(0, 4).map((person) => (
+              <li key={person.name} className="flex flex-col items-center text-center w-24">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={person.img}
+                  alt={person.name}
+                  loading="lazy"
+                  className="h-24 w-24 rounded-full object-cover ring-2 ring-white shadow-lg shadow-navy/10 transition duration-300 hover:-translate-y-1"
+                />
+                <span className="mt-4 font-semibold text-navy">{person.name}</span>
+              </li>
+            ))}
+          </ul>
+          <ul className="flex flex-wrap justify-center gap-x-12 gap-y-10">
+            {organizers.slice(4).map((person) => (
+              <li key={person.name} className="flex flex-col items-center text-center w-24">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={person.img}
+                  alt={person.name}
+                  loading="lazy"
+                  className="h-24 w-24 rounded-full object-cover ring-2 ring-white shadow-lg shadow-navy/10 transition duration-300 hover:-translate-y-1"
+                />
+                <span className="mt-4 font-semibold text-navy">{person.name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <div className="reveal mt-16 flex flex-col items-center gap-6 rounded-3xl border border-navy/10 bg-navy px-8 py-10 text-center text-white">
           <div>
