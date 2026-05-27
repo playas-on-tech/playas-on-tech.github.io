@@ -11,6 +11,7 @@ import Venue from "@/components/Venue";
 import Videos from "@/components/Videos";
 import Organizadores from "@/components/Organizadores";
 import SobreNosotros from "@/components/SobreNosotros";
+import FAQ from "@/components/FAQ";
 import Donaciones from "@/components/Donaciones";
 import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
@@ -33,6 +34,7 @@ export default function Home() {
         <Videos />
         <Organizadores />
         <SobreNosotros />
+        <FAQ />
         <Donaciones />
         <Contacto />
       </main>
