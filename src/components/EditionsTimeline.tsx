@@ -57,7 +57,9 @@ const COPY = {
 export default function EditionsTimeline({ lang = "es" }: { lang?: Lang }) {
   const t = COPY[lang];
   const ref = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
@@ -75,6 +77,61 @@ export default function EditionsTimeline({ lang = "es" }: { lang?: Lang }) {
     return () => io.disconnect();
   }, []);
 
+  useEffect(() => {
+    const slider = scrollRef.current;
+    if (!slider) return;
+
+    // Scroll to the end smoothly after a tiny timeout to ensure layout is complete
+    const timer = setTimeout(() => {
+      slider.scrollTo({
+        left: slider.scrollWidth,
+        behavior: "smooth",
+      });
+    }, 100);
+
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const handleMouseDown = (e: MouseEvent) => {
+      isDown = true;
+      setIsDragging(true);
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    };
+
+    const handleMouseLeave = () => {
+      isDown = false;
+      setIsDragging(false);
+    };
+
+    const handleMouseUp = () => {
+      isDown = false;
+      setIsDragging(false);
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      slider.scrollLeft = scrollLeft - walk;
+    };
+
+    slider.addEventListener("mousedown", handleMouseDown);
+    slider.addEventListener("mouseleave", handleMouseLeave);
+    slider.addEventListener("mouseup", handleMouseUp);
+    slider.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      clearTimeout(timer);
+      slider.removeEventListener("mousedown", handleMouseDown);
+      slider.removeEventListener("mouseleave", handleMouseLeave);
+      slider.removeEventListener("mouseup", handleMouseUp);
+      slider.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <section id="ediciones" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
@@ -89,7 +146,12 @@ export default function EditionsTimeline({ lang = "es" }: { lang?: Lang }) {
         </div>
 
         <div ref={ref} className={`edition-timeline mt-16 ${inView ? "is-in" : ""}`}>
-          <div className="edition-scroll">
+          <div
+            ref={scrollRef}
+            className={`edition-scroll ${
+              isDragging ? "active cursor-grabbing select-none" : "cursor-grab"
+            }`}
+          >
             <ol className="edition-track">
               {t.editions.map((ed, i) => (
                 <li

@@ -267,6 +267,16 @@ body {
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 94%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 4%, #000 94%, transparent);
 }
+.edition-scroll.cursor-grab {
+  cursor: grab;
+}
+.edition-scroll.active {
+  cursor: grabbing;
+  scroll-snap-type: none;
+}
+.edition-scroll.active * {
+  pointer-events: none;
+}
 .edition-scroll::-webkit-scrollbar {
   display: none;
 }
