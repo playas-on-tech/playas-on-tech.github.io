@@ -5,11 +5,11 @@ const footerColumns = [
   {
     title: "Navegación",
     links: [
-      { href: "/#comunidad", label: "Comunidad" },
-      { href: "/#eventos", label: "Eventos" },
-      { href: "/#venue", label: "Venue" },
-      { href: "/#videos", label: "Videos" },
-      { href: "/#sobre-nosotros", label: "Sobre nosotros" },
+      { href: "/#comunidad", label: "La comunidad tech de Manzanillo" },
+      { href: "/#eventos", label: "Próximos meetups" },
+      { href: "/#venue", label: "Dónde nos reunimos" },
+      { href: "/#videos", label: "Charlas grabadas" },
+      { href: "/#sobre-nosotros", label: "Quiénes somos" },
       { href: "/#contacto", label: "Contacto" },
     ],
   },
@@ -17,9 +17,9 @@ const footerColumns = [
     title: "Comunidad",
     links: [
       { href: "/codigo-conducta", label: "Código de conducta" },
-      { href: "/#donaciones", label: "Donaciones" },
+      { href: "/#donaciones", label: "Apoya a la comunidad" },
       { href: "https://forms.gle/XwvZK3BVu2KdaNfWA", label: "Propón una charla" },
-      { href: "/#organizadores", label: "Sé voluntario" },
+      { href: "/#organizadores", label: "Únete al equipo organizador" },
       { href: "/aniversario", label: "7º Aniversario" },
     ],
   },
@@ -61,7 +61,8 @@ export default function Footer() {
               <img src="/assets/app-logo.webp" alt="Playas on Tech" className="h-11 w-auto" />
             </Link>
             <p className="mt-5 max-w-[34ch] leading-relaxed text-white/55">
-              La comunidad de tecnología de Manzanillo, Colima. Cada dos meses, frente al mar.
+              Comunidad tech de Manzanillo, Colima. Meetups gratuitos de desarrolladores,
+              diseñadores y founders cada dos meses, frente al mar — desde 2025.
             </p>
             <ul className="mt-6 flex flex-wrap gap-3">
               {socials.map(({ label, href, Icon }) => (
