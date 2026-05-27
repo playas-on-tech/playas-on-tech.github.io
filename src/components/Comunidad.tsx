@@ -30,12 +30,13 @@ export default function Comunidad() {
               La comunidad
             </span>
             <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-              Un lugar para crecer, juntos.
+              Comunidad de desarrolladores y creadores en el Pacífico mexicano.
             </h2>
           </div>
           <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">
-            Desarrolladores, diseñadores, founders y curiosos del Pacífico mexicano. Vengas de donde
-            vengas, aquí cabes.
+            Programadores, diseñadores, founders, estudiantes y curiosos de Manzanillo, Colima y
+            toda la costa. Nos juntamos para aprender, conectar y compartir tecnología — sin
+            importar tu nivel. Vengas de donde vengas, aquí cabes.
           </p>
         </div>
 

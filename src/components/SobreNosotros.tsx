@@ -108,9 +108,12 @@ export default function SobreNosotros() {
             Abiertos, sin fines de lucro.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-navy/60">
-            Playas on Tech es una comunidad independiente, organizada por voluntarios en Manzanillo,
-            Colima. Todo lo que hacemos es gratuito y abierto: los eventos, el conocimiento y los
-            materiales. Nos sostenemos con donaciones y patrocinios, no con fines de lucro.
+            Playas on Tech es una comunidad de tecnología independiente y sin fines de lucro,
+            organizada por voluntarios en Manzanillo, Colima desde julio de 2025. Reunimos a
+            desarrolladores, diseñadores y creadores del Pacífico mexicano en meetups gratuitos
+            cada dos meses, frente al mar. Todo lo que hacemos es de libre acceso: los eventos, las
+            grabaciones de las charlas y los materiales. Nos sostenemos con donaciones de la
+            comunidad y patrocinios de empresas locales.
           </p>
         </div>
 

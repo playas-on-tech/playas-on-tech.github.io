@@ -1,10 +1,10 @@
 // `data-count` / `data-prefix` / `data-suffix` are read by SiteEffects to run
 // the count-up animation when the strip scrolls into view.
 const stats = [
-  { count: 6, color: "text-sunset", label: "ediciones" },
-  { count: 200, prefix: "+", color: "text-ocean", label: "asistentes" },
-  { count: 2, color: "text-sunset", label: "meses entre cada una" },
-  { count: 100, suffix: "%", color: "text-ocean", label: "gratis y abierta" },
+  { count: 6, color: "text-sunset", label: "ediciones desde 2025" },
+  { count: 200, prefix: "+", color: "text-ocean", label: "asistentes en Manzanillo" },
+  { count: 2, color: "text-sunset", label: "meses entre cada meetup" },
+  { count: 100, suffix: "%", color: "text-ocean", label: "gratis · sin costo · abierta" },
 ];
 
 export default function StatsStrip() {

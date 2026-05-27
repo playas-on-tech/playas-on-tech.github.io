@@ -12,10 +12,10 @@ export default function Eventos() {
     <section id="eventos" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
         <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-          Eventos
+          Eventos · Meetups
         </span>
         <h2 className="mt-5 max-w-[20ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-          Nos vemos cada dos meses.
+          Meetups tech en Manzanillo — cada dos meses.
         </h2>
 
         {/* Next event card → the 7th anniversary */}
@@ -29,8 +29,9 @@ export default function Eventos() {
                 7º Aniversario · Edición #7
               </h3>
               <p className="mt-4 max-w-[42ch] leading-relaxed text-white/70">
-                Celebramos siete ediciones con un día especial de charlas, networking y un brindis
-                frente al mar. Cupo limitado: aparta tu lugar y trae a alguien que quiera aprender.
+                El próximo meetup de Playas on Tech es nuestro 7º aniversario: un día completo de
+                charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella,
+                Manzanillo. Entrada gratuita, cupo limitado.
               </p>
               <div className="mt-8 flex flex-wrap gap-6 text-sm">
                 {nextEventDetails.map((detail) => (
