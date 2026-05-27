@@ -11,14 +11,14 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Playas on Tech — La comunidad tech frente al mar",
+  title: "Playas on Tech — Comunidad tech y meetups en Manzanillo, Colima",
   description:
-    "La comunidad de tecnología de Manzanillo, Colima. Nos reunimos cada dos meses, frente al mar, para aprender, conectar y compartir. Gratis y abierta para todos.",
+    "Comunidad de desarrolladores, diseñadores y founders en Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar, desde 2025. Únete a la comunidad tech del Pacífico mexicano.",
   icons: { icon: "/assets/app-icon.webp" },
   openGraph: {
-    title: "Playas on Tech — La comunidad tech frente al mar",
+    title: "Playas on Tech · Meetup tech frente al mar en Manzanillo",
     description:
-      "La comunidad de tecnología de Manzanillo, Colima. Cada dos meses, frente al mar.",
+      "La comunidad de tecnología de Manzanillo, Colima. Cada dos meses, frente al mar. Gratis y abierta para todos.",
     locale: "es_MX",
     type: "website",
   },
