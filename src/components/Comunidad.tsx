@@ -17,8 +17,8 @@ const GRADIENTS = {
 const COPY = {
   es: {
     pill: "La comunidad",
-    h2: "Un lugar para crecer, juntos.",
-    sub: "Desarrolladores, diseñadores, founders y curiosos del Pacífico mexicano. Vengas de donde vengas, aquí cabes.",
+    h2: "Comunidad de desarrolladores y creadores en el Pacífico mexicano.",
+    sub: "Programadores, diseñadores, founders, estudiantes y curiosos de Manzanillo, Colima y toda la costa. Nos juntamos para aprender, conectar y compartir tecnología — sin importar tu nivel. Vengas de donde vengas, aquí cabes.",
     cards: [
       {
         key: "aprender" as const,
@@ -39,8 +39,8 @@ const COPY = {
   },
   en: {
     pill: "The community",
-    h2: "A place to grow, together.",
-    sub: "Developers, designers, founders and curious folks from the Mexican Pacific. Wherever you come from, you belong here.",
+    h2: "Community of developers and creators in the Mexican Pacific.",
+    sub: "Programmers, designers, founders, students, and curious folks from Manzanillo, Colima, and the entire coast. We get together to learn, connect, and share technology — no matter your level. Wherever you come from, you belong here.",
     cards: [
       {
         key: "aprender" as const,

@@ -11,14 +11,30 @@ import Venue from "@/components/Venue";
 import Videos from "@/components/Videos";
 import Organizadores from "@/components/Organizadores";
 import SobreNosotros from "@/components/SobreNosotros";
+import FAQ, { faqItems } from "@/components/FAQ";
 import Donaciones from "@/components/Donaciones";
 import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
+import JsonLd from "@/components/JsonLd";
+
+const faqPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqPageSchema} />
       <Header />
       <main>
         <Hero />
@@ -33,6 +49,7 @@ export default function Home() {
         <Videos />
         <Organizadores />
         <SobreNosotros />
+        <FAQ />
         <Donaciones />
         <Contacto />
       </main>

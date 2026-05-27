@@ -2,12 +2,12 @@ import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
-    lead: "Creemos que las mejores ideas nacen cuando la comunidad se junta —",
-    trail: "cara a cara, sin jerarquías, con el mar de fondo.",
+    lead: "Creemos que las mejores ideas nacen cuando la comunidad de desarrolladores se junta —",
+    trail: "cara a cara, sin jerarquías, con el mar de fondo. Por eso, desde 2025, los meetups de Playas on Tech reúnen cada dos meses a quienes construyen tecnología en el Pacífico mexicano.",
   },
   en: {
-    lead: "We believe the best ideas are born when the community gets together —",
-    trail: "face to face, no hierarchies, with the sea in the background.",
+    lead: "We believe the best ideas are born when the developer community gets together —",
+    trail: "face to face, no hierarchies, with the sea in the background. That's why, since 2025, Playas on Tech meetups gather those building tech in the Mexican Pacific every two months.",
   },
 } as const;
 

@@ -34,23 +34,23 @@ export default function Donaciones({ lang = "es" }: { lang?: Lang }) {
           <p className="mx-auto mt-5 max-w-[46ch] text-lg leading-relaxed text-white/80">{t.body}</p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="https://www.paypal.com/paypalme/kevindperezm"
+              href="https://patreon.com/PlayasOnTech"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex items-center gap-2.5 rounded-full bg-white py-2 pl-6 pr-2 text-[16px] font-semibold text-navy shadow-xl transition hover:bg-cream"
             >
-              {t.paypal}
+              {t.patreon}
               <span className="grid h-9 w-9 place-items-center rounded-full bg-sunset text-white transition group-hover:rotate-45">
                 <ArrowUpRight size={16} />
               </span>
             </a>
             <a
-              href="https://patreon.com/PlayasOnTech"
+              href="https://www.paypal.com/paypalme/kevindperezm"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 px-6 py-3 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
             >
-              {t.patreon}
+              {t.paypal}
             </a>
           </div>
         </div>

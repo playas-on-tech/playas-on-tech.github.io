@@ -4,13 +4,13 @@ import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
-    h2: "Una comunidad abierta, segura y para todos.",
+    h2: "Una comunidad tech abierta, segura e inclusiva — para todas las personas.",
     sub: "Nos tomamos en serio que cada persona se sienta bienvenida. Por eso tenemos un código de conducta claro — léelo antes de venir.",
     cta: "Lee nuestro código de conducta",
     href: "/codigo-conducta",
   },
   en: {
-    h2: "An open, safe community for everyone.",
+    h2: "An open, safe and inclusive tech community — for all people.",
     sub: "We take it seriously that every person feels welcome. That's why we have a clear code of conduct — read it before you come.",
     cta: "Read our code of conduct",
     href: "/en/code-of-conduct",

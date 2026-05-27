@@ -4,12 +4,12 @@ import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
-    pill: "Eventos",
-    h2: "Nos vemos cada dos meses.",
+    pill: "Eventos · Meetups",
+    h2: "Meetups tech en Manzanillo — cada dos meses.",
     soonTag: "Próximo encuentro",
     cardTitle: "7º Aniversario · Edición #7",
     cardBody:
-      "Celebramos siete ediciones con un día especial de charlas, networking y un brindis frente al mar. Cupo limitado: aparta tu lugar y trae a alguien que quiera aprender.",
+      "El próximo meetup de Playas on Tech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Entrada gratuita, cupo limitado.",
     details: [
       { label: "Fecha", value: "Sáb 18 jul 2026" },
       { label: "Hora", value: "10:00 a 18:00 hrs" },
@@ -19,12 +19,12 @@ const COPY = {
     ctaHref: "/aniversario",
   },
   en: {
-    pill: "Events",
-    h2: "We meet every two months.",
+    pill: "Events · Meetups",
+    h2: "Tech meetups in Manzanillo — every two months.",
     soonTag: "Upcoming",
     cardTitle: "7th Anniversary · Edition #7",
     cardBody:
-      "We celebrate seven editions with a special day of talks, networking and a toast by the sea. Limited seats: grab yours and bring someone who wants to learn.",
+      "The next Playas on Tech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Free admission, limited seats.",
     details: [
       { label: "Date", value: "Sat, Jul 18, 2026" },
       { label: "Time", value: "10:00 to 18:00" },

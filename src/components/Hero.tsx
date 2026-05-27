@@ -4,21 +4,21 @@ import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
-    h1a: "La comunidad tech",
+    h1a: "La comunidad tech de Manzanillo —",
     h1b: "frente al mar.",
-    sub: "Nos reunimos cada dos meses en Manzanillo para compartir ideas, aprender y conectar. Sin corbatas. Con olas.",
-    ctaPrimary: "Únete a la comunidad",
-    ctaSecondary: "Ver próximo evento",
-    sticker: "GRATIS · CADA 2 MESES · FRENTE AL MAR ·",
+    sub: "Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos meses, frente al mar de Colima. Sin corbatas. Con olas.",
+    ctaPrimary: "Reserva tu lugar en el próximo meetup",
+    ctaSecondary: "Ver charlas anteriores",
+    sticker: "GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR ·",
     scrollCue: "Desliza",
   },
   en: {
-    h1a: "The tech community",
+    h1a: "Manzanillo's tech community —",
     h1b: "by the sea.",
-    sub: "We meet every two months in Manzanillo to share ideas, learn and connect. No ties. With waves.",
-    ctaPrimary: "Join the community",
-    ctaSecondary: "See next event",
-    sticker: "FREE · EVERY 2 MONTHS · BY THE SEA ·",
+    sub: "Free meetup for developers, designers, and founders in the Mexican Pacific. Every two months, by the sea of Colima. No ties. With waves.",
+    ctaPrimary: "Reserve your seat for the next meetup",
+    ctaSecondary: "Watch past talks",
+    sticker: "FREE · EVERY 2 MONTHS · MANZANILLO · BY THE SEA ·",
     scrollCue: "Scroll",
   },
 } as const;
@@ -26,7 +26,7 @@ const COPY = {
 export default function Hero({ lang = "es" }: { lang?: Lang }) {
   const t = COPY[lang];
   const eventsHref = lang === "en" ? "/en#events" : "#eventos";
-  const donationsHref = lang === "en" ? "/en#donations" : "#donaciones";
+  const videosHref = lang === "en" ? "/en#videos" : "#videos";
   return (
     <section id="top" className="mesh-hero grain relative min-h-screen overflow-hidden">
       <div id="hero-blobs" className="blobs cine-field">
@@ -50,7 +50,7 @@ export default function Hero({ lang = "es" }: { lang?: Lang }) {
         </p>
         <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
           <Link
-            href={donationsHref}
+            href={eventsHref}
             className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             {t.ctaPrimary}
@@ -59,7 +59,7 @@ export default function Hero({ lang = "es" }: { lang?: Lang }) {
             </span>
           </Link>
           <Link
-            href={eventsHref}
+            href={videosHref}
             className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
             {t.ctaSecondary}

@@ -9,14 +9,14 @@ const COPY = {
     h2: "Aparta tu lugar.",
     accessLine: "El acceso es gratuito, pero el espacio es limitado.",
     cta: "Reservar mi lugar",
-    fineprint: "Registro gratuito gestionado por Eventbrite.",
+    fineprint: "Registro gestionado por Eventbrite.",
   },
   en: {
     pill: "Limited seats",
     h2: "Reserve your seat.",
     accessLine: "Admission is free, but space is limited.",
     cta: "Reserve my seat",
-    fineprint: "Free registration managed by Eventbrite.",
+    fineprint: "Registration managed by Eventbrite.",
   },
 } as const;
 
