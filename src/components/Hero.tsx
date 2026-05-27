@@ -9,7 +9,7 @@ const COPY = {
     sub: "Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos meses, frente al mar de Colima. Sin corbatas. Con olas.",
     ctaPrimary: "Reserva tu lugar en el próximo meetup",
     ctaSecondary: "Ver charlas anteriores",
-    sticker: "GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR ·",
+    sticker: "GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR · ",
     scrollCue: "Desliza",
   },
   en: {
@@ -18,7 +18,7 @@ const COPY = {
     sub: "Free meetup for developers, designers, and founders in the Mexican Pacific. Every two months, by the sea of Colima. No ties. With waves.",
     ctaPrimary: "Reserve your seat for the next meetup",
     ctaSecondary: "Watch past talks",
-    sticker: "FREE · EVERY 2 MONTHS · MANZANILLO · BY THE SEA ·",
+    sticker: "FREE · EVERY 2 MONTHS · MANZANILLO · BY THE SEA · ",
     scrollCue: "Scroll",
   },
 } as const;
@@ -79,11 +79,11 @@ export default function Hero({ lang = "es" }: { lang?: Lang }) {
           <text
             fill="rgba(255,255,255,.85)"
             fontFamily="Manrope"
-            fontSize="13.5"
+            fontSize="12.5"
             fontWeight="600"
-            letterSpacing="2.5"
+            letterSpacing="2"
           >
-            <textPath href="#badge" startOffset="0">
+            <textPath href="#badge" startOffset="0" textLength="445">
               {t.sticker}{" "}
             </textPath>
           </text>
