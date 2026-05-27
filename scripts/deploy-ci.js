@@ -5,6 +5,7 @@ const fs = require("fs");
 const path = require("path");
 
 const WORKFLOW_NAME = "deploy.yml";
+const PAGES_WORKFLOW_NAME = "pages-build-deployment";
 
 // Helper to run git commands and get trimmed output
 function runGit(cmd) {
@@ -152,6 +153,52 @@ async function fetchWorkflowRuns() {
   }
 }
 
+// Helper to poll pages deployment workflow runs via GH CLI or API
+async function fetchPagesDeployRuns() {
+  if (useGhCli) {
+    try {
+      const output = execSync(
+        `gh run list --workflow=${PAGES_WORKFLOW_NAME} --branch=gh-pages --limit=5 --json databaseId,status,conclusion,headSha,url`,
+        { stdio: ["ignore", "pipe", "ignore"] }
+      ).toString();
+      return JSON.parse(output).map(run => ({
+        id: run.databaseId,
+        status: run.status,
+        conclusion: run.conclusion,
+        headSha: run.headSha,
+        url: run.url
+      }));
+    } catch (e) {
+      return [];
+    }
+  } else {
+    try {
+      const response = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}/actions/runs?workflow_id=${PAGES_WORKFLOW_NAME}&branch=gh-pages`,
+        {
+          headers: {
+            Authorization: `Bearer ${apiToken}`,
+            Accept: "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+            "User-Agent": "playas-on-tech-deploy"
+          }
+        }
+      );
+      if (!response.ok) return [];
+      const data = await response.json();
+      return (data.workflow_runs || []).map(run => ({
+        id: run.id,
+        status: run.status,
+        conclusion: run.conclusion,
+        headSha: run.head_sha,
+        url: run.html_url
+      }));
+    } catch (e) {
+      return [];
+    }
+  }
+}
+
 // Helper to trigger the workflow run
 async function triggerWorkflow() {
   console.log("\n⚡ Triggering GitHub Actions deploy workflow...");
@@ -239,6 +286,63 @@ async function main() {
           console.log("\n🎉 GitHub Actions CI Build and Deploy Succeeded!");
         } else {
           throw new Error(`GitHub Actions workflow run failed with conclusion: ${conclusion}`);
+        }
+      }
+    }
+
+    // 4.5 Monitor the pages-build-deployment run (github-pages environment deploy)
+    console.log("\n⚡ Monitoring secondary GitHub Pages deployment (github-pages env)...");
+    const prePagesRuns = await fetchPagesDeployRuns();
+    const prePagesIds = new Set(prePagesRuns.map(r => r.id));
+
+    let pagesRunId = null;
+    let pagesRunUrl = "";
+    const pagesStartTime = Date.now();
+    const pagesTimeout = 60000; // 1 minute to find the pages deployment run
+
+    while (!pagesRunId) {
+      if (Date.now() - pagesStartTime > pagesTimeout) {
+        console.log("⚠️  Timeout waiting for pages-build-deployment to initialize. Skipping active monitoring.");
+        break;
+      }
+      await new Promise(resolve => setTimeout(resolve, 3000));
+      process.stdout.write(".");
+
+      const activePagesRuns = await fetchPagesDeployRuns();
+      // Look for any new pages deployment run triggered after we completed the build
+      const newPagesRun = activePagesRuns.find(run => !prePagesIds.has(run.id));
+      if (newPagesRun) {
+        pagesRunId = newPagesRun.id;
+        pagesRunUrl = newPagesRun.url;
+        console.log(`\n📌 Found Active Pages Deployment Run: ${pagesRunUrl}`);
+      }
+    }
+
+    if (pagesRunId) {
+      console.log("⏳ Monitoring pages build & deploy progress...");
+      let pagesCompleted = false;
+      while (!pagesCompleted) {
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        const runs = await fetchPagesDeployRuns();
+        const currentRun = runs.find(r => r.id === pagesRunId);
+
+        if (!currentRun) {
+          console.log("⚠️  Could not retrieve pages build status. Retrying...");
+          continue;
+        }
+
+        const status = currentRun.status;
+        const conclusion = currentRun.conclusion;
+
+        console.log(`   [${new Date().toLocaleTimeString()}] Pages Status: ${status} | Conclusion: ${conclusion || "pending"}`);
+
+        if (status === "completed") {
+          pagesCompleted = true;
+          if (conclusion === "success") {
+            console.log("\n🎉 GitHub Pages Deployment Succeeded!");
+          } else {
+            throw new Error(`GitHub Pages deployment failed with conclusion: ${conclusion}`);
+          }
         }
       }
     }
