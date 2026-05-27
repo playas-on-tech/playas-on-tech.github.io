@@ -4,6 +4,7 @@ import type { Lang } from "@/i18n/lang";
 
 const organizers = [
   { name: "Danny", img: "/assets/staff/danny.png" },
+  { name: "Edson", img: "/assets/staff/edson.png" },
   { name: "Franky", img: "/assets/staff/franky.png" },
   { name: "H", img: "/assets/staff/h.png" },
   { name: "Juaneque", img: "/assets/staff/juaneque.png" },
@@ -50,23 +51,9 @@ export default function Organizadores({ lang = "es" }: { lang?: Lang }) {
           <p className="mx-auto mt-4 text-lg leading-relaxed text-navy/60">{t.sub}</p>
         </div>
 
-        <div className="reveal mt-14 flex flex-col gap-y-10">
-          <ul className="flex flex-wrap justify-center gap-x-12 gap-y-10">
-            {organizers.slice(0, 4).map((person) => (
-              <li key={person.name} className="flex flex-col items-center text-center w-24">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={person.img}
-                  alt={person.name}
-                  loading="lazy"
-                  className="h-24 w-24 rounded-full object-cover ring-2 ring-white shadow-lg shadow-navy/10 transition duration-300 hover:-translate-y-1"
-                />
-                <span className="mt-4 font-semibold text-navy">{person.name}</span>
-              </li>
-            ))}
-          </ul>
-          <ul className="flex flex-wrap justify-center gap-x-12 gap-y-10">
-            {organizers.slice(4).map((person) => (
+        <div className="reveal mt-14">
+          <ul className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 sm:gap-x-16 max-w-2xl mx-auto justify-items-center">
+            {organizers.map((person) => (
               <li key={person.name} className="flex flex-col items-center text-center w-24">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
