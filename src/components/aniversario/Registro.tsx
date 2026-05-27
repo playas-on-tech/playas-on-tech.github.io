@@ -34,7 +34,7 @@ export default function Registro() {
             </EventbriteCheckout>
           </div>
           <p className="mt-4 text-center text-xs text-white/45">
-            Registro gratuito gestionado por Eventbrite.
+            Registro gestionado por Eventbrite.
           </p>
         </div>
       </div>
