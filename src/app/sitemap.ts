@@ -1,5 +1,9 @@
 import type { MetadataRoute } from "next";
 
+// Required when `output: 'export'` is set in next.config — see
+// https://nextjs.org/docs/advanced-features/static-html-export
+export const dynamic = "force-static";
+
 const BASE_URL = "https://playasontech.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
