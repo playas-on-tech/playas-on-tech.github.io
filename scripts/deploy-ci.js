@@ -232,6 +232,9 @@ async function main() {
     const preTriggerRuns = await fetchWorkflowRuns();
     const preTriggerIds = new Set(preTriggerRuns.map(r => r.id));
 
+    const prePagesRuns = await fetchPagesDeployRuns();
+    const prePagesIds = new Set(prePagesRuns.map(r => r.id));
+
     // Trigger workflow
     await triggerWorkflow();
     console.log("✅ Trigger request successful. Waiting for workflow run to initialize on GitHub...");
@@ -292,8 +295,6 @@ async function main() {
 
     // 4.5 Monitor the pages-build-deployment run (github-pages environment deploy)
     console.log("\n⚡ Monitoring secondary GitHub Pages deployment (github-pages env)...");
-    const prePagesRuns = await fetchPagesDeployRuns();
-    const prePagesIds = new Set(prePagesRuns.map(r => r.id));
 
     let pagesRunId = null;
     let pagesRunUrl = "";
