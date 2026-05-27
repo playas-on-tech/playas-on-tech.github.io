@@ -9,9 +9,6 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: playasontech.com
-      url: https://playasontech.com/
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
