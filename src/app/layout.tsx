@@ -1,6 +1,28 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
+import JsonLd from "@/components/JsonLd";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Playas on Tech",
+  alternateName: "PlayasOnTech",
+  description:
+    "Comunidad de tecnología de Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar.",
+  url: "https://playasontech.com",
+  logo: "https://playasontech.com/assets/app-logo.webp",
+  foundingDate: "2025-07",
+  areaServed: { "@type": "City", name: "Manzanillo, Colima, México" },
+  sameAs: [
+    "https://www.instagram.com/playasontech_mzo",
+    "https://www.facebook.com/playasontech",
+    "https://www.linkedin.com/company/playasontech",
+    "https://x.com/playasontech",
+    "https://www.tiktok.com/@playasontech",
+    "https://www.youtube.com/@PlayasOnTech",
+  ],
+};
 
 // Manrope is a variable font; next/font self-hosts it and exposes every weight
 // through the --font-manrope CSS variable consumed by tailwind's `font-sans`.
@@ -29,7 +51,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es" className={manrope.variable}>
-      <body className="font-sans text-navy antialiased">{children}</body>
+      <body className="font-sans text-navy antialiased">
+        <JsonLd data={organizationSchema} />
+        {children}
+      </body>
     </html>
   );
 }
