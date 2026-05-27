@@ -104,14 +104,12 @@ export default function CodigoConductaPage() {
               <p className="mt-3 text-lg leading-relaxed text-navy/70">
                 Si presencias o experimentas algún comportamiento que infrinja este código, acércate
                 a cualquier miembro del equipo organizador. También puedes reportarlo de forma
-                confidencial a través de nuestro Instagram:{" "}
+                confidencial a través de nuestro correo electrónico:{" "}
                 <a
-                  href="https://www.instagram.com/playasontech_mzo"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:contacto@playasontech.com"
                   className="font-semibold text-ocean underline-offset-4 hover:underline"
                 >
-                  @playasontech_mzo
+                  contacto@playasontech.com
                 </a>
                 .
               </p>
