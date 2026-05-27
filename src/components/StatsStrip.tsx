@@ -1,9 +1,18 @@
 import type { Lang } from "@/i18n/lang";
 
-const COPY = {
+const getEventCount = (): number => {
+  const startDate = new Date(2019, 5, 1); // June 1, 2019
+  const currentDate = new Date();
+  const yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+  const monthsDiff = currentDate.getMonth() - startDate.getMonth();
+  const totalMonths = (yearsDiff * 12) + monthsDiff;
+  return Math.floor(totalMonths / 2) + 1;
+};
+
+const getCOPY = (eventCount: number) => ({
   es: {
     stats: [
-      { count: 6, color: "text-sunset", label: "ediciones desde 2025" },
+      { count: eventCount, color: "text-sunset", label: "ediciones desde 2019" },
       { count: 200, prefix: "+", color: "text-ocean", label: "asistentes en Manzanillo" },
       { count: 2, color: "text-sunset", label: "meses entre cada meetup" },
       { count: 100, suffix: "%", color: "text-ocean", label: "gratis · sin costo · abierta" },
@@ -11,18 +20,19 @@ const COPY = {
   },
   en: {
     stats: [
-      { count: 6, color: "text-sunset", label: "editions since 2025" },
+      { count: eventCount, color: "text-sunset", label: "editions since 2019" },
       { count: 200, prefix: "+", color: "text-ocean", label: "attendees in Manzanillo" },
       { count: 2, color: "text-sunset", label: "months between each meetup" },
       { count: 100, suffix: "%", color: "text-ocean", label: "free · no cost · open" },
     ],
   },
-} as const;
+} as const);
 
 // `data-count` / `data-prefix` / `data-suffix` are read by SiteEffects to run
 // the count-up animation when the strip scrolls into view.
 export default function StatsStrip({ lang = "es" }: { lang?: Lang }) {
-  const { stats } = COPY[lang];
+  const eventCount = getEventCount();
+  const { stats } = getCOPY(eventCount)[lang];
   return (
     <section className="border-y border-navy/10 bg-cream-100">
       <div className="mx-auto grid max-w-[1200px] grid-cols-2 divide-x divide-y divide-navy/10 md:grid-cols-4 md:divide-y-0">
