@@ -29,7 +29,20 @@ export const ANIV_NAV = [
 // Sponsorship fundraising goal + link to the full breakdown of commitments.
 export const SPONSORSHIP = {
   goalMXN: 130000,
+  goalUSD: 7700, // rounded for display
+  // Mix: 1 Title + 2 Platinum + 4 Gold + 2 Silver = $130K exact.
   raisedMXN: 0, // update as sponsors confirm
   // TODO: swap for the full sponsorship deck (Notion / Google Doc / PDF) when ready.
   detailsUrl: "https://www.instagram.com/playasontech_mzo",
+} as const;
+
+// Public ticket — symbolic donation that funds the operation of the community.
+// Sponsor courtesy tickets do NOT charge this price but DO include the same shirt.
+export const TICKET = {
+  priceMXN: 150,
+  priceUSD: 9,
+  includes: [
+    "Acceso al evento completo",
+    "Playera oficial del 7º Aniversario",
+  ],
 } as const;
