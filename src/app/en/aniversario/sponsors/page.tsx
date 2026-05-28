@@ -17,6 +17,21 @@ export const metadata: Metadata = {
       "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum and media partner packages.",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://playasontech.com/assets/app-icon.webp",
+        width: 512,
+        height: 512,
+        alt: "Playas on Tech Icon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Sponsors · 7th Anniversary — Playas on Tech",
+    description:
+      "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum and media partner packages.",
+    images: ["https://playasontech.com/assets/app-icon.webp"],
   },
 };
 

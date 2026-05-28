@@ -18,6 +18,20 @@ export const metadata: Metadata = {
     description: "The tech community of Manzanillo, Colima. Every two months, by the sea.",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://playasontech.com/assets/app-icon.webp",
+        width: 512,
+        height: 512,
+        alt: "Playas on Tech Icon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Playas on Tech — The tech community by the sea",
+    description: "The tech community of Manzanillo, Colima. Every two months, by the sea.",
+    images: ["https://playasontech.com/assets/app-icon.webp"],
   },
 };
 

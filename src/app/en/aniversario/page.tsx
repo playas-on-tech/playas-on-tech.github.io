@@ -19,6 +19,21 @@ export const metadata: Metadata = {
       "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. A gathering to celebrate seven editions by the sea.",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://playasontech.com/assets/app-icon.webp",
+        width: 512,
+        height: 512,
+        alt: "Playas on Tech Icon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "7th Anniversary · Playas on Tech",
+    description:
+      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. A gathering to celebrate seven editions by the sea.",
+    images: ["https://playasontech.com/assets/app-icon.webp"],
   },
 };
 

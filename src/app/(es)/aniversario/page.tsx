@@ -58,6 +58,21 @@ export const metadata: Metadata = {
       "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un encuentro para celebrar siete ediciones frente al mar.",
     locale: "es_MX",
     type: "website",
+    images: [
+      {
+        url: "https://playasontech.com/assets/app-icon.webp",
+        width: 512,
+        height: 512,
+        alt: "Playas on Tech Icon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "7º Aniversario · Playas on Tech",
+    description:
+      "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un encuentro para celebrar siete ediciones frente al mar.",
+    images: ["https://playasontech.com/assets/app-icon.webp"],
   },
 };
 

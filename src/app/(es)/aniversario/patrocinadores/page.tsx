@@ -17,6 +17,21 @@ export const metadata: Metadata = {
       "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes Silver, Gold, Platinum y media partners.",
     locale: "es_MX",
     type: "website",
+    images: [
+      {
+        url: "https://playasontech.com/assets/app-icon.webp",
+        width: 512,
+        height: 512,
+        alt: "Playas on Tech Icon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Patrocinadores · 7º Aniversario — Playas on Tech",
+    description:
+      "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes Silver, Gold, Platinum y media partners.",
+    images: ["https://playasontech.com/assets/app-icon.webp"],
   },
 };
 
