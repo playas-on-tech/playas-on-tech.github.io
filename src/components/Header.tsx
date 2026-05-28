@@ -16,8 +16,8 @@ const COPY = {
       { href: "#donaciones", label: "Donaciones" },
       { href: "#contacto", label: "Contacto" },
     ],
-    joinCta: "Únete",
-    joinHref: "#donaciones",
+    joinCta: "7º Aniversario",
+    joinHref: "/aniversario",
   },
   en: {
     nav: [
@@ -28,8 +28,8 @@ const COPY = {
       { href: "#donaciones", label: "Donations" },
       { href: "#contacto", label: "Contact" },
     ],
-    joinCta: "Join",
-    joinHref: "#donaciones",
+    joinCta: "7th Anniversary",
+    joinHref: "/en/aniversario",
   },
 } as const;
 
@@ -91,10 +91,10 @@ export default function Header({ lang = "es" }: { lang?: Lang }) {
             </Link>
             <Link
               href={t.joinHref}
-              className="group flex items-center gap-2 rounded-full bg-navy py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white"
+              className="group flex items-center gap-2 rounded-full bg-sunset py-1.5 pl-4 pr-1.5 text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
             >
               {t.joinCta}
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-ocean text-white transition group-hover:rotate-45">
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
                 <ArrowUpRight size={14} />
               </span>
             </Link>
