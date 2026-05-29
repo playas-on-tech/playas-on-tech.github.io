@@ -1,12 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/components/Footer";
-
-export const metadata: Metadata = {
-  title: "Términos y licencias — Playas on Tech",
-  description:
-    "Cómo opera Playas on Tech: una comunidad independiente y sin fines de lucro. Contenido bajo Creative Commons (CC BY 4.0), software bajo licencia MIT, y un código de conducta para todas las personas.",
-};
 
 const CC_BY = "https://creativecommons.org/licenses/by/4.0/";
 const REPO_LICENSE = "https://github.com/playas-on-tech/playas-on-tech.github.io/blob/main/LICENSE";

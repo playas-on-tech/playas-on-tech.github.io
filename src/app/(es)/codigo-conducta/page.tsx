@@ -1,12 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/components/Footer";
-
-export const metadata: Metadata = {
-  title: "Código de Conducta — Playas on Tech",
-  description:
-    "Queremos que cada encuentro de Playas on Tech sea un espacio seguro y acogedor para todas las personas. Lee nuestro código de conducta.",
-};
 
 const esperado = [
   "Tratar a los demás con respeto y consideración.",

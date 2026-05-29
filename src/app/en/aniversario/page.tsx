@@ -16,24 +16,24 @@ export const metadata: Metadata = {
   openGraph: {
     title: "7th Anniversary · Playas on Tech",
     description:
-      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. A gathering to celebrate seven editions by the sea.",
+      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. An event to celebrate 7 years by the sea.",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "https://playasontech.com/assets/app-icon.webp",
-        width: 512,
-        height: 512,
-        alt: "Playas on Tech Icon",
+        url: "https://playasontech.com/assets/metadata/og-aniversario.jpg",
+        width: 981,
+        height: 514,
+        alt: "7th Anniversary Playas on Tech",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "7th Anniversary · Playas on Tech",
     description:
-      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. A gathering to celebrate seven editions by the sea.",
-    images: ["https://playasontech.com/assets/app-icon.webp"],
+      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. An event to celebrate 7 years by the sea.",
+    images: ["https://playasontech.com/assets/metadata/og-aniversario.jpg"],
   },
 };
 

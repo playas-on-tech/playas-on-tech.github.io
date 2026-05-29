@@ -19,19 +19,19 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://playasontech.com/assets/app-icon.webp",
-        width: 512,
-        height: 512,
-        alt: "Playas on Tech Icon",
+        url: "https://playasontech.com/assets/metadata/og-patrocinadores.jpg",
+        width: 1119,
+        height: 586,
+        alt: "Sponsors 7th Anniversary Playas on Tech",
       },
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Sponsors · 7th Anniversary — Playas on Tech",
     description:
       "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum and media partner packages.",
-    images: ["https://playasontech.com/assets/app-icon.webp"],
+    images: ["https://playasontech.com/assets/metadata/og-patrocinadores.jpg"],
   },
 };
 
