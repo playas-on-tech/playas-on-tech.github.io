@@ -71,7 +71,7 @@ const TIERS: Record<Lang, Tier[]> = {
       attendeeList: "Plus",
       benefits: [
         "Todo lo de Gold",
-        "Keynote técnico de 25 min + 5 min Q&A (slot principal de agenda)",
+        "Keynote técnico de 15 min (slot principal de agenda)",
         "Stand premium en venue",
         "Logo en intro/outro del video oficial del evento",
         "Post dedicado en redes pre-evento",
@@ -95,7 +95,7 @@ const TIERS: Record<Lang, Tier[]> = {
       benefits: [
         "Naming rights — «Presentado por [Marca]»",
         "Welcome desde el escenario (5 min)",
-        "Keynote de apertura — 25 min + 5 min Q&A",
+        "Keynote de apertura — 15 min",
         "Co-branded lockup en TODOS los assets del evento",
         "Recap video del evento, sponsoreado",
         "Playera oficial co-branded",
@@ -163,7 +163,7 @@ const TIERS: Record<Lang, Tier[]> = {
       attendeeList: "Plus",
       benefits: [
         "Everything in Gold",
-        "25-min technical keynote + 5-min Q&A (main agenda slot)",
+        "15-min technical keynote (main agenda slot)",
         "Premium stand at the venue",
         "Logo in intro/outro of the official event video",
         "Dedicated post on social media pre-event",
@@ -187,7 +187,7 @@ const TIERS: Record<Lang, Tier[]> = {
       benefits: [
         "Naming rights — «Presented by [Brand]»",
         "Welcome speech from the stage (5 min)",
-        "Opening keynote — 25 min + 5 min Q&A",
+        "Opening keynote — 15 min",
         "Co-branded lockup on ALL event assets",
         "Sponsored event recap video",
         "Co-branded official t-shirt",
@@ -228,7 +228,7 @@ const COPY = {
     morePopular: "Más popular",
     chooseLabel: "Elegir",
     singleSponsor: "Solo 1 patrocinador con este paquete por edición.",
-    keynoteLabel: "Incluye keynote 25 min + 5 Q&A",
+    keynoteLabel: "Incluye keynote de 15 min",
     attendeeListLabel: "Lista de asistentes",
     uniqueQuota: "Único cupo",
     
@@ -263,7 +263,7 @@ const COPY = {
     morePopular: "Most popular",
     chooseLabel: "Choose",
     singleSponsor: "Only 1 sponsor with this package per edition.",
-    keynoteLabel: "Includes 25 min keynote + 5 Q&A",
+    keynoteLabel: "Includes 15 min keynote",
     attendeeListLabel: "Attendee list",
     uniqueQuota: "Only slot",
     
