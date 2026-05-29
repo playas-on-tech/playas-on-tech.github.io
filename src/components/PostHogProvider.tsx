@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 import { PostHogProvider as PHProvider } from "posthog-js/react";
@@ -30,18 +30,50 @@ if (typeof window !== "undefined") {
   }
 }
 
-// Client-side Pageview Tracker Component
+// Client-side Pageview & Pageleave Tracker Component
+// Captures $pageview on pathname transition and $pageleave on both internal
+// SPA navigation and tab-close / external browser navigation.
 function PostHogPageview() {
   const pathname = usePathname();
+  const prevPathname = useRef<string | null>(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && pathname) {
-      // Capture pageview manually on pathname transition
+    if (typeof window === "undefined") return;
+    const prev = prevPathname.current;
+
+    // Capture $pageleave for the previous page before recording the new view
+    if (prev && prev !== pathname) {
+      const leaveUrl = window.origin + prev;
+      posthog.capture("$pageleave", { $current_url: leaveUrl });
+      console.log(`📡 PostHog: Captured pageleave for ${leaveUrl}`);
+    }
+
+    // Capture $pageview for the current page
+    if (pathname) {
       const url = window.origin + pathname;
       posthog.capture("$pageview", { $current_url: url });
       console.log(`📡 PostHog: Captured pageview for ${url}`);
     }
+
+    prevPathname.current = pathname;
   }, [pathname]);
+
+  // Capture $pageleave on tab close / browser-level navigation (back, forward, reload)
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleBeforeUnload = () => {
+      const current = prevPathname.current;
+      if (current) {
+        const url = window.origin + current;
+        // posthog-js uses sendBeacon under the hood on page unload
+        posthog.capture("$pageleave", { $current_url: url });
+      }
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, []);
 
   return null;
 }
