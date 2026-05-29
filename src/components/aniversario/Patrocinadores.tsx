@@ -514,7 +514,7 @@ export default function Patrocinadores({
           </div>
           <Link
             href={`${t.homePath}?category=Sponsor&package=MediaPartner#contacto`}
-            className="group inline-flex shrink-0 items-center gap-2.5 rounded-full bg-white py-2 pl-6 pr-2 text-[15px] font-semibold text-navy transition hover:bg-cream"
+            className="group inline-flex shrink-0 items-center gap-2.5 justify-self-start rounded-full bg-white py-2 pl-6 pr-2 text-[15px] font-semibold text-navy transition hover:bg-cream"
           >
             {t.mediaPartnerCta}
             <span className="grid h-8 w-8 place-items-center rounded-full bg-ocean text-white transition group-hover:rotate-45">
