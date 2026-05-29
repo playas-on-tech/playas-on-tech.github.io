@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "../globals.css";
 import JsonLd from "@/components/JsonLd";
+import PostHogProvider from "@/components/PostHogProvider";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -67,8 +68,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={manrope.variable}>
       <body className="font-sans text-navy antialiased">
-        <JsonLd data={organizationSchema} />
-        {children}
+        <PostHogProvider>
+          <JsonLd data={organizationSchema} />
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );

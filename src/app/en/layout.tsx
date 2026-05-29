@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "../globals.css";
+import PostHogProvider from "@/components/PostHogProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -40,7 +41,11 @@ export default function EnRootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={manrope.variable}>
-      <body className="font-sans text-navy antialiased">{children}</body>
+      <body className="font-sans text-navy antialiased">
+        <PostHogProvider>
+          {children}
+        </PostHogProvider>
+      </body>
     </html>
   );
 }
