@@ -47,7 +47,7 @@ export default function Registro({ lang = "es" }: { lang?: Lang }) {
           <div className="mt-9 flex justify-center">
             <EventbriteCheckout className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]">
               {t.cta}
-              <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45">
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45 shrink-0">
                 <ArrowUpRight size={16} />
               </span>
             </EventbriteCheckout>

@@ -39,13 +39,13 @@ export default function AnivHero({ lang = "es" }: { lang?: Lang }) {
         <span className="blob blob-sunset" />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pb-40 pt-32 text-center">
-        <h1 className="cine cine-1 max-w-[16ch] text-[clamp(2.6rem,7vw,6rem)] font-semibold leading-[0.98] tracking-tightest text-white">
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pb-40 pt-28 min-[360px]:pt-32 text-center">
+        <h1 className="cine cine-1 max-w-[16ch] text-[clamp(2.2rem,7vw,6rem)] font-semibold leading-[0.98] tracking-tightest text-white">
           {t.h1a}{" "}
           <span className="text-ocean-300">{t.h1b}</span>
         </h1>
 
-        <p className="cine cine-2 mt-7 max-w-[48ch] text-lg leading-relaxed text-white/80 md:text-xl">
+        <p className="cine cine-2 mt-7 max-w-[48ch] text-base sm:text-lg leading-relaxed text-white/80 md:text-xl">
           {t.sub}
         </p>
 
@@ -67,7 +67,7 @@ export default function AnivHero({ lang = "es" }: { lang?: Lang }) {
             className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             {t.ctaReserve}
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45">
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45 shrink-0">
               <ArrowUpRight size={16} />
             </span>
           </a>
@@ -76,7 +76,7 @@ export default function AnivHero({ lang = "es" }: { lang?: Lang }) {
             className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
             {t.ctaProgram}
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5">
+            <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5 shrink-0">
               <ArrowRight size={16} />
             </span>
           </a>

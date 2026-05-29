@@ -71,7 +71,7 @@ export default function Eventos({ lang = "es" }: { lang?: Lang }) {
                 className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
               >
                 {t.cta}
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
+                <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
                   <ArrowUpRight size={15} />
                 </span>
               </Link>
