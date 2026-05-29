@@ -7,7 +7,7 @@ const COPY = {
     h1a: "La comunidad tech de Manzanillo —",
     h1b: "frente al mar.",
     sub: "Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos meses, frente al mar de Colima. Sin corbatas. Con olas.",
-    ctaPrimary: "Reserva tu lugar en el próximo meetup",
+    ctaPrimary: "Ver todo sobre el 7o Aniversario",
     ctaSecondary: "Ver charlas anteriores",
     sticker: "GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR · ",
     scrollCue: "Desliza",
@@ -16,7 +16,7 @@ const COPY = {
     h1a: "Manzanillo's tech community —",
     h1b: "by the sea.",
     sub: "Free meetup for developers, designers, and founders in the Mexican Pacific. Every two months, by the sea of Colima. No ties. With waves.",
-    ctaPrimary: "Reserve your seat for the next meetup",
+    ctaPrimary: "Learn all about the 7th Anniversary",
     ctaSecondary: "Watch past talks",
     sticker: "FREE · EVERY 2 MONTHS · MANZANILLO · BY THE SEA · ",
     scrollCue: "Scroll",
@@ -25,7 +25,7 @@ const COPY = {
 
 export default function Hero({ lang = "es" }: { lang?: Lang }) {
   const t = COPY[lang];
-  const eventsHref = lang === "en" ? "/en#events" : "#eventos";
+  const anniversaryHref = lang === "en" ? "/en/aniversario" : "/aniversario";
   const videosHref = lang === "en" ? "/en#videos" : "#videos";
   return (
     <section id="top" className="mesh-hero grain relative min-h-screen overflow-hidden">
@@ -50,7 +50,7 @@ export default function Hero({ lang = "es" }: { lang?: Lang }) {
         </p>
         <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
           <Link
-            href={eventsHref}
+            href={anniversaryHref}
             className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
             {t.ctaPrimary}

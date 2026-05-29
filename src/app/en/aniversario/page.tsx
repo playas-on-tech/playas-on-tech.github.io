@@ -5,6 +5,7 @@ import Agenda from "@/components/aniversario/Agenda";
 import Ponentes from "@/components/aniversario/Ponentes";
 import Ubicacion from "@/components/aniversario/Ubicacion";
 import PatrocinadoresCta from "@/components/aniversario/PatrocinadoresCta";
+import TicketInfo from "@/components/aniversario/TicketInfo";
 import Registro from "@/components/aniversario/Registro";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
@@ -31,6 +32,7 @@ export default function AniversarioEnPage() {
         <Agenda lang="en" />
         <Ponentes lang="en" />
         <Ubicacion lang="en" />
+        <TicketInfo lang="en" />
         <PatrocinadoresCta lang="en" />
         <Registro lang="en" />
       </main>
