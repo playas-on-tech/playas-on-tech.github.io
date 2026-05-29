@@ -17,6 +17,21 @@ export const metadata: Metadata = {
       "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes Silver, Gold, Platinum y media partners.",
     locale: "es_MX",
     type: "website",
+    images: [
+      {
+        url: "https://playasontech.com/assets/metadata/og-patrocinadores.jpg",
+        width: 1119,
+        height: 586,
+        alt: "Patrocinadores 7º Aniversario Playas on Tech",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Patrocinadores · 7º Aniversario — Playas on Tech",
+    description:
+      "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes Silver, Gold, Platinum y media partners.",
+    images: ["https://playasontech.com/assets/metadata/og-patrocinadores.jpg"],
   },
 };
 
@@ -53,7 +68,7 @@ export default function PatrocinadoresPage() {
             </p>
             <div className="cine cine-4 mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="#patrocinadores"
+                href="#paquetes"
                 className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
               >
                 Ver paquetes

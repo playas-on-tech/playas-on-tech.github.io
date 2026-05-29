@@ -17,6 +17,21 @@ export const metadata: Metadata = {
       "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum and media partner packages.",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "https://playasontech.com/assets/metadata/og-patrocinadores.jpg",
+        width: 1119,
+        height: 586,
+        alt: "Sponsors 7th Anniversary Playas on Tech",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sponsors · 7th Anniversary — Playas on Tech",
+    description:
+      "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum and media partner packages.",
+    images: ["https://playasontech.com/assets/metadata/og-patrocinadores.jpg"],
   },
 };
 
@@ -50,7 +65,7 @@ export default function SponsorsEnPage() {
             </p>
             <div className="cine cine-4 mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="#patrocinadores"
+                href="#paquetes"
                 className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
               >
                 See packages
