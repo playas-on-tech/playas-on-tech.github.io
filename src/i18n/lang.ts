@@ -13,6 +13,10 @@ const PATH_MAP: Record<string, { es: string; en: string }> = {
   home: { es: "/", en: "/en" },
   aniversario: { es: "/aniversario", en: "/en/aniversario" },
   patrocinadores: {
+    es: "/patrocinadores",
+    en: "/en/sponsors",
+  },
+  patrocinadoresAniversario: {
     es: "/aniversario/patrocinadores",
     en: "/en/aniversario/sponsors",
   },

@@ -332,7 +332,7 @@ export default function Patrocinadores({
   const mediaPartnerPerks = MEDIA_PERKS[lang];
 
   return (
-    <section id="patrocinadores" className="bg-cream-100 px-6 py-28 lg:py-36">
+    <section id="paquetes" className="bg-cream-100 px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
         {withHeader && (
           <div className="reveal mb-14 text-center">

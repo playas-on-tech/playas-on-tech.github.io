@@ -65,7 +65,7 @@ export default function SponsorsEnPage() {
             </p>
             <div className="cine cine-4 mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="#patrocinadores"
+                href="#paquetes"
                 className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
               >
                 See packages
