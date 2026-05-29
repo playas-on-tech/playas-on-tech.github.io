@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sponsors · 7th Anniversary — Playas on Tech",
     description:
-      "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum and media partner packages.",
+      "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum, and Diamond sponsorship packages, plus media partner options. Check out our plans!",
     locale: "en_US",
     type: "website",
     images: [
       {
         url: "https://playasontech.com/assets/metadata/og-patrocinadores.jpg",
-        width: 1119,
-        height: 586,
+        width: 1200,
+        height: 630,
         alt: "Sponsors 7th Anniversary Playas on Tech",
       },
     ],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sponsors · 7th Anniversary — Playas on Tech",
     description:
-      "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum and media partner packages.",
+      "Bring your brand in front of the Mexican Pacific tech community. Silver, Gold, Platinum, and Diamond sponsorship packages, plus media partner options. Check out our plans!",
     images: ["https://playasontech.com/assets/metadata/og-patrocinadores.jpg"],
   },
 };

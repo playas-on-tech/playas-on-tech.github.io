@@ -40,14 +40,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Playas on Tech · Meetup tech frente al mar en Manzanillo",
     description:
-      "La comunidad de tecnología de Manzanillo, Colima. Cada dos meses, frente al mar. Gratis y abierta para todos.",
+      "La comunidad de tecnología de Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar. Gratis y abierta para todos los developers, diseñadores y founders del Pacífico mexicano.",
     locale: "es_MX",
     type: "website",
     images: [
       {
         url: "https://playasontech.com/assets/metadata/og-playasontech.jpg",
-        width: 1054,
-        height: 552,
+        width: 1200,
+        height: 630,
         alt: "Playas on Tech — comunidad tech frente al mar",
       },
     ],
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Playas on Tech · Meetup tech frente al mar en Manzanillo",
     description:
-      "La comunidad de tecnología de Manzanillo, Colima. Cada dos meses, frente al mar. Gratis y abierta para todos.",
+      "La comunidad de tecnología de Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar. Gratis y abierta para todos los developers, diseñadores y founders del Pacífico mexicano.",
     images: ["https://playasontech.com/assets/metadata/og-playasontech.jpg"],
   },
 };

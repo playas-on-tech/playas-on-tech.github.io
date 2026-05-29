@@ -15,14 +15,14 @@ export const metadata: Metadata = {
   icons: { icon: "/assets/app-icon.webp" },
   openGraph: {
     title: "Playas on Tech — The tech community by the sea",
-    description: "The tech community of Manzanillo, Colima. Every two months, by the sea.",
+    description: "The tech community of Manzanillo, Colima. Free meetups every two months by the sea for developers, designers, and founders. Open and welcoming to all.",
     locale: "en_US",
     type: "website",
     images: [
       {
         url: "https://playasontech.com/assets/metadata/og-playasontech.jpg",
-        width: 1054,
-        height: 552,
+        width: 1200,
+        height: 630,
         alt: "Playas on Tech — tech community by the sea",
       },
     ],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Playas on Tech — The tech community by the sea",
-    description: "The tech community of Manzanillo, Colima. Every two months, by the sea.",
+    description: "The tech community of Manzanillo, Colima. Free meetups every two months by the sea for developers, designers, and founders. Open and welcoming to all.",
     images: ["https://playasontech.com/assets/metadata/og-playasontech.jpg"],
   },
 };

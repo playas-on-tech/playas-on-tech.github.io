@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "7th Anniversary · Playas on Tech",
     description:
-      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. An event to celebrate 7 years by the sea.",
+      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. An event to celebrate 7 years by the sea with talks, networking, and a toast. Limited seats — reserve yours.",
     locale: "en_US",
     type: "website",
     images: [
       {
         url: "https://playasontech.com/assets/metadata/og-aniversario.jpg",
-        width: 981,
-        height: 514,
+        width: 1200,
+        height: 630,
         alt: "7th Anniversary Playas on Tech",
       },
     ],
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "7th Anniversary · Playas on Tech",
     description:
-      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. An event to celebrate 7 years by the sea.",
+      "Saturday, July 18, 2026 · Hotel Marbella, Manzanillo. An event to celebrate 7 years by the sea with talks, networking, and a toast. Limited seats — reserve yours.",
     images: ["https://playasontech.com/assets/metadata/og-aniversario.jpg"],
   },
 };

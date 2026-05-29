@@ -14,14 +14,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Patrocinadores · 7º Aniversario — Playas on Tech",
     description:
-      "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes Silver, Gold, Platinum y media partners.",
+      "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes de patrocinio Silver, Gold, Platinum y Diamond, más opciones para media partners. ¡Conoce nuestros planes!",
     locale: "es_MX",
     type: "website",
     images: [
       {
         url: "https://playasontech.com/assets/metadata/og-patrocinadores.jpg",
-        width: 1119,
-        height: 586,
+        width: 1200,
+        height: 630,
         alt: "Patrocinadores 7º Aniversario Playas on Tech",
       },
     ],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Patrocinadores · 7º Aniversario — Playas on Tech",
     description:
-      "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes Silver, Gold, Platinum y media partners.",
+      "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes de patrocinio Silver, Gold, Platinum y Diamond, más opciones para media partners. ¡Conoce nuestros planes!",
     images: ["https://playasontech.com/assets/metadata/og-patrocinadores.jpg"],
   },
 };
