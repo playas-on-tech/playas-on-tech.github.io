@@ -1,6 +1,7 @@
+"use client";
 import Link from "next/link";
 import { ArrowUpRight } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -13,11 +14,12 @@ const COPY = {
     h2: "An open, safe and inclusive tech community — for all people.",
     sub: "We take it seriously that every person feels welcome. That's why we have a clear code of conduct — read it before you come.",
     cta: "Read our code of conduct",
-    href: "/en/code-of-conduct",
+    href: "/codigo-conducta",
   },
 } as const;
 
-export default function CodeOfConduct({ lang = "es" }: { lang?: Lang }) {
+export default function CodeOfConduct() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section className="relative overflow-hidden px-6 py-32 lg:py-44">

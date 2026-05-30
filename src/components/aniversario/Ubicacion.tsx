@@ -1,6 +1,8 @@
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
 import { ArrowUpRight, Check, MapPin } from "../Icons";
 import { anivEvent } from "./event";
-import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
@@ -27,7 +29,8 @@ const COPY = {
   },
 } as const;
 
-export default function Ubicacion({ lang = "es" }: { lang?: Lang }) {
+export default function Ubicacion() {
+  const { lang } = useLang();
   const t = COPY[lang];
   const ev = anivEvent(lang);
   const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(ev.mapQuery)}&output=embed`;

@@ -41,7 +41,6 @@ export function anivEvent(lang: Lang) {
   return ANIV_EVENT;
 }
 
-// Absolute links so the nav works from both /aniversario and its sub-pages.
 const ANIV_NAV_ES = [
   { href: "/aniversario#programa", label: "Programa" },
   { href: "/aniversario#ponentes", label: "Ponentes" },
@@ -50,10 +49,10 @@ const ANIV_NAV_ES = [
 ] as const;
 
 const ANIV_NAV_EN = [
-  { href: "/en/aniversario#programa", label: "Program" },
-  { href: "/en/aniversario#ponentes", label: "Speakers" },
-  { href: "/en/aniversario#ubicacion", label: "Location" },
-  { href: "/en/aniversario/sponsors", label: "Sponsors" },
+  { href: "/aniversario#programa", label: "Program" },
+  { href: "/aniversario#ponentes", label: "Speakers" },
+  { href: "/aniversario#ubicacion", label: "Location" },
+  { href: "/aniversario/patrocinadores", label: "Sponsors" },
 ] as const;
 
 // Legacy export kept for components that haven't been refactored yet.

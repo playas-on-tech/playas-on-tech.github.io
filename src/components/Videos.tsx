@@ -1,5 +1,6 @@
+"use client";
 import { ArrowRight, Play } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const CHANNEL_URL = "https://www.youtube.com/@PlayasOnTech";
 
@@ -26,7 +27,8 @@ const COPY = {
   },
 } as const;
 
-export default function Videos({ lang = "es" }: { lang?: Lang }) {
+export default function Videos() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="videos" className="bg-cream px-6 py-28 lg:py-36">

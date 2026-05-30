@@ -1,5 +1,6 @@
+"use client";
 import { Check } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -26,7 +27,8 @@ const COPY = {
   },
 } as const;
 
-export default function Venue({ lang = "es" }: { lang?: Lang }) {
+export default function Venue() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="venue" className="bg-cream-100 px-6 py-28 lg:py-36">

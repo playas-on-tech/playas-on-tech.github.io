@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowUpRight } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -97,7 +97,8 @@ const COPY = {
   },
 } as const;
 
-export default function Contacto({ lang = "es" }: { lang?: Lang }) {
+export default function Contacto() {
+  const { lang } = useLang();
   const t = COPY[lang];
   const [formData, setFormData] = useState({
     name: "",

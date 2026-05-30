@@ -1,7 +1,9 @@
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
 import { ArrowUpRight } from "../Icons";
 import { anivEvent } from "./event";
 import EventbriteCheckout from "./EventbriteCheckout";
-import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
@@ -20,7 +22,8 @@ const COPY = {
   },
 } as const;
 
-export default function Registro({ lang = "es" }: { lang?: Lang }) {
+export default function Registro() {
+  const { lang } = useLang();
   const t = COPY[lang];
   const ev = anivEvent(lang);
   return (

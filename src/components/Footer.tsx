@@ -1,6 +1,7 @@
+"use client";
 import Link from "next/link";
 import { Instagram, Facebook, LinkedIn, X, TikTok } from "./SocialIcons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -38,29 +39,29 @@ const COPY = {
       {
         title: "Navigation",
         links: [
-          { href: "/en#comunidad", label: "The tech community of Manzanillo" },
-          { href: "/en#eventos", label: "Upcoming meetups" },
-          { href: "/en#venue", label: "Where we meet" },
-          { href: "/en#videos", label: "Recorded talks" },
-          { href: "/en#sobre-nosotros", label: "Who we are" },
-          { href: "/en#contacto", label: "Contact" },
+          { href: "/#comunidad", label: "The tech community of Manzanillo" },
+          { href: "/#eventos", label: "Upcoming meetups" },
+          { href: "/#venue", label: "Where we meet" },
+          { href: "/#videos", label: "Recorded talks" },
+          { href: "/#sobre-nosotros", label: "Who we are" },
+          { href: "/#contacto", label: "Contact" },
         ],
       },
       {
         title: "Community",
         links: [
-          { href: "/en/code-of-conduct", label: "Code of conduct" },
-          { href: "/en#donaciones", label: "Support the community" },
+          { href: "/codigo-conducta", label: "Code of conduct" },
+          { href: "/#donaciones", label: "Support the community" },
           { href: "https://forms.gle/XwvZK3BVu2KdaNfWA", label: "Propose a talk" },
-          { href: "/en#organizadores", label: "Join the organizing team" },
-          { href: "/en/aniversario", label: "7th Anniversary" },
+          { href: "/#organizadores", label: "Join the organizing team" },
+          { href: "/aniversario", label: "7th Anniversary" },
         ],
       },
     ],
     blurb: "Tech community of Manzanillo, Colima. Free meetups for developers, designers, and founders every two months, by the sea — since 2025.",
     copyright: "© 2026 Playas on Tech · Manzanillo, Colima",
     termsLabel: "Terms and licenses",
-    termsHref: "/en/terms",
+    termsHref: "/terminos",
     handmade: "Made by the sea, by the community",
   },
 } as const;
@@ -90,9 +91,10 @@ function FooterLink({ href, label }: { href: string; label: string }) {
   );
 }
 
-export default function Footer({ lang = "es" }: { lang?: Lang }) {
+export default function Footer() {
+  const { lang } = useLang();
   const t = COPY[lang];
-  const topHref = lang === "en" ? "/en#top" : "/#top";
+  const topHref = "/#top";
   return (
     <footer className="bg-navy-900 px-6 pb-12 pt-24 text-white">
       <div className="mx-auto max-w-[1200px]">

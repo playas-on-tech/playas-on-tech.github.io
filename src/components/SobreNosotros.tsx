@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const REPO_LICENSE = "https://github.com/playas-on-tech/playas-on-tech.github.io/blob/main/LICENSE";
 const CC_BY = "https://creativecommons.org/licenses/by/4.0/";
@@ -97,7 +98,7 @@ const COPY = {
       "Playas on Tech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025. We gather developers, designers, and creators from the Mexican Pacific in free meetups every two months, by the sea. Everything we do is freely accessible: events, talk recordings, and materials. We sustain ourselves through community donations and sponsorships from local businesses.",
     termsPrefix: "See the",
     termsLink: "full terms and licenses",
-    termsHref: "/en/terms",
+    termsHref: "/terminos",
     terms: [
       {
         title: "Non-profit",
@@ -123,7 +124,7 @@ const COPY = {
       {
         title: "Code of conduct",
         body: "A safe space for everyone. Participating means respecting our code of conduct.",
-        href: "/en/code-of-conduct",
+        href: "/codigo-conducta",
         linkLabel: "Read the code",
         icon: ICONS.shield,
       },
@@ -154,7 +155,8 @@ function TermLink({ term }: { term: Term }) {
   );
 }
 
-export default function SobreNosotros({ lang = "es" }: { lang?: Lang }) {
+export default function SobreNosotros() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="sobre-nosotros" className="bg-cream px-6 py-28 lg:py-36">

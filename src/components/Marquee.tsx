@@ -1,5 +1,6 @@
+"use client";
 import { Fragment } from "react";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const WORDS = {
   es: ["Aprender", "Conectar", "Compartir", "Crear", "Reír", "Repetir"],
@@ -37,7 +38,8 @@ function Track({
   );
 }
 
-export default function Marquee({ lang = "es" }: { lang?: Lang }) {
+export default function Marquee() {
+  const { lang } = useLang();
   const words = WORDS[lang];
   const ariaLabel = words.map((w) => w.toLowerCase()).join(", ");
   return (

@@ -1,6 +1,8 @@
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
 import Link from "next/link";
 import { ArrowRight } from "../Icons";
-import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
@@ -17,11 +19,12 @@ const COPY = {
     sub: "Packages from $5,000 MXN — help us make this anniversary edition a memorable night.",
     tiers: ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"],
     cta: "See sponsorship packages",
-    href: "/en/aniversario/sponsors",
+    href: "/aniversario/patrocinadores",
   },
 } as const;
 
-export default function PatrocinadoresCta({ lang = "es" }: { lang?: Lang }) {
+export default function PatrocinadoresCta() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="patrocinadores" className="bg-cream-100 px-6 py-24 lg:py-28">

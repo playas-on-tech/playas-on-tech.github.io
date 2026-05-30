@@ -1,5 +1,7 @@
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
 import { ArrowUpRight } from "../Icons";
-import type { Lang } from "@/i18n/lang";
 
 const SLOTS = {
   es: [
@@ -55,7 +57,8 @@ function PersonIcon() {
   );
 }
 
-export default function Ponentes({ lang = "es" }: { lang?: Lang }) {
+export default function Ponentes() {
+  const { lang } = useLang();
   const t = COPY[lang];
   const slots = SLOTS[lang];
   return (
