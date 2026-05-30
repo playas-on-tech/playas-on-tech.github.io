@@ -15,10 +15,11 @@ npm run deploy-ci  # Deploy static export to GitHub Pages
 ## Architecture
 
 - **Stack:** Next.js (App Router), TypeScript, Tailwind CSS. Fully static export (`output: 'export'`).
-- **Routing:** File-based under `src/app`. Spanish (default) lives in the `(es)` route group at URL root (`/`, `/aniversario`, etc.); English mirrors under `/en/...`. Each locale has its own root layout so `<html lang>` and metadata are correct per page.
-- **Client Behavior:** Components are server-rendered by default. Browser-only logic/effects use `"use client"`. Clean up listeners/observers to support React Strict Mode.
+- **Routing:** File-based under `src/app`. All routes serve the same path regardless of language — no `/en/...` prefix. Spanish slugs are canonical (`/`, `/aniversario`, `/codigo-conducta`, `/terminos`, `/patrocinadores`, `/aniversario/patrocinadores`).
+- **Language Control:** Handled client-side via `LangProvider` (`src/lib/LangProvider.tsx`). An inline `<head>` script (`strategy="beforeInteractive"`) reads the `playasontech_lang` cookie, falls back to `navigator.languages`, then defaults to `"es"`. It sets `data-lang` and `lang` on `<html>` synchronously before paint. React hydrates reading `data-lang` — no flash, no loading state.
+- **Client Behavior:** Components are server-rendered by default. Browser-only logic/effects use `"use client"`. Clean up listeners/observers to support React Strict Mode. Bilingual content components use the `useLang()` hook from `LangProvider` instead of a `lang` prop.
 - **Styling:** Tailwind CSS with custom theme tokens. Custom animations and effects are in `src/app/globals.css`.
-- **Content:** Each section component owns its copy in a local `COPY = { es: ..., en: ... }` constant and accepts a `lang?: Lang` prop (defaults to `"es"`). The `Lang` type and `altLangHref` helper live in `src/i18n/lang.ts`.
+- **Content:** Each section component owns its copy in a local `COPY = { es: ..., en: ... }` constant. The `Lang` type and constants live in `src/i18n/lang.ts`.
 - **Assets:** Stored in `public/` (referenced as `/assets/...`).
 
 ## Deploying
@@ -27,7 +28,7 @@ npm run deploy-ci  # Deploy static export to GitHub Pages
 
 ## Conventions
 
-- Site is bilingual (`es` / `en`). Spanish is the default; English is added in parallel — every visible string lives in a `COPY` map keyed by locale and is referenced via the component's `lang` prop. When you add or change Spanish copy, add or change the English counterpart in the same edit.
+- Site is bilingual (`es` / `en`). Spanish is the default; English is added in parallel — every visible string lives in a `COPY` map keyed by locale and is referenced via the `useLang()` hook. When you add or change Spanish copy, add or change the English counterpart in the same edit.
 - `npm run build` must pass (type-check and lint) before opening a PR.
 - Branch from `main` per feature.
 - **Always use Next.js `<Link>` component instead of standard `<a>` tags for internal navigation.**
