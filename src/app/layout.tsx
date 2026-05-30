@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import JsonLd from "@/components/JsonLd";
 import PostHogProvider from "@/components/PostHogProvider";
+import LangProvider from "@/lib/LangProvider";
 
 const organizationSchema = {
   "@context": "https://schema.org",
@@ -70,7 +71,7 @@ export default function RootLayout({
       <body className="font-sans text-navy antialiased">
         <PostHogProvider>
           <JsonLd data={organizationSchema} />
-          {children}
+          <LangProvider>{children}</LangProvider>
         </PostHogProvider>
       </body>
     </html>
