@@ -1,4 +1,5 @@
-import type { Lang } from "@/i18n/lang";
+"use client";
+import { useLang } from "@/lib/LangProvider";
 
 const getEventCount = (): number => {
   const startDate = new Date(2019, 5, 1); // June 1, 2019
@@ -30,7 +31,8 @@ const getCOPY = (eventCount: number) => ({
 
 // `data-count` / `data-prefix` / `data-suffix` are read by SiteEffects to run
 // the count-up animation when the strip scrolls into view.
-export default function StatsStrip({ lang = "es" }: { lang?: Lang }) {
+export default function StatsStrip() {
+  const { lang } = useLang();
   const eventCount = getEventCount();
   const { stats } = getCOPY(eventCount)[lang];
   return (

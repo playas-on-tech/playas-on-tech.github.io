@@ -1,6 +1,7 @@
+"use client";
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight, ChevronDown } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -23,10 +24,11 @@ const COPY = {
   },
 } as const;
 
-export default function Hero({ lang = "es" }: { lang?: Lang }) {
+export default function Hero() {
+  const { lang } = useLang();
   const t = COPY[lang];
-  const anniversaryHref = lang === "en" ? "/en/aniversario" : "/aniversario";
-  const videosHref = lang === "en" ? "/en#videos" : "#videos";
+  const anniversaryHref = "/aniversario";
+  const videosHref = "#videos";
   return (
     <section id="top" className="mesh-hero grain relative min-h-screen overflow-hidden">
       <div id="hero-blobs" className="blobs cine-field">

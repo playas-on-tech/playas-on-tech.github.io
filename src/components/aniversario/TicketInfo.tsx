@@ -1,5 +1,7 @@
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
 import { TICKET } from "./event";
-import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
@@ -16,7 +18,8 @@ const COPY = {
   },
 };
 
-export default function TicketInfo({ lang = "es" }: { lang?: Lang }) {
+export default function TicketInfo() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section className="px-6 py-16 lg:py-20">

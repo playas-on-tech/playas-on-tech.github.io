@@ -1,4 +1,6 @@
-import type { Lang } from "@/i18n/lang";
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
 
 const COPY = {
   es: {
@@ -19,7 +21,8 @@ const COPY = {
   },
 } as const;
 
-export default function Agenda({ lang = "es" }: { lang?: Lang }) {
+export default function Agenda() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="programa" className="bg-cream px-6 py-28 lg:py-36">

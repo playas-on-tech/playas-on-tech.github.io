@@ -1,6 +1,7 @@
+"use client";
 import Link from "next/link";
 import { ArrowUpRight } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const organizers = [
   { name: "Danny", img: "/assets/staff/danny.png" },
@@ -36,7 +37,8 @@ const COPY = {
   },
 } as const;
 
-export default function Organizadores({ lang = "es" }: { lang?: Lang }) {
+export default function Organizadores() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="organizadores" className="bg-cream-100 px-6 py-28 lg:py-36">

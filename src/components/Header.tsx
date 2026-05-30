@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ArrowUpRight } from "./Icons";
-import { type Lang, altLangHref } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -31,13 +30,12 @@ const COPY = {
     ],
     joinCta: "7th Anniversary",
     joinCtaMobile: "7th Aniv.",
-    joinHref: "/en/aniversario",
+    joinHref: "/aniversario",
   },
 } as const;
 
-export default function Header({ lang = "es" }: { lang?: Lang }) {
+export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname() ?? "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,9 +48,8 @@ export default function Header({ lang = "es" }: { lang?: Lang }) {
     };
   }, []);
 
+  const { lang, setLang } = useLang();
   const t = COPY[lang];
-  const switchHref = altLangHref(pathname, lang);
-  const switchLabel = lang === "es" ? "EN" : "ES";
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
@@ -84,13 +81,13 @@ export default function Header({ lang = "es" }: { lang?: Lang }) {
           </ul>
           {/* Right */}
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <Link
-              href={switchHref}
+            <button
+              onClick={() => setLang(lang === "es" ? "en" : "es")}
               aria-label={lang === "es" ? "Switch to English" : "Cambiar a Español"}
               className="rounded-full border border-white/20 px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs font-semibold text-white/80 transition hover:bg-white/10 hover:text-white shrink-0"
             >
-              {switchLabel}
-            </Link>
+              {lang === "es" ? "EN" : "ES"}
+            </button>
             <Link
               href={t.joinHref}
               className="group flex items-center gap-1.5 sm:gap-2 rounded-full bg-sunset py-1 sm:py-1.5 pl-3 sm:pl-4 pr-1 sm:pr-1.5 text-xs sm:text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98] whitespace-nowrap"

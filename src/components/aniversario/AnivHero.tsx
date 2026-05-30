@@ -1,7 +1,9 @@
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
 import { ArrowUpRight, ArrowRight, Calendar, Clock, MapPin } from "../Icons";
 import { anivEvent } from "./event";
 import Countdown from "./Countdown";
-import type { Lang } from "@/i18n/lang";
 
 const COPY = {
   es: {
@@ -22,7 +24,8 @@ const COPY = {
   },
 } as const;
 
-export default function AnivHero({ lang = "es" }: { lang?: Lang }) {
+export default function AnivHero() {
+  const { lang } = useLang();
   const t = COPY[lang];
   const ev = anivEvent(lang);
   const facts = [

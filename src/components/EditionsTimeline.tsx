@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Play } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 type Edition = {
   n: number;
@@ -41,7 +41,7 @@ const COPY = {
     nextTag: "Upcoming",
     watchSession: "Watch session",
     reserve: "Reserve seat",
-    reserveHref: "/en/aniversario",
+    reserveHref: "/aniversario",
     editions: [
       { n: 1, date: "Jul 2025", title: "The first meetup" },
       { n: 2, date: "Sep 2025", title: "Community and code" },
@@ -54,7 +54,8 @@ const COPY = {
   },
 } as const;
 
-export default function EditionsTimeline({ lang = "es" }: { lang?: Lang }) {
+export default function EditionsTimeline() {
+  const { lang } = useLang();
   const t = COPY[lang];
   const ref = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);

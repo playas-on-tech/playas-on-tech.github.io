@@ -11,7 +11,8 @@ import Venue from "@/components/Venue";
 import Videos from "@/components/Videos";
 import Organizadores from "@/components/Organizadores";
 import SobreNosotros from "@/components/SobreNosotros";
-import FAQ, { faqItems } from "@/components/FAQ";
+import FAQ from "@/components/FAQ";
+import { faqItems } from "@/components/faqItems";
 import Donaciones from "@/components/Donaciones";
 import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
@@ -21,7 +22,7 @@ import JsonLd from "@/components/JsonLd";
 const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.en.map((item) => ({
+  mainEntity: faqItems.es.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {
@@ -31,30 +32,32 @@ const faqPageSchema = {
   })),
 };
 
-export default function HomeEn() {
+export default function Home() {
   return (
     <>
       <JsonLd data={faqPageSchema} />
-      <Header lang="en" />
+      <Header />
       <main>
-        <Hero lang="en" />
-        <Statement lang="en" />
-        <Marquee lang="en" />
-        <StatsStrip lang="en" />
-        <Comunidad lang="en" />
-        <CodeOfConduct lang="en" />
-        <Eventos lang="en" />
-        <EditionsTimeline lang="en" />
-        <Venue lang="en" />
-        <Videos lang="en" />
-        <Organizadores lang="en" />
-        <SobreNosotros lang="en" />
-        <FAQ lang="en" />
-        <Donaciones lang="en" />
-        <Contacto lang="en" />
+        <Hero />
+        <Statement />
+        <Marquee />
+        <StatsStrip />
+        <Comunidad />
+        <CodeOfConduct />
+        <Eventos />
+        <EditionsTimeline />
+        <Venue />
+        <Videos />
+        <Organizadores />
+        <SobreNosotros />
+        <FAQ />
+        <Donaciones />
+        <Contacto />
       </main>
-      <Footer lang="en" />
+      <Footer />
+      {/* Wires up the prototype's scroll-reveal, count-up and hero parallax. */}
       <SiteEffects />
     </>
   );
 }
+

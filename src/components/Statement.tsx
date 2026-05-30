@@ -1,4 +1,5 @@
-import type { Lang } from "@/i18n/lang";
+"use client";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -11,7 +12,8 @@ const COPY = {
   },
 } as const;
 
-export default function Statement({ lang = "es" }: { lang?: Lang }) {
+export default function Statement() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section className="bg-cream px-6 pb-24 pt-24 lg:pb-28 lg:pt-32">

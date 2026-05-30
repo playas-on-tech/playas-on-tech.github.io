@@ -1,6 +1,7 @@
+"use client";
 import Link from "next/link";
 import { ArrowUpRight } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -31,11 +32,12 @@ const COPY = {
       { label: "Venue", value: "Hotel Marbella" },
     ],
     cta: "See the 7th anniversary",
-    ctaHref: "/en/aniversario",
+    ctaHref: "/aniversario",
   },
 } as const;
 
-export default function Eventos({ lang = "es" }: { lang?: Lang }) {
+export default function Eventos() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="eventos" className="bg-cream px-6 py-28 lg:py-36">

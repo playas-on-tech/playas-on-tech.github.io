@@ -1,4 +1,5 @@
-import type { Lang } from "@/i18n/lang";
+"use client";
+import { useLang } from "@/lib/LangProvider";
 
 const ICONS = {
   aprender:
@@ -61,7 +62,8 @@ const COPY = {
   },
 } as const;
 
-export default function Comunidad({ lang = "es" }: { lang?: Lang }) {
+export default function Comunidad() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="comunidad" className="bg-cream px-6 py-28 lg:py-36">

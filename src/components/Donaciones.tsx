@@ -1,5 +1,6 @@
+"use client";
 import { ArrowUpRight } from "./Icons";
-import type { Lang } from "@/i18n/lang";
+import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
   es: {
@@ -16,7 +17,8 @@ const COPY = {
   },
 } as const;
 
-export default function Donaciones({ lang = "es" }: { lang?: Lang }) {
+export default function Donaciones() {
+  const { lang } = useLang();
   const t = COPY[lang];
   return (
     <section id="donaciones" className="px-6 py-10">
