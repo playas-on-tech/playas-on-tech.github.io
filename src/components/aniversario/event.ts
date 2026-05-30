@@ -45,14 +45,14 @@ const ANIV_NAV_ES = [
   { href: "/aniversario#programa", label: "Programa" },
   { href: "/aniversario#ponentes", label: "Ponentes" },
   { href: "/aniversario#ubicacion", label: "Ubicación" },
-  { href: "/aniversario/patrocinadores", label: "Patrocinadores" },
+  { href: "/patrocinadores", label: "Patrocinadores" },
 ] as const;
 
 const ANIV_NAV_EN = [
   { href: "/aniversario#programa", label: "Program" },
   { href: "/aniversario#ponentes", label: "Speakers" },
   { href: "/aniversario#ubicacion", label: "Location" },
-  { href: "/aniversario/patrocinadores", label: "Sponsors" },
+  { href: "/patrocinadores", label: "Sponsors" },
 ] as const;
 
 // Legacy export kept for components that haven't been refactored yet.

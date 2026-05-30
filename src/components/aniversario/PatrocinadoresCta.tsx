@@ -11,7 +11,7 @@ const COPY = {
     sub: "Paquetes desde $5,000 MXN — ayúdanos a hacer de esta edición de aniversario una noche memorable.",
     tiers: ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"],
     cta: "Ver paquetes de patrocinio",
-    href: "/aniversario/patrocinadores",
+    href: "/patrocinadores",
   },
   en: {
     pill: "Sponsors",
@@ -19,7 +19,7 @@ const COPY = {
     sub: "Packages from $5,000 MXN — help us make this anniversary edition a memorable night.",
     tiers: ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"],
     cta: "See sponsorship packages",
-    href: "/aniversario/patrocinadores",
+    href: "/patrocinadores",
   },
 } as const;
 
