@@ -4,14 +4,14 @@ import { ArrowUpRight } from "./Icons";
 import { useLang } from "@/lib/LangProvider";
 
 const organizers = [
-  { name: "Danny", img: "/assets/staff/danny.png" },
   { name: "Edson", img: "/assets/staff/edson.png" },
-  { name: "Franky", img: "/assets/staff/franky.png" },
   { name: "H", img: "/assets/staff/h.png" },
   { name: "Juaneque", img: "/assets/staff/juaneque.png" },
   { name: "Kev", img: "/assets/staff/kev.png" },
   { name: "Mane", img: "/assets/staff/mane.png" },
   { name: "Mauricio", img: "/assets/staff/mauricio.png" },
+  { name: "Danny", img: "/assets/staff/danny.png" },
+  { name: "Franky", img: "/assets/staff/franky.png" },
 ];
 
 const COPY = {
