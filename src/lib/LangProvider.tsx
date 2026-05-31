@@ -34,6 +34,20 @@ export function useLang(): LangContextValue {
   return ctx;
 }
 
+// ══════════════════════════════════════════════════════════════════════
+// Multi‑lingual support (es / en)
+//
+// Language switching is handled entirely on the client via a cookie and
+// the DOM `lang` attribute.  Both languages share the same URL — there
+// are no separate /es/ and /en/ routes.
+//
+// SEO note: hreflang tags in the <head> (set via Next.js Metadata
+// `alternates.languages`) point both languages to the same canonical URL
+// because we don't use URL‑based routing.  This is a known limitation of
+// the static‑export + GitHub Pages setup.  If true multilingual SEO
+// becomes critical, consider generating separate builds per language.
+// ══════════════════════════════════════════════════════════════════════
+
 export default function LangProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("es");
 

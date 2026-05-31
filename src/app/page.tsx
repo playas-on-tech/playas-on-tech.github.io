@@ -32,10 +32,24 @@ const faqPageSchema = {
   })),
 };
 
+const faqPageSchemaEn = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.en.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export default function Home() {
   return (
     <>
       <JsonLd data={faqPageSchema} />
+      <JsonLd data={faqPageSchemaEn} />
       <Header />
       <main>
         <Hero />

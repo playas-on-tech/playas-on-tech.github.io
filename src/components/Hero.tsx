@@ -92,7 +92,7 @@ export default function Hero() {
         </svg>
         <span className="absolute inset-0 grid place-items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/app-icon.webp" alt="" className="h-9 w-9 object-contain" />
+          <img src="/assets/app-icon.webp" alt="Playas on Tech" className="h-9 w-9 object-contain" />
         </span>
       </div>
 
