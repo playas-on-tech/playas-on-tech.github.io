@@ -34,11 +34,37 @@ const manrope = Manrope({
   display: "swap",
 });
 
+// ══════════════════════════════════════════════════════════════════════
+// Root layout — SEO metadata
+//
+// The `metadata` export below serves as the FALLBACK for any page that
+// does not export its own `metadata`.  Every page SHOULD export its own
+// `Metadata` object with a unique title, description, canonical URL, and
+// Open Graph / Twitter cards to avoid duplicate‑title issues in search
+// results.
+//
+// See the Next.js Metadata API docs:
+// https://nextjs.org/docs/app/api-reference/functions/generate-metadata
+// ══════════════════════════════════════════════════════════════════════
+
 export const metadata: Metadata = {
   title: "Playas on Tech — Comunidad tech y meetups en Manzanillo, Colima",
   description:
     "Comunidad de desarrolladores, diseñadores y founders en Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar, desde 2025. Únete a la comunidad tech del Pacífico mexicano.",
   icons: { icon: "/assets/app-icon.webp" },
+  metadataBase: new URL("https://playasontech.com"),
+  alternates: {
+    canonical: "/",
+    languages: {
+      "x-default": "https://playasontech.com/",
+      "es-MX": "https://playasontech.com/",
+      en: "https://playasontech.com/",
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Playas on Tech · Meetup tech frente al mar en Manzanillo",
     description:

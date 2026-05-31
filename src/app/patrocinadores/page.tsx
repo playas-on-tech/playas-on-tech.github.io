@@ -4,6 +4,7 @@ import AnivHeader from "@/components/aniversario/AnivHeader";
 import Patrocinadores from "@/components/aniversario/Patrocinadores";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
+import JsonLd from "@/components/JsonLd";
 import { ArrowUpRight, ArrowRight } from "@/components/Icons";
 import { ANIV_EVENT } from "@/components/aniversario/event";
 
@@ -11,6 +12,14 @@ export const metadata: Metadata = {
   title: "Patrocinadores · 7º Aniversario — Playas on Tech",
   description:
     "Patrocina el 7º aniversario de Playas on Tech (18 de julio de 2026, Hotel Marbella, Manzanillo). Paquetes Silver, Gold y Platinum, además de media partners.",
+  alternates: {
+    canonical: "/patrocinadores",
+    languages: {
+      "x-default": "https://playasontech.com/patrocinadores",
+      "es-MX": "https://playasontech.com/patrocinadores",
+      en: "https://playasontech.com/patrocinadores",
+    },
+  },
   openGraph: {
     title: "Patrocinadores · 7º Aniversario — Playas on Tech",
     description:
@@ -35,9 +44,30 @@ export const metadata: Metadata = {
   },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://playasontech.com/" },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "7º Aniversario",
+      item: "https://playasontech.com/aniversario",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Patrocinadores",
+      item: "https://playasontech.com/patrocinadores",
+    },
+  ],
+};
+
 export default function PatrocinadoresPage() {
   return (
     <>
+      <JsonLd data={breadcrumbSchema} />
       <AnivHeader />
       <main>
         {/* Dark hero — keeps the fixed glass header readable, then the warm
