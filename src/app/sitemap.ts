@@ -11,12 +11,22 @@ const BASE_URL = "https://playasontech.com";
  * Last‑modified date derived from the most recent git commit so the sitemap
  * updates automatically when new content lands but stays stable across
  * re‑builds of the same commit.
+ *
+ * Falls back to the current build time when git is unavailable (e.g. CI
+ * environments that don't preserve the `.git` directory, Docker builds, or
+ * `npm pack` scenarios).
  */
-const BUILD_DATE = new Date(
-  execSync("git log -1 --format=%cI", { stdio: ["ignore", "pipe", "ignore"] })
-    .toString()
-    .trim(),
-);
+const BUILD_DATE: Date = (() => {
+  try {
+    return new Date(
+      execSync("git log -1 --format=%cI", { stdio: ["ignore", "pipe", "ignore"] })
+        .toString()
+        .trim(),
+    );
+  } catch {
+    return new Date();
+  }
+})();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
