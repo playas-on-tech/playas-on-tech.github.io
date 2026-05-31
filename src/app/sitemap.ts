@@ -1,3 +1,4 @@
+import { execSync } from "child_process";
 import type { MetadataRoute } from "next";
 
 // Required when `output: 'export'` is set in next.config — see
@@ -6,9 +7,16 @@ export const dynamic = "force-static";
 
 const BASE_URL = "https://playasontech.com";
 
-// Update this date when publishing significant content changes.
-// Format: YYYY-MM-DD
-const BUILD_DATE = new Date("2026-05-30");
+/**
+ * Last‑modified date derived from the most recent git commit so the sitemap
+ * updates automatically when new content lands but stays stable across
+ * re‑builds of the same commit.
+ */
+const BUILD_DATE = new Date(
+  execSync("git log -1 --format=%cI", { stdio: ["ignore", "pipe", "ignore"] })
+    .toString()
+    .trim(),
+);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
