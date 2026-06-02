@@ -13,14 +13,6 @@ function readCookie(): Lang | null {
   return null;
 }
 
-function detectBrowserLang(): Lang {
-  if (typeof navigator === "undefined") return "es";
-  for (const l of navigator.languages ?? []) {
-    if (l.startsWith("en")) return "en";
-  }
-  return "es";
-}
-
 interface LangContextValue {
   lang: Lang;
   setLang: (l: Lang) => void;
@@ -51,19 +43,12 @@ export function useLang(): LangContextValue {
 export default function LangProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("es");
 
-  // Detect language on first mount only (no cookie → browser detection)
+  // Apply saved preference on first mount; default is Spanish
   useEffect(() => {
     const cookie = readCookie();
-    if (cookie) {
-      setLangState(cookie);
-      document.documentElement.lang = cookie;
-    } else {
-      const detected = detectBrowserLang();
-      if (detected !== "es") {
-        setLangState(detected);
-        document.documentElement.lang = detected;
-      }
-    }
+    if (!cookie) return;
+    setLangState(cookie);
+    document.documentElement.lang = cookie;
   }, []);
 
   const setLang = useCallback((l: Lang) => {
