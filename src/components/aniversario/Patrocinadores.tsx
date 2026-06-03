@@ -84,8 +84,8 @@ const TIERS: Record<Lang, Tier[]> = {
     {
       name: "Diamond",
       accent: "text-[#5B3FA8]",
-      priceMXN: 40000,
-      priceUSD: 2400,
+      priceMXN: 45000,
+      priceUSD: 2500,
       seats: "1 cupo · único por edición",
       tagline: "El 7º Aniversario, presentado por ti.",
       headline: true,
@@ -176,8 +176,8 @@ const TIERS: Record<Lang, Tier[]> = {
     {
       name: "Diamond",
       accent: "text-[#5B3FA8]",
-      priceMXN: 40000,
-      priceUSD: 2400,
+      priceMXN: 45000,
+      priceUSD: 2500,
       seats: "1 slot · unique per edition",
       tagline: "The 7th Anniversary, presented by you.",
       headline: true,
