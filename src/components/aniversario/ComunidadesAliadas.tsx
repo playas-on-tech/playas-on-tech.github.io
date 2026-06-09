@@ -66,6 +66,11 @@ const COMMUNITIES = [
     href: "https://gdg.community.dev/gdg-guadalajara/",
   },
   {
+    name: "GDG Heroica Veracruz",
+    logo: "/assets/comunidades-aliadas/gdg-heroica.webp",
+    href: "https://gdg.community.dev/gdg-heroica-veracruz/",
+  },
+  {
     name: "Techy Events",
     logo: "/assets/comunidades-aliadas/techye-events.webp",
     href: "https://linktr.ee/techyevents",
