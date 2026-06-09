@@ -108,18 +108,18 @@ export default function ComunidadesAliadas() {
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="reveal group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-6 text-center transition hover:border-white/25 hover:bg-white/10"
+              className="reveal group flex flex-col items-center gap-4 rounded-2xl border border-white/10 bg-white/10 px-4 py-6 text-center transition hover:border-white/25 hover:bg-white/[0.17] lg:gap-5 lg:px-6 lg:py-8"
             >
-              <div className="flex h-14 w-full items-center justify-center">
+              <div className="flex h-14 w-full items-center justify-center lg:h-20">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={c.logo}
                   alt={c.name}
                   loading="lazy"
-                  className="max-h-14 max-w-full object-contain"
+                  className="max-h-14 max-w-full object-contain lg:max-h-20"
                 />
               </div>
-              <span className="text-[12px] font-medium leading-snug text-white/70 transition group-hover:text-white">
+              <span className="text-[12px] font-medium leading-snug text-white/70 transition group-hover:text-white lg:text-[13px]">
                 {c.name}
               </span>
             </a>
