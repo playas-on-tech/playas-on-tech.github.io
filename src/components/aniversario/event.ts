@@ -44,6 +44,7 @@ export function anivEvent(lang: Lang) {
 const ANIV_NAV_ES = [
   { href: "/aniversario#programa", label: "Programa" },
   { href: "/aniversario#ponentes", label: "Ponentes" },
+  { href: "/aniversario#comunidades-aliadas", label: "Comunidades" },
   { href: "/aniversario#ubicacion", label: "Ubicación" },
   { href: "/patrocinadores", label: "Patrocinadores" },
 ] as const;
@@ -51,6 +52,7 @@ const ANIV_NAV_ES = [
 const ANIV_NAV_EN = [
   { href: "/aniversario#programa", label: "Program" },
   { href: "/aniversario#ponentes", label: "Speakers" },
+  { href: "/aniversario#comunidades-aliadas", label: "Communities" },
   { href: "/aniversario#ubicacion", label: "Location" },
   { href: "/patrocinadores", label: "Sponsors" },
 ] as const;

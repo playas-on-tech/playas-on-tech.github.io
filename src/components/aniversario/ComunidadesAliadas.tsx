@@ -1,0 +1,131 @@
+"use client";
+import { useLang } from "@/lib/LangProvider";
+
+const COPY = {
+  es: {
+    pill: "Comunidades aliadas",
+    h2: "Construido con la comunidad.",
+    sub: "Trece comunidades tech de todo México se unen al 7º aniversario para celebrar juntos frente al mar.",
+  },
+  en: {
+    pill: "Allied communities",
+    h2: "Built with the community.",
+    sub: "Thirteen tech communities from across Mexico join the 7th anniversary to celebrate together by the sea.",
+  },
+} as const;
+
+const COMMUNITIES = [
+  {
+    name: "Proyecto Ada",
+    logo: "/assets/comunidades-aliadas/Formato - Daniela Cruz.webp",
+    href: "https://www.instagram.com/proyecto.ada",
+  },
+  {
+    name: "0xC Community",
+    logo: "/assets/comunidades-aliadas/oxc-community.webp",
+    href: "https://www.instagram.com/0xc.ommunity",
+  },
+  {
+    name: "GDG Tijuana",
+    logo: "/assets/comunidades-aliadas/gdg-tijuana.webp",
+    href: "https://www.instagram.com/gdg_tijuana/",
+  },
+  {
+    name: "Cloud Native Colima",
+    logo: "/assets/comunidades-aliadas/cloud-native-colima.webp",
+    href: "https://www.instagram.com/cloudnativecolima",
+  },
+  {
+    name: "Calzada Code",
+    logo: "/assets/comunidades-aliadas/calzada-code.webp",
+    href: "https://www.instagram.com/calzada.code/",
+  },
+  {
+    name: "Guayaba Devs",
+    logo: "/assets/comunidades-aliadas/guayaba-devs.webp",
+    href: "https://linktr.ee/guayabadevs",
+  },
+  {
+    name: "AWS UG Ensenada",
+    logo: "/assets/comunidades-aliadas/aws-ug-ensenda.webp",
+    href: "https://www.instagram.com/awscommunityens/",
+  },
+  {
+    name: "Linuxeros Zapopan",
+    logo: "/assets/comunidades-aliadas/linuxeros-zapopan.webp",
+    href: "https://linuxeroszapopan.org",
+  },
+  {
+    name: "KETHERLABS",
+    logo: "/assets/comunidades-aliadas/ketherlabs.webp",
+    href: "https://linktr.ee/ketherlabs",
+  },
+  {
+    name: "GDG Guadalajara",
+    logo: "/assets/comunidades-aliadas/GDG-guadalajara.webp",
+    href: "https://gdg.community.dev/gdg-guadalajara/",
+  },
+  {
+    name: "Techy Events",
+    logo: "/assets/comunidades-aliadas/techye-events.webp",
+    href: "https://linktr.ee/techyevents",
+  },
+  {
+    name: "Web Dev Talks",
+    logo: "/assets/comunidades-aliadas/wdt.webp",
+    href: "https://www.instagram.com/webdevtalksmx/",
+  },
+  {
+    name: "AWS UG Colima",
+    logo: "/assets/comunidades-aliadas/aws-ug-colima.webp",
+    href: "https://www.instagram.com/awsugcolima/",
+  },
+];
+
+export default function ComunidadesAliadas() {
+  const { lang } = useLang();
+  const t = COPY[lang];
+
+  return (
+    <section id="comunidades-aliadas" className="mesh-hero px-6 py-24 lg:py-32">
+      <div className="mx-auto max-w-[1100px]">
+        <div className="reveal mb-14 text-center">
+          <span className="inline-block rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-ocean-300">
+            {t.pill}
+          </span>
+          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest text-white">
+            {t.h2}
+          </h2>
+          <p className="mx-auto mt-4 max-w-[52ch] text-lg leading-relaxed text-white/60">
+            {t.sub}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 sm:gap-4">
+          {COMMUNITIES.map((c) => (
+            <a
+              key={c.name}
+              href={c.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="reveal group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-6 text-center transition hover:border-white/25 hover:bg-white/10"
+            >
+              <div className="flex h-14 w-full items-center justify-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={c.logo}
+                  alt={c.name}
+                  loading="lazy"
+                  className="max-h-14 max-w-full object-contain"
+                />
+              </div>
+              <span className="text-[12px] font-medium leading-snug text-white/70 transition group-hover:text-white">
+                {c.name}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
