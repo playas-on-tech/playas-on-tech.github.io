@@ -64,12 +64,17 @@ export default function SiteEffects() {
     // 3. Cinematic scroll parallax — hero text drifts up and fades as you scroll
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const heroContent = document.getElementById("hero-content");
+    // Viewport-relative fade: content fully fades at 85% of viewport height.
+    // Fixed 640px caused content to vanish while still visible on iPhone rubber-band overscroll.
+    const fadeDistance = window.innerHeight * 0.85;
     let ticking = false;
     const onScroll = () => {
       const y = window.scrollY;
       if (heroContent && y < window.innerHeight * 1.2) {
+        const opacity = Math.max(0, 1 - y / fadeDistance);
+        heroContent.style.opacity = String(opacity);
+        if (opacity <= 0) { ticking = false; return; }
         heroContent.style.transform = "translateY(" + y * 0.3 + "px)";
-        heroContent.style.opacity = String(Math.max(0, 1 - y / 640));
       }
       ticking = false;
     };
