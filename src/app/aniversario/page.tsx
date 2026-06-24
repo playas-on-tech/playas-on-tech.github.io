@@ -4,6 +4,7 @@ import AnivHero from "@/components/aniversario/AnivHero";
 import Agenda from "@/components/aniversario/Agenda";
 import Ponentes from "@/components/aniversario/Ponentes";
 import ComunidadesAliadas from "@/components/aniversario/ComunidadesAliadas";
+import Sponsors from "@/components/aniversario/Sponsors";
 import Ubicacion from "@/components/aniversario/Ubicacion";
 import PatrocinadoresCta from "@/components/aniversario/PatrocinadoresCta";
 import Registro from "@/components/aniversario/Registro";
@@ -109,6 +110,7 @@ export default function AniversarioPage() {
         <AnivHero />
         <Agenda />
         <Ponentes />
+        <Sponsors />
         <ComunidadesAliadas />
         <Ubicacion />
         <PatrocinadoresCta />
