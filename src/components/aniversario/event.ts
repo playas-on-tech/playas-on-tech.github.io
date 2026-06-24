@@ -77,8 +77,8 @@ export const SPONSORSHIP = {
 // Public ticket — symbolic donation that funds the operation of the community.
 // Sponsor courtesy tickets do NOT charge this price but DO include the same shirt.
 export const TICKET = {
-  priceMXN: 150,
-  priceUSD: 9,
+  priceMXN: 350,
+  priceUSD: 19,
   includes: [
     "Acceso al evento completo",
     "Playera oficial del 7º Aniversario",

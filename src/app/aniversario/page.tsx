@@ -6,7 +6,6 @@ import Ponentes from "@/components/aniversario/Ponentes";
 import ComunidadesAliadas from "@/components/aniversario/ComunidadesAliadas";
 import Ubicacion from "@/components/aniversario/Ubicacion";
 import PatrocinadoresCta from "@/components/aniversario/PatrocinadoresCta";
-import TicketInfo from "@/components/aniversario/TicketInfo";
 import Registro from "@/components/aniversario/Registro";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
@@ -112,7 +111,6 @@ export default function AniversarioPage() {
         <Ponentes />
         <ComunidadesAliadas />
         <Ubicacion />
-        <TicketInfo />
         <PatrocinadoresCta />
         <Registro />
       </main>
