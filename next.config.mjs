@@ -7,6 +7,9 @@ const nextConfig = {
   images: { unoptimized: true },
   // Emit /route/index.html so clean URLs (e.g. /aniversario/) work on Pages.
   trailingSlash: true,
+  turbopack: {
+    root: import.meta.dirname,
+  }
 };
 
 export default nextConfig;
