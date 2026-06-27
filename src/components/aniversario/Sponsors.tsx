@@ -1,11 +1,8 @@
 "use client"
 import { useLang } from "@/lib/LangProvider"
+import rawTiers from "@/data/sponsors.json"
+import Image from "next/image"
 
-// ponytail: logo paths are keyed by `key` (tier) + exact filename — mirrors the
-// public/assets/sponsors/<N-tier>/<slug>.ext directory structure 1:1.
-// When adding a sponsor, drop the file into the matching folder first,
-// then add it to the right tier below. Never invent a path that doesn't
-// correspond to an actual file on disk.
 const COPY = {
   es: {
     pill: "Patrocinadores",
@@ -40,45 +37,12 @@ type TierData = {
   sponsors: Sponsor[]
 }
 
-const TIERS: TierData[] = [
-  {
-    key: "diamond",
-    sponsors: [
-      { name: "Monato", logo: "/assets/sponsors/5-diamond/monato.png" },
-    ],
-  },
-  {
-    key: "platinum",
-    sponsors: [],
-  },
-  {
-    key: "gold",
-    sponsors: [],
-  },
-  {
-    key: "silver",
-    sponsors: [
-      { name: "Feromasc", logo: "/assets/sponsors/2-silver/feromasc.jpeg" },
-      { name: "Magma Labs", logo: "/assets/sponsors/2-silver/magma-labs.png" },
-      { name: "Valente", logo: "/assets/sponsors/2-silver/valente.svg" },
-    ],
-  },
-  {
-    key: "bronze",
-    sponsors: [
-      { name: "Agenda Ya", logo: "/assets/sponsors/1-bronze/agenda-ya.png" },
-      { name: "Don Beto", logo: "/assets/sponsors/1-bronze/don-beto.jpeg" },
-      { name: "Sadai Nails", logo: "/assets/sponsors/1-bronze/sadai-nails.jpg" },
-      { name: "Tuxpeñitos", logo: "/assets/sponsors/1-bronze/tuxpeñitos.jpg" },
-      { name: "Asesoría Financiera y Seguros", logo: "/assets/sponsors/1-bronze/asesoria-financiera-y-seguros.png" },
-    ],
-  },
-]
+const TIERS = rawTiers as TierData[]
 
 function tierGridClass(key: string): string {
   switch (key) {
     case "diamond":
-      return "grid-cols-1 max-w-md mx-auto"
+      return "grid-cols-1 mx-auto"
     case "gold":
       return "grid-cols-1 max-w-md mx-auto"
     case "silver":
@@ -95,14 +59,10 @@ function logoSizeClass(key: string): string {
     case "diamond":
       return "max-h-28 sm:max-h-36"
     case "gold":
-      return "max-h-20 sm:max-h-24"
-    case "silver":
-      return "max-h-16 sm:max-h-20"
-    case "bronze":
-      return "max-h-12 sm:max-h-16"
+      return "max-h-[12rem]"
     default:
-      return "max-h-16"
-  }
+      return "max-h-24"
+  } 
 }
 
 function tierHeadingSize(key: string): string {
@@ -123,7 +83,7 @@ function tierAccent(key: string): string {
     case "gold":
       return "bg-sunset"
     case "silver":
-      return "bg-white/50"
+      return "bg-navy/30"
     case "bronze":
       return "bg-[#CD7F32]"
     default:
@@ -138,16 +98,16 @@ export default function Sponsors() {
   const visibleTiers = TIERS.filter((tier) => tier.sponsors.length > 0)
 
   return (
-    <section id="patrocinadores" className="bg-navy-900 px-6 py-24 lg:py-32">
+    <section id="patrocinadores" className="bg-white px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-[1100px]">
         <div className="reveal mb-14 text-center">
-          <span className="inline-block rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-white">
+          <span className="inline-block rounded-full bg-navy/10 px-3.5 py-1.5 text-[13px] font-semibold text-navy">
             {t.pill}
           </span>
-          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest text-white">
+          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest text-navy">
             {t.h2}
           </h2>
-          <p className="mx-auto mt-4 max-w-[52ch] text-lg leading-relaxed text-white/60">
+          <p className="mx-auto mt-4 max-w-[52ch] text-lg leading-relaxed text-navy/60">
             {t.sub}
           </p>
         </div>
@@ -158,7 +118,7 @@ export default function Sponsors() {
               <div className="mb-6 flex items-center justify-center gap-3">
                 <span className={`h-1 w-8 rounded-full ${tierAccent(tier.key)}`} />
                 <h3
-                  className={`${tierHeadingSize(tier.key)} font-semibold tracking-tight text-white`}
+                  className={`${tierHeadingSize(tier.key)} font-semibold tracking-tight text-navy`}
                 >
                   {t[tier.key]}
                 </h3>
@@ -170,11 +130,12 @@ export default function Sponsors() {
                   const Card = (
                     <div
                       key={sponsor.name}
-                      className="flex flex-col items-center gap-4 rounded-2xl border border-navy/10 bg-white px-6 py-8 transition hover:border-navy/20 hover:shadow-md"
+                      className="flex flex-col items-center gap-4 rounded-2xl border border-navy/10 bg-white px-6 py-8 shadow-sm transition hover:border-navy/20 hover:shadow-md"
                     >
-                      <div className="flex h-20 w-full items-center justify-center">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
+                      <div className="flex min-h-20 w-full items-center justify-center">
+                        <Image
+                          width="0"
+                          height="0"
                           src={sponsor.logo}
                           alt={sponsor.name}
                           loading="lazy"

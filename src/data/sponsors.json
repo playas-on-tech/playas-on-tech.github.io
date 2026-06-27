@@ -1,0 +1,41 @@
+[
+  {
+    "key": "diamond",
+    "sponsors": [
+      { "name": "Monato", "logo": "/assets/sponsors/5-diamond/monato.png" }
+    ]
+  },
+  {
+    "key": "platinum",
+    "sponsors": []
+  },
+  {
+    "key": "gold",
+    "sponsors": [
+      { "name": "Transportes Respsa", "logo": "/assets/sponsors/3-gold/transportes_respsa.png" }
+    ]
+  },
+  {
+    "key": "silver",
+    "sponsors": [
+      { "name": "Feromasc", "logo": "/assets/sponsors/2-silver/feromasc.jpeg" },
+      { "name": "Magma Labs", "logo": "/assets/sponsors/2-silver/magma-labs.png" },
+      { "name": "RootDevLab", "logo": "/assets/sponsors/2-silver/rootdevlab.PNG" },
+      { "name": "Spacefit", "logo": "/assets/sponsors/2-silver/spacefit.png" },
+      { "name": "Taxa", "logo": "/assets/sponsors/2-silver/taxa.png" },
+      { "name": "Valente", "logo": "/assets/sponsors/2-silver/valente.svg" }
+    ]
+  },
+  {
+    "key": "bronze",
+    "sponsors": [
+      { "name": "Agenda Ya", "logo": "/assets/sponsors/1-bronze/agenda-ya.png" },
+      { "name": "Asesoría Financiera y Seguros", "logo": "/assets/sponsors/1-bronze/asesoria-financiera-y-seguros.png" },
+      { "name": "Don Beto", "logo": "/assets/sponsors/1-bronze/don-beto.jpeg" },
+      { "name": "Mi Universo Dental", "logo": "/assets/sponsors/1-bronze/mi-universo-dental.png" },
+      { "name": "Sadai Nails", "logo": "/assets/sponsors/1-bronze/sadai-nails.jpg" },
+      { "name": "Sano Bocado", "logo": "/assets/sponsors/1-bronze/sano-bocado.JPEG" },
+      { "name": "Tuxpeñitos", "logo": "/assets/sponsors/1-bronze/tuxpeñitos.jpg" }
+    ]
+  }
+]
