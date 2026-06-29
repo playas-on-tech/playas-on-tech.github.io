@@ -1,0 +1,69 @@
+{
+  "keynotes": [
+    {
+      "name": "Iñigo Rumayor",
+      "company": "Monato",
+      "title": "CEO",
+      "photo": "/assets/speakers/Inigo-Rumayor-1.jpg"
+    },
+    {
+      "name": "Edwin Cruz",
+      "company": "MagmaLabs",
+      "title": "Principal Engineer",
+      "photo": "/assets/speakers/edwin-cruz.jpg",
+      "imagePosition": "left center"
+    },
+    {
+      "name": "Juan Carlos Ruiz",
+      "company": "X-Team",
+      "title": "Tech Lead",
+      "photo": "/assets/speakers/juan-carlos-ruiz.png"
+    },
+    {
+      "name": "Miguel Oseguera",
+      "company": "Dynatrace",
+      "title": "Sr Consultant & WDT Leader",
+      "photo": "/assets/speakers/miguel-oseguera.jpeg"
+    }
+  ],
+  "talks": [
+    {
+      "name": "Juan Manuel Fernández",
+      "title": "PTC",
+      "company": "Universidad Tecnológica de Manzanillo",
+      "photo": "/assets/speakers/juan-manuel.jpeg"
+    },
+    {
+      "name": "Jonh Kleinad",
+      "title": "AWS Community Builder",
+      "company": "",
+      "photo": "/assets/speakers/jonh-kleinad.jpeg"
+    },
+    {
+      "name": "Angel Monroy",
+      "title": "GDG Heroica Leader",
+      "company": "GDG Heroica Veracruz",
+      "photo": "/assets/speakers/angel.jpeg"
+    },
+    {
+      "name": "Dulce Gutiérrez",
+      "title": "Community Leader",
+      "company": "Techy Events",
+      "photo": "/assets/speakers/dulce.png"
+    }
+  ],
+  "panels": [
+    {
+      "name": "Affadir Camal",
+      "title": "Cybersecurity Specialist",
+      "company": "Monato",
+      "photo": "/assets/speakers/allfadir.jpg"
+    },
+    {
+      "name": "Iván Alva",
+      "title": "Cybersecurity Specialist",
+      "company": "Monato",
+      "photo": "/assets/speakers/ivanalva.jpg"
+    }
+  ]
+}

@@ -108,8 +108,8 @@ export default function AniversarioPage() {
       <AnivHeader />
       <main>
         <AnivHero />
-        <Agenda />
         <Ponentes />
+        <Agenda />
         <Sponsors />
         <ComunidadesAliadas />
         <Ubicacion />

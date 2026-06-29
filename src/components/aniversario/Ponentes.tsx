@@ -1,66 +1,41 @@
 "use client";
 import { useLang } from "@/lib/LangProvider";
+import Image from "next/image";
 
-import { ArrowUpRight } from "../Icons";
+import speakersData from "@/data/speakers.json";
 
-const SLOTS = {
-  es: [
-    { tag: "Keynote", gradient: "from-sunset-300 to-sunset" },
-    { tag: "Charla", gradient: "from-ocean-400 to-ocean" },
-    { tag: "Lightning talk", gradient: "from-ocean to-navy-700" },
-    { tag: "Panel", gradient: "from-sunset to-ocean" },
-  ],
-  en: [
-    { tag: "Keynote", gradient: "from-sunset-300 to-sunset" },
-    { tag: "Talk", gradient: "from-ocean-400 to-ocean" },
-    { tag: "Lightning talk", gradient: "from-ocean to-navy-700" },
-    { tag: "Panel", gradient: "from-sunset to-ocean" },
-  ],
-} as const;
+const KEYNOTES = speakersData.keynotes;
+const TALKS = speakersData.talks;
+const PANELS = speakersData.panels;
 
 const COPY = {
   es: {
     pill: "Ponentes",
     h2: "Las voces del evento.",
-    sub: "Estamos cerrando el line-up del 7º aniversario. Vuelve pronto para conocer a los ponentes — o postula tu propia charla.",
+    sub: "Expertos de todo México se reúnen para nuestro 7º aniversario.",
     placeholder: "Por anunciar",
-    ctaH3: "¿Quieres subir al escenario?",
-    ctaBody: "Propón una charla para el 7º aniversario.",
-    cta: "Propón tu charla",
+    keynotesLabel: "Keynotes",
+    talksLabel: "Charlas",
   },
   en: {
     pill: "Speakers",
     h2: "The voices of the event.",
-    sub: "We're closing the line-up for the 7th anniversary. Come back soon to meet the speakers — or submit your own talk.",
+    sub: "Experts from across Mexico gather for our 7th anniversary.",
     placeholder: "To be announced",
+    keynotesLabel: "Keynotes",
+    talksLabel: "Talks",
     ctaH3: "Want to take the stage?",
     ctaBody: "Propose a talk for the 7th anniversary.",
     cta: "Propose your talk",
   },
 } as const;
 
-function PersonIcon() {
-  return (
-    <svg
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.8}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-      <circle cx="12" cy="7" r="4" />
-    </svg>
-  );
-}
-
 export default function Ponentes() {
   const { lang } = useLang();
   const t = COPY[lang];
-  const slots = SLOTS[lang];
+  const keynotes = KEYNOTES;
+  const talks = TALKS;
+
   return (
     <section id="ponentes" className="bg-cream-100 px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
@@ -76,41 +51,77 @@ export default function Ponentes() {
           <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">{t.sub}</p>
         </div>
 
+        <div className="mb-5 flex items-center gap-4">
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-navy/40">{t.keynotesLabel}</h3>
+          <span className="h-px flex-1 bg-navy/10" />
+        </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {slots.map((slot, i) => (
+          {keynotes.map((k, i) => (
             <div
               key={i}
-              className="reveal tilt rounded-3xl border border-navy/10 bg-cream p-7 text-center hover:shadow-2xl hover:shadow-navy/10"
+              className="reveal tilt rounded-3xl border border-navy/10 bg-cream p-9 text-center hover:shadow-2xl hover:shadow-navy/10"
             >
-              <span
-                className={`mx-auto grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br ${slot.gradient} text-white`}
-              >
-                <PersonIcon />
-              </span>
-              <div className="mt-5 text-lg font-semibold tracking-tight">{t.placeholder}</div>
-              <span className="mt-3 inline-block rounded-full bg-navy/5 px-3 py-1 text-[12px] font-semibold text-navy/60">
-                {slot.tag}
-              </span>
+              <Image
+                src={k.photo}
+                alt={k.name}
+                width={96}
+                height={96}
+                className="mx-auto h-24 w-24 rounded-full object-cover"
+                style={k.imagePosition ? { objectPosition: k.imagePosition } : undefined}
+              />
+              <div className="mt-5 text-lg font-semibold tracking-tight">{k.name}</div>
+              <div className="mt-1 text-sm text-navy/60">{k.title}</div>
+              <div className="mt-1 text-sm text-sunset/90">{k.company}</div>
             </div>
           ))}
         </div>
 
-        <div className="reveal mt-10 flex flex-col items-center justify-between gap-5 rounded-3xl border border-navy/10 bg-navy px-8 py-8 text-white sm:flex-row">
-          <div>
-            <h3 className="text-xl font-semibold tracking-tight">{t.ctaH3}</h3>
-            <p className="mt-1 text-white/70">{t.ctaBody}</p>
-          </div>
-          <a
-            href="https://forms.gle/XwvZK3BVu2KdaNfWA"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex shrink-0 items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
-          >
-            {t.cta}
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45">
-              <ArrowUpRight size={15} />
-            </span>
-          </a>
+        <div className="my-8 flex items-center gap-4">
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-navy/40">{t.talksLabel}</h3>
+          <span className="h-px flex-1 bg-navy/10" />
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {talks.map((slot, i) => (
+            <div
+              key={i}
+              className="reveal tilt rounded-3xl border border-navy/10 bg-cream p-7 text-center hover:shadow-2xl hover:shadow-navy/10"
+            >
+              <Image
+                src={slot.photo}
+                alt={slot.name}
+                width={80}
+                height={80}
+                className="mx-auto h-20 w-20 rounded-full object-cover"
+              />
+              <div className="mt-5 text-lg font-semibold tracking-tight">{slot.name}</div>
+              {slot.title && <div className="mt-1 text-sm text-navy/60">{slot.title}</div>}
+              {slot.company && <div className="mt-1 text-sm text-sunset/90">{slot.company}</div>}
+            </div>
+          ))}
+        </div>
+
+        <div className="my-8 flex items-center gap-4">
+          <h3 className="text-sm font-semibold uppercase tracking-widest text-navy/40">{lang === "es" ? "Panel" : "Panel"}</h3>
+          <span className="h-px flex-1 bg-navy/10" />
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {PANELS.map((p, i) => (
+            <div
+              key={i}
+              className="reveal tilt rounded-3xl border border-navy/10 bg-cream p-7 text-center hover:shadow-2xl hover:shadow-navy/10"
+            >
+              <Image
+                src={p.photo}
+                alt={p.name}
+                width={80}
+                height={80}
+                className="mx-auto h-20 w-20 rounded-full object-cover"
+              />
+              <div className="mt-5 text-lg font-semibold tracking-tight">{p.name}</div>
+              {p.title && <div className="mt-1 text-sm text-navy/60">{p.title}</div>}
+              {p.company && <div className="mt-1 text-sm text-sunset/90">{p.company}</div>}
+            </div>
+          ))}
         </div>
       </div>
     </section>
