@@ -4,37 +4,78 @@ import Image from "next/image";
 
 import speakersData from "@/data/speakers.json";
 
-const KEYNOTES = speakersData.keynotes;
-const TALKS = speakersData.talks;
-const PANELS = speakersData.panels;
+type Speaker = (typeof speakersData.keynotes)[number];
+
+const SECTIONS = [
+  { labelKey: "keynotesLabel" as const, speakers: speakersData.keynotes },
+  { labelKey: "talksLabel" as const, speakers: speakersData.talks },
+  { labelKey: "panelLabel" as const, speakers: speakersData.panels },
+];
 
 const COPY = {
   es: {
     pill: "Ponentes",
     h2: "Las voces del evento.",
     sub: "Expertos de todo México se reúnen para nuestro 7º aniversario.",
-    placeholder: "Por anunciar",
     keynotesLabel: "Keynotes",
     talksLabel: "Charlas",
+    panelLabel: "Panel",
   },
   en: {
     pill: "Speakers",
     h2: "The voices of the event.",
     sub: "Experts from across Mexico gather for our 7th anniversary.",
-    placeholder: "To be announced",
     keynotesLabel: "Keynotes",
     talksLabel: "Talks",
-    ctaH3: "Want to take the stage?",
-    ctaBody: "Propose a talk for the 7th anniversary.",
-    cta: "Propose your talk",
+    panelLabel: "Panel",
   },
 } as const;
+
+function SpeakerCard({ speaker: s }: { speaker: Speaker }) {
+  return (
+    <div className="reveal tilt flex w-full flex-col rounded-3xl border border-navy/10 bg-cream p-7 text-center hover:shadow-2xl hover:shadow-navy/10 sm:w-[calc(50%-0.625rem)] lg:w-[calc(25%-0.9375rem)]">
+      <Image
+        src={s.photo}
+        alt={s.name}
+        width={80}
+        height={80}
+        className="mx-auto h-20 w-20 rounded-full object-cover"
+        style={s.imagePosition ? { objectPosition: s.imagePosition } : undefined}
+      />
+      <div className="mt-5 text-lg font-semibold tracking-tight">{s.name}</div>
+      {(s.title || s.company) && (
+        <div className="mt-1 text-sm">
+          {s.title && <span className="text-navy/60">{s.title}</span>}
+          {s.title && s.company && <span className="text-navy/40">, </span>}
+          {s.company && <span className="text-sunset/90">{s.company}</span>}
+        </div>
+      )}
+
+      {s.talkTitle && (
+        <div className="mt-4 min-h-[2.5rem] text-left text-xs leading-snug text-navy/70">
+          {s.talkTitle}
+        </div>
+      )}
+
+      {s.topics && s.topics.length > 0 && (
+        <div className="mt-2 flex flex-wrap gap-1.5 self-start">
+          {s.topics.map((topic, j) => (
+            <span
+              key={j}
+              className="rounded-full border border-navy/20 bg-navy/5 px-2 py-0.5 text-[10px] font-medium text-navy/70"
+            >
+              {topic}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Ponentes() {
   const { lang } = useLang();
   const t = COPY[lang];
-  const keynotes = KEYNOTES;
-  const talks = TALKS;
 
   return (
     <section id="ponentes" className="bg-cream-100 px-6 py-28 lg:py-36">
@@ -51,78 +92,22 @@ export default function Ponentes() {
           <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">{t.sub}</p>
         </div>
 
-        <div className="mb-5 flex items-center gap-4">
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-navy/40">{t.keynotesLabel}</h3>
-          <span className="h-px flex-1 bg-navy/10" />
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {keynotes.map((k, i) => (
-            <div
-              key={i}
-              className="reveal tilt rounded-3xl border border-navy/10 bg-cream p-9 text-center hover:shadow-2xl hover:shadow-navy/10"
-            >
-              <Image
-                src={k.photo}
-                alt={k.name}
-                width={96}
-                height={96}
-                className="mx-auto h-24 w-24 rounded-full object-cover"
-                style={k.imagePosition ? { objectPosition: k.imagePosition } : undefined}
-              />
-              <div className="mt-5 text-lg font-semibold tracking-tight">{k.name}</div>
-              <div className="mt-1 text-sm text-navy/60">{k.title}</div>
-              <div className="mt-1 text-sm text-sunset/90">{k.company}</div>
+        {SECTIONS.map((section, i) => (
+          <div key={section.labelKey} className={i === 0 ? "" : "mt-20"}>
+            <div className="mb-8 flex items-center gap-4">
+              <span className="h-px flex-1 bg-navy/10" />
+              <h3 className="text-3xl font-semibold leading-none tracking-tight text-navy">
+                {t[section.labelKey]}
+              </h3>
+              <span className="h-px flex-1 bg-navy/10" />
             </div>
-          ))}
-        </div>
-
-        <div className="my-8 flex items-center gap-4">
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-navy/40">{t.talksLabel}</h3>
-          <span className="h-px flex-1 bg-navy/10" />
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {talks.map((slot, i) => (
-            <div
-              key={i}
-              className="reveal tilt rounded-3xl border border-navy/10 bg-cream p-7 text-center hover:shadow-2xl hover:shadow-navy/10"
-            >
-              <Image
-                src={slot.photo}
-                alt={slot.name}
-                width={80}
-                height={80}
-                className="mx-auto h-20 w-20 rounded-full object-cover"
-              />
-              <div className="mt-5 text-lg font-semibold tracking-tight">{slot.name}</div>
-              {slot.title && <div className="mt-1 text-sm text-navy/60">{slot.title}</div>}
-              {slot.company && <div className="mt-1 text-sm text-sunset/90">{slot.company}</div>}
+            <div className="flex flex-wrap justify-center gap-5">
+              {section.speakers.map((s, j) => (
+                <SpeakerCard key={`${section.labelKey}-${j}`} speaker={s} />
+              ))}
             </div>
-          ))}
-        </div>
-
-        <div className="my-8 flex items-center gap-4">
-          <h3 className="text-sm font-semibold uppercase tracking-widest text-navy/40">{lang === "es" ? "Panel" : "Panel"}</h3>
-          <span className="h-px flex-1 bg-navy/10" />
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {PANELS.map((p, i) => (
-            <div
-              key={i}
-              className="reveal tilt rounded-3xl border border-navy/10 bg-cream p-7 text-center hover:shadow-2xl hover:shadow-navy/10"
-            >
-              <Image
-                src={p.photo}
-                alt={p.name}
-                width={80}
-                height={80}
-                className="mx-auto h-20 w-20 rounded-full object-cover"
-              />
-              <div className="mt-5 text-lg font-semibold tracking-tight">{p.name}</div>
-              {p.title && <div className="mt-1 text-sm text-navy/60">{p.title}</div>}
-              {p.company && <div className="mt-1 text-sm text-sunset/90">{p.company}</div>}
-            </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
