@@ -1,0 +1,89 @@
+{
+  "keynotes": [
+    {
+      "name": "Iñigo Rumayor",
+      "company": "Monato",
+      "title": "CEO",
+      "photo": "/assets/speakers/Inigo-Rumayor-1.jpg",
+      "talkTitle": "Creando el futuro de los pagos",
+      "topics": ["Fintech"]
+    },
+    {
+      "name": "Edwin Cruz",
+      "company": "MagmaLabs",
+      "title": "Principal Engineer",
+      "photo": "/assets/speakers/edwin-cruz.jpg",
+      "imagePosition": "left center",
+      "talkTitle": "El journey railero de Colima",
+      "topics": ["Historia", "Inspiracional"]
+    },
+    {
+      "name": "Juan Carlos Ruiz",
+      "company": "X-Team",
+      "title": "Tech Lead",
+      "photo": "/assets/speakers/juan-carlos-ruiz.png",
+      "talkTitle": "De escribir código a construir criterio",
+      "topics": ["Liderazgo", "Engineering"]
+    },
+    {
+      "name": "Miguel Oseguera",
+      "company": "Dynatrace",
+      "title": "Sr Consultant & WDT Leader",
+      "photo": "/assets/speakers/miguel-oseguera.jpeg",
+      "talkTitle": "Managed Agents with Claude: Code, Ship, and Learn Across Your Dev Workflow",
+      "topics": ["AI", "Claude", "DevTools"]
+    }
+  ],
+  "talks": [
+    {
+      "name": "Juan Manuel Fernández",
+      "title": "PTC",
+      "company": "Universidad Tecnológica de Manzanillo",
+      "photo": "/assets/speakers/juan-manuel.jpeg",
+      "talkTitle": "Del aula al mundo real: cómo las comunidades tecnológicas conectan talento, universidad y empresa",
+      "topics": ["Educación", "Comunidad"]
+    },
+    {
+      "name": "Jonh Kleinad",
+      "title": "AWS Community Builder",
+      "company": "",
+      "photo": "/assets/speakers/jonh-kleinad.jpeg",
+      "talkTitle": "De cero a experto: Vibe codeando con Kiro",
+      "topics": ["AI", "Vibe Coding"]
+    },
+    {
+      "name": "Angel Monroy",
+      "title": "GDG Heroica Leader",
+      "company": "GDG Heroica Veracruz",
+      "photo": "/assets/speakers/angel.jpeg",
+      "talkTitle": "Procesamiento ETL en Google Cloud a través de Dataflow y BigQuery (Python)",
+      "topics": ["Cloud", "Data", "Python"]
+    },
+    {
+      "name": "Dulce Gutiérrez",
+      "title": "Community Leader",
+      "company": "Techy Events",
+      "photo": "/assets/speakers/dulce.png",
+      "talkTitle": "Mejor pedir perdon que pedir Permiso: Innovando en Comunidad",
+      "topics": ["Comunidad", "Innovación"]
+    }
+  ],
+  "panels": [
+    {
+      "name": "Affadir Camal",
+      "title": "Cybersecurity Specialist",
+      "company": "Monato",
+      "photo": "/assets/speakers/allfadir.jpg",
+      "talkTitle": "Hacking Trust: Seguridad que todos deberiamos entender",
+      "topics": ["Ciberseguridad", "Hacking"]
+    },
+    {
+      "name": "Iván Alva",
+      "title": "Cybersecurity Specialist",
+      "company": "Monato",
+      "photo": "/assets/speakers/ivanalva.jpg",
+      "talkTitle": "Hacking Trust: Seguridad que todos deberiamos entender",
+      "topics": ["Ciberseguridad", "Hacking"]
+    }
+  ]
+}
