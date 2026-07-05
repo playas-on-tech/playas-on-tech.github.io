@@ -266,6 +266,18 @@ body {
   }
 }
 
+/* Hero parallax — text drifts up and fades on scroll (CSS-native replacement) */
+.hero-parallax {
+  opacity: 1;
+  transition: opacity 0.85s ease, transform 0.85s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-parallax {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 /* Subtle film grain for richness */
 .grain::after {
   content: "";

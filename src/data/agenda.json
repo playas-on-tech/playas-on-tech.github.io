@@ -1,0 +1,16 @@
+[
+  { "time": "9:30 - 10:00am", "label": "Check in", "talk": "", "photos": [], "type": "sunset" },
+  { "time": "10:00 - 10:15am", "label": "Bienvenida", "talk": "", "photos": [], "type": "sunset" },
+  { "time": "10:15 – 10:40am", "label": "Dulce Gutiérrez", "talk": "Mejor pedir perdón que pedir Permiso: Innovando en Comunidad", "photos": [{ "src": "/assets/speakers/dulce.png" }], "type": "ocean" },
+  { "time": "10:40 – 11:05am", "label": "Juan Manuel Fernández", "talk": "Del aula al mundo real: cómo las comunidades tecnológicas conectan talento, universidad y empresa", "photos": [{ "src": "/assets/speakers/juan-manuel.jpeg" }], "type": "ocean" },
+  { "time": "11:10 – 11:50am", "label": "Edwin Cruz", "talk": "El journey railero de Colima", "photos": [{ "src": "/assets/speakers/edwin-cruz.jpg", "position": "left center" }], "type": "keynote" },
+  { "time": "11:55 – 12:35pm", "label": "Iñigo Rumayor", "talk": "Creando el futuro de los pagos", "photos": [{ "src": "/assets/speakers/Inigo-Rumayor-1.jpg" }], "type": "keynote" },
+  { "time": "12:40pm – 1:15pm", "label": "Panel: Allfadir Camal & Iván Alva", "talk": "Hacking Trust: Seguridad que todos deberíamos entender", "photos": [{ "src": "/assets/speakers/allfadir.jpg" }, { "src": "/assets/speakers/ivanalva.jpg" }], "type": "panel" },
+  { "time": "1:15 – 2:45pm", "label": "Break para comida", "talk": "", "photos": [], "type": "comida" },
+  { "time": "2:45 – 3:25pm", "label": "Angel Monroy", "talk": "Procesamiento ETL en Google Cloud a través de Dataflow y BigQuery (Python)", "photos": [{ "src": "/assets/speakers/angel.jpeg" }], "type": "ocean" },
+  { "time": "3:30 – 4:10pm", "label": "Juan Carlos Ruiz", "talk": "De escribir código a construir criterio", "photos": [{ "src": "/assets/speakers/juan-carlos-ruiz.png" }], "type": "keynote" },
+  { "time": "4:15 – 4:40pm", "label": "Jonh Kleinad", "talk": "De cero a experto: Vibe codeando con Kiro", "photos": [{ "src": "/assets/speakers/jonh-kleinad.jpeg" }], "type": "ocean" },
+  { "time": "4:45 – 5:25pm", "label": "Miguel Oseguera", "talk": "Managed Agents with Claude: Code, Ship, and Learn Across Your Dev Workflow", "photos": [{ "src": "/assets/speakers/miguel-oseguera.jpeg" }], "type": "keynote" },
+  { "time": "5:25 – 5:55pm", "label": "Cierre del evento", "talk": "", "photos": [], "type": "sunset" },
+  { "time": "6:30 – 11:30pm", "label": "After", "talk": "", "photos": [], "type": "after" }
+]

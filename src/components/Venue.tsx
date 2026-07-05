@@ -1,5 +1,5 @@
 "use client";
-import { Check } from "./Icons";
+import { Check } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
 const COPY = {

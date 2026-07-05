@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowUpRight } from "./Icons";
+import { ArrowUpRight } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
@@ -159,13 +159,9 @@ export default function Contacto() {
     window.addEventListener("popstate", handleLocationChange);
     window.addEventListener("hashchange", handleLocationChange);
 
-    // Safety net for Next.js internal client transitions
-    const interval = setInterval(handleLocationChange, 200);
-
     return () => {
       window.removeEventListener("popstate", handleLocationChange);
       window.removeEventListener("hashchange", handleLocationChange);
-      clearInterval(interval);
     };
   }, []);
 

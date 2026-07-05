@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, ChevronDown } from "./Icons";
+import { ArrowUpRight, ArrowRight, ChevronDown } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
 const COPY = {

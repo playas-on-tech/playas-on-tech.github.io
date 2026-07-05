@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "./Icons";
+import { ArrowUpRight } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
