@@ -1,7 +1,7 @@
 "use client";
 import { useLang } from "@/lib/LangProvider";
 
-import { ArrowUpRight, ArrowRight, Calendar, Clock, MapPin } from "../Icons";
+import { ArrowUpRight, ArrowRight, Calendar, Clock, MapPin } from "../SocialIcons";
 import { anivEvent } from "./event";
 import Countdown from "./Countdown";
 

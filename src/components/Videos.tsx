@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, Play } from "./Icons";
+import { ArrowRight, Play } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
 const CHANNEL_URL = "https://www.youtube.com/@PlayasOnTech";

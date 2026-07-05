@@ -1,5 +1,7 @@
 "use client";
 import { useLang } from "@/lib/LangProvider";
+import Image from "next/image";
+import agendaData from "@/data/agenda.json";
 
 const COPY = {
   es: {
@@ -14,8 +16,6 @@ const COPY = {
   },
 } as const;
 
-import Image from "next/image";
-
 type Photo = { src: string; position?: string };
 
 type ScheduleItem = {
@@ -26,23 +26,10 @@ type ScheduleItem = {
   type: "sunset" | "ocean" | "keynote" | "panel" | "comida" | "after";
 };
 
-const schedule: ScheduleItem[] = [
-  { time: "9:30 - 10:00am", label: "Check in", talk: "", photos: [], type: "sunset" as const },
-  { time: "10:00 - 10:15am", label: "Bienvenida", talk: "", photos: [], type: "sunset" as const },
-  { time: "10:15 – 10:40am", label: "Dulce Gutiérrez", talk: "Mejor pedir perdón que pedir Permiso: Innovando en Comunidad", photos: [{ src: "/assets/speakers/dulce.png" }], type: "ocean" as const },
-  { time: "10:40 – 11:05am", label: "Juan Manuel Fernández", talk: "Del aula al mundo real: cómo las comunidades tecnológicas conectan talento, universidad y empresa", photos: [{ src: "/assets/speakers/juan-manuel.jpeg" }], type: "ocean" as const },
-  { time: "11:10 – 11:50am", label: "Edwin Cruz", talk: "El journey railero de Colima", photos: [{ src: "/assets/speakers/edwin-cruz.jpg", position: "left center" }], type: "keynote" as const },
-  { time: "11:55 – 12:35pm", label: "Iñigo Rumayor", talk: "Creando el futuro de los pagos", photos: [{ src: "/assets/speakers/Inigo-Rumayor-1.jpg" }], type: "keynote" as const },
-  { time: "12:40pm – 1:15pm", label: "Panel: Allfadir Camal & Iván Alva", talk: "Hacking Trust: Seguridad que todos deberíamos entender", photos: [{ src: "/assets/speakers/allfadir.jpg" }, { src: "/assets/speakers/ivanalva.jpg" }], type: "panel" as const },
-  { time: "1:15 – 2:45pm", label: "Break para comida", talk: "", photos: [], type: "comida" as const },
-  { time: "2:45 – 3:25pm", label: "Angel Monroy", talk: "Procesamiento ETL en Google Cloud a través de Dataflow y BigQuery (Python)", photos: [{ src: "/assets/speakers/angel.jpeg" }], type: "ocean" as const },
-  { time: "3:30 – 4:10pm", label: "Juan Carlos Ruiz", talk: "De escribir código a construir criterio", photos: [{ src: "/assets/speakers/juan-carlos-ruiz.png" }], type: "keynote" as const },
-  { time: "4:15 – 4:40pm", label: "Jonh Kleinad", talk: "De cero a experto: Vibe codeando con Kiro", photos: [{ src: "/assets/speakers/jonh-kleinad.jpeg" }], type: "ocean" as const },
-  { time: "4:45 – 5:25pm", label: "Miguel Oseguera", talk: "Managed Agents with Claude: Code, Ship, and Learn Across Your Dev Workflow", photos: [{ src: "/assets/speakers/miguel-oseguera.jpeg" }], type: "keynote" as const },
-  { time: "5:25 – 5:55pm", label: "Cierre del evento", talk: "", photos: [], type: "sunset" as const },
-  { time: "6:30 – 11:30pm", label: "After", talk: "", photos: [], type: "after" as const },
-];
+// ponytail: static content extracted to src/data/agenda.json for easier maintenance
+// schedule data is now imported from JSON instead of hardcoded in TS
 
+// ponytail: static content extracted to src/data/agenda.json for easier maintenance
 const typeStyles = {
   sunset: "bg-sunset text-white",
   ocean: "bg-ocean text-white",
@@ -50,11 +37,16 @@ const typeStyles = {
   panel: "bg-panel text-white",
   comida: "bg-comida text-navy",
   after: "bg-navy text-white",
-};
+} as Record<string, string>;
+
+// ponytail: static content extracted to src/data/agenda.json for easier maintenance
+// schedule data is now imported from JSON instead of hardcoded in TS
 
 export default function Agenda() {
+  // ponytail: static content extracted to src/data/agenda.json for easier maintenance
   const { lang } = useLang();
   const t = COPY[lang];
+  const schedule = agendaData;
 
   return (
     <section id="programa" className="bg-cream px-6 py-28 lg:py-36">
@@ -88,7 +80,7 @@ export default function Agenda() {
                             alt={item.label}
                             fill
                             className="object-cover"
-                            style={{ objectPosition: photo.position || "center" }}
+                            style={{ objectPosition: (photo as Photo).position || "center" }}
                             sizes="56px"
                           />
                         </div>

@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight } from "./Icons";
+import { ArrowUpRight } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
 const COPY = {

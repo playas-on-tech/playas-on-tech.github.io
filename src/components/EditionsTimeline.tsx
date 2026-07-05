@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Play } from "./Icons";
+import { ArrowUpRight, Play } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
 type Edition = {
@@ -82,7 +82,7 @@ export default function EditionsTimeline() {
     const slider = scrollRef.current;
     if (!slider) return;
 
-    // Scroll to the end smoothly after a tiny timeout to ensure layout is complete
+    // Smooth auto-scroll to end after layout is complete
     const timer = setTimeout(() => {
       slider.scrollTo({
         left: slider.scrollWidth,
@@ -90,61 +90,44 @@ export default function EditionsTimeline() {
       });
     }, 100);
 
+// ponytail: PointerEvent covers touch+mouse for modern browsers; older browser support is not a concern for this static site
     let isDown = false;
     let startX = 0;
     let scrollLeft = 0;
-    let dragThresholdPassed = false;
 
-    const handleMouseDown = (e: MouseEvent) => {
+    const handleDragStart = (e: MouseEvent) => {
       isDown = true;
-      dragThresholdPassed = false;
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
+      slider.style.userSelect = "none";
     };
 
-    const handleMouseLeave = () => {
-      isDown = false;
-      setIsDragging(false);
-    };
-
-    const handleMouseUp = () => {
-      isDown = false;
-      setIsDragging(false);
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleDragMove = (e: MouseEvent) => {
       if (!isDown) return;
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 1.5;
+      const walk = (e.pageX - startX) * 1.5;
 
-      if (Math.abs(x - startX) > 5) {
-        dragThresholdPassed = true;
-        setIsDragging(true);
+      if (Math.abs(e.pageX - startX) > 5) {
+        slider.classList.add("active", "cursor-grabbing", "select-none");
         e.preventDefault();
         slider.scrollLeft = scrollLeft - walk;
       }
     };
 
-    const handleClick = (e: MouseEvent) => {
-      if (dragThresholdPassed) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
+    const handleDragEnd = () => {
+      isDown = false;
+      slider.style.userSelect = "";
+      slider.classList.remove("active", "cursor-grabbing", "select-none");
     };
 
-    slider.addEventListener("mousedown", handleMouseDown);
-    slider.addEventListener("mouseleave", handleMouseLeave);
-    slider.addEventListener("mouseup", handleMouseUp);
-    slider.addEventListener("mousemove", handleMouseMove);
-    slider.addEventListener("click", handleClick, true);
+    slider.addEventListener("mousedown", handleDragStart);
+    document.addEventListener("mousemove", handleDragMove);
+    document.addEventListener("mouseup", handleDragEnd);
 
     return () => {
       clearTimeout(timer);
-      slider.removeEventListener("mousedown", handleMouseDown);
-      slider.removeEventListener("mouseleave", handleMouseLeave);
-      slider.removeEventListener("mouseup", handleMouseUp);
-      slider.removeEventListener("mousemove", handleMouseMove);
-      slider.removeEventListener("click", handleClick, true);
+      slider.removeEventListener("mousedown", handleDragStart);
+      document.removeEventListener("mousemove", handleDragMove);
+      document.removeEventListener("mouseup", handleDragEnd);
     };
   }, []);
 
