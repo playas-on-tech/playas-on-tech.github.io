@@ -40,6 +40,7 @@ export function useLang(): LangContextValue {
 // becomes critical, consider generating separate builds per language.
 // ══════════════════════════════════════════════════════════════════════
 
+// ponytail: async setState in effect body avoids cascading renders from sync updates
 export default function LangProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>("es");
 
@@ -47,8 +48,11 @@ export default function LangProvider({ children }: { children: React.ReactNode }
   useEffect(() => {
     const cookie = readCookie();
     if (!cookie) return;
-    setLangState(cookie);
-    document.documentElement.lang = cookie;
+    // ponytail: setTimeout defers setState to next macrotask — no cascade
+    setTimeout(() => {
+      setLangState(cookie);
+      document.documentElement.lang = cookie;
+    }, 0);
   }, []);
 
   const setLang = useCallback((l: Lang) => {
