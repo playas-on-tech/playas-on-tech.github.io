@@ -44,12 +44,12 @@
       "topics": ["Educación", "Comunidad"]
     },
     {
-      "name": "Jonh Kleinad",
-      "title": "AWS Community Builder",
+      "name": "Yuliana Reyna",
+      "title": "Software Engineer",
       "company": "",
-      "photo": "/assets/speakers/jonh-kleinad.jpeg",
-      "talkTitle": "De cero a experto: Vibe codeando con Kiro",
-      "topics": ["AI", "Vibe Coding"]
+      "photo": "/assets/speakers/yuli.jpg",
+      "talkTitle": "",
+      "topics": ["Software", "Comunidad"]
     },
     {
       "name": "Angel Monroy",
