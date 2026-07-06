@@ -58,7 +58,7 @@ function SpeakerCard({ speaker: s }: { speaker: Speaker }) {
       )}
 
       {s.topics && s.topics.length > 0 && (
-        <div className="mt-2 flex flex-wrap gap-1.5 self-start">
+        <div className="mt-auto pt-2 flex flex-wrap gap-1.5 self-start">
           {s.topics.map((topic, j) => (
             <span
               key={j}
