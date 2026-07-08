@@ -26,6 +26,11 @@ const COMMUNITIES = [
     href: "https://www.instagram.com/0xc.ommunity",
   },
   {
+    name: "Mobile Developer Community",
+    logo: "/assets/comunidades-aliadas/mdc.webp",
+    href: "https://www.instagram.com/mobiledevelopercommunity/",
+  },
+  {
     name: "GDG Tijuana",
     logo: "/assets/comunidades-aliadas/gdg-tijuana.webp",
     href: "https://www.instagram.com/gdg_tijuana/",
@@ -84,6 +89,16 @@ const COMMUNITIES = [
     name: "AWS UG Colima",
     logo: "/assets/comunidades-aliadas/aws-ug-colima.webp",
     href: "https://www.instagram.com/awsugcolima/",
+  },
+  {
+    name: "Codificadas",
+    logo: "/assets/comunidades-aliadas/codificadas.webp",
+    href: "https://www.instagram.com/codificadasmx/",
+  },
+  {
+    name: "AWS Playa Vicente",
+    logo: "/assets/comunidades-aliadas/aws-playa-vicente.webp",
+    href: "https://linktr.ee/awsusergroupplayavicente",
   },
 ];
 
