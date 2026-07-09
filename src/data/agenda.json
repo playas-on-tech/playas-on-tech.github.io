@@ -9,7 +9,7 @@
   { "time": "1:15 – 2:45pm", "label": "Break para comida", "talk": "", "photos": [], "type": "comida" },
   { "time": "2:45 – 3:25pm", "label": "Angel Monroy", "talk": "Procesamiento ETL en Google Cloud a través de Dataflow y BigQuery (Python)", "photos": [{ "src": "/assets/speakers/angel.jpeg" }], "type": "ocean" },
   { "time": "3:30 – 4:10pm", "label": "Juan Carlos Ruiz", "talk": "De escribir código a construir criterio", "photos": [{ "src": "/assets/speakers/juan-carlos-ruiz.png" }], "type": "keynote" },
-  { "time": "4:15 – 4:40pm", "label": "Yuliana Reyna", "talk": "", "photos": [{ "src": "/assets/speakers/yuli.jpg" }], "type": "ocean" },
+  { "time": "4:15 – 4:40pm", "label": "Yuliana Reyna", "talk": "404: Soft Skills Not Found", "photos": [{ "src": "/assets/speakers/yuli.jpg" }], "type": "ocean" },
   { "time": "4:45 – 5:25pm", "label": "Miguel Oseguera", "talk": "Managed Agents with Claude: Code, Ship, and Learn Across Your Dev Workflow", "photos": [{ "src": "/assets/speakers/miguel-oseguera.jpeg" }], "type": "keynote" },
   { "time": "5:25 – 5:55pm", "label": "Cierre del evento", "talk": "", "photos": [], "type": "sunset" },
   { "time": "6:30 – 11:30pm", "label": "After", "talk": "", "photos": [], "type": "after" }
