@@ -5,12 +5,12 @@ const COPY = {
   es: {
     pill: "Comunidades aliadas",
     h2: "Construido por la comunidad.",
-    sub: "Catorce comunidades tech de todo México se unen al 7º aniversario para celebrar juntos frente al mar.",
+    sub: "Diecisiete comunidades tech de todo México se unen al 7º aniversario para celebrar juntos frente al mar.",
   },
   en: {
     pill: "Allied communities",
     h2: "Built by the community.",
-    sub: "Fourteen tech communities from across Mexico join the 7th anniversary to celebrate together by the sea.",
+    sub: "Seventeen tech communities from across Mexico join the 7th anniversary to celebrate together by the sea.",
   },
 } as const;
 
