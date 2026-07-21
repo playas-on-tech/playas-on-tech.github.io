@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
+import AnivCta from "@/components/AnivCta";
 
 const COPY = {
   es: {
@@ -93,17 +94,19 @@ export default function Header() {
             >
               {lang === "es" ? "EN" : "ES"}
             </button>
-            <Link
-              href={t.joinHref}
-              className="group flex items-center gap-1.5 sm:gap-2 rounded-full bg-sunset py-1 sm:py-1.5 pl-3 sm:pl-4 pr-1 sm:pr-1.5 text-xs sm:text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98] whitespace-nowrap"
-            >
-              <span className="hidden sm:inline">{t.joinCta}</span>
-              <span className="sm:hidden">{t.joinCtaMobile}</span>
-              <span className="grid h-6 w-6 sm:h-7 sm:w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
-                <ArrowUpRight size={12} className="sm:hidden" />
-                <ArrowUpRight size={14} className="hidden sm:block" />
-              </span>
-            </Link>
+            <AnivCta>
+              <Link
+                href={t.joinHref}
+                className="group flex items-center gap-1.5 sm:gap-2 rounded-full bg-sunset py-1 sm:py-1.5 pl-3 sm:pl-4 pr-1 sm:pr-1.5 text-xs sm:text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98] whitespace-nowrap"
+              >
+                <span className="hidden sm:inline">{t.joinCta}</span>
+                <span className="sm:hidden">{t.joinCtaMobile}</span>
+                <span className="grid h-6 w-6 sm:h-7 sm:w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
+                  <ArrowUpRight size={12} className="sm:hidden" />
+                  <ArrowUpRight size={14} className="hidden sm:block" />
+                </span>
+              </Link>
+            </AnivCta>
           </div>
         </div>
       </nav>

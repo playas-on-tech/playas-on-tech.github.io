@@ -2,37 +2,38 @@
 import Link from "next/link";
 import { ArrowUpRight } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
+import AnivCta from "@/components/AnivCta";
 
 const COPY = {
   es: {
     pill: "Eventos · Meetups",
     h2: "Meetups tech en Manzanillo — cada dos meses.",
     soonTag: "Próximo encuentro",
-    cardTitle: "7º Aniversario · Edición #7",
+    cardTitle: "Setiembre 2026",
     cardBody:
-      "El próximo meetup de Playas on Tech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Cupo limitado, requiere boleto.",
+      "Estamos preparando la próxima sesión. Síguenos en redes para enterarte de más detalles.",
     details: [
-      { label: "Fecha", value: "Sáb 18 jul 2026" },
-      { label: "Hora", value: "10:00 a 18:00 hrs" },
-      { label: "Lugar", value: "Hotel Marbella" },
+      { label: "Fecha", value: "Sáb 17 sept 2026" },
+      { label: "Hora", value: "8:00 a 10:00 p. m." },
+      { label: "Lugar", value: "rootDevLab" },
     ],
-    cta: "Ver el 7º aniversario",
-    ctaHref: "/aniversario",
+    cta: "Próximamente",
+    ctaHref: "#eventos",
   },
   en: {
     pill: "Events · Meetups",
     h2: "Tech meetups in Manzanillo — every two months.",
     soonTag: "Upcoming",
-    cardTitle: "7th Anniversary · Edition #7",
+    cardTitle: "September 2026",
     cardBody:
-      "The next Playas on Tech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Limited seats, ticket required.",
+      "We're preparing the next session. Follow us on social media for more details.",
     details: [
-      { label: "Date", value: "Sat, Jul 18, 2026" },
-      { label: "Time", value: "10:00 to 18:00" },
-      { label: "Venue", value: "Hotel Marbella" },
+      { label: "Date", value: "Sat, Sep 17, 2026" },
+      { label: "Time", value: "8:00 PM to 10:00 PM" },
+      { label: "Venue", value: "rootDevLab" },
     ],
-    cta: "See the 7th anniversary",
-    ctaHref: "/aniversario",
+    cta: "Coming soon",
+    ctaHref: "#eventos",
   },
 } as const;
 
@@ -68,15 +69,17 @@ export default function Eventos() {
                   </div>
                 ))}
               </div>
-              <Link
-                href={t.ctaHref}
-                className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
-              >
-                {t.cta}
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
-                  <ArrowUpRight size={15} />
-                </span>
-              </Link>
+              <AnivCta>
+                <Link
+                  href={t.ctaHref}
+                  className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
+                >
+                  {t.cta}
+                  <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
+                    <ArrowUpRight size={15} />
+                  </span>
+                </Link>
+              </AnivCta>
             </div>
             <div className="mesh-cta grain relative min-h-[260px] overflow-hidden">
               <div className="blobs">

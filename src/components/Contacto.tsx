@@ -19,23 +19,13 @@ const COPY = {
     categoryLabel: "¿De qué se trata?",
     categories: [
       { value: "General", label: "General / Dudas" },
-      { value: "Sponsor", label: "Sponsor / Patrocinios" },
+      { value: "Sponsor", label: "Patrocinador" },
       { value: "Speaker", label: "Speaker / Charlas" },
       { value: "Staff", label: "Staff / Voluntario" },
       { value: "Otro", label: "Otro asunto" },
     ],
     subjectLabel: "Asunto",
     subjectPlaceholder: "Asunto de tu mensaje",
-    packageLabel: "Paquete de patrocinio",
-    packagePlaceholder: "Selecciona un paquete",
-    packages: [
-      { value: "Diamond", label: "Diamond ($40,000 MXN / US$2,400)" },
-      { value: "Platinum", label: "Platinum ($20,000 MXN / US$1,200)" },
-      { value: "Gold", label: "Gold ($10,000 MXN / US$600)" },
-      { value: "Silver", label: "Silver ($5,000 MXN / US$300)" },
-      { value: "MediaPartner", label: "Media Partner / Aliado de prensa" },
-      { value: "Custom", label: "Paquete a la medida" },
-    ],
     speakerCalloutH4: "🎤 ¡Queremos escucharte en el escenario!",
     speakerCalloutBody:
       "Para proponer tu charla y ayudarnos a evaluar tu propuesta de la mejor manera, por favor completa nuestro formulario oficial para conferencistas:",
@@ -45,7 +35,6 @@ const COPY = {
     submitting: "Enviando...",
     submit: "Enviar mensaje",
     errorRequired: "Por favor, llena todos los campos requeridos.",
-    errorPackage: "Por favor, selecciona un paquete de patrocinio.",
     errorApi: "Lo sentimos, hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
     errorNetwork: "No se pudo enviar el mensaje por un problema de conexión. Verifica tu red e intenta de nuevo.",
     subjectFallback: "Nuevo Mensaje",
@@ -64,23 +53,13 @@ const COPY = {
     categoryLabel: "What's it about?",
     categories: [
       { value: "General", label: "General / Questions" },
-      { value: "Sponsor", label: "Sponsor / Partnership" },
+      { value: "Sponsor", label: "Sponsor" },
       { value: "Speaker", label: "Speaker / Talks" },
       { value: "Staff", label: "Staff / Volunteer" },
       { value: "Otro", label: "Other" },
     ],
     subjectLabel: "Subject",
     subjectPlaceholder: "Subject of your message",
-    packageLabel: "Sponsorship package",
-    packagePlaceholder: "Select a package",
-    packages: [
-      { value: "Diamond", label: "Diamond ($40,000 MXN / US$2,400)" },
-      { value: "Platinum", label: "Platinum ($20,000 MXN / US$1,200)" },
-      { value: "Gold", label: "Gold ($10,000 MXN / US$600)" },
-      { value: "Silver", label: "Silver ($5,000 MXN / US$300)" },
-      { value: "MediaPartner", label: "Media Partner" },
-      { value: "Custom", label: "Custom package" },
-    ],
     speakerCalloutH4: "🎤 We want to hear you on stage!",
     speakerCalloutBody:
       "To propose your talk and help us evaluate your proposal properly, please fill out our official speaker form:",
@@ -90,7 +69,6 @@ const COPY = {
     submitting: "Sending...",
     submit: "Send message",
     errorRequired: "Please fill in all required fields.",
-    errorPackage: "Please select a sponsorship package.",
     errorApi: "Sorry, there was a problem sending your message. Please try again later.",
     errorNetwork: "Could not send your message due to a network problem. Check your connection and try again.",
     subjectFallback: "New Message",
@@ -104,7 +82,6 @@ export default function Contacto() {
     name: "",
     email: "",
     category: "General",
-    package: "",
     subject: "",
     message: "",
   });
@@ -125,19 +102,16 @@ export default function Contacto() {
 
       const params = new URLSearchParams(window.location.search);
       const categoryParam = params.get("category");
-      const packageParam = params.get("package");
 
       const targetCategory = categoryParam || "General";
-      const targetPackage = packageParam || "";
 
       setFormData((prev) => {
-        if (prev.category === targetCategory && prev.package === targetPackage) {
+        if (prev.category === targetCategory) {
           return prev;
         }
         return {
           ...prev,
           category: targetCategory,
-          package: targetPackage,
         };
       });
 
@@ -180,21 +154,13 @@ export default function Contacto() {
       return;
     }
 
-    if (formData.category === "Sponsor" && !formData.package) {
-      setStatus("error");
-      setErrorMessage(t.errorPackage);
-      return;
-    }
-
     setStatus("submitting");
 
     try {
       const accessKey =
         process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "00000000-0000-0000-0000-000000000000";
 
-      const subjectPrefix = formData.category === "Sponsor" && formData.package
-        ? `[Sponsor: ${formData.package}]`
-        : `[Playas on Tech - ${formData.category}]`;
+      const subjectPrefix = formData.category === "Sponsor" ? "[Patrocinador]" : `[Playas on Tech - ${formData.category}]`;
 
       const payload = {
         access_key: accessKey,
@@ -222,7 +188,6 @@ export default function Contacto() {
           name: "",
           email: "",
           category: "General",
-          package: "",
           subject: "",
           message: "",
         });
@@ -362,25 +327,12 @@ export default function Contacto() {
                 </div>
 
                 {formData.category === "Sponsor" && (
-                  <div className="animate-[cine-in_0.3s_ease-out]">
-                    <label htmlFor="package" className="block text-sm font-semibold text-white/90">
-                      {t.packageLabel} <span className="text-sunset">*</span>
-                    </label>
-                    <select
-                      id="package"
-                      name="package"
-                      required
-                      value={formData.package}
-                      onChange={handleChange}
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white outline-none transition focus:border-ocean focus:bg-navy-800/80"
-                    >
-                      <option value="">{t.packagePlaceholder}</option>
-                      {t.packages.map((p) => (
-                        <option key={p.value} value={p.value}>
-                          {p.label}
-                        </option>
-                      ))}
-                    </select>
+                  <div className="rounded-2xl border border-sunset/30 bg-sunset/10 p-5">
+                    <p className="text-sm text-white/80">
+                      {lang === "es" 
+                        ? "Selecciona la categoría \"Patrocinador\" y describe tu propuesta en el mensaje. Nos pondremos en contacto contigo."
+                        : "Select the \"Sponsor\" category and describe your proposal in the message. We'll get back to you."}
+                    </p>
                   </div>
                 )}
 
