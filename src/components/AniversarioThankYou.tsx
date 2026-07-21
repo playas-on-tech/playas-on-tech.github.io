@@ -17,127 +17,179 @@ const PHOTOS = [
   "/assets/7aniversario/10.webp",
 ];
 
-const PHOTO_DELAY = 3000; // 3 seconds between photos
-const SHRINK_DELAY = 1500; // Delay before stack shrinks
-
-interface PhotoState {
-  src: string;
-  angle: number;
-  opacity: number;
-}
+const PHOTO_INTERVAL = 1500;
+const DROP_DURATION = 800;
 
 export default function AniversarioThankYou() {
-  const [photos, setPhotos] = useState<PhotoState[]>([]);
-  const [showMessage, setShowMessage] = useState(false);
+  const [droppedCount, setDroppedCount] = useState(0);
   const [stackShrunk, setStackShrunk] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   useEffect(() => {
-    let currentIndex = 0;
-    
-    const addPhoto = () => {
-      if (currentIndex >= PHOTOS.length) {
-        // All photos added, wait then shrink
-        setTimeout(() => {
-          setStackShrunk(true);
-          setShowMessage(true);
-        }, SHRINK_DELAY);
-        return;
+    let i = 0;
+    const interval = setInterval(() => {
+      i++;
+      setDroppedCount(i);
+      if (i >= PHOTOS.length) {
+        clearInterval(interval);
+        setTimeout(() => setStackShrunk(true), 1200);
+        setTimeout(() => setShowMessage(true), 1900);
       }
+    }, PHOTO_INTERVAL);
 
-      const newPhoto: PhotoState = {
-        src: PHOTOS[currentIndex],
-        angle: (Math.random() - 0.5) * 4, // ±2 degrees
-        opacity: 1,
-      };
-
-      setPhotos((prev) => [newPhoto, ...prev]);
-      currentIndex++;
-
-      setTimeout(addPhoto, PHOTO_DELAY);
-    };
-
-    // Start with first photo after a brief delay
-    const timer = setTimeout(addPhoto, 500);
-    return () => clearTimeout(timer);
+    return () => clearInterval(interval);
   }, []);
 
-  return (
-    <section className="mesh-hero grain relative min-h-screen overflow-hidden">
-      <div className="blobs cine-field">
-        <span className="blob blob-teal" />
-        <span className="blob blob-ocean" />
-        <span className="blob blob-aqua" />
-        <span className="blob blob-sunset" />
-      </div>
+  const angles = [
+    -2.5, 1.8, -1.2, 3.0, -0.8, 2.2, -1.8, 1.0, -2.0, 1.5,
+  ];
 
-      <div className="relative z-10 mx-auto max-w-[1200px] px-6 pt-8 pb-32">
-        {/* Photo stack */}
-        <div
-          className={`transition-all duration-700 ease-out ${
-            stackShrunk ? "max-h-[40vh] scale-95" : "max-h-screen"
-          }`}
-        >
-          {photos.map((photo, index) => (
-            <div
-              key={photo.src}
-              className="absolute inset-x-0 mx-auto rounded-xl overflow-hidden shadow-2xl shadow-navy/30 border border-white/10"
-              style={{
-                transform: `rotate(${photo.angle}deg)`,
-                zIndex: index,
-                opacity: photo.opacity,
-              }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={photo.src}
-                alt=""
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+  return (
+    <>
+      <style>{`
+        @keyframes drop-in {
+          0% {
+            transform: translateY(-110vh) rotate(var(--angle)) scale(1.1);
+            opacity: 0;
+          }
+          60% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0) rotate(var(--angle)) scale(1);
+            opacity: 1;
+          }
+        }
+        @keyframes drop-in-curve {
+          0% {
+            transform: translateY(-110vh) translateX(var(--drift)) rotate(var(--angle)) scale(1.1);
+            opacity: 0;
+          }
+          60% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(0) translateX(0) rotate(var(--angle)) scale(1);
+            opacity: 1;
+          }
+        }
+        @keyframes settle {
+          0% {
+            transform: scale(1);
+          }
+          100% {
+            transform: scale(0.55) translateY(-15vh);
+          }
+        }
+        @keyframes fade-up {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+
+      <section className="mesh-hero grain relative min-h-screen overflow-hidden">
+        <div className="blobs cine-field">
+          <span className="blob blob-teal" />
+          <span className="blob blob-ocean" />
+          <span className="blob blob-aqua" />
+          <span className="blob blob-sunset" />
         </div>
 
-        {/* Message - appears after stack shrinks */}
-        {showMessage && (
-          <div className="mt-16 text-center animate-[cine-in_0.5s_ease-out]">
-            <h2 className="text-3xl font-bold leading-tight tracking-tightest text-white">
-              ¡Gracias por ser parte de esta historia!
-            </h2>
+        {/* Photo stack - centered in viewport */}
+        <div className="absolute inset-0 z-10 flex items-center justify-center">
+          <div
+            className="relative transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+            style={{
+              width: "min(85vw, 600px)",
+              aspectRatio: "4/3",
+              transform: stackShrunk
+                ? "scale(0.55) translateY(-15vh)"
+                : "scale(1) translateY(0)",
+            }}
+          >
+            {PHOTOS.slice(0, droppedCount).map((src, i) => {
+              const angle = angles[i % angles.length];
+              const drift = ((i % 3) - 1) * 15;
+              const isNewest = i === droppedCount - 1;
 
-            <p className="mt-6 max-w-[50ch] mx-auto text-lg leading-relaxed text-white/80">
-              Este 7º aniversario fue posible gracias a ustedes: nuestro increíble equipo de voluntarios, 
-              los patrocinadores que creyeron en nosotros, y cada asistente que hizo de este evento 
-              una celebración inolvidable frente al mar.
-            </p>
-
-            <p className="mt-4 max-w-[50ch] mx-auto text-lg leading-relaxed text-white/80">
-              Juntos construimos algo especial. La comunidad tech del Pacífico mexicano sigue creciendo, 
-              y cada meetup nos acerca un poco más.
-            </p>
-
-            <p className="mt-8 text-xl font-semibold text-white">
-              ¡Nos vemos el próximo año!
-            </p>
+              return (
+                <div
+                  key={src}
+                  className="absolute inset-0 rounded-xl overflow-hidden shadow-2xl shadow-navy/40 border border-white/10"
+                  style={{
+                    zIndex: i,
+                    "--angle": `${angle}deg`,
+                    "--drift": `${drift}px`,
+                    animation: isNewest
+                      ? `drop-in-curve ${DROP_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards`
+                      : "none",
+                    transform: isNewest
+                      ? undefined
+                      : `translateY(0) translateX(0) rotate(${angle}deg)`,
+                    opacity: isNewest ? 0 : 1,
+                  } as React.CSSProperties}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={src}
+                    alt=""
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              );
+            })}
           </div>
-        )}
+        </div>
 
-        {/* Discrete CTA link at bottom */}
-        <div className="mt-16 text-center">
+        {/* Message and footer - appears after stack shrinks */}
+        <div
+          className="relative z-20 mx-auto max-w-[600px] px-6 pt-[55vh] text-center"
+          style={{
+            opacity: showMessage ? 1 : 0,
+            transform: showMessage ? "translateY(0)" : "translateY(20px)",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
+          }}
+        >
+          <h2 className="text-3xl font-bold leading-tight tracking-tightest text-white">
+            ¡Gracias por ser parte de esta historia!
+          </h2>
+
+          <p className="mt-6 text-lg leading-relaxed text-white/80">
+            Este 7º aniversario fue posible gracias a ustedes: nuestro
+            increíble equipo de voluntarios, los patrocinadores que creyeron en
+            nosotros, y cada asistente que hizo de este evento una celebración
+            inolvidable frente al mar.
+          </p>
+
+          <p className="mt-4 text-lg leading-relaxed text-white/80">
+            Juntos construimos algo especial. La comunidad tech del Pacífico
+            mexicano sigue creciendo, y cada meetup nos acerca un poco más.
+          </p>
+
+          <p className="mt-8 text-xl font-semibold text-white">
+            ¡Nos vemos el próximo año!
+          </p>
+
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-white/50 hover:text-white/80 transition"
+            className="inline-flex items-center gap-1.5 mt-12 text-sm font-medium text-white/40 hover:text-white/70 transition"
           >
             Volver al inicio
             <ArrowUpRight size={12} />
           </Link>
-        </div>
 
-        {/* Postal footer */}
-        <div className="mt-12 pt-6 border-t border-white/10 text-xs text-white/40 flex justify-between items-center px-6">
-          <span>Playas on Tech · Manzanillo, Colima</span>
-          <span>7º Aniversario</span>
+          <div className="mt-10 pt-6 border-t border-white/10 text-xs text-white/30 flex justify-between items-center">
+            <span>Playas on Tech · Manzanillo, Colima</span>
+            <span>7º Aniversario</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
