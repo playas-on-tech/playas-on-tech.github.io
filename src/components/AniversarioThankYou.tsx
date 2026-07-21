@@ -17,7 +17,7 @@ const PHOTOS = [
   "/assets/7aniversario/10.webp",
 ];
 
-const PHOTO_INTERVAL = 1500;
+const PHOTO_INTERVAL = 5000;
 const DROP_DURATION = 800;
 
 export default function AniversarioThankYou() {
@@ -106,10 +106,10 @@ export default function AniversarioThankYou() {
           <div
             className="relative transition-all duration-[800ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
             style={{
-              width: "min(85vw, 600px)",
+              width: "min(92vw, 750px)",
               aspectRatio: "4/3",
               transform: stackShrunk
-                ? "scale(0.55) translateY(-15vh)"
+                ? "scale(0.45) translateY(-38vh)"
                 : "scale(1) translateY(0)",
             }}
           >
@@ -149,7 +149,7 @@ export default function AniversarioThankYou() {
 
         {/* Message and footer - appears after stack shrinks */}
         <div
-          className="relative z-20 mx-auto max-w-[600px] px-6 pt-[55vh] text-center"
+          className="relative z-20 mx-auto max-w-[600px] px-6 pt-[60vh] text-center"
           style={{
             opacity: showMessage ? 1 : 0,
             transform: showMessage ? "translateY(0)" : "translateY(20px)",
