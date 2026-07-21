@@ -16,20 +16,6 @@ export default function AniversarioThankYou() {
       <div className="relative z-10 mx-auto max-w-[600px] px-6 py-28">
         {/* Postal card */}
         <div className="rounded-3xl overflow-hidden shadow-2xl shadow-navy/20 border border-white/10 bg-white/5 glass">
-          {/* Stamp */}
-          <div className="absolute top-6 right-6 w-20 h-24 rounded-lg bg-sunset/20 flex items-center justify-center border-2 border-dashed border-sunset/40">
-            <span className="text-[10px] font-bold text-white text-center leading-tight tracking-wider">
-              PLAYAS<br/>ON<br/>TECH
-            </span>
-          </div>
-
-          {/* Postmark */}
-          <div className="absolute top-6 left-6 w-20 h-20 rounded-full border-2 border-dashed border-white/30 flex items-center justify-center">
-            <span className="text-[9px] font-bold text-white/60 text-center leading-tight tracking-widest">
-              MANZANILLO<br/>COL. MX<br/>★ 2026 ★
-            </span>
-          </div>
-
           {/* Image */}
           <div className="w-full h-72 overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -57,6 +43,10 @@ export default function AniversarioThankYou() {
               y cada meetup nos acerca un poco más.
             </p>
 
+            <p className="mt-6 text-xl font-semibold text-white">
+              ¡Nos vemos el próximo año!
+            </p>
+
             {/* CTA */}
             <Link
               href="/"
@@ -75,11 +65,6 @@ export default function AniversarioThankYou() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll cue */}
-      <div className="absolute inset-x-0 bottom-16 flex flex-col items-center gap-2 text-white/55">
-        <span className="text-[11px] font-medium uppercase tracking-[0.3em]">Gracias</span>
       </div>
     </section>
   );
