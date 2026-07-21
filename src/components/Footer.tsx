@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Instagram, Facebook, LinkedIn, X, TikTok } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
+import AnivCta from "@/components/AnivCta";
 
 const COPY = {
   es: {
@@ -126,11 +127,16 @@ export default function Footer() {
             <div key={column.title}>
               <div className="text-sm font-semibold text-white/40">{column.title}</div>
               <ul className="mt-4 space-y-3 text-white/80">
-                {column.links.map((link) => (
+                {column.links.filter((link) => link.href !== "/aniversario").map((link) => (
                   <li key={link.label}>
                     <FooterLink href={link.href} label={link.label} />
                   </li>
                 ))}
+                <AnivCta>
+                  <li>
+                    <FooterLink href="/aniversario" label={lang === "es" ? "7º Aniversario" : "7th Anniversary"} />
+                  </li>
+                </AnivCta>
               </ul>
             </div>
           ))}
