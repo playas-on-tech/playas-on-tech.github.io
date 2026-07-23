@@ -34,3 +34,5 @@ next-env.d.ts
 
 # tooling
 .antigravitycli/
+dev.log
+dev2.log

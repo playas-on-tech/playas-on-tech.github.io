@@ -1,0 +1,498 @@
+{
+  "hero": {
+    "h1a": "La comunidad tech de Manzanillo —",
+    "h1b": "frente al mar.",
+    "sub": "Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos meses, frente al mar de Colima. Sin corbatas. Con olas.",
+    "ctaPrimary": "Ver todo sobre el 7o Aniversario",
+    "ctaSecondary": "Ver charlas anteriores",
+    "sticker": "GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR · ",
+    "scrollCue": "Desliza"
+  },
+  "header": {
+    "nav": [
+      { "href": "#comunidad", "label": "Comunidad" },
+      { "href": "#eventos", "label": "Eventos" },
+      { "href": "#venue", "label": "Venue" },
+      { "href": "#videos", "label": "Videos" },
+      { "href": "#donaciones", "label": "Donaciones" },
+      { "href": "#contacto", "label": "Contacto" }
+    ],
+    "joinCta": "7º Aniversario",
+    "joinCtaMobile": "7º Aniv.",
+    "joinHref": "/aniversario"
+  },
+  "statement": {
+    "lead": "Creemos que las mejores ideas nacen cuando la comunidad de desarrolladores se junta —",
+    "trail": "cara a cara, sin jerarquías, con el mar de fondo. Por eso, desde 2019, los meetups de PlayasOnTech reúnen cada dos meses a quienes construyen tecnología en el Pacífico mexicano."
+  },
+  "marquee": ["Aprender", "Conectar", "Compartir", "Crear", "Reír", "Repetir"],
+  "statsStrip": {
+    "stats": [
+      { "color": "text-sunset", "label": "ediciones desde 2019" },
+      { "prefix": "+", "color": "text-ocean", "label": "asistentes en Manzanillo" },
+      { "color": "text-sunset", "label": "meses entre cada meetup" },
+      { "suffix": "%", "color": "text-ocean", "label": "gratis · sin costo · abierta" }
+    ]
+  },
+  "comunidad": {
+    "pill": "La comunidad",
+    "h2": "Comunidad de desarrolladores y creadores en el Pacífico mexicano.",
+    "sub": "Programadores, diseñadores, founders, estudiantes y curiosos de Manzanillo, Colima y toda la costa. Nos juntamos para aprender, conectar y compartir tecnología — sin importar tu nivel. Vengas de donde vengas, aquí cabes.",
+    "cards": [
+      { "key": "aprender", "title": "Aprender", "text": "Charlas y talleres de quienes construyen tecnología en la región y más allá. De lo práctico a lo experimental." },
+      { "key": "conectar", "title": "Conectar", "text": "Conoce a la gente que está construyendo el futuro desde la costa. Las mejores colaboraciones empiezan con un café." },
+      { "key": "compartir", "title": "Compartir", "text": "¿Tienes algo que enseñar? El micrófono es tuyo. Propón una charla y comparte lo que sabes con la comunidad." }
+    ]
+  },
+  "codeOfConduct": {
+    "h2": "Una comunidad tech abierta, segura e inclusiva — para todas las personas.",
+    "sub": "Nos tomamos en serio que cada persona se sienta bienvenida. Por eso tenemos un código de conducta claro — léelo antes de venir.",
+    "cta": "Lee nuestro código de conducta",
+    "href": "/codigo-conducta"
+  },
+  "eventos": {
+    "pill": "Eventos · Meetups",
+    "h2": "Meetups tech en Manzanillo — cada dos meses.",
+    "soonTag": "Próximo encuentro",
+    "cardTitle": "7º Aniversario · Edición #7",
+    "cardBody": "El próximo meetup de PlayasOnTech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Cupo limitado, requiere boleto.",
+    "details": [
+      { "label": "Fecha", "value": "Sáb 18 jul 2026" },
+      { "label": "Hora", "value": "10:00 a 18:00 hrs" },
+      { "label": "Lugar", "value": "Hotel Marbella" }
+    ],
+    "cta": "Ver el 7º aniversario",
+    "ctaHref": "/aniversario"
+  },
+  "editionsTimeline": {
+    "pill": "La historia",
+    "h2": "De la edición #1 al 7º aniversario.",
+    "sub": "Cada dos meses, sin falta, frente al mar. Este es el camino que nos trajo hasta aquí.",
+    "editionLabel": "Edición",
+    "nextTag": "Próxima",
+    "watchSession": "Ver sesión",
+    "reserve": "Reservar lugar",
+    "reserveHref": "/aniversario",
+    "editions": [
+      { "n": 1, "date": "Jul 2025", "title": "El primer encuentro" },
+      { "n": 2, "date": "Sep 2025", "title": "Comunidad y código" },
+      { "n": 3, "date": "Nov 2025", "title": "Open source en la costa" },
+      { "n": 4, "date": "Ene 2026", "title": "Animación web con GSAP", "video": "preXoZ6zFuc" },
+      { "n": 5, "date": "Mar 2026", "title": "IA y autenticación", "video": "V2vlUPn-v5Y" },
+      { "n": 6, "date": "May 2026", "title": "Builders frente al mar", "video": "C0U9Z_jO-0o" },
+      { "n": 7, "date": "18 Jul 2026", "title": "7º Aniversario", "next": true }
+    ]
+  },
+  "venue": {
+    "pill": "Venue",
+    "h2": "Donde sucede la magia.",
+    "body": "Un espacio cómodo en Manzanillo, con buen internet y mejor ambiente, a unos pasos del mar. Cada edición se realiza en un venue local; el lugar exacto se anuncia con cada meetup. WiFi rápido, café y estacionamiento incluidos.",
+    "alt": "Espacio donde se realizan los meetups de PlayasOnTech en Manzanillo, Colima — frente al mar",
+    "features": [
+      "WiFi rápido y enchufes de sobra",
+      "Estacionamiento cercano",
+      "Café, snacks y buena vibra"
+    ]
+  },
+  "videos": {
+    "pill": "Videos",
+    "h2": "¿Te lo perdiste?",
+    "seeAll": "Ver todas",
+    "videos": [
+      { "id": "C0U9Z_jO-0o", "title": "Sesión Mayo 2026", "meta": "Sesión completa · 2h 11m" },
+      { "id": "V2vlUPn-v5Y", "title": "Sesión Marzo 2026", "meta": "Sesión completa · 1h 56m" },
+      { "id": "preXoZ6zFuc", "title": "Sesión Enero 2026", "meta": "Sesión completa · 1h 18m" }
+    ]
+  },
+  "organizadores": {
+    "pill": "Organizadores",
+    "h2": "Hecho por voluntarios.",
+    "sub": "Cada edición de PlayasOnTech la organiza un grupo de voluntarios en su tiempo libre, por amor a la comunidad. Sin fines de lucro: solo ganas de juntar a quienes construyen tecnología en la costa.",
+    "ctaH3": "¿Te gustaría ser parte del equipo?",
+    "ctaBody": "Buscamos manos para organizar, dar charlas, conseguir venue y mucho más. No necesitas experiencia, solo ganas de aportar a la comunidad.",
+    "cta": "Quiero ser voluntario",
+    "ctaHref": "/?category=Staff#contacto"
+  },
+  "sobreNosotros": {
+    "pill": "Sobre nosotros",
+    "h2": "Abiertos, sin fines de lucro.",
+    "intro": "PlayasOnTech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025. Reunimos a desarrolladores, diseñadores y creadores del Pacífico mexicano en meetups gratuitos cada dos meses, frente al mar. Todo lo que hacemos es de libre acceso: los eventos, las grabaciones de las charlas y los materiales. Nos sostenemos con donaciones de la comunidad y patrocinios de empresas locales.",
+    "termsPrefix": "Consulta los",
+    "termsLink": "términos y licencias completos",
+    "termsHref": "/terminos",
+    "terms": [
+      { "title": "Sin fines de lucro", "body": "Organizada por voluntarios y sostenida por la comunidad. Cero ánimo de lucro: lo recaudado vuelve al evento." },
+      { "title": "Contenido abierto", "body": "Charlas, slides y grabaciones bajo Creative Commons (CC BY 4.0). Compártelas y reutilízalas dando crédito.", "href": "https://creativecommons.org/licenses/by/4.0/", "external": true, "linkLabel": "CC BY 4.0" },
+      { "title": "Código abierto", "body": "Las demos y este sitio son software libre bajo licencia MIT. Úsalo, apréndelo, mejóralo.", "href": "https://github.com/playas-on-tech/playas-on-tech.github.io/blob/main/LICENSE", "external": true, "linkLabel": "Licencia MIT" },
+      { "title": "Código de conducta", "body": "Un espacio seguro para todas las personas. Participar implica respetar nuestro código de conducta.", "href": "/codigo-conducta", "linkLabel": "Leer el código" }
+    ]
+  },
+  "faq": {
+    "pill": "FAQ",
+    "h2": "Preguntas frecuentes sobre PlayasOnTech",
+    "sub": "Todo lo que necesitas saber antes de unirte al meetup tech del Pacífico mexicano.",
+    "items": [
+      { "q": "¿Qué es PlayasOnTech?", "a": "PlayasOnTech es la comunidad de tecnología de Manzanillo, Colima. Reúne a desarrolladores, diseñadores, founders y entusiastas de la tecnología en meetups gratuitos que se realizan cada dos meses, frente al mar. Desde julio de 2025 hemos celebrado seis ediciones, con más de 200 asistentes acumulados." },
+      { "q": "¿Dónde se realiza PlayasOnTech?", "a": "Los meetups se realizan en Manzanillo, Colima, México — en venues de la zona hotelera, siempre cerca o frente al mar. La 7ª edición (julio 2026) será en el Hotel Marbella, sobre Playa Azul Salagua." },
+      { "q": "¿Cuándo es el próximo evento?", "a": "El próximo meetup es nuestro 7º aniversario: sábado 18 de julio de 2026, de 10:00 a 18:00 hrs, en el Hotel Marbella, Manzanillo. Después de esa fecha, mantenemos cadencia bimestral." },
+      { "q": "¿Cuánto cuesta asistir?", "a": "La asistencia a PlayasOnTech es 100% gratuita. No cobramos entrada, registro ni materiales — nos sostenemos con donaciones de la comunidad y patrocinios." },
+      { "q": "¿Quién puede asistir? ¿Necesito experiencia en tecnología?", "a": "Cualquier persona interesada en tecnología puede asistir. No se requiere experiencia previa: recibimos desarrolladores senior, estudiantes, diseñadores, founders y curiosos. Si quieres aprender o conocer a la comunidad tech de la costa, aquí cabes." },
+      { "q": "¿Cómo me registro?", "a": "El registro se hace en playasontech.com, en la sección del próximo evento. Para el 7º aniversario, el registro se gestiona vía Eventbrite con una cuota de recuperación de $350 MXN, y el cupo es limitado." },
+      { "q": "¿Qué tipo de charlas se dan?", "a": "Cubrimos temas amplios de tecnología: desarrollo web, animación con GSAP, IA y autenticación, open source, comunidad y código. Hay charlas técnicas profundas, lightning talks y paneles. Las grabaciones quedan en nuestro canal de YouTube @PlayasOnTech." },
+      { "q": "¿Cómo propongo una charla?", "a": "Cualquier persona puede proponer una charla a través de nuestro formulario público — el enlace está en la sección «Sé voluntario» y en el footer. Revisamos las propuestas en orden y respondemos antes del cierre de programa de cada edición." },
+      { "q": "¿Quién organiza PlayasOnTech?", "a": "PlayasOnTech es organizada por un equipo de voluntarios en su tiempo libre, sin fines de lucro. El equipo actual: Danny, Franky, H, Juaneque, Kev y Mane. Buscamos siempre manos nuevas para sumar al equipo." },
+      { "q": "¿Hay comunidades tech similares en Manzanillo o Colima?", "a": "PlayasOnTech es la comunidad de tecnología activa más grande en la costa de Colima, con cadencia bimestral y entrada gratuita. Si conoces otra iniciativa tech local que quiera colaborar, escríbenos." },
+      { "q": "¿Cómo apoyo a la comunidad?", "a": "Puedes apoyar de tres formas: (1) donando vía PayPal o Patreon — los enlaces están en la sección Donaciones; (2) patrocinando una edición o el aniversario, con paquetes desde $5,000 MXN; (3) sumándote como voluntario al equipo organizador." },
+      { "q": "¿Hay grabaciones de los eventos pasados?", "a": "Sí. Todas las sesiones recientes están en nuestro canal de YouTube — @PlayasOnTech — bajo licencia Creative Commons (CC BY 4.0). Las puedes ver, compartir y reutilizar dando crédito." }
+    ]
+  },
+  "donaciones": {
+    "h2": "Ayúdanos a mantener la comunidad viva.",
+    "body": "PlayasOnTech es 100% gratis. Cada aportación nos ayuda a seguir organizando eventos gratuitos para la comunidad — cubre el venue, el café y el equipo.",
+    "paypal": "Donar con PayPal",
+    "patreon": "Apóyanos en Patreon"
+  },
+  "contacto": {
+    "pill": "¿Hablamos?",
+    "h2": "Ponte en contacto con nosotros.",
+    "sub": "¿Quieres proponer una charla, patrocinar el próximo evento o tienes alguna duda general? Escríbenos y te responderemos lo antes posible.",
+    "locationLabel": "Manzanillo, Colima, México",
+    "successH3": "¡Mensaje Enviado!",
+    "successBody": "Muchas gracias por escribirnos. Nos pondremos en contacto contigo en breve a tu correo.",
+    "nameLabel": "Nombre completo",
+    "namePlaceholder": "Tu nombre",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@correo.com",
+    "categoryLabel": "¿De qué se trata?",
+    "categories": [
+      { "value": "General", "label": "General / Dudas" },
+      { "value": "Sponsor", "label": "Sponsor / Patrocinios" },
+      { "value": "Speaker", "label": "Speaker / Charlas" },
+      { "value": "Staff", "label": "Staff / Voluntario" },
+      { "value": "Otro", "label": "Otro asunto" }
+    ],
+    "subjectLabel": "Asunto",
+    "subjectPlaceholder": "Asunto de tu mensaje",
+    "packageLabel": "Paquete de patrocinio",
+    "packagePlaceholder": "Selecciona un paquete",
+    "packages": [
+      { "value": "Diamond", "label": "Diamond ($40,000 MXN / US$2,400)" },
+      { "value": "Platinum", "label": "Platinum ($20,000 MXN / US$1,200)" },
+      { "value": "Gold", "label": "Gold ($10,000 MXN / US$600)" },
+      { "value": "Silver", "label": "Silver ($5,000 MXN / US$300)" },
+      { "value": "MediaPartner", "label": "Media Partner / Aliado de prensa" },
+      { "value": "Custom", "label": "Paquete a la medida" }
+    ],
+    "speakerCalloutH4": "🎤 ¡Queremos escucharte en el escenario!",
+    "speakerCalloutBody": "Para proponer tu charla y ayudarnos a evaluar tu propuesta de la mejor manera, por favor completa nuestro formulario oficial para conferencistas:",
+    "speakerCta": "Llenar Formulario de Charlas",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "submitting": "Enviando...",
+    "submit": "Enviar mensaje",
+    "errorRequired": "Por favor, llena todos los campos requeridos.",
+    "errorPackage": "Por favor, selecciona un paquete de patrocinio.",
+    "errorApi": "Lo sentimos, hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
+    "errorNetwork": "No se pudo enviar el mensaje por un problema de conexión. Verifica tu red e intenta de nuevo.",
+    "subjectFallback": "Nuevo Mensaje"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Navegación",
+        "links": [
+          { "href": "/#comunidad", "label": "La comunidad tech de Manzanillo" },
+          { "href": "/#eventos", "label": "Próximos meetups" },
+          { "href": "/#venue", "label": "Dónde nos reunimos" },
+          { "href": "/#videos", "label": "Charlas grabadas" },
+          { "href": "/#sobre-nosotros", "label": "Quiénes somos" },
+          { "href": "/#contacto", "label": "Contacto" }
+        ]
+      },
+      {
+        "title": "Comunidad",
+        "links": [
+          { "href": "/codigo-conducta", "label": "Código de conducta" },
+          { "href": "/#donaciones", "label": "Apoya a la comunidad" },
+          { "href": "https://forms.gle/XwvZK3BVu2KdaNfWA", "label": "Propón una charla" },
+          { "href": "/#organizadores", "label": "Únete al equipo organizador" },
+          { "href": "/aniversario", "label": "7º Aniversario" }
+        ]
+      }
+    ],
+    "blurb": "Comunidad tech de Manzanillo, Colima. Meetups gratuitos de desarrolladores, diseñadores y founders cada dos meses, frente al mar — desde 2025.",
+    "copyright": "© 2026 PlayasOnTech · Manzanillo, Colima",
+    "termsLabel": "Términos y licencias",
+    "termsHref": "/terminos",
+    "handmade": "Hecho frente al mar, por la comunidad"
+  },
+  "aniversario": {
+    "header": {
+      "reserve": "Reservar",
+      "homeHref": "/",
+      "registroHref": "/aniversario#registro"
+    },
+    "hero": {
+      "h1a": "Celebramos nuestro 7º aniversario",
+      "h1b": "frente al mar.",
+      "sub": "Siete ediciones de comunidad, charlas y olas. Esta es la edición que lo celebra — un día especial de talks, networking y un brindis frente al mar de Manzanillo.",
+      "ctaReserve": "Reservar mi lugar",
+      "ctaProgram": "Ver programa",
+      "countdownLabel": "Faltan"
+    },
+    "agenda": {
+      "pill": "Programa",
+      "h2": "Agenda del evento",
+      "sub": "Una tarde-noche para aprender, conectar y celebrar nuestro 7º Aniversario."
+    },
+    "ponentes": {
+      "pill": "Ponentes",
+      "h2": "Las voces del evento.",
+      "sub": "Expertos de todo México se reúnen para nuestro 7º aniversario.",
+      "keynotesLabel": "Keynotes",
+      "talksLabel": "Charlas",
+      "panelLabel": "Panel"
+    },
+    "comunidadesAliadas": {
+      "pill": "Comunidades aliadas",
+      "h2": "Construido por la comunidad.",
+      "sub": "Diecisiete comunidades tech de todo México se unen al 7º aniversario para celebrar juntos frente al mar."
+    },
+    "patrocinadoresCta": {
+      "pill": "Patrocinadores",
+      "h2": "Lleva tu marca al 7º aniversario.",
+      "sub": "Paquetes desde $5,000 MXN — ayúdanos a hacer de esta edición de aniversario una noche memorable.",
+      "tiers": ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"],
+      "cta": "Ver paquetes de patrocinio",
+      "href": "/patrocinadores"
+    },
+    "patrocinadores": {
+      "pill": "Patrocinadores",
+      "h2": "Celebremos juntos.",
+      "sub": "Tu marca frente a la comunidad tech del Pacífico mexicano. Elige un paquete y ayúdanos a hacer del 7º aniversario una noche memorable.",
+      "morePopular": "Más popular",
+      "chooseLabel": "Elegir",
+      "singleSponsor": "Solo 1 patrocinador con este paquete por edición.",
+      "keynoteLabel": "Incluye keynote de 15 min",
+      "attendeeListLabel": "Lista de asistentes",
+      "uniqueQuota": "Único cupo",
+      "ticketPill": "Boleto del evento",
+      "ticketTitle": "Costo del evento",
+      "ticketBody": "Tu boleto incluye la playera oficial del 7º Aniversario + acceso completo al evento. Lo recaudado cubre la operación de la comunidad — sin fines de lucro.",
+      "ticketFineprint": "Los boletos cortesía del patrocinador NO se cobran y SÍ incluyen playera.",
+      "sponsorTicketPill": "Boletos para patrocinadores",
+      "sponsorTicketTitle": "Dos formas de usar tus cortesías",
+      "forTeamTitle": "Para tu equipo",
+      "forTeamBody": "Llévalos al evento: colaboradores, clientes, prospectos o invitados estratégicos.",
+      "forRaffleTitle": "Para una rifa en tus redes",
+      "forRaffleBody": "Convierte tus boletos en una dinámica de redes sociales «presentada por tu marca». PlayasOnTech amplifica el sorteo desde sus canales oficiales y el ganador recibe boleto + playera. Plus de engagement social y leads.",
+      "tierTicketNote": "Boletos cortesía por tier: Silver 2 · Gold 4 · Platinum 6 · Diamond 10 (máx)",
+      "attendeeOptInNote": "Los sponsors Gold, Platinum y Diamond reciben una lista con la información de los asistentes que dan consentimiento explícito al registrarse (nombre, email, empresa, rol). Para uso de marketing y/u ofertas laborales según los términos del acuerdo de patrocinio.",
+      "mediaPartnerPill": "Media partners",
+      "mediaPartnerH3": "¿Eres medio o creador?",
+      "mediaPartnerBody": "Suma a tu audiencia a la conversación. Buscamos aliados de difusión para amplificar el 7º aniversario.",
+      "mediaPartnerCta": "Ser media partner",
+      "customPrefix": "Solo el aniversario tiene esta estructura. Para ediciones bimestrales tenemos otro track con paquetes desde $500 MXN — ",
+      "customLink": "escríbenos",
+      "customSuffix": " para conocerlo.",
+      "homePath": "/",
+      "tiers": [
+        {
+          "name": "Silver",
+          "seats": "Sin límite de cupos",
+          "tagline": "Apoya a la comunidad y date a conocer.",
+          "benefits": [
+            "Logo en el sitio del evento (sección Silver)",
+            "Mención agrupada en redes sociales",
+            "Logo en pantalla durante intermedios",
+            "Mención en agradecimientos de cierre",
+            "Sticker físico en welcome kit",
+            "Atribución en YouTube (logo en descripción del recap)",
+            "Mención en los siguientes 3 newsletters bimestrales",
+            "2 boletos cortesía (úsalos para tu equipo o ríflalos en redes en nombre de tu marca)",
+            "Reporte post-evento a 30 días"
+          ]
+        },
+        {
+          "name": "Gold",
+          "seats": "Hasta 4 cupos por edición",
+          "tagline": "Presencia destacada en el venue y la noche.",
+          "benefits": [
+            "Todo lo de Silver",
+            "Mesa o stand en el venue",
+            "Logo en pantalla recurrente durante el evento",
+            "Mención individual desde el escenario",
+            "Materiales en welcome kit (pieza física + sticker)",
+            "Lightning sponsor moment (2 min onstage)",
+            "Mención en mail post-evento a asistentes",
+            "Lista de asistentes (Standard) — opt-ins con datos de contacto, entrega post-evento (día +3). Para marketing y/u ofertas laborales.",
+            "4 boletos cortesía (úsalos para tu equipo o ríflalos en redes)"
+          ]
+        },
+        {
+          "name": "Platinum",
+          "seats": "Hasta 2 cupos por edición",
+          "tagline": "Patrocinador principal — protagonista en escenario y venue.",
+          "benefits": [
+            "Todo lo de Gold",
+            "Keynote técnico de 15 min (slot principal de agenda)",
+            "Stand premium en venue",
+            "Logo en intro/outro del video oficial del evento",
+            "Post dedicado en redes pre-evento",
+            "Mención destacada en blog/recap post-evento",
+            "Lista de asistentes (Plus) — entrega 7 días pre-evento + segmentación por rol/seniority/industria. Para marketing y/u ofertas laborales.",
+            "Coffee Break by [Marca] (opcional)",
+            "6 boletos cortesía"
+          ]
+        },
+        {
+          "name": "Diamond",
+          "seats": "1 cupo · único por edición",
+          "tagline": "El 7º Aniversario, presentado por ti.",
+          "benefits": [
+            "Naming rights — «Presentado por [Marca]»",
+            "Welcome desde el escenario (5 min)",
+            "Keynote de apertura — 15 min",
+            "Co-branded lockup en TODOS los assets del evento",
+            "Recap video del evento, sponsoreado",
+            "Playera oficial co-branded",
+            "Espacio de activación premium",
+            "Mesa redonda o panel co-creado",
+            "Exclusividad de categoría",
+            "Contenido dedicado post-evento (blog + podcast + redes)",
+            "Lista de asistentes (Premium) — entrega 14 días pre-evento + segmentación + 3 intros directas a asistentes específicos. Para marketing y/u ofertas laborales.",
+            "10 boletos cortesía (máximo del paquete · úsalos para tu equipo o ríflalos en redes)",
+            "Acknowledgment en kits de prensa",
+            "Reunión de planeación con el equipo organizador",
+            "Right of first refusal — próxima edición"
+          ]
+        }
+      ],
+      "mediaPerks": [
+        "Difusión cruzada del evento",
+        "Cobertura y entrevistas",
+        "Acceso de prensa",
+        "Logo como media partner"
+      ]
+    },
+    "sponsors": {
+      "pill": "Patrocinadores",
+      "h2": "Gracias por hacerlo posible.",
+      "sub": "Empresas y marcas que se suman al 7º aniversario para construir comunidad tech en Manzanillo.",
+      "diamond": "Diamante",
+      "platinum": "Platino",
+      "gold": "Oro",
+      "silver": "Plata",
+      "bronze": "Bronce"
+    },
+    "ubicacion": {
+      "pill": "Ubicación",
+      "body": "Celebramos el 7º aniversario en la zona hotelera de Manzanillo, justo frente al mar. Los detalles de acceso al salón se confirman al reservar tu lugar.",
+      "amenities": ["Salón frente al mar", "Terraza para el brindis frente al mar", "Estacionamiento en el hotel"],
+      "cta": "Cómo llegar",
+      "mapTitlePrefix": "Mapa"
+    },
+    "registro": {
+      "pill": "Cupo limitado",
+      "h2": "Aparta tu lugar.",
+      "accessLine": "El espacio es limitado, reserva tu lugar con anticipación.",
+      "cta": "Reservar mi lugar",
+      "fineprint": "Registro gestionado por Eventbrite."
+    },
+    "countdown": {
+      "days": "días",
+      "hours": "horas",
+      "minutes": "min",
+      "seconds": "seg",
+      "today": "¡Hoy es el día!"
+    },
+    "nav": [
+      { "href": "/aniversario#programa", "label": "Programa" },
+      { "href": "/aniversario#ponentes", "label": "Ponentes" },
+      { "href": "/aniversario#patrocinadores", "label": "Patrocinadores" },
+      { "href": "/aniversario#comunidades-aliadas", "label": "Comunidades" },
+      { "href": "/aniversario#ubicacion", "label": "Ubicación" }
+    ],
+    "event": {
+      "edition": "7º Aniversario",
+      "editionTag": "Edición especial · 7ª edición",
+      "dateISO": "2026-07-18T10:00:00-06:00",
+      "dateLabel": "Sábado 18 de julio, 2026",
+      "timeLabel": "10:00 a 18:00 hrs",
+      "venue": "Hotel Marbella",
+      "venueCity": "Manzanillo, Colima",
+      "venueAddress": "Marbella 7, Playa Azul Salagua, 28218 Manzanillo, Col.",
+      "mapQuery": "Hotel Marbella Manzanillo Colima",
+      "eventbriteEventId": "1990496734315",
+      "eventbriteUrl": "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315?aff=oddtdtcreator"
+    }
+  },
+  "codigoConducta": {
+    "back": "← Volver al inicio",
+    "h1": "Código de Conducta",
+    "heroSub": "Queremos que cada encuentro de PlayasOnTech sea un espacio seguro y acogedor para todas las personas.",
+    "compromisoH2": "Nuestro compromiso",
+    "compromisoBody": "Queremos que cada evento sea un espacio seguro y acogedor para todas las personas. No toleramos ninguna forma de acoso o discriminación por motivos de género, orientación sexual, discapacidad, apariencia, raza, edad o religión.",
+    "esperadoH2": "Comportamiento esperado",
+    "esperado": [
+      "Participar de forma activa y respetuosa",
+      "Ser considerado con los demás participantes",
+      "Pedir consentimiento antes de fotografiar o grabar a alguien"
+    ],
+    "inaceptableH2": "Comportamiento inaceptable",
+    "inaceptable": [
+      "Comentarios sexuales o de otro tipo que no sean apropiados para el contexto",
+      "Intimidación, acoso o seguimiento deliberado",
+      "Publicar información privada de otros participantes",
+      "Cualquier otra conducta que sea considerada inapropiada en un espacio profesional"
+    ],
+    "reportarH2": "Cómo reportar",
+    "reportarBody": "Si experimentas o presencias comportamientos inaceptables, por favor repórtalo al equipo organizador a través de nuestro correo",
+    "reportarEmail": "contacto@playasontech.com",
+    "consecuenciasH2": "Consecuencias",
+    "consecuenciasBody": "El equipo organizador se reserva el derecho de tomar las medidas que considere necesarias, incluyendo la expulsión del evento sin reembolso.",
+    "closing": "Gracias por ayudarnos a mantener un espacio seguro y agradable para todos."
+  },
+  "terminos": {
+    "back": "← Volver al inicio",
+    "h1": "Términos y licencias",
+    "somosH2": "Quiénes somos",
+    "somosBody": "PlayasOnTech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025.",
+    "lucroH2": "Sin fines de lucro",
+    "lucroBody": "Organizada por voluntarios y sostenida por la comunidad. Cero ánimo de lucro: lo recaudado vuelve al evento.",
+    "ccH2": "Contenido — Creative Commons (CC BY 4.0)",
+    "ccBody": "Charlas, slides y grabaciones bajo licencia Creative Commons (CC BY 4.0). Compártelas y reutilízalas dando crédito.",
+    "ccLink": "CC BY 4.0",
+    "mitH2": "Software — Licencia MIT",
+    "mitBody": "Las demos y este sitio son software libre bajo licencia MIT. Úsalo, apréndelo, mejóralo.",
+    "mitLink": "Licencia MIT",
+    "conductaH2": "Código de conducta",
+    "conductaBody": "Un espacio seguro para todas las personas. Participar implica respetar nuestro código de conducta.",
+    "conductaLink": "Leer el código",
+    "avisoH2": "Aviso",
+    "avisoBody": "El uso de este sitio implica la aceptación de los términos aquí descritos. Si tienes dudas, escríbenos.",
+    "closing": "¿Dudas sobre estos términos? Escríbenos por Instagram."
+  },
+  "patrocinadoresPage": {
+    "back": "← Volver al 7º Aniversario",
+    "h1": "Patrocina el 7º aniversario.",
+    "cta": "Ver paquetes",
+    "reserve": "Reservar mi lugar"
+  },
+  "merch": {
+    "header": {
+      "ctaLabel": "7º Aniversario",
+      "ctaHref": "/aniversario"
+    },
+    "section": {
+      "pill": "Merch",
+      "title": "¡Compra ya tu merch del 7o aniversario!",
+      "subtitle": "Apoya a la comunidad adquiriendo la playera oficial del 7o aniversario.",
+      "price": "$300 MXN",
+      "cta": "Comprar ahora",
+      "deliveryTitle": "¿Cómo la recibo?",
+      "deliveryLocal": "En Colima: la recibes en la siguiente sesión de PlayasOnTech.",
+      "deliveryOther": "Fuera de Colima: en la próxima JSConf MX o la acordamos contigo."
+    }
+  }
+}

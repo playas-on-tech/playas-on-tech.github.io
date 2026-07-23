@@ -2,34 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useLang } from "@/lib/LangProvider";
-
-const COPY = {
-  es: {
-    pill: "Merch",
-    title: "¡Compra ya tu merch del 7o aniversario!",
-    subtitle: "Apoya a la comunidad adquiriendo la playera oficial del 7o aniversario.",
-    price: "$300 MXN",
-    cta: "Comprar ahora",
-    deliveryTitle: "¿Cómo la recibo?",
-    deliveryLocal: "En Colima: la recibes en la siguiente sesión de PlayasOnTech.",
-    deliveryOther: "Fuera de Colima: en la próxima JSConf MX o la acordamos contigo.",
-  },
-  en: {
-    pill: "Merch",
-    title: "Get your 7th anniversary merch now!",
-    subtitle: "Official PlayasOnTech seventh anniversary t-shirt. Exclusive design featuring the iconic community raccoon.",
-    price: "$300 MXN",
-    cta: "Buy now",
-    deliveryTitle: "How do I get it?",
-    deliveryLocal: "In Colima: pick it up at the next PlayasOnTech session.",
-    deliveryOther: "Outside the state: at the next JSConf MX or we'll arrange it with you.",
-  },
-} as const;
+import { useTranslation } from "react-i18next";
 
 export default function MerchSection() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
 
   return (
     <section id="top" className="mesh-hero grain relative overflow-hidden">
@@ -58,12 +34,12 @@ export default function MerchSection() {
           <div className="cine cine-2 flex flex-col justify-center md:w-1/2 mt-0 lg:mt-10">
             <div className="rounded-2xl bg-white p-8 shadow-lg">
               <h2 className="mt-4 text-[clamp(1.5rem,3vw,2.2rem)] font-semibold leading-[1.1] tracking-tightest">
-                {t.title}
+                {t("merch.section.title")}
               </h2>
               <p className="mt-3 text-base leading-relaxed">
-                {t.subtitle}
+                {t("merch.section.subtitle")}
               </p>
-              <p className="mt-5 text-center text-2xl font-bold text-ocean-400">{t.price}</p>
+              <p className="mt-5 text-center text-2xl font-bold text-ocean-400">{t("merch.section.price")}</p>
 
               <div className="mt-6 text-center">
                 <Link
@@ -72,15 +48,15 @@ export default function MerchSection() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-sunset px-6 py-3 text-[15px] font-semibold shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
                 >
-                  {t.cta}
+                  {t("merch.section.cta")}
                 </Link>
               </div>
 
               <div className="mt-8 border-t pt-6">
-                <p className="text-sm font-semibold">{t.deliveryTitle}</p>
+                <p className="text-sm font-semibold">{t("merch.section.deliveryTitle")}</p>
                 <ul className="mt-2 space-y-1.5 text-sm">
-                  <li>{t.deliveryLocal}</li>
-                  <li>{t.deliveryOther}</li>
+                  <li>{t("merch.section.deliveryLocal")}</li>
+                  <li>{t("merch.section.deliveryOther")}</li>
                 </ul>
               </div>
             </div>

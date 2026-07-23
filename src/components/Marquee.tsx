@@ -1,11 +1,6 @@
 "use client";
 import { Fragment } from "react";
-import { useLang } from "@/lib/LangProvider";
-
-const WORDS = {
-  es: ["Aprender", "Conectar", "Compartir", "Crear", "Reír", "Repetir"],
-  en: ["Learn", "Connect", "Share", "Create", "Laugh", "Repeat"],
-} as const;
+import { useTranslation } from "react-i18next";
 
 function Track({
   words,
@@ -39,8 +34,8 @@ function Track({
 }
 
 export default function Marquee() {
-  const { lang } = useLang();
-  const words = WORDS[lang];
+  const { t } = useTranslation();
+  const words = t("marquee", { returnObjects: true }) as string[];
   const ariaLabel = words.map((w) => w.toLowerCase()).join(", ");
   return (
     <section className="overflow-hidden border-y border-navy/10 bg-navy py-7 lg:py-9">

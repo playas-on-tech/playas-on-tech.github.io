@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
 
 const ICONS = {
   aprender:
@@ -15,73 +15,31 @@ const GRADIENTS = {
   compartir: "from-sunset to-ocean",
 } as const;
 
-const COPY = {
-  es: {
-    pill: "La comunidad",
-    h2: "Comunidad de desarrolladores y creadores en el Pacífico mexicano.",
-    sub: "Programadores, diseñadores, founders, estudiantes y curiosos de Manzanillo, Colima y toda la costa. Nos juntamos para aprender, conectar y compartir tecnología — sin importar tu nivel. Vengas de donde vengas, aquí cabes.",
-    cards: [
-      {
-        key: "aprender" as const,
-        title: "Aprender",
-        text: "Charlas y talleres de quienes construyen tecnología en la región y más allá. De lo práctico a lo experimental.",
-      },
-      {
-        key: "conectar" as const,
-        title: "Conectar",
-        text: "Conoce a la gente que está construyendo el futuro desde la costa. Las mejores colaboraciones empiezan con un café.",
-      },
-      {
-        key: "compartir" as const,
-        title: "Compartir",
-        text: "¿Tienes algo que enseñar? El micrófono es tuyo. Propón una charla y comparte lo que sabes con la comunidad.",
-      },
-    ],
-  },
-  en: {
-    pill: "The community",
-    h2: "Community of developers and creators in the Mexican Pacific.",
-    sub: "Programmers, designers, founders, students, and curious folks from Manzanillo, Colima, and the entire coast. We get together to learn, connect, and share technology — no matter your level. Wherever you come from, you belong here.",
-    cards: [
-      {
-        key: "aprender" as const,
-        title: "Learn",
-        text: "Talks and workshops from people building tech in the region and beyond. From practical to experimental.",
-      },
-      {
-        key: "conectar" as const,
-        title: "Connect",
-        text: "Meet the people building the future from the coast. The best collaborations start over coffee.",
-      },
-      {
-        key: "compartir" as const,
-        title: "Share",
-        text: "Got something to teach? The mic is yours. Propose a talk and share what you know with the community.",
-      },
-    ],
-  },
-} as const;
+type Card = {
+  key: keyof typeof ICONS;
+  title: string;
+  text: string;
+};
 
 export default function Comunidad() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
   return (
     <section id="comunidad" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
         <div className="reveal mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-              {t.pill}
+              {t("comunidad.pill")}
             </span>
             <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-              {t.h2}
+              {t("comunidad.h2")}
             </h2>
           </div>
-          <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">{t.sub}</p>
+          <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">{t("comunidad.sub")}</p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-3">
-          {t.cards.map((card) => (
+          {(t("comunidad.cards", { returnObjects: true }) as Card[]).map((card) => (
             <div
               key={card.key}
               className="reveal tilt group rounded-3xl border border-navy/10 bg-cream-100 p-8 hover:shadow-2xl hover:shadow-navy/10"

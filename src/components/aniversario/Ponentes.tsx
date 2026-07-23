@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 
 import speakersData from "@/data/speakers.json";
@@ -11,25 +11,6 @@ const SECTIONS = [
   { labelKey: "talksLabel" as const, speakers: speakersData.talks },
   { labelKey: "panelLabel" as const, speakers: speakersData.panels },
 ];
-
-const COPY = {
-  es: {
-    pill: "Ponentes",
-    h2: "Las voces del evento.",
-    sub: "Expertos de todo México se reúnen para nuestro 7º aniversario.",
-    keynotesLabel: "Keynotes",
-    talksLabel: "Charlas",
-    panelLabel: "Panel",
-  },
-  en: {
-    pill: "Speakers",
-    h2: "The voices of the event.",
-    sub: "Experts from across Mexico gather for our 7th anniversary.",
-    keynotesLabel: "Keynotes",
-    talksLabel: "Talks",
-    panelLabel: "Panel",
-  },
-} as const;
 
 function SpeakerCard({ speaker: s }: { speaker: Speaker }) {
   return (
@@ -74,8 +55,7 @@ function SpeakerCard({ speaker: s }: { speaker: Speaker }) {
 }
 
 export default function Ponentes() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
 
   return (
     <section id="ponentes" className="bg-cream-100 px-6 py-28 lg:py-36">
@@ -83,13 +63,13 @@ export default function Ponentes() {
         <div className="reveal mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-              {t.pill}
+              {t("aniversario.ponentes.pill")}
             </span>
             <h2 className="mt-5 max-w-[18ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-              {t.h2}
+              {t("aniversario.ponentes.h2")}
             </h2>
           </div>
-          <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">{t.sub}</p>
+          <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">{t("aniversario.ponentes.sub")}</p>
         </div>
 
         {SECTIONS.map((section, i) => (
@@ -97,7 +77,7 @@ export default function Ponentes() {
             <div className="mb-8 flex items-center gap-4">
               <span className="h-px flex-1 bg-navy/10" />
               <h3 className="text-3xl font-semibold leading-none tracking-tight text-navy">
-                {t[section.labelKey]}
+                {t(`aniversario.ponentes.${section.labelKey}`)}
               </h3>
               <span className="h-px flex-1 bg-navy/10" />
             </div>

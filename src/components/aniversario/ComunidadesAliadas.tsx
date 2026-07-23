@@ -1,18 +1,5 @@
 "use client";
-import { useLang } from "@/lib/LangProvider";
-
-const COPY = {
-  es: {
-    pill: "Comunidades aliadas",
-    h2: "Construido por la comunidad.",
-    sub: "Diecisiete comunidades tech de todo México se unen al 7º aniversario para celebrar juntos frente al mar.",
-  },
-  en: {
-    pill: "Allied communities",
-    h2: "Built by the community.",
-    sub: "Seventeen tech communities from across Mexico join the 7th anniversary to celebrate together by the sea.",
-  },
-} as const;
+import { useTranslation } from "react-i18next";
 
 const COMMUNITIES = [
   {
@@ -103,21 +90,20 @@ const COMMUNITIES = [
 ];
 
 export default function ComunidadesAliadas() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
 
   return (
     <section id="comunidades-aliadas" className="mesh-hero px-6 py-24 lg:py-32">
       <div className="mx-auto max-w-[1100px]">
         <div className="reveal mb-14 text-center">
           <span className="inline-block rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t.pill}
+            {t("aniversario.comunidadesAliadas.pill")}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest text-white">
-            {t.h2}
+            {t("aniversario.comunidadesAliadas.h2")}
           </h2>
           <p className="mx-auto mt-4 max-w-[52ch] text-lg leading-relaxed text-white/60">
-            {t.sub}
+            {t("aniversario.comunidadesAliadas.sub")}
           </p>
         </div>
 

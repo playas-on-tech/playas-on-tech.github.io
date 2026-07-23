@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
 
 const REPO_LICENSE = "https://github.com/playas-on-tech/playas-on-tech.github.io/blob/main/LICENSE";
 const CC_BY = "https://creativecommons.org/licenses/by/4.0/";
@@ -51,86 +51,7 @@ const ICONS = {
   ),
 };
 
-const COPY = {
-  es: {
-    pill: "Sobre nosotros",
-    h2: "Abiertos, sin fines de lucro.",
-    intro:
-      "PlayasOnTech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025. Reunimos a desarrolladores, diseñadores y creadores del Pacífico mexicano en meetups gratuitos cada dos meses, frente al mar. Todo lo que hacemos es de libre acceso: los eventos, las grabaciones de las charlas y los materiales. Nos sostenemos con donaciones de la comunidad y patrocinios de empresas locales.",
-    termsPrefix: "Consulta los",
-    termsLink: "términos y licencias completos",
-    termsHref: "/terminos",
-    terms: [
-      {
-        title: "Sin fines de lucro",
-        body: "Organizada por voluntarios y sostenida por la comunidad. Cero ánimo de lucro: lo recaudado vuelve al evento.",
-        icon: ICONS.heart,
-      },
-      {
-        title: "Contenido abierto",
-        body: "Charlas, slides y grabaciones bajo Creative Commons (CC BY 4.0). Compártelas y reutilízalas dando crédito.",
-        href: CC_BY,
-        external: true,
-        linkLabel: "CC BY 4.0",
-        icon: ICONS.share,
-      },
-      {
-        title: "Código abierto",
-        body: "Las demos y este sitio son software libre bajo licencia MIT. Úsalo, apréndelo, mejóralo.",
-        href: REPO_LICENSE,
-        external: true,
-        linkLabel: "Licencia MIT",
-        icon: ICONS.code,
-      },
-      {
-        title: "Código de conducta",
-        body: "Un espacio seguro para todas las personas. Participar implica respetar nuestro código de conducta.",
-        href: "/codigo-conducta",
-        linkLabel: "Leer el código",
-        icon: ICONS.shield,
-      },
-    ] as Term[],
-  },
-  en: {
-    pill: "About us",
-    h2: "Open, non-profit.",
-    intro:
-      "PlayasOnTech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025. We gather developers, designers, and creators from the Mexican Pacific in free meetups every two months, by the sea. Everything we do is freely accessible: events, talk recordings, and materials. We sustain ourselves through community donations and sponsorships from local businesses.",
-    termsPrefix: "See the",
-    termsLink: "full terms and licenses",
-    termsHref: "/terminos",
-    terms: [
-      {
-        title: "Non-profit",
-        body: "Organized by volunteers and sustained by the community. Zero profit motive: everything raised goes back to the event.",
-        icon: ICONS.heart,
-      },
-      {
-        title: "Open content",
-        body: "Talks, slides and recordings under Creative Commons (CC BY 4.0). Share and reuse them with attribution.",
-        href: CC_BY,
-        external: true,
-        linkLabel: "CC BY 4.0",
-        icon: ICONS.share,
-      },
-      {
-        title: "Open source",
-        body: "The demos and this site are free software under the MIT license. Use it, learn it, improve it.",
-        href: REPO_LICENSE,
-        external: true,
-        linkLabel: "MIT license",
-        icon: ICONS.code,
-      },
-      {
-        title: "Code of conduct",
-        body: "A safe space for everyone. Participating means respecting our code of conduct.",
-        href: "/codigo-conducta",
-        linkLabel: "Read the code",
-        icon: ICONS.shield,
-      },
-    ] as Term[],
-  },
-} as const;
+const TERMS_ICONS = [ICONS.heart, ICONS.share, ICONS.code, ICONS.shield];
 
 function TermLink({ term }: { term: Term }) {
   if (!term.href) return null;
@@ -156,23 +77,26 @@ function TermLink({ term }: { term: Term }) {
 }
 
 export default function SobreNosotros() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t, i18n } = useTranslation();
+  const terms = (t("sobreNosotros.terms", { returnObjects: true }) as Array<Omit<Term, "icon">>).map((term, i) => ({
+    ...term,
+    icon: TERMS_ICONS[i],
+  }));
   return (
     <section id="sobre-nosotros" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1100px]">
         <div className="reveal max-w-[680px]">
           <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t.pill}
+            {t("sobreNosotros.pill")}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            {t.h2}
+            {t("sobreNosotros.h2")}
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-navy/60">{t.intro}</p>
+          <p className="mt-4 text-lg leading-relaxed text-navy/60">{t("sobreNosotros.intro")}</p>
         </div>
 
         <div className="reveal mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {t.terms.map((term) => (
+          {terms.map((term) => (
             <div
               key={term.title}
               className="rounded-2xl border border-navy/10 bg-cream-100 p-6"
@@ -188,9 +112,9 @@ export default function SobreNosotros() {
         </div>
 
         <p className="reveal mt-8 text-navy/60">
-          {t.termsPrefix}{" "}
-          <Link href={t.termsHref} className="font-semibold text-ocean underline-offset-4 hover:underline">
-            {t.termsLink}
+          {t("sobreNosotros.termsPrefix")}{" "}
+          <Link href={t("sobreNosotros.termsHref")} className="font-semibold text-ocean underline-offset-4 hover:underline">
+            {t("sobreNosotros.termsLink")}
           </Link>
           .
         </p>

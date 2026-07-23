@@ -1,45 +1,23 @@
 "use client";
 import { ArrowRight, Play } from "./SocialIcons";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
 
 const CHANNEL_URL = "https://www.youtube.com/@PlayasOnTech";
 
-const COPY = {
-  es: {
-    pill: "Videos",
-    h2: "¿Te lo perdiste?",
-    seeAll: "Ver todas",
-    videos: [
-      { id: "C0U9Z_jO-0o", title: "Sesión Mayo 2026", meta: "Sesión completa · 2h 11m" },
-      { id: "V2vlUPn-v5Y", title: "Sesión Marzo 2026", meta: "Sesión completa · 1h 56m" },
-      { id: "preXoZ6zFuc", title: "Sesión Enero 2026", meta: "Sesión completa · 1h 18m" },
-    ],
-  },
-  en: {
-    pill: "Videos",
-    h2: "Missed it?",
-    seeAll: "See all",
-    videos: [
-      { id: "C0U9Z_jO-0o", title: "May 2026 session", meta: "Full session · 2h 11m" },
-      { id: "V2vlUPn-v5Y", title: "March 2026 session", meta: "Full session · 1h 56m" },
-      { id: "preXoZ6zFuc", title: "January 2026 session", meta: "Full session · 1h 18m" },
-    ],
-  },
-} as const;
+type VideoItem = { id: string; title: string; meta: string };
 
 export default function Videos() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
   return (
     <section id="videos" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
         <div className="mb-12 flex items-end justify-between gap-6">
           <div>
             <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-              {t.pill}
+              {t("videos.pill")}
             </span>
             <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-              {t.h2}
+              {t("videos.h2")}
             </h2>
           </div>
           <a
@@ -48,11 +26,11 @@ export default function Videos() {
             rel="noopener noreferrer"
             className="hidden items-center gap-2 text-[15px] font-semibold text-navy/70 transition hover:text-navy sm:flex"
           >
-            {t.seeAll} <ArrowRight size={16} />
+            {t("videos.seeAll")} <ArrowRight size={16} />
           </a>
         </div>
         <div className="reveal grid gap-5 md:grid-cols-3">
-          {t.videos.map((video) => (
+          {(t("videos.videos", { returnObjects: true }) as VideoItem[]).map((video) => (
             <a
               key={video.id}
               href={`https://www.youtube.com/watch?v=${video.id}`}

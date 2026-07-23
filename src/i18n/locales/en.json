@@ -1,0 +1,498 @@
+{
+  "hero": {
+    "h1a": "Manzanillo's tech community —",
+    "h1b": "by the sea.",
+    "sub": "Free meetup for developers, designers, and founders in the Mexican Pacific. Every two months, by the sea of Colima. No ties. With waves.",
+    "ctaPrimary": "Learn all about the 7th Anniversary",
+    "ctaSecondary": "Watch past talks",
+    "sticker": "FREE · EVERY 2 MONTHS · MANZANILLO · BY THE SEA · ",
+    "scrollCue": "Scroll"
+  },
+  "header": {
+    "nav": [
+      { "href": "#comunidad", "label": "Community" },
+      { "href": "#eventos", "label": "Events" },
+      { "href": "#venue", "label": "Venue" },
+      { "href": "#videos", "label": "Videos" },
+      { "href": "#donaciones", "label": "Donations" },
+      { "href": "#contacto", "label": "Contact" }
+    ],
+    "joinCta": "7th Anniversary",
+    "joinCtaMobile": "7th Aniv.",
+    "joinHref": "/aniversario"
+  },
+  "statement": {
+    "lead": "We believe the best ideas are born when the developer community gets together —",
+    "trail": "face to face, no hierarchies, with the sea in the background. That's why, since 2019, PlayasOnTech meetups gather those building tech in the Mexican Pacific every two months."
+  },
+  "marquee": ["Learn", "Connect", "Share", "Create", "Laugh", "Repeat"],
+  "statsStrip": {
+    "stats": [
+      { "color": "text-sunset", "label": "editions since 2019" },
+      { "prefix": "+", "color": "text-ocean", "label": "attendees in Manzanillo" },
+      { "color": "text-sunset", "label": "months between each meetup" },
+      { "suffix": "%", "color": "text-ocean", "label": "free · no cost · open" }
+    ]
+  },
+  "comunidad": {
+    "pill": "The community",
+    "h2": "Community of developers and creators in the Mexican Pacific.",
+    "sub": "Programmers, designers, founders, students, and curious folks from Manzanillo, Colima, and the entire coast. We get together to learn, connect, and share technology — no matter your level. Wherever you come from, you belong here.",
+    "cards": [
+      { "key": "aprender", "title": "Learn", "text": "Talks and workshops from people building tech in the region and beyond. From practical to experimental." },
+      { "key": "conectar", "title": "Connect", "text": "Meet the people building the future from the coast. The best collaborations start over coffee." },
+      { "key": "compartir", "title": "Share", "text": "Got something to teach? The mic is yours. Propose a talk and share what you know with the community." }
+    ]
+  },
+  "codeOfConduct": {
+    "h2": "An open, safe and inclusive tech community — for all people.",
+    "sub": "We take it seriously that every person feels welcome. That's why we have a clear code of conduct — read it before you come.",
+    "cta": "Read our code of conduct",
+    "href": "/codigo-conducta"
+  },
+  "eventos": {
+    "pill": "Events · Meetups",
+    "h2": "Tech meetups in Manzanillo — every two months.",
+    "soonTag": "Upcoming",
+    "cardTitle": "7th Anniversary · Edition #7",
+    "cardBody": "The next PlayasOnTech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Limited seats, ticket required.",
+    "details": [
+      { "label": "Date", "value": "Sat, Jul 18, 2026" },
+      { "label": "Time", "value": "10:00 to 18:00" },
+      { "label": "Venue", "value": "Hotel Marbella" }
+    ],
+    "cta": "See the 7th anniversary",
+    "ctaHref": "/aniversario"
+  },
+  "editionsTimeline": {
+    "pill": "The story",
+    "h2": "From edition #1 to the 7th anniversary.",
+    "sub": "Every two months, no exceptions, by the sea. This is the path that brought us here.",
+    "editionLabel": "Edition",
+    "nextTag": "Upcoming",
+    "watchSession": "Watch session",
+    "reserve": "Reserve seat",
+    "reserveHref": "/aniversario",
+    "editions": [
+      { "n": 1, "date": "Jul 2025", "title": "The first meetup" },
+      { "n": 2, "date": "Sep 2025", "title": "Community and code" },
+      { "n": 3, "date": "Nov 2025", "title": "Open source on the coast" },
+      { "n": 4, "date": "Jan 2026", "title": "Web animation with GSAP", "video": "preXoZ6zFuc" },
+      { "n": 5, "date": "Mar 2026", "title": "AI and authentication", "video": "V2vlUPn-v5Y" },
+      { "n": 6, "date": "May 2026", "title": "Builders by the sea", "video": "C0U9Z_jO-0o" },
+      { "n": 7, "date": "Jul 18, 2026", "title": "7th Anniversary", "next": true }
+    ]
+  },
+  "venue": {
+    "pill": "Venue",
+    "h2": "Where the magic happens.",
+    "body": "A comfortable space in Manzanillo with fast internet and even better vibes, steps from the sea. Each edition is held at a local venue; the exact location is announced with each meetup. Fast WiFi, coffee, and parking included.",
+    "alt": "Space where PlayasOnTech meetups are held in Manzanillo, Colima — by the sea",
+    "features": [
+      "Fast WiFi and plenty of outlets",
+      "Parking nearby",
+      "Coffee, snacks and good vibes"
+    ]
+  },
+  "videos": {
+    "pill": "Videos",
+    "h2": "Missed it?",
+    "seeAll": "See all",
+    "videos": [
+      { "id": "C0U9Z_jO-0o", "title": "May 2026 session", "meta": "Full session · 2h 11m" },
+      { "id": "V2vlUPn-v5Y", "title": "March 2026 session", "meta": "Full session · 1h 56m" },
+      { "id": "preXoZ6zFuc", "title": "January 2026 session", "meta": "Full session · 1h 18m" }
+    ]
+  },
+  "organizadores": {
+    "pill": "Organizers",
+    "h2": "Made by volunteers.",
+    "sub": "Every PlayasOnTech edition is put together by volunteers in their spare time, out of love for the community. Non-profit: just the desire to bring together those building tech on the coast.",
+    "ctaH3": "Want to join the team?",
+    "ctaBody": "We're looking for hands to organize, give talks, find venues and much more. No experience required, just the will to give back to the community.",
+    "cta": "I want to volunteer",
+    "ctaHref": "/en?category=Staff#contacto"
+  },
+  "sobreNosotros": {
+    "pill": "About us",
+    "h2": "Open, non-profit.",
+    "intro": "PlayasOnTech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025. We gather developers, designers, and creators from the Mexican Pacific in free meetups every two months, by the sea. Everything we do is freely accessible: events, talk recordings, and materials. We sustain ourselves through community donations and sponsorships from local businesses.",
+    "termsPrefix": "See the",
+    "termsLink": "full terms and licenses",
+    "termsHref": "/terminos",
+    "terms": [
+      { "title": "Non-profit", "body": "Organized by volunteers and sustained by the community. Zero profit motive: everything raised goes back to the event." },
+      { "title": "Open content", "body": "Talks, slides and recordings under Creative Commons (CC BY 4.0). Share and reuse them with attribution.", "href": "https://creativecommons.org/licenses/by/4.0/", "external": true, "linkLabel": "CC BY 4.0" },
+      { "title": "Open source", "body": "The demos and this site are free software under the MIT license. Use it, learn it, improve it.", "href": "https://github.com/playas-on-tech/playas-on-tech.github.io/blob/main/LICENSE", "external": true, "linkLabel": "MIT license" },
+      { "title": "Code of conduct", "body": "A safe space for everyone. Participating means respecting our code of conduct.", "href": "/codigo-conducta", "linkLabel": "Read the code" }
+    ]
+  },
+  "faq": {
+    "pill": "FAQ",
+    "h2": "Frequently Asked Questions about PlayasOnTech",
+    "sub": "Everything you need to know before joining the tech meetup of the Mexican Pacific.",
+    "items": [
+      { "q": "What is PlayasOnTech?", "a": "PlayasOnTech is Manzanillo's tech community in Colima, Mexico. It gathers developers, designers, founders, and tech enthusiasts in free meetups held every two months, by the sea. Since July 2025, we have held six editions with over 200 cumulative attendees." },
+      { "q": "Where is PlayasOnTech held?", "a": "The meetups are held in Manzanillo, Colima, Mexico — at venues in the hotel zone, always near or by the sea. The 7th edition (July 2026) will take place at Hotel Marbella, on Playa Azul Salagua." },
+      { "q": "When is the next event?", "a": "The next meetup is our 7th anniversary: Saturday, July 18, 2026, from 10:00 AM to 6:00 PM, at Hotel Marbella, Manzanillo. After that date, we will maintain our bi-monthly cadence." },
+      { "q": "How much does it cost to attend?", "a": "Attending PlayasOnTech is 100% free. We do not charge for entry, registration, or materials — we support ourselves through community donations and sponsorships." },
+      { "q": "Who can attend? Do I need tech experience?", "a": "Anyone interested in technology can attend. No prior experience is required: we welcome senior developers, students, designers, founders, and the curious. If you want to learn or meet the coast's tech community, you belong here." },
+      { "q": "How do I register?", "a": "Registration is done on playasontech.com, in the next event section. For the 7th anniversary, registration is managed via Eventbrite with a $350 MXN recovery fee, and space is limited." },
+      { "q": "What kind of talks are given?", "a": "We cover broad tech topics: web development, GSAP animation, AI and authentication, open source, community, and coding. There are deep technical talks, lightning talks, and panels. Recordings are uploaded to our YouTube channel @PlayasOnTech." },
+      { "q": "How do I propose a talk?", "a": "Anyone can propose a talk through our public form — the link is in the 'Volunteer' section and in the footer. We review submissions in order and reply before each edition's program closes." },
+      { "q": "Who organizes PlayasOnTech?", "a": "PlayasOnTech is organized by a team of volunteers in their free time, on a non-profit basis. The current team: Danny, Franky, H, Juaneque, Kev, and Mane. We are always looking for new hands to join the team." },
+      { "q": "Are there similar tech communities in Manzanillo or Colima?", "a": "PlayasOnTech is the largest active tech community on the Colima coast, with a bi-monthly cadence and free admission. If you know of another local tech initiative that would like to collaborate, write to us." },
+      { "q": "How do I support the community?", "a": "You can support us in three ways: (1) donating via PayPal or Patreon — the links are in the Donations section; (2) sponsoring an edition or the anniversary, with packages starting at $5,000 MXN; (3) joining the organizing team as a volunteer." },
+      { "q": "Are there recordings of past events?", "a": "Yes. All recent sessions are on our YouTube channel — @PlayasOnTech — under the Creative Commons license (CC BY 4.0). You can watch, share, and reuse them with attribution." }
+    ]
+  },
+  "donaciones": {
+    "h2": "Help us keep the community alive.",
+    "body": "PlayasOnTech is 100% free. Every contribution helps us keep organizing free events for the community — covering venue, coffee and gear.",
+    "paypal": "Donate with PayPal",
+    "patreon": "Support us on Patreon"
+  },
+  "contacto": {
+    "pill": "Let's talk?",
+    "h2": "Get in touch with us.",
+    "sub": "Want to propose a talk, sponsor the next event, or have a general question? Write to us and we'll get back as soon as possible.",
+    "locationLabel": "Manzanillo, Colima, Mexico",
+    "successH3": "Message sent!",
+    "successBody": "Thanks for writing. We'll get back to you shortly via email.",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "categoryLabel": "What's it about?",
+    "categories": [
+      { "value": "General", "label": "General / Questions" },
+      { "value": "Sponsor", "label": "Sponsor / Partnership" },
+      { "value": "Speaker", "label": "Speaker / Talks" },
+      { "value": "Staff", "label": "Staff / Volunteer" },
+      { "value": "Otro", "label": "Other" }
+    ],
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Subject of your message",
+    "packageLabel": "Sponsorship package",
+    "packagePlaceholder": "Select a package",
+    "packages": [
+      { "value": "Diamond", "label": "Diamond ($40,000 MXN / US$2,400)" },
+      { "value": "Platinum", "label": "Platinum ($20,000 MXN / US$1,200)" },
+      { "value": "Gold", "label": "Gold ($10,000 MXN / US$600)" },
+      { "value": "Silver", "label": "Silver ($5,000 MXN / US$300)" },
+      { "value": "MediaPartner", "label": "Media Partner" },
+      { "value": "Custom", "label": "Custom package" }
+    ],
+    "speakerCalloutH4": "🎤 We want to hear you on stage!",
+    "speakerCalloutBody": "To propose your talk and help us evaluate your proposal properly, please fill out our official speaker form:",
+    "speakerCta": "Fill speaker form",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "submitting": "Sending...",
+    "submit": "Send message",
+    "errorRequired": "Please fill in all required fields.",
+    "errorPackage": "Please select a sponsorship package.",
+    "errorApi": "Sorry, there was a problem sending your message. Please try again later.",
+    "errorNetwork": "Could not send your message due to a network problem. Check your connection and try again.",
+    "subjectFallback": "New Message"
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "Navigation",
+        "links": [
+          { "href": "/#comunidad", "label": "The tech community of Manzanillo" },
+          { "href": "/#eventos", "label": "Upcoming meetups" },
+          { "href": "/#venue", "label": "Where we meet" },
+          { "href": "/#videos", "label": "Recorded talks" },
+          { "href": "/#sobre-nosotros", "label": "Who we are" },
+          { "href": "/#contacto", "label": "Contact" }
+        ]
+      },
+      {
+        "title": "Community",
+        "links": [
+          { "href": "/codigo-conducta", "label": "Code of conduct" },
+          { "href": "/#donaciones", "label": "Support the community" },
+          { "href": "https://forms.gle/XwvZK3BVu2KdaNfWA", "label": "Propose a talk" },
+          { "href": "/#organizadores", "label": "Join the organizing team" },
+          { "href": "/aniversario", "label": "7th Anniversary" }
+        ]
+      }
+    ],
+    "blurb": "Tech community of Manzanillo, Colima. Free meetups for developers, designers, and founders every two months, by the sea — since 2025.",
+    "copyright": "© 2026 PlayasOnTech · Manzanillo, Colima",
+    "termsLabel": "Terms and licenses",
+    "termsHref": "/terminos",
+    "handmade": "Made by the sea, by the community"
+  },
+  "aniversario": {
+    "header": {
+      "reserve": "Reserve",
+      "homeHref": "/",
+      "registroHref": "/aniversario#registro"
+    },
+    "hero": {
+      "h1a": "We celebrate our 7th anniversary",
+      "h1b": "by the sea.",
+      "sub": "Seven editions of community, talks and waves. This is the edition that celebrates it — a special day of talks, networking and a toast by the sea of Manzanillo.",
+      "ctaReserve": "Reserve my seat",
+      "ctaProgram": "See program",
+      "countdownLabel": "Time left"
+    },
+    "agenda": {
+      "pill": "Program",
+      "h2": "Event agenda",
+      "sub": "An afternoon-evening to learn, connect and celebrate our 7th Anniversary."
+    },
+    "ponentes": {
+      "pill": "Speakers",
+      "h2": "The voices of the event.",
+      "sub": "Experts from across Mexico gather for our 7th anniversary.",
+      "keynotesLabel": "Keynotes",
+      "talksLabel": "Talks",
+      "panelLabel": "Panel"
+    },
+    "comunidadesAliadas": {
+      "pill": "Allied communities",
+      "h2": "Built by the community.",
+      "sub": "Seventeen tech communities from across Mexico join the 7th anniversary to celebrate together by the sea."
+    },
+    "patrocinadoresCta": {
+      "pill": "Sponsors",
+      "h2": "Bring your brand to the 7th anniversary.",
+      "sub": "Packages from $5,000 MXN — help us make this anniversary edition a memorable night.",
+      "tiers": ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"],
+      "cta": "See sponsorship packages",
+      "href": "/patrocinadores"
+    },
+    "patrocinadores": {
+      "pill": "Sponsors",
+      "h2": "Let's celebrate together.",
+      "sub": "Your brand in front of the Mexican Pacific tech community. Pick a package and help us make the 7th anniversary a memorable night.",
+      "morePopular": "Most popular",
+      "chooseLabel": "Choose",
+      "singleSponsor": "Only 1 sponsor with this package per edition.",
+      "keynoteLabel": "Includes 15 min keynote",
+      "attendeeListLabel": "Attendee list",
+      "uniqueQuota": "Only slot",
+      "ticketPill": "Event Ticket",
+      "ticketTitle": "Event Cost",
+      "ticketBody": "Your ticket includes the official 7th Anniversary t-shirt + full access to the event. Proceeds cover the community's operations — non-profit.",
+      "ticketFineprint": "Sponsor complimentary tickets are FREE of charge and DO include a t-shirt.",
+      "sponsorTicketPill": "Sponsor Tickets",
+      "sponsorTicketTitle": "Two ways to use your complimentary tickets",
+      "forTeamTitle": "For your team",
+      "forTeamBody": "Bring them to the event: collaborators, clients, prospects, or strategic guests.",
+      "forRaffleTitle": "For a raffle on your social media",
+      "forRaffleBody": "Turn your tickets into a social media dynamic 'presented by your brand'. PlayasOnTech amplifies the giveaway from its official channels and the winner receives a ticket + t-shirt. A plus for social engagement and leads.",
+      "tierTicketNote": "Complimentary tickets by tier: Silver 2 · Gold 4 · Platinum 6 · Diamond 10 (max)",
+      "attendeeOptInNote": "Gold, Platinum, and Diamond sponsors receive a list of attendees who provide explicit consent upon registration (name, email, company, role). For marketing and/or job offer use according to the terms of the sponsorship agreement.",
+      "mediaPartnerPill": "Media partners",
+      "mediaPartnerH3": "Are you a media outlet or creator?",
+      "mediaPartnerBody": "Bring your audience into the conversation. We're looking for broadcast allies to amplify the 7th anniversary.",
+      "mediaPartnerCta": "Become a media partner",
+      "customPrefix": "Only the anniversary has this structure. For bi-monthly editions we have another track with packages starting at $500 MXN — ",
+      "customLink": "write to us",
+      "customSuffix": " to learn about it.",
+      "homePath": "/en",
+      "tiers": [
+        {
+          "name": "Silver",
+          "seats": "Unlimited seats",
+          "tagline": "Support the community and get yourself known.",
+          "benefits": [
+            "Logo on the event site (Silver section)",
+            "Grouped mention on social media",
+            "Logo on screen during breaks",
+            "Mention in closing acknowledgments",
+            "Physical sticker in welcome kit",
+            "YouTube attribution (logo in recap description)",
+            "Mention in the next 3 bi-monthly newsletters",
+            "2 complimentary tickets (use for your team or raffle them on social media in your brand's name)",
+            "30-day post-event report"
+          ]
+        },
+        {
+          "name": "Gold",
+          "seats": "Up to 4 slots per edition",
+          "tagline": "Featured presence at the venue and during the night.",
+          "benefits": [
+            "Everything in Silver",
+            "Table or booth at the venue",
+            "Recurring logo on screen during the event",
+            "Individual mention from the stage",
+            "Welcome kit inserts (physical item + sticker)",
+            "Lightning sponsor moment (2 min onstage)",
+            "Mention in post-event email to attendees",
+            "Attendee list (Standard) — opt-ins with contact info, delivered post-event (day +3). For marketing and/or job offers.",
+            "4 complimentary tickets (use for your team or raffle them on social media)"
+          ]
+        },
+        {
+          "name": "Platinum",
+          "seats": "Up to 2 slots per edition",
+          "tagline": "Headline sponsor — protagonist on stage and at the venue.",
+          "benefits": [
+            "Everything in Gold",
+            "15-min technical keynote (main agenda slot)",
+            "Premium stand at the venue",
+            "Logo in intro/outro of the official event video",
+            "Dedicated post on social media pre-event",
+            "Featured mention in post-event blog/recap",
+            "Attendee list (Plus) — delivery 7 days pre-event + segmentation by role/seniority/industry. For marketing and/or job offers.",
+            "Coffee Break by [Brand] (optional)",
+            "6 complimentary tickets"
+          ]
+        },
+        {
+          "name": "Diamond",
+          "seats": "1 slot · unique per edition",
+          "tagline": "The 7th Anniversary, presented by you.",
+          "benefits": [
+            "Naming rights — «Presented by [Brand]»",
+            "Welcome speech from the stage (5 min)",
+            "Opening keynote — 15 min",
+            "Co-branded lockup on ALL event assets",
+            "Sponsored event recap video",
+            "Co-branded official t-shirt",
+            "Premium activation space",
+            "Co-created roundtable or panel",
+            "Category exclusivity",
+            "Dedicated post-event content (blog + podcast + social)",
+            "Attendee list (Premium) — delivery 14 days pre-event + segmentation + 3 direct intros to specific attendees. For marketing and/or job offers.",
+            "10 complimentary tickets (package max · use for your team or raffle them on social)",
+            "Acknowledgment in press kits",
+            "Planning meeting with the organizing team",
+            "Right of first refusal — next edition"
+          ]
+        }
+      ],
+      "mediaPerks": [
+        "Cross-promotion of the event",
+        "Coverage and interviews",
+        "Press access",
+        "Logo as media partner"
+      ]
+    },
+    "sponsors": {
+      "pill": "Sponsors",
+      "h2": "Thanks for making it possible.",
+      "sub": "Companies and brands joining the 7th anniversary to build tech community in Manzanillo.",
+      "diamond": "Diamond",
+      "platinum": "Platinum",
+      "gold": "Gold",
+      "silver": "Silver",
+      "bronze": "Bronze"
+    },
+    "ubicacion": {
+      "pill": "Location",
+      "body": "We celebrate the 7th anniversary in Manzanillo's hotel zone, right by the sea. Room access details are confirmed when you reserve your seat.",
+      "amenities": ["Beachfront ballroom", "Terrace for the toast by the sea", "Parking at the hotel"],
+      "cta": "Get directions",
+      "mapTitlePrefix": "Map"
+    },
+    "registro": {
+      "pill": "Limited seats",
+      "h2": "Reserve your seat.",
+      "accessLine": "Space is limited, reserve your seat in advance.",
+      "cta": "Reserve my seat",
+      "fineprint": "Registration managed by Eventbrite."
+    },
+    "countdown": {
+      "days": "days",
+      "hours": "hours",
+      "minutes": "min",
+      "seconds": "sec",
+      "today": "Today is the day!"
+    },
+    "nav": [
+      { "href": "/aniversario#programa", "label": "Program" },
+      { "href": "/aniversario#ponentes", "label": "Speakers" },
+      { "href": "/aniversario#patrocinadores", "label": "Sponsors" },
+      { "href": "/aniversario#comunidades-aliadas", "label": "Communities" },
+      { "href": "/aniversario#ubicacion", "label": "Location" }
+    ],
+    "event": {
+      "edition": "7th Anniversary",
+      "editionTag": "Special edition · 7th meetup",
+      "dateISO": "2026-07-18T10:00:00-06:00",
+      "dateLabel": "Saturday, July 18, 2026",
+      "timeLabel": "10:00 to 18:00",
+      "venue": "Hotel Marbella",
+      "venueCity": "Manzanillo, Colima",
+      "venueAddress": "Marbella 7, Playa Azul Salagua, 28218 Manzanillo, Col.",
+      "mapQuery": "Hotel Marbella Manzanillo Colima",
+      "eventbriteEventId": "1990496734315",
+      "eventbriteUrl": "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315?aff=oddtdtcreator"
+    }
+  },
+  "codigoConducta": {
+    "back": "← Back to home",
+    "h1": "Code of Conduct",
+    "heroSub": "We want every PlayasOnTech meetup to be a safe and welcoming space for everyone.",
+    "compromisoH2": "Our commitment",
+    "compromisoBody": "We want every event to be a safe and welcoming space for everyone. We do not tolerate any form of harassment or discrimination based on gender, sexual orientation, disability, appearance, race, age, or religion.",
+    "esperadoH2": "Expected behavior",
+    "esperado": [
+      "Participate actively and respectfully",
+      "Be considerate of other attendees",
+      "Ask for consent before photographing or recording someone"
+    ],
+    "inaceptableH2": "Unacceptable behavior",
+    "inaceptable": [
+      "Sexual or other comments not appropriate for the context",
+      "Intimidation, harassment, or deliberate stalking",
+      "Publishing private information of other attendees",
+      "Any other conduct considered inappropriate in a professional setting"
+    ],
+    "reportarH2": "How to report",
+    "reportarBody": "If you experience or witness unacceptable behavior, please report it to the organizing team via our email",
+    "reportarEmail": "contacto@playasontech.com",
+    "consecuenciasH2": "Consequences",
+    "consecuenciasBody": "The organizing team reserves the right to take any action they deem necessary, including expulsion from the event without refund.",
+    "closing": "Thank you for helping us maintain a safe and pleasant space for everyone."
+  },
+  "terminos": {
+    "back": "← Back to home",
+    "h1": "Terms and licenses",
+    "somosH2": "Who we are",
+    "somosBody": "PlayasOnTech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025.",
+    "lucroH2": "Non-profit",
+    "lucroBody": "Organized by volunteers and sustained by the community. Zero profit motive: everything raised goes back to the event.",
+    "ccH2": "Content — Creative Commons (CC BY 4.0)",
+    "ccBody": "Talks, slides and recordings under the Creative Commons (CC BY 4.0) license. Share and reuse them with attribution.",
+    "ccLink": "CC BY 4.0",
+    "mitH2": "Software — MIT License",
+    "mitBody": "The demos and this site are free software under the MIT license. Use it, learn it, improve it.",
+    "mitLink": "MIT license",
+    "conductaH2": "Code of conduct",
+    "conductaBody": "A safe space for everyone. Participating means respecting our code of conduct.",
+    "conductaLink": "Read the code",
+    "avisoH2": "Notice",
+    "avisoBody": "Using this site implies acceptance of the terms described here. If you have questions, write to us.",
+    "closing": "Questions about these terms? Write to us on Instagram."
+  },
+  "patrocinadoresPage": {
+    "back": "← Back to 7th Anniversary",
+    "h1": "Sponsor the 7th anniversary.",
+    "cta": "See packages",
+    "reserve": "Reserve my seat"
+  },
+  "merch": {
+    "header": {
+      "ctaLabel": "7th Anniversary",
+      "ctaHref": "/aniversario"
+    },
+    "section": {
+      "pill": "Merch",
+      "title": "Get your 7th anniversary merch now!",
+      "subtitle": "Official PlayasOnTech seventh anniversary t-shirt. Exclusive design featuring the iconic community raccoon.",
+      "price": "$300 MXN",
+      "cta": "Buy now",
+      "deliveryTitle": "How do I get it?",
+      "deliveryLocal": "In Colima: pick it up at the next PlayasOnTech session.",
+      "deliveryOther": "Outside the state: at the next JSConf MX or we'll arrange it with you."
+    }
+  }
+}
