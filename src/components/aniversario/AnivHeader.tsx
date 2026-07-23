@@ -1,84 +1,24 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { ArrowUpRight } from "../Icons";
+import Navbar from "../Navbar";
 import { anivNav } from "./event";
 import { useLang } from "@/lib/LangProvider";
 
 const COPY = {
-  es: { reserve: "Reservar", homeHref: "/", registroHref: "/aniversario#registro" },
-  en: { reserve: "Reserve", homeHref: "/", registroHref: "/aniversario#registro" },
+  es: { reserve: "Reservar", registroHref: "/aniversario#registro" },
+  en: { reserve: "Reserve", registroHref: "/aniversario#registro" },
 } as const;
 
 export default function AnivHeader() {
-  const [scrolled, setScrolled] = useState(false);
-  const scrolledRef = useRef(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (scrolledRef.current !== isScrolled) {
-        scrolledRef.current = isScrolled;
-        setScrolled(isScrolled);
-      }
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const { lang, setLang } = useLang();
+  const { lang } = useLang();
   const t = COPY[lang];
   const nav = anivNav(lang);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
-      <nav className="mx-auto max-w-[1400px] px-3 min-[360px]:px-4 sm:px-6 lg:px-10 mt-4">
-        <div
-          className={`glass flex items-center justify-between rounded-full border px-2.5 min-[360px]:px-3 py-2 sm:px-4 sm:py-2.5 transition-all duration-300 ${
-            scrolled
-              ? "border-white/20 bg-navy-900/90 shadow-2xl shadow-navy-900/40"
-              : "border-white/15 bg-white/10 shadow-lg shadow-navy/5"
-          }`}
-        >
-          <Link href={t.homeHref} className="flex items-center gap-1.5 sm:gap-2 pl-1 shrink-0">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/app-icon.webp" alt="Playas on Tech" className="h-8 w-8 sm:h-9 sm:w-9 object-contain drop-shadow" />
-            <span className="hidden min-[360px]:inline text-[15px] sm:text-[17px] font-bold tracking-tight text-white drop-shadow">
-              Playas<span className="text-ocean-300">On</span>Tech
-            </span>
-          </Link>
-          <ul className="hidden items-center gap-7 text-[15px] font-medium text-white/90 lg:flex">
-            {nav.map((link) => (
-              <li key={link.href}>
-                <Link className="transition hover:text-white" href={link.href}>
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <button
-              onClick={() => setLang(lang === "es" ? "en" : "es")}
-              aria-label={lang === "es" ? "Switch to English" : "Cambiar a Español"}
-              className="rounded-full border border-white/20 px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs font-semibold text-white/80 transition hover:bg-white/10 hover:text-white shrink-0"
-            >
-              {lang === "es" ? "EN" : "ES"}
-            </button>
-            <Link
-              href={t.registroHref}
-              className="group flex items-center gap-1.5 sm:gap-2 rounded-full bg-sunset py-1 sm:py-1.5 pl-3 sm:pl-4 pr-1 sm:pr-1.5 text-xs sm:text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98] whitespace-nowrap"
-            >
-              {t.reserve}
-              <span className="grid h-6 w-6 sm:h-7 sm:w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
-                <ArrowUpRight size={12} className="sm:hidden" />
-                <ArrowUpRight size={14} className="hidden sm:block" />
-              </span>
-            </Link>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <Navbar
+      navLinks={[...nav]}
+      ctaLabel={t.reserve}
+      ctaHref={t.registroHref}
+    />
   );
 }
