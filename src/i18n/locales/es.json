@@ -23,7 +23,7 @@
   },
   "statement": {
     "lead": "Creemos que las mejores ideas nacen cuando la comunidad de desarrolladores se junta —",
-    "trail": "cara a cara, sin jerarquías, con el mar de fondo. Por eso, desde 2019, los meetups de Playas on Tech reúnen cada dos meses a quienes construyen tecnología en el Pacífico mexicano."
+    "trail": "cara a cara, sin jerarquías, con el mar de fondo. Por eso, desde 2019, los meetups de PlayasOnTech reúnen cada dos meses a quienes construyen tecnología en el Pacífico mexicano."
   },
   "marquee": ["Aprender", "Conectar", "Compartir", "Crear", "Reír", "Repetir"],
   "statsStrip": {
@@ -55,7 +55,7 @@
     "h2": "Meetups tech en Manzanillo — cada dos meses.",
     "soonTag": "Próximo encuentro",
     "cardTitle": "7º Aniversario · Edición #7",
-    "cardBody": "El próximo meetup de Playas on Tech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Cupo limitado, requiere boleto.",
+    "cardBody": "El próximo meetup de PlayasOnTech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Cupo limitado, requiere boleto.",
     "details": [
       { "label": "Fecha", "value": "Sáb 18 jul 2026" },
       { "label": "Hora", "value": "10:00 a 18:00 hrs" },
@@ -87,7 +87,7 @@
     "pill": "Venue",
     "h2": "Donde sucede la magia.",
     "body": "Un espacio cómodo en Manzanillo, con buen internet y mejor ambiente, a unos pasos del mar. Cada edición se realiza en un venue local; el lugar exacto se anuncia con cada meetup. WiFi rápido, café y estacionamiento incluidos.",
-    "alt": "Espacio donde se realizan los meetups de Playas on Tech en Manzanillo, Colima — frente al mar",
+    "alt": "Espacio donde se realizan los meetups de PlayasOnTech en Manzanillo, Colima — frente al mar",
     "features": [
       "WiFi rápido y enchufes de sobra",
       "Estacionamiento cercano",
@@ -107,7 +107,7 @@
   "organizadores": {
     "pill": "Organizadores",
     "h2": "Hecho por voluntarios.",
-    "sub": "Cada edición de Playas on Tech la organiza un grupo de voluntarios en su tiempo libre, por amor a la comunidad. Sin fines de lucro: solo ganas de juntar a quienes construyen tecnología en la costa.",
+    "sub": "Cada edición de PlayasOnTech la organiza un grupo de voluntarios en su tiempo libre, por amor a la comunidad. Sin fines de lucro: solo ganas de juntar a quienes construyen tecnología en la costa.",
     "ctaH3": "¿Te gustaría ser parte del equipo?",
     "ctaBody": "Buscamos manos para organizar, dar charlas, conseguir venue y mucho más. No necesitas experiencia, solo ganas de aportar a la comunidad.",
     "cta": "Quiero ser voluntario",
@@ -116,7 +116,7 @@
   "sobreNosotros": {
     "pill": "Sobre nosotros",
     "h2": "Abiertos, sin fines de lucro.",
-    "intro": "Playas on Tech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025. Reunimos a desarrolladores, diseñadores y creadores del Pacífico mexicano en meetups gratuitos cada dos meses, frente al mar. Todo lo que hacemos es de libre acceso: los eventos, las grabaciones de las charlas y los materiales. Nos sostenemos con donaciones de la comunidad y patrocinios de empresas locales.",
+    "intro": "PlayasOnTech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025. Reunimos a desarrolladores, diseñadores y creadores del Pacífico mexicano en meetups gratuitos cada dos meses, frente al mar. Todo lo que hacemos es de libre acceso: los eventos, las grabaciones de las charlas y los materiales. Nos sostenemos con donaciones de la comunidad y patrocinios de empresas locales.",
     "termsPrefix": "Consulta los",
     "termsLink": "términos y licencias completos",
     "termsHref": "/terminos",
@@ -129,26 +129,26 @@
   },
   "faq": {
     "pill": "FAQ",
-    "h2": "Preguntas frecuentes sobre Playas on Tech",
+    "h2": "Preguntas frecuentes sobre PlayasOnTech",
     "sub": "Todo lo que necesitas saber antes de unirte al meetup tech del Pacífico mexicano.",
     "items": [
-      { "q": "¿Qué es Playas on Tech?", "a": "Playas on Tech es la comunidad de tecnología de Manzanillo, Colima. Reúne a desarrolladores, diseñadores, founders y entusiastas de la tecnología en meetups gratuitos que se realizan cada dos meses, frente al mar. Desde julio de 2025 hemos celebrado seis ediciones, con más de 200 asistentes acumulados." },
-      { "q": "¿Dónde se realiza Playas on Tech?", "a": "Los meetups se realizan en Manzanillo, Colima, México — en venues de la zona hotelera, siempre cerca o frente al mar. La 7ª edición (julio 2026) será en el Hotel Marbella, sobre Playa Azul Salagua." },
+      { "q": "¿Qué es PlayasOnTech?", "a": "PlayasOnTech es la comunidad de tecnología de Manzanillo, Colima. Reúne a desarrolladores, diseñadores, founders y entusiastas de la tecnología en meetups gratuitos que se realizan cada dos meses, frente al mar. Desde julio de 2025 hemos celebrado seis ediciones, con más de 200 asistentes acumulados." },
+      { "q": "¿Dónde se realiza PlayasOnTech?", "a": "Los meetups se realizan en Manzanillo, Colima, México — en venues de la zona hotelera, siempre cerca o frente al mar. La 7ª edición (julio 2026) será en el Hotel Marbella, sobre Playa Azul Salagua." },
       { "q": "¿Cuándo es el próximo evento?", "a": "El próximo meetup es nuestro 7º aniversario: sábado 18 de julio de 2026, de 10:00 a 18:00 hrs, en el Hotel Marbella, Manzanillo. Después de esa fecha, mantenemos cadencia bimestral." },
-      { "q": "¿Cuánto cuesta asistir?", "a": "La asistencia a Playas on Tech es 100% gratuita. No cobramos entrada, registro ni materiales — nos sostenemos con donaciones de la comunidad y patrocinios." },
+      { "q": "¿Cuánto cuesta asistir?", "a": "La asistencia a PlayasOnTech es 100% gratuita. No cobramos entrada, registro ni materiales — nos sostenemos con donaciones de la comunidad y patrocinios." },
       { "q": "¿Quién puede asistir? ¿Necesito experiencia en tecnología?", "a": "Cualquier persona interesada en tecnología puede asistir. No se requiere experiencia previa: recibimos desarrolladores senior, estudiantes, diseñadores, founders y curiosos. Si quieres aprender o conocer a la comunidad tech de la costa, aquí cabes." },
       { "q": "¿Cómo me registro?", "a": "El registro se hace en playasontech.com, en la sección del próximo evento. Para el 7º aniversario, el registro se gestiona vía Eventbrite con una cuota de recuperación de $350 MXN, y el cupo es limitado." },
       { "q": "¿Qué tipo de charlas se dan?", "a": "Cubrimos temas amplios de tecnología: desarrollo web, animación con GSAP, IA y autenticación, open source, comunidad y código. Hay charlas técnicas profundas, lightning talks y paneles. Las grabaciones quedan en nuestro canal de YouTube @PlayasOnTech." },
       { "q": "¿Cómo propongo una charla?", "a": "Cualquier persona puede proponer una charla a través de nuestro formulario público — el enlace está en la sección «Sé voluntario» y en el footer. Revisamos las propuestas en orden y respondemos antes del cierre de programa de cada edición." },
-      { "q": "¿Quién organiza Playas on Tech?", "a": "Playas on Tech es organizada por un equipo de voluntarios en su tiempo libre, sin fines de lucro. El equipo actual: Danny, Franky, H, Juaneque, Kev y Mane. Buscamos siempre manos nuevas para sumar al equipo." },
-      { "q": "¿Hay comunidades tech similares en Manzanillo o Colima?", "a": "Playas on Tech es la comunidad de tecnología activa más grande en la costa de Colima, con cadencia bimestral y entrada gratuita. Si conoces otra iniciativa tech local que quiera colaborar, escríbenos." },
+      { "q": "¿Quién organiza PlayasOnTech?", "a": "PlayasOnTech es organizada por un equipo de voluntarios en su tiempo libre, sin fines de lucro. El equipo actual: Danny, Franky, H, Juaneque, Kev y Mane. Buscamos siempre manos nuevas para sumar al equipo." },
+      { "q": "¿Hay comunidades tech similares en Manzanillo o Colima?", "a": "PlayasOnTech es la comunidad de tecnología activa más grande en la costa de Colima, con cadencia bimestral y entrada gratuita. Si conoces otra iniciativa tech local que quiera colaborar, escríbenos." },
       { "q": "¿Cómo apoyo a la comunidad?", "a": "Puedes apoyar de tres formas: (1) donando vía PayPal o Patreon — los enlaces están en la sección Donaciones; (2) patrocinando una edición o el aniversario, con paquetes desde $5,000 MXN; (3) sumándote como voluntario al equipo organizador." },
       { "q": "¿Hay grabaciones de los eventos pasados?", "a": "Sí. Todas las sesiones recientes están en nuestro canal de YouTube — @PlayasOnTech — bajo licencia Creative Commons (CC BY 4.0). Las puedes ver, compartir y reutilizar dando crédito." }
     ]
   },
   "donaciones": {
     "h2": "Ayúdanos a mantener la comunidad viva.",
-    "body": "Playas on Tech es 100% gratis. Cada aportación nos ayuda a seguir organizando eventos gratuitos para la comunidad — cubre el venue, el café y el equipo.",
+    "body": "PlayasOnTech es 100% gratis. Cada aportación nos ayuda a seguir organizando eventos gratuitos para la comunidad — cubre el venue, el café y el equipo.",
     "paypal": "Donar con PayPal",
     "patreon": "Apóyanos en Patreon"
   },
@@ -221,7 +221,7 @@
       }
     ],
     "blurb": "Comunidad tech de Manzanillo, Colima. Meetups gratuitos de desarrolladores, diseñadores y founders cada dos meses, frente al mar — desde 2025.",
-    "copyright": "© 2026 Playas on Tech · Manzanillo, Colima",
+    "copyright": "© 2026 PlayasOnTech · Manzanillo, Colima",
     "termsLabel": "Términos y licencias",
     "termsHref": "/terminos",
     "handmade": "Hecho frente al mar, por la comunidad"
@@ -285,7 +285,7 @@
       "forTeamTitle": "Para tu equipo",
       "forTeamBody": "Llévalos al evento: colaboradores, clientes, prospectos o invitados estratégicos.",
       "forRaffleTitle": "Para una rifa en tus redes",
-      "forRaffleBody": "Convierte tus boletos en una dinámica de redes sociales «presentada por tu marca». Playas on Tech amplifica el sorteo desde sus canales oficiales y el ganador recibe boleto + playera. Plus de engagement social y leads.",
+      "forRaffleBody": "Convierte tus boletos en una dinámica de redes sociales «presentada por tu marca». PlayasOnTech amplifica el sorteo desde sus canales oficiales y el ganador recibe boleto + playera. Plus de engagement social y leads.",
       "tierTicketNote": "Boletos cortesía por tier: Silver 2 · Gold 4 · Platinum 6 · Diamond 10 (máx)",
       "attendeeOptInNote": "Los sponsors Gold, Platinum y Diamond reciben una lista con la información de los asistentes que dan consentimiento explícito al registrarse (nombre, email, empresa, rol). Para uso de marketing y/u ofertas laborales según los términos del acuerdo de patrocinio.",
       "mediaPartnerPill": "Media partners",
@@ -430,7 +430,7 @@
   "codigoConducta": {
     "back": "← Volver al inicio",
     "h1": "Código de Conducta",
-    "heroSub": "Queremos que cada encuentro de Playas on Tech sea un espacio seguro y acogedor para todas las personas.",
+    "heroSub": "Queremos que cada encuentro de PlayasOnTech sea un espacio seguro y acogedor para todas las personas.",
     "compromisoH2": "Nuestro compromiso",
     "compromisoBody": "Queremos que cada evento sea un espacio seguro y acogedor para todas las personas. No toleramos ninguna forma de acoso o discriminación por motivos de género, orientación sexual, discapacidad, apariencia, raza, edad o religión.",
     "esperadoH2": "Comportamiento esperado",
@@ -457,7 +457,7 @@
     "back": "← Volver al inicio",
     "h1": "Términos y licencias",
     "somosH2": "Quiénes somos",
-    "somosBody": "Playas on Tech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025.",
+    "somosBody": "PlayasOnTech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025.",
     "lucroH2": "Sin fines de lucro",
     "lucroBody": "Organizada por voluntarios y sostenida por la comunidad. Cero ánimo de lucro: lo recaudado vuelve al evento.",
     "ccH2": "Contenido — Creative Commons (CC BY 4.0)",

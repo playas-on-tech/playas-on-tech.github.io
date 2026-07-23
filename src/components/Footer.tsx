@@ -39,7 +39,7 @@ export default function Footer() {
           <div>
             <Link href={topHref} className="inline-flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/app-logo.webp" alt="Playas on Tech" className="h-11 w-auto" />
+              <img src="/assets/app-logo.webp" alt="PlayasOnTech" className="h-11 w-auto" />
             </Link>
             <p className="mt-5 max-w-[34ch] leading-relaxed text-white/55">{t("footer.blurb")}</p>
             <ul className="mt-6 flex flex-wrap gap-3">

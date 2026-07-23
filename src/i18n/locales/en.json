@@ -23,7 +23,7 @@
   },
   "statement": {
     "lead": "We believe the best ideas are born when the developer community gets together —",
-    "trail": "face to face, no hierarchies, with the sea in the background. That's why, since 2019, Playas on Tech meetups gather those building tech in the Mexican Pacific every two months."
+    "trail": "face to face, no hierarchies, with the sea in the background. That's why, since 2019, PlayasOnTech meetups gather those building tech in the Mexican Pacific every two months."
   },
   "marquee": ["Learn", "Connect", "Share", "Create", "Laugh", "Repeat"],
   "statsStrip": {
@@ -55,7 +55,7 @@
     "h2": "Tech meetups in Manzanillo — every two months.",
     "soonTag": "Upcoming",
     "cardTitle": "7th Anniversary · Edition #7",
-    "cardBody": "The next Playas on Tech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Limited seats, ticket required.",
+    "cardBody": "The next PlayasOnTech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Limited seats, ticket required.",
     "details": [
       { "label": "Date", "value": "Sat, Jul 18, 2026" },
       { "label": "Time", "value": "10:00 to 18:00" },
@@ -87,7 +87,7 @@
     "pill": "Venue",
     "h2": "Where the magic happens.",
     "body": "A comfortable space in Manzanillo with fast internet and even better vibes, steps from the sea. Each edition is held at a local venue; the exact location is announced with each meetup. Fast WiFi, coffee, and parking included.",
-    "alt": "Space where Playas on Tech meetups are held in Manzanillo, Colima — by the sea",
+    "alt": "Space where PlayasOnTech meetups are held in Manzanillo, Colima — by the sea",
     "features": [
       "Fast WiFi and plenty of outlets",
       "Parking nearby",
@@ -107,7 +107,7 @@
   "organizadores": {
     "pill": "Organizers",
     "h2": "Made by volunteers.",
-    "sub": "Every Playas on Tech edition is put together by volunteers in their spare time, out of love for the community. Non-profit: just the desire to bring together those building tech on the coast.",
+    "sub": "Every PlayasOnTech edition is put together by volunteers in their spare time, out of love for the community. Non-profit: just the desire to bring together those building tech on the coast.",
     "ctaH3": "Want to join the team?",
     "ctaBody": "We're looking for hands to organize, give talks, find venues and much more. No experience required, just the will to give back to the community.",
     "cta": "I want to volunteer",
@@ -116,7 +116,7 @@
   "sobreNosotros": {
     "pill": "About us",
     "h2": "Open, non-profit.",
-    "intro": "Playas on Tech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025. We gather developers, designers, and creators from the Mexican Pacific in free meetups every two months, by the sea. Everything we do is freely accessible: events, talk recordings, and materials. We sustain ourselves through community donations and sponsorships from local businesses.",
+    "intro": "PlayasOnTech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025. We gather developers, designers, and creators from the Mexican Pacific in free meetups every two months, by the sea. Everything we do is freely accessible: events, talk recordings, and materials. We sustain ourselves through community donations and sponsorships from local businesses.",
     "termsPrefix": "See the",
     "termsLink": "full terms and licenses",
     "termsHref": "/terminos",
@@ -129,26 +129,26 @@
   },
   "faq": {
     "pill": "FAQ",
-    "h2": "Frequently Asked Questions about Playas on Tech",
+    "h2": "Frequently Asked Questions about PlayasOnTech",
     "sub": "Everything you need to know before joining the tech meetup of the Mexican Pacific.",
     "items": [
-      { "q": "What is Playas on Tech?", "a": "Playas on Tech is Manzanillo's tech community in Colima, Mexico. It gathers developers, designers, founders, and tech enthusiasts in free meetups held every two months, by the sea. Since July 2025, we have held six editions with over 200 cumulative attendees." },
-      { "q": "Where is Playas on Tech held?", "a": "The meetups are held in Manzanillo, Colima, Mexico — at venues in the hotel zone, always near or by the sea. The 7th edition (July 2026) will take place at Hotel Marbella, on Playa Azul Salagua." },
+      { "q": "What is PlayasOnTech?", "a": "PlayasOnTech is Manzanillo's tech community in Colima, Mexico. It gathers developers, designers, founders, and tech enthusiasts in free meetups held every two months, by the sea. Since July 2025, we have held six editions with over 200 cumulative attendees." },
+      { "q": "Where is PlayasOnTech held?", "a": "The meetups are held in Manzanillo, Colima, Mexico — at venues in the hotel zone, always near or by the sea. The 7th edition (July 2026) will take place at Hotel Marbella, on Playa Azul Salagua." },
       { "q": "When is the next event?", "a": "The next meetup is our 7th anniversary: Saturday, July 18, 2026, from 10:00 AM to 6:00 PM, at Hotel Marbella, Manzanillo. After that date, we will maintain our bi-monthly cadence." },
-      { "q": "How much does it cost to attend?", "a": "Attending Playas on Tech is 100% free. We do not charge for entry, registration, or materials — we support ourselves through community donations and sponsorships." },
+      { "q": "How much does it cost to attend?", "a": "Attending PlayasOnTech is 100% free. We do not charge for entry, registration, or materials — we support ourselves through community donations and sponsorships." },
       { "q": "Who can attend? Do I need tech experience?", "a": "Anyone interested in technology can attend. No prior experience is required: we welcome senior developers, students, designers, founders, and the curious. If you want to learn or meet the coast's tech community, you belong here." },
       { "q": "How do I register?", "a": "Registration is done on playasontech.com, in the next event section. For the 7th anniversary, registration is managed via Eventbrite with a $350 MXN recovery fee, and space is limited." },
       { "q": "What kind of talks are given?", "a": "We cover broad tech topics: web development, GSAP animation, AI and authentication, open source, community, and coding. There are deep technical talks, lightning talks, and panels. Recordings are uploaded to our YouTube channel @PlayasOnTech." },
       { "q": "How do I propose a talk?", "a": "Anyone can propose a talk through our public form — the link is in the 'Volunteer' section and in the footer. We review submissions in order and reply before each edition's program closes." },
-      { "q": "Who organizes Playas on Tech?", "a": "Playas on Tech is organized by a team of volunteers in their free time, on a non-profit basis. The current team: Danny, Franky, H, Juaneque, Kev, and Mane. We are always looking for new hands to join the team." },
-      { "q": "Are there similar tech communities in Manzanillo or Colima?", "a": "Playas on Tech is the largest active tech community on the Colima coast, with a bi-monthly cadence and free admission. If you know of another local tech initiative that would like to collaborate, write to us." },
+      { "q": "Who organizes PlayasOnTech?", "a": "PlayasOnTech is organized by a team of volunteers in their free time, on a non-profit basis. The current team: Danny, Franky, H, Juaneque, Kev, and Mane. We are always looking for new hands to join the team." },
+      { "q": "Are there similar tech communities in Manzanillo or Colima?", "a": "PlayasOnTech is the largest active tech community on the Colima coast, with a bi-monthly cadence and free admission. If you know of another local tech initiative that would like to collaborate, write to us." },
       { "q": "How do I support the community?", "a": "You can support us in three ways: (1) donating via PayPal or Patreon — the links are in the Donations section; (2) sponsoring an edition or the anniversary, with packages starting at $5,000 MXN; (3) joining the organizing team as a volunteer." },
       { "q": "Are there recordings of past events?", "a": "Yes. All recent sessions are on our YouTube channel — @PlayasOnTech — under the Creative Commons license (CC BY 4.0). You can watch, share, and reuse them with attribution." }
     ]
   },
   "donaciones": {
     "h2": "Help us keep the community alive.",
-    "body": "Playas on Tech is 100% free. Every contribution helps us keep organizing free events for the community — covering venue, coffee and gear.",
+    "body": "PlayasOnTech is 100% free. Every contribution helps us keep organizing free events for the community — covering venue, coffee and gear.",
     "paypal": "Donate with PayPal",
     "patreon": "Support us on Patreon"
   },
@@ -221,7 +221,7 @@
       }
     ],
     "blurb": "Tech community of Manzanillo, Colima. Free meetups for developers, designers, and founders every two months, by the sea — since 2025.",
-    "copyright": "© 2026 Playas on Tech · Manzanillo, Colima",
+    "copyright": "© 2026 PlayasOnTech · Manzanillo, Colima",
     "termsLabel": "Terms and licenses",
     "termsHref": "/terminos",
     "handmade": "Made by the sea, by the community"
@@ -285,7 +285,7 @@
       "forTeamTitle": "For your team",
       "forTeamBody": "Bring them to the event: collaborators, clients, prospects, or strategic guests.",
       "forRaffleTitle": "For a raffle on your social media",
-      "forRaffleBody": "Turn your tickets into a social media dynamic 'presented by your brand'. Playas on Tech amplifies the giveaway from its official channels and the winner receives a ticket + t-shirt. A plus for social engagement and leads.",
+      "forRaffleBody": "Turn your tickets into a social media dynamic 'presented by your brand'. PlayasOnTech amplifies the giveaway from its official channels and the winner receives a ticket + t-shirt. A plus for social engagement and leads.",
       "tierTicketNote": "Complimentary tickets by tier: Silver 2 · Gold 4 · Platinum 6 · Diamond 10 (max)",
       "attendeeOptInNote": "Gold, Platinum, and Diamond sponsors receive a list of attendees who provide explicit consent upon registration (name, email, company, role). For marketing and/or job offer use according to the terms of the sponsorship agreement.",
       "mediaPartnerPill": "Media partners",
@@ -430,7 +430,7 @@
   "codigoConducta": {
     "back": "← Back to home",
     "h1": "Code of Conduct",
-    "heroSub": "We want every Playas on Tech meetup to be a safe and welcoming space for everyone.",
+    "heroSub": "We want every PlayasOnTech meetup to be a safe and welcoming space for everyone.",
     "compromisoH2": "Our commitment",
     "compromisoBody": "We want every event to be a safe and welcoming space for everyone. We do not tolerate any form of harassment or discrimination based on gender, sexual orientation, disability, appearance, race, age, or religion.",
     "esperadoH2": "Expected behavior",
@@ -457,7 +457,7 @@
     "back": "← Back to home",
     "h1": "Terms and licenses",
     "somosH2": "Who we are",
-    "somosBody": "Playas on Tech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025.",
+    "somosBody": "PlayasOnTech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025.",
     "lucroH2": "Non-profit",
     "lucroBody": "Organized by volunteers and sustained by the community. Zero profit motive: everything raised goes back to the event.",
     "ccH2": "Content — Creative Commons (CC BY 4.0)",
