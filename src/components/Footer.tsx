@@ -25,11 +25,12 @@ const COPY = {
           { href: "https://forms.gle/XwvZK3BVu2KdaNfWA", label: "Propón una charla" },
           { href: "/#organizadores", label: "Únete al equipo organizador" },
           { href: "/aniversario", label: "7º Aniversario" },
+          { href: "/merch", label: "Merch" },
         ],
       },
     ],
     blurb: "Comunidad tech de Manzanillo, Colima. Meetups gratuitos de desarrolladores, diseñadores y founders cada dos meses, frente al mar — desde 2025.",
-    copyright: "© 2026 Playas on Tech · Manzanillo, Colima",
+    copyright: "© 2026 PlayasOnTech · Manzanillo, Colima",
     termsLabel: "Términos y licencias",
     termsHref: "/terminos",
     handmade: "Hecho frente al mar, por la comunidad",
@@ -55,11 +56,12 @@ const COPY = {
           { href: "https://forms.gle/XwvZK3BVu2KdaNfWA", label: "Propose a talk" },
           { href: "/#organizadores", label: "Join the organizing team" },
           { href: "/aniversario", label: "7th Anniversary" },
+          { href: "/merch", label: "Merch" },
         ],
       },
     ],
     blurb: "Tech community of Manzanillo, Colima. Free meetups for developers, designers, and founders every two months, by the sea — since 2025.",
-    copyright: "© 2026 Playas on Tech · Manzanillo, Colima",
+    copyright: "© 2026 PlayasOnTech · Manzanillo, Colima",
     termsLabel: "Terms and licenses",
     termsHref: "/terminos",
     handmade: "Made by the sea, by the community",
@@ -102,7 +104,7 @@ export default function Footer() {
           <div>
             <Link href={topHref} className="inline-flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/app-logo.webp" alt="Playas on Tech" className="h-11 w-auto" />
+              <img src="/assets/app-logo.webp" alt="PlayasOnTech" className="h-11 w-auto" />
             </Link>
             <p className="mt-5 max-w-[34ch] leading-relaxed text-white/55">{t.blurb}</p>
             <ul className="mt-6 flex flex-wrap gap-3">
