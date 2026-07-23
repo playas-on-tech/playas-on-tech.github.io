@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ============================================================================
-   Playas on Tech — global styles
+   PlayasOnTech — global styles
    Ported verbatim from the original single-file prototype so the rendered
    design stays pixel-identical. The animation/effect classes below are plain
    CSS (outside Tailwind layers) on purpose: they are referenced from the JSX

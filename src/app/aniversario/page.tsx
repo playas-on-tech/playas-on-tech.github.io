@@ -28,7 +28,7 @@ const breadcrumbSchema = {
 const eventSchema = {
   "@context": "https://schema.org",
   "@type": "Event",
-  name: "Playas on Tech — 7º Aniversario",
+  name: "PlayasOnTech — 7º Aniversario",
   description:
     "7º Aniversario de la comunidad tech de Manzanillo: charlas, networking y brindis frente al mar.",
   startDate: "2026-07-18T10:00:00-06:00",
@@ -58,15 +58,15 @@ const eventSchema = {
   },
   organizer: {
     "@type": "Organization",
-    name: "Playas on Tech",
+    name: "PlayasOnTech",
     url: "https://playasontech.com",
   },
 };
 
 export const metadata: Metadata = {
-  title: "7º Aniversario · Playas on Tech — Meetup tech en Manzanillo, 18 julio 2026",
+  title: "7º Aniversario · PlayasOnTech — Meetup tech en Manzanillo, 18 julio 2026",
   description:
-    "Celebra el 7º aniversario de Playas on Tech, la comunidad tech de Manzanillo, Colima. Sábado 18 de julio de 2026 en el Hotel Marbella: charlas, networking y brindis frente al mar. Cupo limitado.",
+    "Celebra el 7º aniversario de PlayasOnTech, la comunidad tech de Manzanillo, Colima. Sábado 18 de julio de 2026 en el Hotel Marbella: charlas, networking y brindis frente al mar. Cupo limitado.",
   alternates: {
     canonical: "/aniversario",
     languages: {
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "7º Aniversario · Playas on Tech",
+    title: "7º Aniversario · PlayasOnTech",
     description:
       "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un evento para celebrar 7 años frente al mar con charlas, networking y brindis. Cupo limitado — reserva tu lugar.",
     locale: "es_MX",
@@ -86,13 +86,13 @@ export const metadata: Metadata = {
         url: "https://playasontech.com/assets/metadata/og-aniversario.jpg",
         width: 1200,
         height: 630,
-        alt: "7º Aniversario Playas on Tech",
+        alt: "7º Aniversario PlayasOnTech",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "7º Aniversario · Playas on Tech",
+    title: "7º Aniversario · PlayasOnTech",
     description:
       "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un evento para celebrar 7 años frente al mar con charlas, networking y brindis. Cupo limitado — reserva tu lugar.",
     images: ["https://playasontech.com/assets/metadata/og-aniversario.jpg"],

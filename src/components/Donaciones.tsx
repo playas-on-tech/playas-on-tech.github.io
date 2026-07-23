@@ -5,13 +5,13 @@ import { useLang } from "@/lib/LangProvider";
 const COPY = {
   es: {
     h2: "Ayúdanos a mantener la comunidad viva.",
-    body: "Playas on Tech es 100% gratis. Cada aportación nos ayuda a seguir organizando eventos gratuitos para la comunidad — cubre el venue, el café y el equipo.",
+    body: "PlayasOnTech es 100% gratis. Cada aportación nos ayuda a seguir organizando eventos gratuitos para la comunidad — cubre el venue, el café y el equipo.",
     paypal: "Donar con PayPal",
     patreon: "Apóyanos en Patreon",
   },
   en: {
     h2: "Help us keep the community alive.",
-    body: "Playas on Tech is 100% free. Every contribution helps us keep organizing free events for the community — covering venue, coffee and gear.",
+    body: "PlayasOnTech is 100% free. Every contribution helps us keep organizing free events for the community — covering venue, coffee and gear.",
     paypal: "Donate with PayPal",
     patreon: "Support us on Patreon",
   },

@@ -3,13 +3,13 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Términos y Licencias · Playas on Tech",
+  title: "Términos y Licencias · PlayasOnTech",
   description:
-    "Playas on Tech es una comunidad independiente y sin fines de lucro en Manzanillo, Colima. Conoce nuestros términos: licencias CC BY 4.0, MIT y nuestra política de privacidad.",
+    "PlayasOnTech es una comunidad independiente y sin fines de lucro en Manzanillo, Colima. Conoce nuestros términos: licencias CC BY 4.0, MIT y nuestra política de privacidad.",
   openGraph: {
-    title: "Términos y Licencias · Playas on Tech",
+    title: "Términos y Licencias · PlayasOnTech",
     description:
-      "Playas on Tech es una comunidad independiente y sin fines de lucro. Contenido bajo Creative Commons (CC BY 4.0), software bajo licencia MIT y política de privacidad.",
+      "PlayasOnTech es una comunidad independiente y sin fines de lucro. Contenido bajo Creative Commons (CC BY 4.0), software bajo licencia MIT y política de privacidad.",
     locale: "es_MX",
     type: "website",
     images: [
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
         url: "https://playasontech.com/assets/metadata/og-playasontech.jpg",
         width: 1200,
         height: 630,
-        alt: "Playas on Tech — comunidad tech frente al mar",
+        alt: "PlayasOnTech — comunidad tech frente al mar",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Términos y Licencias · Playas on Tech",
+    title: "Términos y Licencias · PlayasOnTech",
     description:
-      "Playas on Tech es una comunidad independiente y sin fines de lucro. Contenido bajo Creative Commons (CC BY 4.0), software bajo licencia MIT y política de privacidad.",
+      "PlayasOnTech es una comunidad independiente y sin fines de lucro. Contenido bajo Creative Commons (CC BY 4.0), software bajo licencia MIT y política de privacidad.",
     images: ["https://playasontech.com/assets/metadata/og-playasontech.jpg"],
   },
 };
@@ -56,7 +56,7 @@ export default function TerminosPage() {
               Términos y licencias
             </h1>
             <p className="cine cine-3 mx-auto mt-5 max-w-[52ch] text-lg leading-relaxed text-white/80">
-              Cómo opera Playas on Tech y bajo qué condiciones compartimos todo lo que hacemos.
+              Cómo opera PlayasOnTech y bajo qué condiciones compartimos todo lo que hacemos.
             </p>
           </div>
           <svg
@@ -78,7 +78,7 @@ export default function TerminosPage() {
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-navy">Quiénes somos</h2>
               <p className="mt-3 text-lg leading-relaxed text-navy/70">
-                Playas on Tech es una comunidad independiente y sin fines de lucro, organizada por un
+                PlayasOnTech es una comunidad independiente y sin fines de lucro, organizada por un
                 grupo de voluntarios en Manzanillo, Colima. No somos una empresa ni vendemos un
                 producto: existimos para juntar a quienes construyen tecnología en la costa y
                 compartir conocimiento de forma abierta y gratuita.
@@ -110,7 +110,7 @@ export default function TerminosPage() {
                   Creative Commons Attribution 4.0 (CC BY 4.0)
                 </a>
                 . Eres libre de copiar, compartir y adaptar el contenido, incluso con fines
-                comerciales, siempre que des crédito a Playas on Tech y a la persona ponente. El
+                comerciales, siempre que des crédito a PlayasOnTech y a la persona ponente. El
                 contenido de cada ponente le pertenece y se publica con su autorización.
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function TerminosPage() {
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-navy">Código de conducta</h2>
               <p className="mt-3 text-lg leading-relaxed text-navy/70">
-                Participar en cualquier actividad de Playas on Tech implica aceptar nuestro{" "}
+                Participar en cualquier actividad de PlayasOnTech implica aceptar nuestro{" "}
                 <Link
                   href="/codigo-conducta"
                   className="font-semibold text-ocean underline-offset-4 hover:underline"

@@ -6,12 +6,12 @@ import { faqItems } from "./faqItems";
 const COPY = {
   es: {
     pill: "FAQ",
-    h2: "Preguntas frecuentes sobre Playas on Tech",
+    h2: "Preguntas frecuentes sobre PlayasOnTech",
     sub: "Todo lo que necesitas saber antes de unirte al meetup tech del Pacífico mexicano.",
   },
   en: {
     pill: "FAQ",
-    h2: "Frequently Asked Questions about Playas on Tech",
+    h2: "Frequently Asked Questions about PlayasOnTech",
     sub: "Everything you need to know before joining the tech meetup of the Mexican Pacific.",
   },
 } as const;

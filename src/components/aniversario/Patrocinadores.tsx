@@ -243,7 +243,7 @@ const COPY = {
     forTeamTitle: "Para tu equipo",
     forTeamBody: "Llévalos al evento: colaboradores, clientes, prospectos o invitados estratégicos.",
     forRaffleTitle: "Para una rifa en tus redes",
-    forRaffleBody: "Convierte tus boletos en una dinámica de redes sociales «presentada por tu marca». Playas on Tech amplifica el sorteo desde sus canales oficiales y el ganador recibe boleto + playera. Plus de engagement social y leads.",
+    forRaffleBody: "Convierte tus boletos en una dinámica de redes sociales «presentada por tu marca». PlayasOnTech amplifica el sorteo desde sus canales oficiales y el ganador recibe boleto + playera. Plus de engagement social y leads.",
     tierTicketNote: "Boletos cortesía por tier: Silver 2 · Gold 4 · Platinum 6 · Diamond 10 (máx)",
     attendeeOptInNote: "Los sponsors Gold, Platinum y Diamond reciben una lista con la información de los asistentes que dan consentimiento explícito al registrarse (nombre, email, empresa, rol). Para uso de marketing y/u ofertas laborales según los términos del acuerdo de patrocinio.",
 
@@ -278,7 +278,7 @@ const COPY = {
     forTeamTitle: "For your team",
     forTeamBody: "Bring them to the event: collaborators, clients, prospects, or strategic guests.",
     forRaffleTitle: "For a raffle on your social media",
-    forRaffleBody: "Turn your tickets into a social media dynamic 'presented by your brand'. Playas on Tech amplifies the giveaway from its official channels and the winner receives a ticket + t-shirt. A plus for social engagement and leads.",
+    forRaffleBody: "Turn your tickets into a social media dynamic 'presented by your brand'. PlayasOnTech amplifies the giveaway from its official channels and the winner receives a ticket + t-shirt. A plus for social engagement and leads.",
     tierTicketNote: "Complimentary tickets by tier: Silver 2 · Gold 4 · Platinum 6 · Diamond 10 (max)",
     attendeeOptInNote: "Gold, Platinum, and Diamond sponsors receive a list of attendees who provide explicit consent upon registration (name, email, company, role). For marketing and/or job offer use according to the terms of the sponsorship agreement.",
 

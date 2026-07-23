@@ -7,7 +7,7 @@ const COPY = {
     pill: "Venue",
     h2: "Donde sucede la magia.",
     body: "Un espacio cómodo en Manzanillo, con buen internet y mejor ambiente, a unos pasos del mar. Cada edición se realiza en un venue local; el lugar exacto se anuncia con cada meetup. WiFi rápido, café y estacionamiento incluidos.",
-    alt: "Espacio donde se realizan los meetups de Playas on Tech en Manzanillo, Colima — frente al mar",
+    alt: "Espacio donde se realizan los meetups de PlayasOnTech en Manzanillo, Colima — frente al mar",
     features: [
       "WiFi rápido y enchufes de sobra",
       "Estacionamiento cercano",
@@ -18,7 +18,7 @@ const COPY = {
     pill: "Venue",
     h2: "Where the magic happens.",
     body: "A comfortable space in Manzanillo with fast internet and even better vibes, steps from the sea. Each edition is held at a local venue; the exact location is announced with each meetup. Fast WiFi, coffee, and parking included.",
-    alt: "Space where Playas on Tech meetups are held in Manzanillo, Colima — by the sea",
+    alt: "Space where PlayasOnTech meetups are held in Manzanillo, Colima — by the sea",
     features: [
       "Fast WiFi and plenty of outlets",
       "Parking nearby",

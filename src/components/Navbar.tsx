@@ -52,7 +52,7 @@ export default function Navbar({
         >
           <Link href={logoHref} className="flex items-center gap-1.5 sm:gap-2 pl-1 shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/app-icon.webp" alt="Playas on Tech" className="h-8 w-8 sm:h-9 sm:w-9 object-contain drop-shadow" />
+            <img src="/assets/app-icon.webp" alt="PlayasOnTech" className="h-8 w-8 sm:h-9 sm:w-9 object-contain drop-shadow" />
             <span className="hidden min-[360px]:inline text-[15px] sm:text-[17px] font-bold tracking-tight text-white drop-shadow">
               Playas<span className="text-ocean-300">On</span>Tech
             </span>

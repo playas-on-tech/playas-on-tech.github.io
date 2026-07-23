@@ -9,9 +9,9 @@ import { ArrowUpRight, ArrowRight } from "@/components/Icons";
 import { ANIV_EVENT } from "@/components/aniversario/event";
 
 export const metadata: Metadata = {
-  title: "Patrocinadores · 7º Aniversario — Playas on Tech",
+  title: "Patrocinadores · 7º Aniversario — PlayasOnTech",
   description:
-    "Patrocina el 7º aniversario de Playas on Tech (18 de julio de 2026, Hotel Marbella, Manzanillo). Paquetes Silver, Gold y Platinum, además de media partners.",
+    "Patrocina el 7º aniversario de PlayasOnTech (18 de julio de 2026, Hotel Marbella, Manzanillo). Paquetes Silver, Gold y Platinum, además de media partners.",
   alternates: {
     canonical: "/patrocinadores",
     languages: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Patrocinadores · 7º Aniversario — Playas on Tech",
+    title: "Patrocinadores · 7º Aniversario — PlayasOnTech",
     description:
       "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes de patrocinio Silver, Gold, Platinum y Diamond, más opciones para media partners. ¡Conoce nuestros planes!",
     locale: "es_MX",
@@ -31,13 +31,13 @@ export const metadata: Metadata = {
         url: "https://playasontech.com/assets/metadata/og-patrocinadores.jpg",
         width: 1200,
         height: 630,
-        alt: "Patrocinadores 7º Aniversario Playas on Tech",
+        alt: "Patrocinadores 7º Aniversario PlayasOnTech",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Patrocinadores · 7º Aniversario — Playas on Tech",
+    title: "Patrocinadores · 7º Aniversario — PlayasOnTech",
     description:
       "Lleva tu marca frente a la comunidad tech del Pacífico mexicano. Paquetes de patrocinio Silver, Gold, Platinum y Diamond, más opciones para media partners. ¡Conoce nuestros planes!",
     images: ["https://playasontech.com/assets/metadata/og-patrocinadores.jpg"],

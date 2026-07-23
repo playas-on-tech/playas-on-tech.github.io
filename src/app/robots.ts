@@ -10,7 +10,7 @@ export default function robots(): MetadataRoute.Robots {
       // Search engines — full access
       { userAgent: "*", allow: "/" },
 
-      // AI crawlers — explicitly allow so Playas on Tech can be cited by
+      // AI crawlers — explicitly allow so PlayasOnTech can be cited by
       // ChatGPT, Perplexity, Claude, Gemini and similar answer engines.
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "OAI-SearchBot", allow: "/" },

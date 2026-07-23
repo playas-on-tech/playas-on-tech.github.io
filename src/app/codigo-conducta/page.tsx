@@ -3,13 +3,13 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Código de Conducta · Playas on Tech",
+  title: "Código de Conducta · PlayasOnTech",
   description:
-    "Queremos que cada encuentro de Playas on Tech sea un espacio seguro y acogedor para todas las personas. Conoce nuestro código de conducta y compromiso contra el acoso.",
+    "Queremos que cada encuentro de PlayasOnTech sea un espacio seguro y acogedor para todas las personas. Conoce nuestro código de conducta y compromiso contra el acoso.",
   openGraph: {
-    title: "Código de Conducta · Playas on Tech",
+    title: "Código de Conducta · PlayasOnTech",
     description:
-      "Conoce el código de conducta de Playas on Tech: comportamiento esperado, cómo reportar incidentes y consecuencias. Un espacio seguro para la comunidad tech de Manzanillo.",
+      "Conoce el código de conducta de PlayasOnTech: comportamiento esperado, cómo reportar incidentes y consecuencias. Un espacio seguro para la comunidad tech de Manzanillo.",
     locale: "es_MX",
     type: "website",
     images: [
@@ -17,15 +17,15 @@ export const metadata: Metadata = {
         url: "https://playasontech.com/assets/metadata/og-playasontech.jpg",
         width: 1200,
         height: 630,
-        alt: "Playas on Tech — comunidad tech frente al mar",
+        alt: "PlayasOnTech — comunidad tech frente al mar",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Código de Conducta · Playas on Tech",
+    title: "Código de Conducta · PlayasOnTech",
     description:
-      "Conoce el código de conducta de Playas on Tech: comportamiento esperado, cómo reportar incidentes y consecuencias. Un espacio seguro para la comunidad tech de Manzanillo.",
+      "Conoce el código de conducta de PlayasOnTech: comportamiento esperado, cómo reportar incidentes y consecuencias. Un espacio seguro para la comunidad tech de Manzanillo.",
     images: ["https://playasontech.com/assets/metadata/og-playasontech.jpg"],
   },
 };
@@ -66,7 +66,7 @@ export default function CodigoConductaPage() {
               Código de Conducta
             </h1>
             <p className="cine cine-3 mx-auto mt-5 max-w-[50ch] text-lg leading-relaxed text-white/80">
-              Queremos que cada encuentro de Playas on Tech sea un espacio seguro y acogedor para
+              Queremos que cada encuentro de PlayasOnTech sea un espacio seguro y acogedor para
               todas las personas.
             </p>
           </div>

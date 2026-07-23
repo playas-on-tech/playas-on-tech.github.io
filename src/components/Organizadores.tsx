@@ -18,7 +18,7 @@ const COPY = {
   es: {
     pill: "Organizadores",
     h2: "Hecho por voluntarios.",
-    sub: "Cada edición de Playas on Tech la organiza un grupo de voluntarios en su tiempo libre, por amor a la comunidad. Sin fines de lucro: solo ganas de juntar a quienes construyen tecnología en la costa.",
+    sub: "Cada edición de PlayasOnTech la organiza un grupo de voluntarios en su tiempo libre, por amor a la comunidad. Sin fines de lucro: solo ganas de juntar a quienes construyen tecnología en la costa.",
     ctaH3: "¿Te gustaría ser parte del equipo?",
     ctaBody:
       "Buscamos manos para organizar, dar charlas, conseguir venue y mucho más. No necesitas experiencia, solo ganas de aportar a la comunidad.",
@@ -28,7 +28,7 @@ const COPY = {
   en: {
     pill: "Organizers",
     h2: "Made by volunteers.",
-    sub: "Every Playas on Tech edition is put together by volunteers in their spare time, out of love for the community. Non-profit: just the desire to bring together those building tech on the coast.",
+    sub: "Every PlayasOnTech edition is put together by volunteers in their spare time, out of love for the community. Non-profit: just the desire to bring together those building tech on the coast.",
     ctaH3: "Want to join the team?",
     ctaBody:
       "We're looking for hands to organize, give talks, find venues and much more. No experience required, just the will to give back to the community.",

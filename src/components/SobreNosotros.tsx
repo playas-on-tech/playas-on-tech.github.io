@@ -56,7 +56,7 @@ const COPY = {
     pill: "Sobre nosotros",
     h2: "Abiertos, sin fines de lucro.",
     intro:
-      "Playas on Tech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025. Reunimos a desarrolladores, diseñadores y creadores del Pacífico mexicano en meetups gratuitos cada dos meses, frente al mar. Todo lo que hacemos es de libre acceso: los eventos, las grabaciones de las charlas y los materiales. Nos sostenemos con donaciones de la comunidad y patrocinios de empresas locales.",
+      "PlayasOnTech es una comunidad de tecnología independiente y sin fines de lucro, organizada por voluntarios en Manzanillo, Colima desde julio de 2025. Reunimos a desarrolladores, diseñadores y creadores del Pacífico mexicano en meetups gratuitos cada dos meses, frente al mar. Todo lo que hacemos es de libre acceso: los eventos, las grabaciones de las charlas y los materiales. Nos sostenemos con donaciones de la comunidad y patrocinios de empresas locales.",
     termsPrefix: "Consulta los",
     termsLink: "términos y licencias completos",
     termsHref: "/terminos",
@@ -95,7 +95,7 @@ const COPY = {
     pill: "About us",
     h2: "Open, non-profit.",
     intro:
-      "Playas on Tech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025. We gather developers, designers, and creators from the Mexican Pacific in free meetups every two months, by the sea. Everything we do is freely accessible: events, talk recordings, and materials. We sustain ourselves through community donations and sponsorships from local businesses.",
+      "PlayasOnTech is an independent, non-profit tech community, organized by volunteers in Manzanillo, Colima since July 2025. We gather developers, designers, and creators from the Mexican Pacific in free meetups every two months, by the sea. Everything we do is freely accessible: events, talk recordings, and materials. We sustain ourselves through community donations and sponsorships from local businesses.",
     termsPrefix: "See the",
     termsLink: "full terms and licenses",
     termsHref: "/terminos",

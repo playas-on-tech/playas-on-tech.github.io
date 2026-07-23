@@ -8,7 +8,7 @@ import LangProvider from "@/lib/LangProvider";
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Playas on Tech",
+  name: "PlayasOnTech",
   alternateName: "PlayasOnTech",
   description:
     "Comunidad de tecnología de Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar.",
@@ -48,7 +48,7 @@ const manrope = Manrope({
 // ══════════════════════════════════════════════════════════════════════
 
 export const metadata: Metadata = {
-  title: "Playas on Tech — Comunidad tech y meetups en Manzanillo, Colima",
+  title: "PlayasOnTech — Comunidad tech y meetups en Manzanillo, Colima",
   description:
     "Comunidad de desarrolladores, diseñadores y founders en Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar, desde 2025. Únete a la comunidad tech del Pacífico mexicano.",
   icons: { icon: "/assets/app-icon.webp" },
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "Playas on Tech · Meetup tech frente al mar en Manzanillo",
+    title: "PlayasOnTech · Meetup tech frente al mar en Manzanillo",
     description:
       "La comunidad de tecnología de Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar. Gratis y abierta para todos los developers, diseñadores y founders del Pacífico mexicano.",
     locale: "es_MX",
@@ -76,13 +76,13 @@ export const metadata: Metadata = {
         url: "https://playasontech.com/assets/metadata/og-playasontech.jpg",
         width: 1200,
         height: 630,
-        alt: "Playas on Tech — comunidad tech frente al mar",
+        alt: "PlayasOnTech — comunidad tech frente al mar",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Playas on Tech · Meetup tech frente al mar en Manzanillo",
+    title: "PlayasOnTech · Meetup tech frente al mar en Manzanillo",
     description:
       "La comunidad de tecnología de Manzanillo, Colima. Meetups gratuitos cada dos meses frente al mar. Gratis y abierta para todos los developers, diseñadores y founders del Pacífico mexicano.",
     images: ["https://playasontech.com/assets/metadata/og-playasontech.jpg"],

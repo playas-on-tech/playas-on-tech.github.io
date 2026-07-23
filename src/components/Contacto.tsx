@@ -194,7 +194,7 @@ export default function Contacto() {
 
       const subjectPrefix = formData.category === "Sponsor" && formData.package
         ? `[Sponsor: ${formData.package}]`
-        : `[Playas on Tech - ${formData.category}]`;
+        : `[PlayasOnTech - ${formData.category}]`;
 
       const payload = {
         access_key: accessKey,
@@ -202,7 +202,7 @@ export default function Contacto() {
         email: formData.email,
         subject: `${subjectPrefix} ${formData.subject || t.subjectFallback}`,
         message: formData.message,
-        from_name: "Contacto Playas on Tech",
+        from_name: "Contacto PlayasOnTech",
       };
 
       const response = await fetch("https://api.web3forms.com/submit", {

@@ -1,6 +1,6 @@
-# Playas on Tech — playasontech.com
+# PlayasOnTech — playasontech.com
 
-Official site for **Playas on Tech**, the tech community of Manzanillo, Colima
+Official site for **PlayasOnTech**, the tech community of Manzanillo, Colima
 that meets every two months, frente al mar. 🌊
 
 Built with **Next.js 15** (App Router) + **TypeScript** + **Tailwind CSS**,
