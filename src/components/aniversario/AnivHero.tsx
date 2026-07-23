@@ -1,32 +1,14 @@
 "use client";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
+import type { Lang } from "@/i18n/lang";
 
 import { ArrowUpRight, ArrowRight, Calendar, Clock, MapPin } from "../SocialIcons";
 import { anivEvent } from "./event";
 import Countdown from "./Countdown";
 
-const COPY = {
-  es: {
-    h1a: "Celebramos nuestro 7º aniversario",
-    h1b: "frente al mar.",
-    sub: "Siete ediciones de comunidad, charlas y olas. Esta es la edición que lo celebra — un día especial de talks, networking y un brindis frente al mar de Manzanillo.",
-    ctaReserve: "Reservar mi lugar",
-    ctaProgram: "Ver programa",
-    countdownLabel: "Faltan",
-  },
-  en: {
-    h1a: "We celebrate our 7th anniversary",
-    h1b: "by the sea.",
-    sub: "Seven editions of community, talks and waves. This is the edition that celebrates it — a special day of talks, networking and a toast by the sea of Manzanillo.",
-    ctaReserve: "Reserve my seat",
-    ctaProgram: "See program",
-    countdownLabel: "Time left",
-  },
-} as const;
-
 export default function AnivHero() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language as Lang;
   const ev = anivEvent(lang);
   const facts = [
     { icon: Calendar, text: ev.dateLabel },
@@ -44,12 +26,12 @@ export default function AnivHero() {
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pb-40 pt-28 min-[360px]:pt-32 text-center">
         <h1 className="cine cine-1 max-w-[16ch] text-[clamp(2.2rem,7vw,6rem)] font-semibold leading-[0.98] tracking-tightest text-white">
-          {t.h1a}{" "}
-          <span className="text-ocean-300">{t.h1b}</span>
+          {t("aniversario.hero.h1a")}{" "}
+          <span className="text-ocean-300">{t("aniversario.hero.h1b")}</span>
         </h1>
 
         <p className="cine cine-2 mt-7 max-w-[48ch] text-base sm:text-lg leading-relaxed text-white/80 md:text-xl">
-          {t.sub}
+          {t("aniversario.hero.sub")}
         </p>
 
         <div className="cine cine-2 mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -69,7 +51,7 @@ export default function AnivHero() {
             href="#registro"
             className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
           >
-            {t.ctaReserve}
+            {t("aniversario.hero.ctaReserve")}
             <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45 shrink-0">
               <ArrowUpRight size={16} />
             </span>
@@ -78,7 +60,7 @@ export default function AnivHero() {
             href="#programa"
             className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
-            {t.ctaProgram}
+            {t("aniversario.hero.ctaProgram")}
             <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5 shrink-0">
               <ArrowRight size={16} />
             </span>
@@ -87,9 +69,9 @@ export default function AnivHero() {
 
         <div className="cine cine-4 mt-14 w-full">
           <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.3em] text-white/55">
-            {t.countdownLabel}
+            {t("aniversario.hero.countdownLabel")}
           </p>
-          <Countdown lang={lang} />
+          <Countdown />
         </div>
       </div>
 

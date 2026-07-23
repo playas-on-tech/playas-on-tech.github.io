@@ -1,30 +1,7 @@
 "use client"
-import { useLang } from "@/lib/LangProvider"
+import { useTranslation } from "react-i18next"
 import rawTiers from "@/data/sponsors.json"
 import Image from "next/image"
-
-const COPY = {
-  es: {
-    pill: "Patrocinadores",
-    h2: "Gracias por hacerlo posible.",
-    sub: "Empresas y marcas que se suman al 7º aniversario para construir comunidad tech en Manzanillo.",
-    diamond: "Diamante",
-    platinum: "Platino",
-    gold: "Oro",
-    silver: "Plata",
-    bronze: "Bronce",
-  },
-  en: {
-    pill: "Sponsors",
-    h2: "Thanks for making it possible.",
-    sub: "Companies and brands joining the 7th anniversary to build tech community in Manzanillo.",
-    diamond: "Diamond",
-    platinum: "Platinum",
-    gold: "Gold",
-    silver: "Silver",
-    bronze: "Bronze",
-  },
-} as const
 
 type Sponsor = {
   name: string
@@ -33,7 +10,7 @@ type Sponsor = {
 }
 
 type TierData = {
-  key: keyof typeof COPY.es & ("diamond" | "platinum" | "gold" | "silver" | "bronze")
+  key: "diamond" | "platinum" | "gold" | "silver" | "bronze"
   sponsors: Sponsor[]
 }
 
@@ -92,8 +69,7 @@ function tierAccent(key: string): string {
 }
 
 export default function Sponsors() {
-  const { lang } = useLang()
-  const t = COPY[lang]
+  const { t } = useTranslation()
 
   const visibleTiers = TIERS.filter((tier) => tier.sponsors.length > 0)
 
@@ -102,13 +78,13 @@ export default function Sponsors() {
       <div className="mx-auto max-w-[1100px]">
         <div className="reveal mb-14 text-center">
           <span className="inline-block rounded-full bg-navy/10 px-3.5 py-1.5 text-[13px] font-semibold text-navy">
-            {t.pill}
+            {t("aniversario.sponsors.pill")}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest text-navy">
-            {t.h2}
+            {t("aniversario.sponsors.h2")}
           </h2>
           <p className="mx-auto mt-4 max-w-[52ch] text-lg leading-relaxed text-navy/60">
-            {t.sub}
+            {t("aniversario.sponsors.sub")}
           </p>
         </div>
 
@@ -120,7 +96,7 @@ export default function Sponsors() {
                 <h3
                   className={`${tierHeadingSize(tier.key)} font-semibold tracking-tight text-navy`}
                 >
-                  {t[tier.key]}
+                  {t(`aniversario.sponsors.${tier.key}`)}
                 </h3>
                 <span className={`h-1 w-8 rounded-full ${tierAccent(tier.key)}`} />
               </div>

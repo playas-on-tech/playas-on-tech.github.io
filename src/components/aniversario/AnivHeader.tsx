@@ -1,24 +1,16 @@
 "use client";
 
 import Navbar from "../Navbar";
-import { anivNav } from "./event";
-import { useLang } from "@/lib/LangProvider";
-
-const COPY = {
-  es: { reserve: "Reservar", registroHref: "/aniversario#registro" },
-  en: { reserve: "Reserve", registroHref: "/aniversario#registro" },
-} as const;
+import { useTranslation } from "react-i18next";
 
 export default function AnivHeader() {
-  const { lang } = useLang();
-  const t = COPY[lang];
-  const nav = anivNav(lang);
+  const { t } = useTranslation();
 
   return (
     <Navbar
-      navLinks={[...nav]}
-      ctaLabel={t.reserve}
-      ctaHref={t.registroHref}
+      navLinks={t("aniversario.nav", { returnObjects: true }) as Array<{ href: string; label: string }>}
+      ctaLabel={t("aniversario.header.reserve")}
+      ctaHref={t("aniversario.header.registroHref")}
     />
   );
 }

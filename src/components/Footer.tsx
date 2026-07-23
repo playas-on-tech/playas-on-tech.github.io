@@ -1,72 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Instagram, Facebook, LinkedIn, X, TikTok } from "./SocialIcons";
-import { useLang } from "@/lib/LangProvider";
-
-const COPY = {
-  es: {
-    columns: [
-      {
-        title: "Navegación",
-        links: [
-          { href: "/#comunidad", label: "La comunidad tech de Manzanillo" },
-          { href: "/#eventos", label: "Próximos meetups" },
-          { href: "/#venue", label: "Dónde nos reunimos" },
-          { href: "/#videos", label: "Charlas grabadas" },
-          { href: "/#sobre-nosotros", label: "Quiénes somos" },
-          { href: "/#contacto", label: "Contacto" },
-        ],
-      },
-      {
-        title: "Comunidad",
-        links: [
-          { href: "/codigo-conducta", label: "Código de conducta" },
-          { href: "/#donaciones", label: "Apoya a la comunidad" },
-          { href: "https://forms.gle/XwvZK3BVu2KdaNfWA", label: "Propón una charla" },
-          { href: "/#organizadores", label: "Únete al equipo organizador" },
-          { href: "/aniversario", label: "7º Aniversario" },
-          { href: "/merch", label: "Merch" },
-        ],
-      },
-    ],
-    blurb: "Comunidad tech de Manzanillo, Colima. Meetups gratuitos de desarrolladores, diseñadores y founders cada dos meses, frente al mar — desde 2025.",
-    copyright: "© 2026 PlayasOnTech · Manzanillo, Colima",
-    termsLabel: "Términos y licencias",
-    termsHref: "/terminos",
-    handmade: "Hecho frente al mar, por la comunidad",
-  },
-  en: {
-    columns: [
-      {
-        title: "Navigation",
-        links: [
-          { href: "/#comunidad", label: "The tech community of Manzanillo" },
-          { href: "/#eventos", label: "Upcoming meetups" },
-          { href: "/#venue", label: "Where we meet" },
-          { href: "/#videos", label: "Recorded talks" },
-          { href: "/#sobre-nosotros", label: "Who we are" },
-          { href: "/#contacto", label: "Contact" },
-        ],
-      },
-      {
-        title: "Community",
-        links: [
-          { href: "/codigo-conducta", label: "Code of conduct" },
-          { href: "/#donaciones", label: "Support the community" },
-          { href: "https://forms.gle/XwvZK3BVu2KdaNfWA", label: "Propose a talk" },
-          { href: "/#organizadores", label: "Join the organizing team" },
-          { href: "/aniversario", label: "7th Anniversary" },
-          { href: "/merch", label: "Merch" },
-        ],
-      },
-    ],
-    blurb: "Tech community of Manzanillo, Colima. Free meetups for developers, designers, and founders every two months, by the sea — since 2025.",
-    copyright: "© 2026 PlayasOnTech · Manzanillo, Colima",
-    termsLabel: "Terms and licenses",
-    termsHref: "/terminos",
-    handmade: "Made by the sea, by the community",
-  },
-} as const;
+import { useTranslation } from "react-i18next";
 
 const socials = [
   { label: "Instagram", href: "https://www.instagram.com/playasontech_mzo", Icon: Instagram },
@@ -94,8 +29,8 @@ function FooterLink({ href, label }: { href: string; label: string }) {
 }
 
 export default function Footer() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
+  const columns = t("footer.columns", { returnObjects: true }) as Array<{title: string; links: Array<{href: string; label: string}>}>;
   const topHref = "/#top";
   return (
     <footer className="bg-navy-900 px-6 pb-12 pt-24 text-white">
@@ -104,9 +39,9 @@ export default function Footer() {
           <div>
             <Link href={topHref} className="inline-flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/app-logo.webp" alt="PlayasOnTech" className="h-11 w-auto" />
+              <img src="/assets/app-logo.webp" alt="Playas on Tech" className="h-11 w-auto" />
             </Link>
-            <p className="mt-5 max-w-[34ch] leading-relaxed text-white/55">{t.blurb}</p>
+            <p className="mt-5 max-w-[34ch] leading-relaxed text-white/55">{t("footer.blurb")}</p>
             <ul className="mt-6 flex flex-wrap gap-3">
               {socials.map(({ label, href, Icon }) => (
                 <li key={label}>
@@ -124,7 +59,7 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-          {t.columns.map((column) => (
+          {columns.map((column) => (
             <div key={column.title}>
               <div className="text-sm font-semibold text-white/40">{column.title}</div>
               <ul className="mt-4 space-y-3 text-white/80">
@@ -138,12 +73,12 @@ export default function Footer() {
           ))}
         </div>
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-sm text-white/45 sm:flex-row sm:justify-between">
-          <span>{t.copyright}</span>
+          <span>{t("footer.copyright")}</span>
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-            <Link href={t.termsHref} className="transition hover:text-white">
-              {t.termsLabel}
+            <Link href={t("footer.termsHref")} className="transition hover:text-white">
+              {t("footer.termsLabel")}
             </Link>
-            <span>{t.handmade}</span>
+            <span>{t("footer.handmade")}</span>
           </div>
         </div>
       </div>

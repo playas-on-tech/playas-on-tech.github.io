@@ -2,104 +2,10 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowUpRight } from "./SocialIcons";
-import { useLang } from "@/lib/LangProvider";
-
-const COPY = {
-  es: {
-    pill: "¿Hablamos?",
-    h2: "Ponte en contacto con nosotros.",
-    sub: "¿Quieres proponer una charla, patrocinar el próximo evento o tienes alguna duda general? Escríbenos y te responderemos lo antes posible.",
-    locationLabel: "Manzanillo, Colima, México",
-    successH3: "¡Mensaje Enviado!",
-    successBody: "Muchas gracias por escribirnos. Nos pondremos en contacto contigo en breve a tu correo.",
-    nameLabel: "Nombre completo",
-    namePlaceholder: "Tu nombre",
-    emailLabel: "Correo electrónico",
-    emailPlaceholder: "tu@correo.com",
-    categoryLabel: "¿De qué se trata?",
-    categories: [
-      { value: "General", label: "General / Dudas" },
-      { value: "Sponsor", label: "Sponsor / Patrocinios" },
-      { value: "Speaker", label: "Speaker / Charlas" },
-      { value: "Staff", label: "Staff / Voluntario" },
-      { value: "Otro", label: "Otro asunto" },
-    ],
-    subjectLabel: "Asunto",
-    subjectPlaceholder: "Asunto de tu mensaje",
-    packageLabel: "Paquete de patrocinio",
-    packagePlaceholder: "Selecciona un paquete",
-    packages: [
-      { value: "Diamond", label: "Diamond ($40,000 MXN / US$2,400)" },
-      { value: "Platinum", label: "Platinum ($20,000 MXN / US$1,200)" },
-      { value: "Gold", label: "Gold ($10,000 MXN / US$600)" },
-      { value: "Silver", label: "Silver ($5,000 MXN / US$300)" },
-      { value: "MediaPartner", label: "Media Partner / Aliado de prensa" },
-      { value: "Custom", label: "Paquete a la medida" },
-    ],
-    speakerCalloutH4: "🎤 ¡Queremos escucharte en el escenario!",
-    speakerCalloutBody:
-      "Para proponer tu charla y ayudarnos a evaluar tu propuesta de la mejor manera, por favor completa nuestro formulario oficial para conferencistas:",
-    speakerCta: "Llenar Formulario de Charlas",
-    messageLabel: "Mensaje",
-    messagePlaceholder: "Escribe tu mensaje aquí...",
-    submitting: "Enviando...",
-    submit: "Enviar mensaje",
-    errorRequired: "Por favor, llena todos los campos requeridos.",
-    errorPackage: "Por favor, selecciona un paquete de patrocinio.",
-    errorApi: "Lo sentimos, hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
-    errorNetwork: "No se pudo enviar el mensaje por un problema de conexión. Verifica tu red e intenta de nuevo.",
-    subjectFallback: "Nuevo Mensaje",
-  },
-  en: {
-    pill: "Let's talk?",
-    h2: "Get in touch with us.",
-    sub: "Want to propose a talk, sponsor the next event, or have a general question? Write to us and we'll get back as soon as possible.",
-    locationLabel: "Manzanillo, Colima, Mexico",
-    successH3: "Message sent!",
-    successBody: "Thanks for writing. We'll get back to you shortly via email.",
-    nameLabel: "Full name",
-    namePlaceholder: "Your name",
-    emailLabel: "Email",
-    emailPlaceholder: "you@email.com",
-    categoryLabel: "What's it about?",
-    categories: [
-      { value: "General", label: "General / Questions" },
-      { value: "Sponsor", label: "Sponsor / Partnership" },
-      { value: "Speaker", label: "Speaker / Talks" },
-      { value: "Staff", label: "Staff / Volunteer" },
-      { value: "Otro", label: "Other" },
-    ],
-    subjectLabel: "Subject",
-    subjectPlaceholder: "Subject of your message",
-    packageLabel: "Sponsorship package",
-    packagePlaceholder: "Select a package",
-    packages: [
-      { value: "Diamond", label: "Diamond ($40,000 MXN / US$2,400)" },
-      { value: "Platinum", label: "Platinum ($20,000 MXN / US$1,200)" },
-      { value: "Gold", label: "Gold ($10,000 MXN / US$600)" },
-      { value: "Silver", label: "Silver ($5,000 MXN / US$300)" },
-      { value: "MediaPartner", label: "Media Partner" },
-      { value: "Custom", label: "Custom package" },
-    ],
-    speakerCalloutH4: "🎤 We want to hear you on stage!",
-    speakerCalloutBody:
-      "To propose your talk and help us evaluate your proposal properly, please fill out our official speaker form:",
-    speakerCta: "Fill speaker form",
-    messageLabel: "Message",
-    messagePlaceholder: "Write your message here...",
-    submitting: "Sending...",
-    submit: "Send message",
-    errorRequired: "Please fill in all required fields.",
-    errorPackage: "Please select a sponsorship package.",
-    errorApi: "Sorry, there was a problem sending your message. Please try again later.",
-    errorNetwork: "Could not send your message due to a network problem. Check your connection and try again.",
-    subjectFallback: "New Message",
-  },
-} as const;
+import { useTranslation } from "react-i18next";
 
 export default function Contacto() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -176,13 +82,13 @@ export default function Contacto() {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       setStatus("error");
-      setErrorMessage(t.errorRequired);
+      setErrorMessage(t("contacto.errorRequired"));
       return;
     }
 
     if (formData.category === "Sponsor" && !formData.package) {
       setStatus("error");
-      setErrorMessage(t.errorPackage);
+      setErrorMessage(t("contacto.errorPackage"));
       return;
     }
 
@@ -200,7 +106,7 @@ export default function Contacto() {
         access_key: accessKey,
         name: formData.name,
         email: formData.email,
-        subject: `${subjectPrefix} ${formData.subject || t.subjectFallback}`,
+        subject: `${subjectPrefix} ${formData.subject || t("contacto.subjectFallback")}`,
         message: formData.message,
         from_name: "Contacto PlayasOnTech",
       };
@@ -229,14 +135,17 @@ export default function Contacto() {
       } else {
         console.error("Web3Forms API Error:", result);
         setStatus("error");
-        setErrorMessage(t.errorApi);
+        setErrorMessage(t("contacto.errorApi"));
       }
     } catch (error) {
       console.error("Form Submission Error:", error);
       setStatus("error");
-      setErrorMessage(t.errorNetwork);
+      setErrorMessage(t("contacto.errorNetwork"));
     }
   };
+
+  const categories = t("contacto.categories", { returnObjects: true }) as Array<{value: string; label: string}>;
+  const packages = t("contacto.packages", { returnObjects: true }) as Array<{value: string; label: string}>;
 
   return (
     <section id="contacto" className="relative bg-navy-900 px-6 py-24 text-white lg:py-32">
@@ -249,12 +158,12 @@ export default function Contacto() {
         <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="reveal flex flex-col justify-start lg:col-span-2">
             <span className="inline-self-start self-start rounded-full bg-white/10 px-3.5 py-1.5 text-[13px] font-semibold text-ocean-300 glass border border-white/10">
-              {t.pill}
+              {t("contacto.pill")}
             </span>
             <h2 className="mt-6 text-[clamp(2.2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-              {t.h2}
+              {t("contacto.h2")}
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-white/70">{t.sub}</p>
+            <p className="mt-5 text-base leading-relaxed text-white/70">{t("contacto.sub")}</p>
 
             <div className="mt-8 space-y-4">
               <div className="flex items-center gap-3 text-white/80">
@@ -267,7 +176,7 @@ export default function Contacto() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10">
                   📍
                 </span>
-                <span className="text-sm font-medium">{t.locationLabel}</span>
+                <span className="text-sm font-medium">{t("contacto.locationLabel")}</span>
               </div>
             </div>
           </div>
@@ -278,8 +187,8 @@ export default function Contacto() {
                 <div className="flex h-16 w-16 items-center justify-center rounded-full bg-ocean/20 text-ocean-300 border border-ocean/30 text-3xl">
                   ✓
                 </div>
-                <h3 className="mt-6 text-2xl font-semibold">{t.successH3}</h3>
-                <p className="mt-3 text-white/70 max-w-[32ch]">{t.successBody}</p>
+                <h3 className="mt-6 text-2xl font-semibold">{t("contacto.successH3")}</h3>
+                <p className="mt-3 text-white/70 max-w-[32ch]">{t("contacto.successBody")}</p>
               </div>
             )}
 
@@ -294,7 +203,7 @@ export default function Contacto() {
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-white/90">
-                      {t.nameLabel} <span className="text-sunset">*</span>
+                      {t("contacto.nameLabel")} <span className="text-sunset">*</span>
                     </label>
                     <input
                       type="text"
@@ -303,14 +212,14 @@ export default function Contacto() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      placeholder={t.namePlaceholder}
+                      placeholder={t("contacto.namePlaceholder")}
                       className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-ocean focus:bg-navy-800/80"
                     />
                   </div>
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-white/90">
-                      {t.emailLabel} <span className="text-sunset">*</span>
+                      {t("contacto.emailLabel")} <span className="text-sunset">*</span>
                     </label>
                     <input
                       type="email"
@@ -319,7 +228,7 @@ export default function Contacto() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      placeholder={t.emailPlaceholder}
+                      placeholder={t("contacto.emailPlaceholder")}
                       className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-ocean focus:bg-navy-800/80"
                     />
                   </div>
@@ -328,7 +237,7 @@ export default function Contacto() {
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
                     <label htmlFor="category" className="block text-sm font-semibold text-white/90">
-                      {t.categoryLabel}
+                      {t("contacto.categoryLabel")}
                     </label>
                     <select
                       id="category"
@@ -337,7 +246,7 @@ export default function Contacto() {
                       onChange={handleChange}
                       className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white outline-none transition focus:border-ocean focus:bg-navy-800/80"
                     >
-                      {t.categories.map((c) => (
+                      {categories.map((c) => (
                         <option key={c.value} value={c.value}>
                           {c.label}
                         </option>
@@ -347,7 +256,7 @@ export default function Contacto() {
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-semibold text-white/90">
-                      {t.subjectLabel}
+                      {t("contacto.subjectLabel")}
                     </label>
                     <input
                       type="text"
@@ -355,7 +264,7 @@ export default function Contacto() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder={t.subjectPlaceholder}
+                      placeholder={t("contacto.subjectPlaceholder")}
                       className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-ocean focus:bg-navy-800/80"
                     />
                   </div>
@@ -364,7 +273,7 @@ export default function Contacto() {
                 {formData.category === "Sponsor" && (
                   <div className="animate-[cine-in_0.3s_ease-out]">
                     <label htmlFor="package" className="block text-sm font-semibold text-white/90">
-                      {t.packageLabel} <span className="text-sunset">*</span>
+                      {t("contacto.packageLabel")} <span className="text-sunset">*</span>
                     </label>
                     <select
                       id="package"
@@ -374,8 +283,8 @@ export default function Contacto() {
                       onChange={handleChange}
                       className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white outline-none transition focus:border-ocean focus:bg-navy-800/80"
                     >
-                      <option value="">{t.packagePlaceholder}</option>
-                      {t.packages.map((p) => (
+                      <option value="">{t("contacto.packagePlaceholder")}</option>
+                      {packages.map((p) => (
                         <option key={p.value} value={p.value}>
                           {p.label}
                         </option>
@@ -387,16 +296,16 @@ export default function Contacto() {
                 {formData.category === "Speaker" && (
                   <div className="rounded-2xl border border-ocean/30 bg-ocean/10 p-5 transition-all duration-300">
                     <h4 className="text-sm font-semibold text-ocean-300 flex items-center gap-2">
-                      {t.speakerCalloutH4}
+                      {t("contacto.speakerCalloutH4")}
                     </h4>
-                    <p className="mt-2 text-xs leading-relaxed text-white/80">{t.speakerCalloutBody}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-white/80">{t("contacto.speakerCalloutBody")}</p>
                     <a
                       href="https://forms.gle/XwvZK3BVu2KdaNfWA"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group mt-4 inline-flex items-center gap-2 rounded-xl bg-ocean px-4 py-2 text-xs font-semibold text-navy transition hover:bg-ocean-300"
                     >
-                      {t.speakerCta}
+                      {t("contacto.speakerCta")}
                       <ArrowUpRight size={12} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </a>
                   </div>
@@ -404,7 +313,7 @@ export default function Contacto() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-white/90">
-                    {t.messageLabel} <span className="text-sunset">*</span>
+                    {t("contacto.messageLabel")} <span className="text-sunset">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -413,7 +322,7 @@ export default function Contacto() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder={t.messagePlaceholder}
+                    placeholder={t("contacto.messagePlaceholder")}
                     className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white placeholder-white/40 outline-none transition focus:border-ocean focus:bg-navy-800/80 resize-none"
                   />
                 </div>
@@ -423,7 +332,7 @@ export default function Contacto() {
                   disabled={status === "submitting"}
                   className="group flex w-full items-center justify-center gap-2.5 rounded-full bg-sunset py-3 text-base font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.99] disabled:opacity-50"
                 >
-                  {status === "submitting" ? t.submitting : t.submit}
+                  {status === "submitting" ? t("contacto.submitting") : t("contacto.submit")}
                   <span className="grid h-6 w-6 place-items-center rounded-full bg-white/20 text-white transition group-hover:rotate-45">
                     <ArrowUpRight size={13} />
                   </span>

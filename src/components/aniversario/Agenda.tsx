@@ -1,20 +1,7 @@
 "use client";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import agendaData from "@/data/agenda.json";
-
-const COPY = {
-  es: {
-    pill: "Programa",
-    h2: "Agenda del evento",
-    sub: "Una tarde-noche para aprender, conectar y celebrar nuestro 7º Aniversario.",
-  },
-  en: {
-    pill: "Program",
-    h2: "Event agenda",
-    sub: "An afternoon-evening to learn, connect and celebrate our 7th Anniversary.",
-  },
-} as const;
 
 type Photo = { src: string; position?: string };
 
@@ -27,9 +14,6 @@ type ScheduleItem = {
 };
 
 // ponytail: static content extracted to src/data/agenda.json for easier maintenance
-// schedule data is now imported from JSON instead of hardcoded in TS
-
-// ponytail: static content extracted to src/data/agenda.json for easier maintenance
 const typeStyles = {
   sunset: "bg-sunset text-white",
   ocean: "bg-ocean text-white",
@@ -39,13 +23,8 @@ const typeStyles = {
   after: "bg-navy text-white",
 } as Record<string, string>;
 
-// ponytail: static content extracted to src/data/agenda.json for easier maintenance
-// schedule data is now imported from JSON instead of hardcoded in TS
-
 export default function Agenda() {
-  // ponytail: static content extracted to src/data/agenda.json for easier maintenance
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
   const schedule = agendaData;
 
   return (
@@ -53,12 +32,12 @@ export default function Agenda() {
       <div className="mx-auto max-w-[820px]">
         <div className="reveal mb-14 text-center">
           <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t.pill}
+            {t("aniversario.agenda.pill")}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            {t.h2}
+            {t("aniversario.agenda.h2")}
           </h2>
-          <p className="mx-auto mt-4 max-w-[46ch] text-lg leading-relaxed text-navy/60">{t.sub}</p>
+          <p className="mx-auto mt-4 max-w-[46ch] text-lg leading-relaxed text-navy/60">{t("aniversario.agenda.sub")}</p>
         </div>
 
         <div className="reveal relative ml-4 sm:ml-0">

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Play } from "./SocialIcons";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
 
 type Edition = {
   n: number;
@@ -13,50 +13,8 @@ type Edition = {
   next?: boolean;
 };
 
-const COPY = {
-  es: {
-    pill: "La historia",
-    h2: "De la edición #1 al 7º aniversario.",
-    sub: "Cada dos meses, sin falta, frente al mar. Este es el camino que nos trajo hasta aquí.",
-    editionLabel: "Edición",
-    nextTag: "Próxima",
-    watchSession: "Ver sesión",
-    reserve: "Reservar lugar",
-    reserveHref: "/aniversario",
-    editions: [
-      { n: 1, date: "Jul 2025", title: "El primer encuentro" },
-      { n: 2, date: "Sep 2025", title: "Comunidad y código" },
-      { n: 3, date: "Nov 2025", title: "Open source en la costa" },
-      { n: 4, date: "Ene 2026", title: "Animación web con GSAP", video: "preXoZ6zFuc" },
-      { n: 5, date: "Mar 2026", title: "IA y autenticación", video: "V2vlUPn-v5Y" },
-      { n: 6, date: "May 2026", title: "Builders frente al mar", video: "C0U9Z_jO-0o" },
-      { n: 7, date: "18 Jul 2026", title: "7º Aniversario", next: true },
-    ] as Edition[],
-  },
-  en: {
-    pill: "The story",
-    h2: "From edition #1 to the 7th anniversary.",
-    sub: "Every two months, no exceptions, by the sea. This is the path that brought us here.",
-    editionLabel: "Edition",
-    nextTag: "Upcoming",
-    watchSession: "Watch session",
-    reserve: "Reserve seat",
-    reserveHref: "/aniversario",
-    editions: [
-      { n: 1, date: "Jul 2025", title: "The first meetup" },
-      { n: 2, date: "Sep 2025", title: "Community and code" },
-      { n: 3, date: "Nov 2025", title: "Open source on the coast" },
-      { n: 4, date: "Jan 2026", title: "Web animation with GSAP", video: "preXoZ6zFuc" },
-      { n: 5, date: "Mar 2026", title: "AI and authentication", video: "V2vlUPn-v5Y" },
-      { n: 6, date: "May 2026", title: "Builders by the sea", video: "C0U9Z_jO-0o" },
-      { n: 7, date: "Jul 18, 2026", title: "7th Anniversary", next: true },
-    ] as Edition[],
-  },
-} as const;
-
 export default function EditionsTimeline() {
-  const { lang } = useLang();
-  const t = COPY[lang];
+  const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -131,17 +89,19 @@ export default function EditionsTimeline() {
     };
   }, []);
 
+  const editions = t("editionsTimeline.editions", { returnObjects: true }) as Edition[];
+
   return (
     <section id="ediciones" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
         <div className="reveal max-w-[640px]">
           <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t.pill}
+            {t("editionsTimeline.pill")}
           </span>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            {t.h2}
+            {t("editionsTimeline.h2")}
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-navy/60">{t.sub}</p>
+          <p className="mt-4 text-lg leading-relaxed text-navy/60">{t("editionsTimeline.sub")}</p>
         </div>
 
         <div ref={ref} className={`edition-timeline mt-16 ${inView ? "is-in" : ""}`}>
@@ -152,7 +112,7 @@ export default function EditionsTimeline() {
             }`}
           >
             <ol className="edition-track">
-              {t.editions.map((ed, i) => (
+              {editions.map((ed, i) => (
                 <li
                   key={ed.n}
                   className={`edition-node ${ed.next ? "edition-node--next" : ""}`}
@@ -165,11 +125,11 @@ export default function EditionsTimeline() {
                     </div>
                     <div className="mt-1.5 flex items-center gap-2">
                       <span className="text-lg font-bold tracking-tight text-navy">
-                        {t.editionLabel} #{ed.n}
+                        {t("editionsTimeline.editionLabel")} #{ed.n}
                       </span>
                       {ed.next && (
                         <span className="rounded-full bg-sunset/15 px-2 py-0.5 text-[11px] font-semibold text-sunset">
-                          {t.nextTag}
+                          {t("editionsTimeline.nextTag")}
                         </span>
                       )}
                     </div>
@@ -183,15 +143,15 @@ export default function EditionsTimeline() {
                         className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-navy/70 transition hover:text-ocean"
                       >
                         <Play size={13} />
-                        {t.watchSession}
+                        {t("editionsTimeline.watchSession")}
                       </a>
                     )}
                     {ed.next && (
                       <Link
-                        href={t.reserveHref}
+                        href={t("editionsTimeline.reserveHref")}
                         className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-sunset transition hover:text-sunset-400"
                       >
-                        {t.reserve}
+                        {t("editionsTimeline.reserve")}
                         <ArrowUpRight size={13} className="transition group-hover:rotate-45" />
                       </Link>
                     )}

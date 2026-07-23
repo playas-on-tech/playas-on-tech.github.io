@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ANIV_EVENT } from "./event";
-import type { Lang } from "@/i18n/lang";
+import { useTranslation } from "react-i18next";
 
 type Remaining = { days: number; hours: number; minutes: number; seconds: number };
 
@@ -19,12 +19,8 @@ function getRemaining(): Remaining | null {
   };
 }
 
-const LABELS = {
-  es: { days: "días", hours: "horas", minutes: "min", seconds: "seg", today: "¡Hoy es el día!" },
-  en: { days: "days", hours: "hours", minutes: "min", seconds: "sec", today: "Today is the day!" },
-} as const;
-
-export default function Countdown({ lang = "es" }: { lang?: Lang }) {
+export default function Countdown() {
+  const { t } = useTranslation();
   const [remaining, setRemaining] = useState<Remaining | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -36,18 +32,17 @@ export default function Countdown({ lang = "es" }: { lang?: Lang }) {
     return () => clearInterval(id);
   }, []);
 
-  const l = LABELS[lang];
   const units: { key: keyof Remaining; label: string }[] = [
-    { key: "days", label: l.days },
-    { key: "hours", label: l.hours },
-    { key: "minutes", label: l.minutes },
-    { key: "seconds", label: l.seconds },
+    { key: "days", label: t("aniversario.countdown.days") },
+    { key: "hours", label: t("aniversario.countdown.hours") },
+    { key: "minutes", label: t("aniversario.countdown.minutes") },
+    { key: "seconds", label: t("aniversario.countdown.seconds") },
   ];
 
   if (mounted && remaining === null) {
     return (
       <p className="text-[clamp(1.4rem,3vw,2rem)] font-semibold tracking-tight text-white">
-        {l.today}
+        {t("aniversario.countdown.today")}
       </p>
     );
   }

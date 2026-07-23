@@ -12,17 +12,18 @@ import Videos from "@/components/Videos";
 import Organizadores from "@/components/Organizadores";
 import SobreNosotros from "@/components/SobreNosotros";
 import FAQ from "@/components/FAQ";
-import { faqItems } from "@/components/faqItems";
 import Donaciones from "@/components/Donaciones";
 import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
 import JsonLd from "@/components/JsonLd";
+import esTranslations from "@/i18n/locales/es.json";
+import enTranslations from "@/i18n/locales/en.json";
 
 const faqPageSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.es.map((item) => ({
+  mainEntity: esTranslations.faq.items.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {
@@ -35,7 +36,7 @@ const faqPageSchema = {
 const faqPageSchemaEn = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqItems.en.map((item) => ({
+  mainEntity: enTranslations.faq.items.map((item) => ({
     "@type": "Question",
     name: item.q,
     acceptedAnswer: {
@@ -74,4 +75,3 @@ export default function Home() {
     </>
   );
 }
-

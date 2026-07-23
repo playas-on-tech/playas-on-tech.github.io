@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
 import type { Lang } from "@/i18n/lang";
+import i18n from "@/i18n";
 
 const COOKIE_NAME = "playasontech_lang";
 
@@ -26,36 +27,19 @@ export function useLang(): LangContextValue {
   return ctx;
 }
 
-// ══════════════════════════════════════════════════════════════════════
-// Multi‑lingual support (es / en)
-//
-// Language switching is handled entirely on the client via a cookie and
-// the DOM `lang` attribute.  Both languages share the same URL — there
-// are no separate /es/ and /en/ routes.
-//
-// SEO note: hreflang tags in the <head> (set via Next.js Metadata
-// `alternates.languages`) point both languages to the same canonical URL
-// because we don't use URL‑based routing.  This is a known limitation of
-// the static‑export + GitHub Pages setup.  If true multilingual SEO
-// becomes critical, consider generating separate builds per language.
-// ══════════════════════════════════════════════════════════════════════
-
-// ponytail: async setState in effect body avoids cascading renders from sync updates
 export default function LangProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es");
+  const [lang, setLangState] = useState<Lang>(() => i18n.language as Lang);
 
-  // Apply saved preference on first mount; default is Spanish
   useEffect(() => {
     const cookie = readCookie();
-    if (!cookie) return;
-    // ponytail: setTimeout defers setState to next macrotask — no cascade
-    setTimeout(() => {
-      setLangState(cookie);
+    if (cookie && cookie !== i18n.language) {
+      i18n.changeLanguage(cookie);
       document.documentElement.lang = cookie;
-    }, 0);
+    }
   }, []);
 
   const setLang = useCallback((l: Lang) => {
+    i18n.changeLanguage(l);
     document.cookie = `${COOKIE_NAME}=${l};path=/;max-age=31536000;SameSite=Lax`;
     document.documentElement.lang = l;
     setLangState(l);

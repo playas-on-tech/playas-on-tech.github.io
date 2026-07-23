@@ -1,5 +1,5 @@
 "use client";
-import { useLang } from "@/lib/LangProvider";
+import { useTranslation } from "react-i18next";
 
 const getEventCount = (): number => {
   const startDate = new Date(2019, 5, 1); // June 1, 2019
@@ -10,31 +10,26 @@ const getEventCount = (): number => {
   return Math.floor(totalMonths / 2) + 1;
 };
 
-const getCOPY = (eventCount: number) => ({
-  es: {
-    stats: [
-      { count: eventCount, color: "text-sunset", label: "ediciones desde 2019" },
-      { count: 200, prefix: "+", color: "text-ocean", label: "asistentes en Manzanillo" },
-      { count: 2, color: "text-sunset", label: "meses entre cada meetup" },
-      { count: 100, suffix: "%", color: "text-ocean", label: "gratis · sin costo · abierta" },
-    ],
-  },
-  en: {
-    stats: [
-      { count: eventCount, color: "text-sunset", label: "editions since 2019" },
-      { count: 200, prefix: "+", color: "text-ocean", label: "attendees in Manzanillo" },
-      { count: 2, color: "text-sunset", label: "months between each meetup" },
-      { count: 100, suffix: "%", color: "text-ocean", label: "free · no cost · open" },
-    ],
-  },
-} as const);
+type Stat = {
+  count: number;
+  color: string;
+  label: string;
+  prefix?: string;
+  suffix?: string;
+};
 
 // `data-count` / `data-prefix` / `data-suffix` are read by SiteEffects to run
 // the count-up animation when the strip scrolls into view.
 export default function StatsStrip() {
-  const { lang } = useLang();
+  const { t } = useTranslation();
   const eventCount = getEventCount();
-  const { stats } = getCOPY(eventCount)[lang];
+  const statsData = t("statsStrip.stats", { returnObjects: true }) as Array<{ color: string; label: string; prefix?: string; suffix?: string }>;
+  const stats: Stat[] = [
+    { count: eventCount, ...statsData[0] },
+    { count: 200, ...statsData[1] },
+    { count: 2, ...statsData[2] },
+    { count: 100, ...statsData[3] },
+  ];
   return (
     <section className="border-y border-navy/10 bg-cream-100">
       <div className="mx-auto grid max-w-[1200px] grid-cols-2 divide-x divide-y divide-navy/10 md:grid-cols-4 md:divide-y-0">
@@ -43,8 +38,8 @@ export default function StatsStrip() {
             <div
               className={`text-[clamp(2.4rem,5vw,3.4rem)] font-bold tracking-tightest ${stat.color}`}
               data-count={stat.count}
-              data-prefix={"prefix" in stat ? stat.prefix : undefined}
-              data-suffix={"suffix" in stat ? stat.suffix : undefined}
+              data-prefix={stat.prefix}
+              data-suffix={stat.suffix}
             >
               0
             </div>

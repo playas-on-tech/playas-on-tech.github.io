@@ -1,25 +1,10 @@
 "use client";
 
-import { useLang } from "@/lib/LangProvider";
-import { faqItems } from "./faqItems";
-
-const COPY = {
-  es: {
-    pill: "FAQ",
-    h2: "Preguntas frecuentes sobre PlayasOnTech",
-    sub: "Todo lo que necesitas saber antes de unirte al meetup tech del Pacífico mexicano.",
-  },
-  en: {
-    pill: "FAQ",
-    h2: "Frequently Asked Questions about PlayasOnTech",
-    sub: "Everything you need to know before joining the tech meetup of the Mexican Pacific.",
-  },
-} as const;
+import { useTranslation } from "react-i18next";
 
 export default function FAQ() {
-  const { lang } = useLang();
-  const t = COPY[lang];
-  const items = faqItems[lang];
+  const { t } = useTranslation();
+  const items = t("faq.items", { returnObjects: true }) as Array<{q: string; a: string}>;
 
   return (
     <section id="faq" className="bg-cream-100 px-6 py-28 lg:py-36">
@@ -27,14 +12,14 @@ export default function FAQ() {
         <div className="reveal mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-              {t.pill}
+              {t("faq.pill")}
             </span>
             <h2 className="mt-5 max-w-[22ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-              {t.h2}
+              {t("faq.h2")}
             </h2>
           </div>
           <p className="max-w-[38ch] text-lg leading-relaxed text-navy/60">
-            {t.sub}
+            {t("faq.sub")}
           </p>
         </div>
 
