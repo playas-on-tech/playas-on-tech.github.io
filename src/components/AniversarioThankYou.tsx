@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Footer from "./Footer";
+import Fireworks from "./Fireworks";
 import { ArrowUpRight } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
@@ -133,6 +134,7 @@ export default function AniversarioThankYou() {
           <span className="blob blob-aqua" />
           <span className="blob blob-sunset" />
         </div>
+        <Fireworks />
         <div className="relative z-10 mx-auto max-w-[720px] text-center">
           <span className="glass inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[13px] font-semibold text-ocean-300">
             {t.heroPill}
