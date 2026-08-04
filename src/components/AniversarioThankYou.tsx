@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Footer from "./Footer";
 import Fireworks from "./Fireworks";
+import SiteEffects from "./SiteEffects";
 import { ArrowUpRight } from "./SocialIcons";
 import { useLang } from "@/lib/LangProvider";
 
@@ -136,16 +137,16 @@ export default function AniversarioThankYou() {
         </div>
         <Fireworks />
         <div className="relative z-10 mx-auto max-w-[720px] text-center">
-          <span className="glass inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[13px] font-semibold text-ocean-300">
+          <span className="cine cine-1 glass inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-[13px] font-semibold text-ocean-300">
             {t.heroPill}
           </span>
-          <h1 className="mt-6 text-[clamp(2.2rem,6vw,3.8rem)] font-bold leading-[1.05] tracking-tightest text-white">
+          <h1 className="cine cine-2 mt-6 text-[clamp(2.2rem,6vw,3.8rem)] font-bold leading-[1.05] tracking-tightest text-white">
             {t.heroTitle}
           </h1>
-          <p className="mx-auto mt-6 max-w-[52ch] text-base leading-relaxed text-white/80 sm:text-lg">
+          <p className="cine cine-3 mx-auto mt-6 max-w-[52ch] text-base leading-relaxed text-white/80 sm:text-lg">
             {t.heroBody1}
           </p>
-          <p className="mx-auto mt-4 max-w-[52ch] text-base leading-relaxed text-white/80 sm:text-lg">
+          <p className="cine cine-4 mx-auto mt-4 max-w-[52ch] text-base leading-relaxed text-white/80 sm:text-lg">
             {t.heroBody2}
           </p>
         </div>
@@ -154,7 +155,7 @@ export default function AniversarioThankYou() {
       {/* Gallery */}
       <section className="bg-cream-100 px-6 py-20 sm:py-28">
         <div className="mx-auto max-w-[1200px]">
-          <div className="mb-10 flex flex-col items-start justify-between gap-6 sm:mb-14 md:flex-row md:items-end">
+          <div className="reveal mb-10 flex flex-col items-start justify-between gap-6 sm:mb-14 md:flex-row md:items-end">
             <div>
               <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
                 {t.galleryPill}
@@ -173,7 +174,7 @@ export default function AniversarioThankYou() {
                 type="button"
                 onClick={() => setIndex(i)}
                 aria-label={t.openPhoto(i + 1)}
-                className="group block cursor-zoom-in overflow-hidden rounded-2xl border border-navy/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean"
+                className="reveal group block cursor-zoom-in overflow-hidden rounded-2xl border border-navy/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-ocean"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -190,7 +191,7 @@ export default function AniversarioThankYou() {
 
       {/* Merch */}
       <section className="bg-cream-100 px-6 pb-20 sm:pb-24">
-        <div className="mx-auto flex max-w-[1100px] flex-col items-center gap-8 rounded-3xl border border-navy/10 bg-white p-6 shadow-sm sm:p-10 md:flex-row md:gap-12">
+        <div className="reveal mx-auto flex max-w-[1100px] flex-col items-center gap-8 rounded-3xl border border-navy/10 bg-white p-6 shadow-sm sm:p-10 md:flex-row md:gap-12">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/assets/_k7x2m9f.jpeg"
@@ -222,7 +223,7 @@ export default function AniversarioThankYou() {
 
       {/* Invitation for next year */}
       <section className="bg-cream-100 px-6 pb-20 sm:pb-24">
-        <div className="mesh-cta grain relative mx-auto max-w-[1100px] overflow-hidden rounded-[2.5rem] px-6 py-16 text-center sm:py-20">
+        <div className="reveal mesh-cta grain relative mx-auto max-w-[1100px] overflow-hidden rounded-[2.5rem] px-6 py-16 text-center sm:py-20">
           <div className="blobs">
             <span className="blob blob-teal" />
             <span className="blob blob-ocean" />
@@ -252,6 +253,7 @@ export default function AniversarioThankYou() {
       </section>
 
       <Footer />
+      <SiteEffects />
 
       {/* Lightbox */}
       {index !== null && (
