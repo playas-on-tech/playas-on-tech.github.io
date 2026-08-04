@@ -10,7 +10,6 @@ export default function Contacto() {
     name: "",
     email: "",
     category: "General",
-    package: "",
     subject: "",
     message: "",
   });
@@ -31,19 +30,16 @@ export default function Contacto() {
 
       const params = new URLSearchParams(window.location.search);
       const categoryParam = params.get("category");
-      const packageParam = params.get("package");
 
       const targetCategory = categoryParam || "General";
-      const targetPackage = packageParam || "";
 
       setFormData((prev) => {
-        if (prev.category === targetCategory && prev.package === targetPackage) {
+        if (prev.category === targetCategory) {
           return prev;
         }
         return {
           ...prev,
           category: targetCategory,
-          package: targetPackage,
         };
       });
 
@@ -86,21 +82,15 @@ export default function Contacto() {
       return;
     }
 
-    if (formData.category === "Sponsor" && !formData.package) {
-      setStatus("error");
-      setErrorMessage(t("contacto.errorPackage"));
-      return;
-    }
-
     setStatus("submitting");
 
     try {
       const accessKey =
         process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "00000000-0000-0000-0000-000000000000";
 
-      const subjectPrefix = formData.category === "Sponsor" && formData.package
-        ? `[Sponsor: ${formData.package}]`
-        : `[PlayasOnTech - ${formData.category}]`;
+      const subjectPrefix = formData.category === "Sponsor"
+        ? "[Patrocinador]"
+        : `[Playas on Tech - ${formData.category}]`;
 
       const payload = {
         access_key: accessKey,
@@ -108,7 +98,7 @@ export default function Contacto() {
         email: formData.email,
         subject: `${subjectPrefix} ${formData.subject || t("contacto.subjectFallback")}`,
         message: formData.message,
-        from_name: "Contacto PlayasOnTech",
+        from_name: "Contacto Playas on Tech",
       };
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -128,7 +118,6 @@ export default function Contacto() {
           name: "",
           email: "",
           category: "General",
-          package: "",
           subject: "",
           message: "",
         });
@@ -145,7 +134,6 @@ export default function Contacto() {
   };
 
   const categories = t("contacto.categories", { returnObjects: true }) as Array<{value: string; label: string}>;
-  const packages = t("contacto.packages", { returnObjects: true }) as Array<{value: string; label: string}>;
 
   return (
     <section id="contacto" className="relative bg-navy-900 px-6 py-24 text-white lg:py-32">
@@ -270,28 +258,6 @@ export default function Contacto() {
                   </div>
                 </div>
 
-                {formData.category === "Sponsor" && (
-                  <div className="animate-[cine-in_0.3s_ease-out]">
-                    <label htmlFor="package" className="block text-sm font-semibold text-white/90">
-                      {t("contacto.packageLabel")} <span className="text-sunset">*</span>
-                    </label>
-                    <select
-                      id="package"
-                      name="package"
-                      required
-                      value={formData.package}
-                      onChange={handleChange}
-                      className="mt-2 w-full rounded-2xl border border-white/10 bg-navy-800 px-4 py-3 text-sm text-white outline-none transition focus:border-ocean focus:bg-navy-800/80"
-                    >
-                      <option value="">{t("contacto.packagePlaceholder")}</option>
-                      {packages.map((p) => (
-                        <option key={p.value} value={p.value}>
-                          {p.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                )}
 
                 {formData.category === "Speaker" && (
                   <div className="rounded-2xl border border-ocean/30 bg-ocean/10 p-5 transition-all duration-300">

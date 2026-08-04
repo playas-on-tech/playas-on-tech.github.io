@@ -13,6 +13,7 @@ export default function Header() {
       ctaMobileLabel={t("header.joinCtaMobile")}
       ctaHref={t("header.joinHref")}
       logoHref="#top"
+      gateCta
     />
   );
 }

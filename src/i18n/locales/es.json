@@ -1,6 +1,6 @@
 {
   "hero": {
-    "h1a": "La comunidad tech de Manzanillo —",
+    "h1a": "La comunidad tech de Manzanillo",
     "h1b": "frente al mar.",
     "sub": "Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos meses, frente al mar de Colima. Sin corbatas. Con olas.",
     "ctaPrimary": "Ver todo sobre el 7o Aniversario",
@@ -54,22 +54,20 @@
     "pill": "Eventos · Meetups",
     "h2": "Meetups tech en Manzanillo — cada dos meses.",
     "soonTag": "Próximo encuentro",
-    "cardTitle": "7º Aniversario · Edición #7",
-    "cardBody": "El próximo meetup de PlayasOnTech es nuestro 7º aniversario: un día completo de charlas técnicas, networking y un brindis frente al mar en el Hotel Marbella, Manzanillo. Cupo limitado, requiere boleto.",
+    "cardTitle": "Setiembre 2026",
+    "cardBody": "Estamos preparando la próxima sesión. Síguenos en redes para enterarte de más detalles.",
     "details": [
-      { "label": "Fecha", "value": "Sáb 18 jul 2026" },
-      { "label": "Hora", "value": "10:00 a 18:00 hrs" },
-      { "label": "Lugar", "value": "Hotel Marbella" }
+      { "label": "Fecha", "value": "Sáb 17 sept 2026" },
+      { "label": "Hora", "value": "8:00 a 10:00 p. m." },
+      { "label": "Lugar", "value": "rootDevLab" }
     ],
-    "cta": "Ver el 7º aniversario",
-    "ctaHref": "/aniversario"
+    "cta": "Próximamente",
+    "ctaHref": "#eventos"
   },
   "editionsTimeline": {
     "pill": "La historia",
     "h2": "De la edición #1 al 7º aniversario.",
     "sub": "Cada dos meses, sin falta, frente al mar. Este es el camino que nos trajo hasta aquí.",
-    "editionLabel": "Edición",
-    "nextTag": "Próxima",
     "watchSession": "Ver sesión",
     "reserve": "Reservar lugar",
     "reserveHref": "/aniversario",
@@ -132,17 +130,17 @@
     "h2": "Preguntas frecuentes sobre PlayasOnTech",
     "sub": "Todo lo que necesitas saber antes de unirte al meetup tech del Pacífico mexicano.",
     "items": [
-      { "q": "¿Qué es PlayasOnTech?", "a": "PlayasOnTech es la comunidad de tecnología de Manzanillo, Colima. Reúne a desarrolladores, diseñadores, founders y entusiastas de la tecnología en meetups gratuitos que se realizan cada dos meses, frente al mar. Desde julio de 2025 hemos celebrado seis ediciones, con más de 200 asistentes acumulados." },
-      { "q": "¿Dónde se realiza PlayasOnTech?", "a": "Los meetups se realizan en Manzanillo, Colima, México — en venues de la zona hotelera, siempre cerca o frente al mar. La 7ª edición (julio 2026) será en el Hotel Marbella, sobre Playa Azul Salagua." },
-      { "q": "¿Cuándo es el próximo evento?", "a": "El próximo meetup es nuestro 7º aniversario: sábado 18 de julio de 2026, de 10:00 a 18:00 hrs, en el Hotel Marbella, Manzanillo. Después de esa fecha, mantenemos cadencia bimestral." },
+      { "q": "¿Qué es PlayasOnTech?", "a": "PlayasOnTech es la comunidad de tecnología de Manzanillo, Colima. Reúne a desarrolladores, diseñadores, founders y entusiastas de la tecnología en meetups gratuitos que se realizan cada dos meses, frente al mar." },
+      { "q": "¿Dónde se realiza PlayasOnTech?", "a": "Los meetups se realizan en Manzanillo, Colima, México — en venues de la zona hotelera, siempre cerca o frente al mar." },
+      { "q": "¿Cuándo es el próximo evento?", "a": "Consulta nuestra página de eventos para conocer la fecha y lugar del próximo meetup. Mantenemos cadencia bimestral." },
       { "q": "¿Cuánto cuesta asistir?", "a": "La asistencia a PlayasOnTech es 100% gratuita. No cobramos entrada, registro ni materiales — nos sostenemos con donaciones de la comunidad y patrocinios." },
       { "q": "¿Quién puede asistir? ¿Necesito experiencia en tecnología?", "a": "Cualquier persona interesada en tecnología puede asistir. No se requiere experiencia previa: recibimos desarrolladores senior, estudiantes, diseñadores, founders y curiosos. Si quieres aprender o conocer a la comunidad tech de la costa, aquí cabes." },
-      { "q": "¿Cómo me registro?", "a": "El registro se hace en playasontech.com, en la sección del próximo evento. Para el 7º aniversario, el registro se gestiona vía Eventbrite con una cuota de recuperación de $350 MXN, y el cupo es limitado." },
+      { "q": "¿Cómo me registro?", "a": "El registro se hace en playasontech.com, en la sección del próximo evento. El cupo es limitado." },
       { "q": "¿Qué tipo de charlas se dan?", "a": "Cubrimos temas amplios de tecnología: desarrollo web, animación con GSAP, IA y autenticación, open source, comunidad y código. Hay charlas técnicas profundas, lightning talks y paneles. Las grabaciones quedan en nuestro canal de YouTube @PlayasOnTech." },
       { "q": "¿Cómo propongo una charla?", "a": "Cualquier persona puede proponer una charla a través de nuestro formulario público — el enlace está en la sección «Sé voluntario» y en el footer. Revisamos las propuestas en orden y respondemos antes del cierre de programa de cada edición." },
       { "q": "¿Quién organiza PlayasOnTech?", "a": "PlayasOnTech es organizada por un equipo de voluntarios en su tiempo libre, sin fines de lucro. El equipo actual: Danny, Franky, H, Juaneque, Kev y Mane. Buscamos siempre manos nuevas para sumar al equipo." },
       { "q": "¿Hay comunidades tech similares en Manzanillo o Colima?", "a": "PlayasOnTech es la comunidad de tecnología activa más grande en la costa de Colima, con cadencia bimestral y entrada gratuita. Si conoces otra iniciativa tech local que quiera colaborar, escríbenos." },
-      { "q": "¿Cómo apoyo a la comunidad?", "a": "Puedes apoyar de tres formas: (1) donando vía PayPal o Patreon — los enlaces están en la sección Donaciones; (2) patrocinando una edición o el aniversario, con paquetes desde $5,000 MXN; (3) sumándote como voluntario al equipo organizador." },
+      { "q": "¿Cómo apoyo a la comunidad?", "a": "Puedes apoyar de tres formas: (1) donando vía PayPal o Patreon — los enlaces están en la sección Donaciones; (2) patrocinando una edición, con paquetes desde $5,000 MXN; (3) sumándote como voluntario al equipo organizador." },
       { "q": "¿Hay grabaciones de los eventos pasados?", "a": "Sí. Todas las sesiones recientes están en nuestro canal de YouTube — @PlayasOnTech — bajo licencia Creative Commons (CC BY 4.0). Las puedes ver, compartir y reutilizar dando crédito." }
     ]
   },
@@ -166,23 +164,13 @@
     "categoryLabel": "¿De qué se trata?",
     "categories": [
       { "value": "General", "label": "General / Dudas" },
-      { "value": "Sponsor", "label": "Sponsor / Patrocinios" },
+      { "value": "Sponsor", "label": "Patrocinador" },
       { "value": "Speaker", "label": "Speaker / Charlas" },
       { "value": "Staff", "label": "Staff / Voluntario" },
       { "value": "Otro", "label": "Otro asunto" }
     ],
     "subjectLabel": "Asunto",
     "subjectPlaceholder": "Asunto de tu mensaje",
-    "packageLabel": "Paquete de patrocinio",
-    "packagePlaceholder": "Selecciona un paquete",
-    "packages": [
-      { "value": "Diamond", "label": "Diamond ($40,000 MXN / US$2,400)" },
-      { "value": "Platinum", "label": "Platinum ($20,000 MXN / US$1,200)" },
-      { "value": "Gold", "label": "Gold ($10,000 MXN / US$600)" },
-      { "value": "Silver", "label": "Silver ($5,000 MXN / US$300)" },
-      { "value": "MediaPartner", "label": "Media Partner / Aliado de prensa" },
-      { "value": "Custom", "label": "Paquete a la medida" }
-    ],
     "speakerCalloutH4": "🎤 ¡Queremos escucharte en el escenario!",
     "speakerCalloutBody": "Para proponer tu charla y ayudarnos a evaluar tu propuesta de la mejor manera, por favor completa nuestro formulario oficial para conferencistas:",
     "speakerCta": "Llenar Formulario de Charlas",
@@ -191,7 +179,6 @@
     "submitting": "Enviando...",
     "submit": "Enviar mensaje",
     "errorRequired": "Por favor, llena todos los campos requeridos.",
-    "errorPackage": "Por favor, selecciona un paquete de patrocinio.",
     "errorApi": "Lo sentimos, hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
     "errorNetwork": "No se pudo enviar el mensaje por un problema de conexión. Verifica tu red e intenta de nuevo.",
     "subjectFallback": "Nuevo Mensaje"

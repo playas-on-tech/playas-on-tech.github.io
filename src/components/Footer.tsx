@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { Instagram, Facebook, LinkedIn, X, TikTok } from "./SocialIcons";
 import { useTranslation } from "react-i18next";
+import AnivCta from "./AnivCta";
 
 const socials = [
   { label: "Instagram", href: "https://www.instagram.com/playasontech_mzo", Icon: Instagram },
@@ -63,11 +64,15 @@ export default function Footer() {
             <div key={column.title}>
               <div className="text-sm font-semibold text-white/40">{column.title}</div>
               <ul className="mt-4 space-y-3 text-white/80">
-                {column.links.map((link) => (
-                  <li key={link.label}>
-                    <FooterLink href={link.href} label={link.label} />
-                  </li>
-                ))}
+                {column.links.map((link) => {
+                  const item = (
+                    <li key={link.label}>
+                      <FooterLink href={link.href} label={link.label} />
+                    </li>
+                  );
+                  // Anniversary link is gated behind the feature flag
+                  return link.href === "/aniversario" ? <AnivCta key={link.label}>{item}</AnivCta> : item;
+                })}
               </ul>
             </div>
           ))}

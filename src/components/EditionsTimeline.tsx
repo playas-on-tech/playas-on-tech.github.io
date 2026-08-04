@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Play } from "./SocialIcons";
 import { useTranslation } from "react-i18next";
+import AnivCta from "./AnivCta";
 
 type Edition = {
   n: number;
@@ -123,16 +124,6 @@ export default function EditionsTimeline() {
                     <div className="text-xs font-semibold uppercase tracking-[0.18em] text-ocean">
                       {ed.date}
                     </div>
-                    <div className="mt-1.5 flex items-center gap-2">
-                      <span className="text-lg font-bold tracking-tight text-navy">
-                        {t("editionsTimeline.editionLabel")} #{ed.n}
-                      </span>
-                      {ed.next && (
-                        <span className="rounded-full bg-sunset/15 px-2 py-0.5 text-[11px] font-semibold text-sunset">
-                          {t("editionsTimeline.nextTag")}
-                        </span>
-                      )}
-                    </div>
                     <p className="mt-1 leading-snug text-navy/60">{ed.title}</p>
 
                     {ed.video && (
@@ -147,13 +138,15 @@ export default function EditionsTimeline() {
                       </a>
                     )}
                     {ed.next && (
-                      <Link
-                        href={t("editionsTimeline.reserveHref")}
-                        className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-sunset transition hover:text-sunset-400"
-                      >
-                        {t("editionsTimeline.reserve")}
-                        <ArrowUpRight size={13} className="transition group-hover:rotate-45" />
-                      </Link>
+                      <AnivCta>
+                        <Link
+                          href={t("editionsTimeline.reserveHref")}
+                          className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-sunset transition hover:text-sunset-400"
+                        >
+                          {t("editionsTimeline.reserve")}
+                          <ArrowUpRight size={13} className="transition group-hover:rotate-45" />
+                        </Link>
+                      </AnivCta>
                     )}
                   </div>
                 </li>

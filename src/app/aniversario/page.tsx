@@ -10,6 +10,7 @@ import Registro from "@/components/aniversario/Registro";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
 import JsonLd from "@/components/JsonLd";
+import AniversarioGate from "@/components/AniversarioGate";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -104,19 +105,21 @@ export default function AniversarioPage() {
     <>
       <JsonLd data={breadcrumbSchema} />
       <JsonLd data={eventSchema} />
-      <AnivHeader />
-      <main>
-        <AnivHero />
-        <Ponentes />
-        <Agenda />
-        <Sponsors />
-        <ComunidadesAliadas />
-        <Ubicacion />
-        <Registro />
-      </main>
-      <Footer />
-      {/* Reuses the homepage scroll-reveal observer (hero parallax/count-up are no-ops here). */}
-      <SiteEffects />
+      <AniversarioGate>
+        <AnivHeader />
+        <main>
+          <AnivHero />
+          <Ponentes />
+          <Agenda />
+          <Sponsors />
+          <ComunidadesAliadas />
+          <Ubicacion />
+          <Registro />
+        </main>
+        <Footer />
+        {/* Reuses the homepage scroll-reveal observer (hero parallax/count-up are no-ops here). */}
+        <SiteEffects />
+      </AniversarioGate>
     </>
   );
 }

@@ -1,6 +1,6 @@
 {
   "hero": {
-    "h1a": "Manzanillo's tech community —",
+    "h1a": "Manzanillo's tech community",
     "h1b": "by the sea.",
     "sub": "Free meetup for developers, designers, and founders in the Mexican Pacific. Every two months, by the sea of Colima. No ties. With waves.",
     "ctaPrimary": "Learn all about the 7th Anniversary",
@@ -54,22 +54,20 @@
     "pill": "Events · Meetups",
     "h2": "Tech meetups in Manzanillo — every two months.",
     "soonTag": "Upcoming",
-    "cardTitle": "7th Anniversary · Edition #7",
-    "cardBody": "The next PlayasOnTech meetup is our 7th anniversary: a full day of tech talks, networking, and a toast by the sea at Hotel Marbella, Manzanillo. Limited seats, ticket required.",
+    "cardTitle": "September 2026",
+    "cardBody": "We're preparing the next session. Follow us on social media for more details.",
     "details": [
-      { "label": "Date", "value": "Sat, Jul 18, 2026" },
-      { "label": "Time", "value": "10:00 to 18:00" },
-      { "label": "Venue", "value": "Hotel Marbella" }
+      { "label": "Date", "value": "Sat, Sep 17, 2026" },
+      { "label": "Time", "value": "8:00 PM to 10:00 PM" },
+      { "label": "Venue", "value": "rootDevLab" }
     ],
-    "cta": "See the 7th anniversary",
-    "ctaHref": "/aniversario"
+    "cta": "Coming soon",
+    "ctaHref": "#eventos"
   },
   "editionsTimeline": {
     "pill": "The story",
     "h2": "From edition #1 to the 7th anniversary.",
     "sub": "Every two months, no exceptions, by the sea. This is the path that brought us here.",
-    "editionLabel": "Edition",
-    "nextTag": "Upcoming",
     "watchSession": "Watch session",
     "reserve": "Reserve seat",
     "reserveHref": "/aniversario",
@@ -132,17 +130,17 @@
     "h2": "Frequently Asked Questions about PlayasOnTech",
     "sub": "Everything you need to know before joining the tech meetup of the Mexican Pacific.",
     "items": [
-      { "q": "What is PlayasOnTech?", "a": "PlayasOnTech is Manzanillo's tech community in Colima, Mexico. It gathers developers, designers, founders, and tech enthusiasts in free meetups held every two months, by the sea. Since July 2025, we have held six editions with over 200 cumulative attendees." },
-      { "q": "Where is PlayasOnTech held?", "a": "The meetups are held in Manzanillo, Colima, Mexico — at venues in the hotel zone, always near or by the sea. The 7th edition (July 2026) will take place at Hotel Marbella, on Playa Azul Salagua." },
-      { "q": "When is the next event?", "a": "The next meetup is our 7th anniversary: Saturday, July 18, 2026, from 10:00 AM to 6:00 PM, at Hotel Marbella, Manzanillo. After that date, we will maintain our bi-monthly cadence." },
+      { "q": "What is PlayasOnTech?", "a": "PlayasOnTech is Manzanillo's tech community in Colima, Mexico. It gathers developers, designers, founders, and tech enthusiasts in free meetups held every two months, by the sea." },
+      { "q": "Where is PlayasOnTech held?", "a": "The meetups are held in Manzanillo, Colima, Mexico — at venues in the hotel zone, always near or by the sea." },
+      { "q": "When is the next event?", "a": "Check our events page for the date and location of the next meetup. We maintain a bi-monthly cadence." },
       { "q": "How much does it cost to attend?", "a": "Attending PlayasOnTech is 100% free. We do not charge for entry, registration, or materials — we support ourselves through community donations and sponsorships." },
       { "q": "Who can attend? Do I need tech experience?", "a": "Anyone interested in technology can attend. No prior experience is required: we welcome senior developers, students, designers, founders, and the curious. If you want to learn or meet the coast's tech community, you belong here." },
-      { "q": "How do I register?", "a": "Registration is done on playasontech.com, in the next event section. For the 7th anniversary, registration is managed via Eventbrite with a $350 MXN recovery fee, and space is limited." },
+      { "q": "How do I register?", "a": "Registration is done on playasontech.com, in the next event section. Space is limited." },
       { "q": "What kind of talks are given?", "a": "We cover broad tech topics: web development, GSAP animation, AI and authentication, open source, community, and coding. There are deep technical talks, lightning talks, and panels. Recordings are uploaded to our YouTube channel @PlayasOnTech." },
       { "q": "How do I propose a talk?", "a": "Anyone can propose a talk through our public form — the link is in the 'Volunteer' section and in the footer. We review submissions in order and reply before each edition's program closes." },
       { "q": "Who organizes PlayasOnTech?", "a": "PlayasOnTech is organized by a team of volunteers in their free time, on a non-profit basis. The current team: Danny, Franky, H, Juaneque, Kev, and Mane. We are always looking for new hands to join the team." },
       { "q": "Are there similar tech communities in Manzanillo or Colima?", "a": "PlayasOnTech is the largest active tech community on the Colima coast, with a bi-monthly cadence and free admission. If you know of another local tech initiative that would like to collaborate, write to us." },
-      { "q": "How do I support the community?", "a": "You can support us in three ways: (1) donating via PayPal or Patreon — the links are in the Donations section; (2) sponsoring an edition or the anniversary, with packages starting at $5,000 MXN; (3) joining the organizing team as a volunteer." },
+      { "q": "How do I support the community?", "a": "You can support us in three ways: (1) donating via PayPal or Patreon — the links are in the Donations section; (2) sponsoring an edition, with packages starting at $5,000 MXN; (3) joining the organizing team as a volunteer." },
       { "q": "Are there recordings of past events?", "a": "Yes. All recent sessions are on our YouTube channel — @PlayasOnTech — under the Creative Commons license (CC BY 4.0). You can watch, share, and reuse them with attribution." }
     ]
   },
@@ -166,23 +164,13 @@
     "categoryLabel": "What's it about?",
     "categories": [
       { "value": "General", "label": "General / Questions" },
-      { "value": "Sponsor", "label": "Sponsor / Partnership" },
+      { "value": "Sponsor", "label": "Sponsor" },
       { "value": "Speaker", "label": "Speaker / Talks" },
       { "value": "Staff", "label": "Staff / Volunteer" },
       { "value": "Otro", "label": "Other" }
     ],
     "subjectLabel": "Subject",
     "subjectPlaceholder": "Subject of your message",
-    "packageLabel": "Sponsorship package",
-    "packagePlaceholder": "Select a package",
-    "packages": [
-      { "value": "Diamond", "label": "Diamond ($40,000 MXN / US$2,400)" },
-      { "value": "Platinum", "label": "Platinum ($20,000 MXN / US$1,200)" },
-      { "value": "Gold", "label": "Gold ($10,000 MXN / US$600)" },
-      { "value": "Silver", "label": "Silver ($5,000 MXN / US$300)" },
-      { "value": "MediaPartner", "label": "Media Partner" },
-      { "value": "Custom", "label": "Custom package" }
-    ],
     "speakerCalloutH4": "🎤 We want to hear you on stage!",
     "speakerCalloutBody": "To propose your talk and help us evaluate your proposal properly, please fill out our official speaker form:",
     "speakerCta": "Fill speaker form",
@@ -191,7 +179,6 @@
     "submitting": "Sending...",
     "submit": "Send message",
     "errorRequired": "Please fill in all required fields.",
-    "errorPackage": "Please select a sponsorship package.",
     "errorApi": "Sorry, there was a problem sending your message. Please try again later.",
     "errorNetwork": "Could not send your message due to a network problem. Check your connection and try again.",
     "subjectFallback": "New Message"

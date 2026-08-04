@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
 import JsonLd from "@/components/JsonLd";
 import PatrocinadoresHeroContent from "@/components/PatrocinadoresHeroContent";
+import AniversarioGate from "@/components/AniversarioGate";
 
 export const metadata: Metadata = {
   title: "Patrocinadores · 7º Aniversario — PlayasOnTech",
@@ -66,13 +67,15 @@ export default function PatrocinadoresPage() {
   return (
     <>
       <JsonLd data={breadcrumbSchema} />
-      <AnivHeader />
-      <main>
-        <PatrocinadoresHeroContent />
-        <Patrocinadores withHeader={false} />
-      </main>
-      <Footer />
-      <SiteEffects />
+      <AniversarioGate>
+        <AnivHeader />
+        <main>
+          <PatrocinadoresHeroContent />
+          <Patrocinadores withHeader={false} />
+        </main>
+        <Footer />
+        <SiteEffects />
+      </AniversarioGate>
     </>
   );
 }

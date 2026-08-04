@@ -2,6 +2,8 @@
 import Link from "next/link";
 import { ArrowUpRight, ArrowRight, ChevronDown } from "./SocialIcons";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
+import AnivCta from "./AnivCta";
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -17,8 +19,11 @@ export default function Hero() {
       </div>
       <div
         id="hero-content"
-        className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pt-28 min-[360px]:pt-32 pb-36 text-center lg:pb-40"
+        className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-start px-6 pt-28 min-[360px]:pt-32 pb-36 text-center lg:pb-40 gap-8"
       >
+        <div className="w-full flex justify-center">
+          <Image src="/assets/logo-full.webp" alt="Playas on Tech" width={1024} height={600} className="mb-6 max-h-[15rem] object-contain" />
+        </div>
         <h1 className="cine cine-1 max-w-[15ch] text-[clamp(2.2rem,7vw,6.2rem)] font-semibold leading-[0.98] tracking-tightest text-white">
           {t("hero.h1a")}{" "}
           <span className="text-ocean-300">
@@ -29,15 +34,17 @@ export default function Hero() {
           {t("hero.sub")}
         </p>
         <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
-          <Link
-            href={anniversaryHref}
-            className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
-          >
-            {t("hero.ctaPrimary")}
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45 shrink-0">
-              <ArrowUpRight size={16} />
-            </span>
-          </Link>
+          <AnivCta>
+            <Link
+              href={anniversaryHref}
+              className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
+            >
+              {t("hero.ctaPrimary")}
+              <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45 shrink-0">
+                <ArrowUpRight size={16} />
+              </span>
+            </Link>
+          </AnivCta>
           <Link
             href={videosHref}
             className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
