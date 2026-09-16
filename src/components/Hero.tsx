@@ -8,7 +8,7 @@ import AnivCta from "./AnivCta";
 export default function Hero() {
   const { t } = useTranslation();
   const anniversaryHref = "/aniversario";
-  const videosHref = "#videos";
+  const eventHref = "#eventos";
   return (
     <section id="top" className="mesh-hero grain relative min-h-screen overflow-hidden">
       <div id="hero-blobs" className="blobs cine-field">
@@ -46,7 +46,7 @@ export default function Hero() {
             </Link>
           </AnivCta>
           <Link
-            href={videosHref}
+            href={eventHref}
             className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
           >
             {t("hero.ctaSecondary")}
