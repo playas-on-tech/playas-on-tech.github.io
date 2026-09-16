@@ -22,26 +22,19 @@ npm run deploy-ci  # Deploy static export to GitHub Pages
 - **Content:** Each section component owns its copy in a local `COPY = { es: ..., en: ... }` constant. The `Lang` type and constants live in `src/i18n/lang.ts`.
 - **Assets:** Stored in `public/` (referenced as `/assets/...`).
 
- ## Deploying
+ ## Adding an event
+
+The next meetup is announced on the homepage's next-event card only — don't create new event pages.
+
+1. Add the event flyer image to the assets directory and point the next-event card's flyer at it.
+2. Update the card copy in **both locales in the same edit** (es + en). Spanish is canonical.
+3. Card content is minimal: date, time, venue, free-entry/sponsor line, and the flyer image. Talk titles and speaker details live on the flyer, not in the card.
+4. Don't duplicate flyer information on mobile. Everything the flyer already communicates (date, time, venue, entry) is desktop-only.
+5. A venue address links to its Google Maps share URL wherever it appears.
+
+## Deploying
 
 `npm run deploy-ci` pushes local commits, triggers the GitHub Actions build/deploy workflow, and verifies the online status of the static export on the `gh-pages` branch.
-
-## Adding an event
-
-The "Próximo encuentro" card on the homepage (`src/components/Eventos.tsx`) is the only place a meetup is announced. The flyer opens `src/components/Lightbox.tsx` (single-image viewer: backdrop click, ×, or Esc to close, body scroll locked) — the richer gallery lightbox (arrows, swipe, counter, download) is still inline in `AniversarioThankYou.tsx`.
-
-To add or update the next event:
-
-1. Copy the event flyer into `public/assets/` (e.g. `meetup-sep2026-speakers.jpg`), update the `FLYER` constant, and reference it from the card.
-2. Edit the `eventos` block in `src/i18n/locales/es.json` and `en.json` in the same edit — both must stay in sync.
-3. Keys: `cardTitle` (month/year), `cardBody` (free entry / sponsor line), `details` (array of `{ label, value, url? }` — a `url` renders the value as a `MapLink` to Google Maps; other values stay plain text), `cta` + `ctaHref`.
-
-Layout rules (already in `Eventos.tsx`, keep them when editing):
-
-- Card is a two-column grid: text on the left, flyer image on the right (`w-full h-auto`, never cropped). Clicking the flyer opens the lightbox.
-- Mobile: card shows only the tag, `cardTitle`, the flyer, then the Maps link at the bottom; everything else duplicated by the flyer (date, time, venue, entry) is `hidden md:block` / `hidden md:flex`.
-- Desktop: also show `cardBody` and the `details` chips (date/time/venue/address). No talk titles — those live on the flyer.
-- Maps links use the `MapLink` component in `Eventos.tsx` (pin icon + underlined address + external-link arrow), shared by mobile and desktop.
 
 ## Conventions
 
