@@ -122,7 +122,6 @@ export default function AniversarioThankYou() {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   return (

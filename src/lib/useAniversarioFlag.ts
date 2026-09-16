@@ -16,20 +16,8 @@ export function useAniversarioFlag(): boolean | null {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Fast path: flag already resolved
-    const current = posthog.getFeatureFlag(FLAG);
-    if (current !== undefined) {
-      setEnabled(current === FLAG);
-      return;
-    }
-
-    // Wait for PostHog to load flags, then resolve
-    const onFlags = () => {
-      const flag = posthog.getFeatureFlag(FLAG);
-      setEnabled(flag === FLAG);
-    };
-    posthog.onFeatureFlags(onFlags);
-
+    // Wait for PostHog to resolve flags, then sync; fires immediately if already resolved
+    posthog.onFeatureFlags((flags) => setEnabled(flags.includes(FLAG)));
   }, []);
 
   return enabled;
