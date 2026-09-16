@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, Play } from "./SocialIcons";
+import { ArrowRight, Play } from "./Icons";
 import { useTranslation } from "react-i18next";
 
 const CHANNEL_URL = "https://www.youtube.com/@PlayasOnTech";

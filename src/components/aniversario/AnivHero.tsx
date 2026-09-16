@@ -2,7 +2,7 @@
 import { useTranslation } from "react-i18next";
 import type { Lang } from "@/i18n/lang";
 
-import { ArrowUpRight, ArrowRight, Calendar, Clock, MapPin } from "../SocialIcons";
+import { ArrowUpRight, ArrowRight, Calendar, Clock, MapPin } from "../Icons";
 import { anivEvent } from "./event";
 import Countdown from "./Countdown";
 

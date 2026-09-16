@@ -1,5 +1,5 @@
 "use client";
-import { Check } from "./SocialIcons";
+import { Check } from "./Icons";
 import { useTranslation } from "react-i18next";
 
 export default function Venue() {

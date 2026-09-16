@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, ChevronDown } from "./SocialIcons";
+import { ArrowUpRight, ArrowRight, ChevronDown } from "./Icons";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
 import AnivCta from "./AnivCta";

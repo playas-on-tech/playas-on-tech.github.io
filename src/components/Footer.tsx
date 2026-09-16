@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Instagram, Facebook, LinkedIn, X, TikTok } from "./SocialIcons";
+import { Instagram, Facebook, LinkedIn, X, TikTok } from "./Icons";
 import { useTranslation } from "react-i18next";
 import AnivCta from "./AnivCta";
 
