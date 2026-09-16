@@ -54,12 +54,12 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Eventos />
         <Statement />
         <Marquee />
         <StatsStrip />
         <Comunidad />
         <CodeOfConduct />
-        <Eventos />
         <EditionsTimeline />
         <Venue />
         <Videos />
