@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Play } from "./SocialIcons";
+import { ArrowUpRight, Play } from "./Icons";
 import { useTranslation } from "react-i18next";
 import AnivCta from "./AnivCta";
 

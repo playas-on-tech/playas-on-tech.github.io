@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowUpRight } from "./SocialIcons";
+import { ArrowUpRight } from "./Icons";
 import { useTranslation } from "react-i18next";
 
 export default function Contacto() {

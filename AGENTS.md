@@ -22,6 +22,16 @@ npm run deploy-ci  # Deploy static export to GitHub Pages
 - **Content:** Each section component owns its copy in a local `COPY = { es: ..., en: ... }` constant. The `Lang` type and constants live in `src/i18n/lang.ts`.
 - **Assets:** Stored in `public/` (referenced as `/assets/...`).
 
+ ## Adding an event
+
+The next meetup is announced on the homepage's next-event card only — don't create new event pages.
+
+1. Add the event flyer image to the assets directory and point the next-event card's flyer at it.
+2. Update the card copy in **both locales in the same edit** (es + en). Spanish is canonical.
+3. Card content is minimal: date, time, venue, free-entry/sponsor line, and the flyer image. Talk titles and speaker details live on the flyer, not in the card.
+4. Don't duplicate flyer information on mobile. Everything the flyer already communicates (date, time, venue, entry) is desktop-only.
+5. A venue address links to its Google Maps share URL wherever it appears.
+
 ## Deploying
 
 `npm run deploy-ci` pushes local commits, triggers the GitHub Actions build/deploy workflow, and verifies the online status of the static export on the `gh-pages` branch.

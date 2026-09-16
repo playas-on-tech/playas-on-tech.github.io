@@ -5,7 +5,7 @@ import Link from "next/link";
 import Footer from "./Footer";
 import Fireworks from "./Fireworks";
 import SiteEffects from "./SiteEffects";
-import { ArrowUpRight } from "./SocialIcons";
+import { ArrowUpRight } from "./Icons";
 import { useLang } from "@/lib/LangProvider";
 
 const PHOTOS = Array.from({ length: 10 }, (_, i) => `/assets/7aniversario/${i + 1}.webp`);
@@ -122,7 +122,6 @@ export default function AniversarioThankYou() {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKey);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
   return (

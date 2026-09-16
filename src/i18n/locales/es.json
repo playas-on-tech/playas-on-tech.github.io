@@ -4,7 +4,7 @@
     "h1b": "frente al mar.",
     "sub": "Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos meses, frente al mar de Colima. Sin corbatas. Con olas.",
     "ctaPrimary": "Ver todo sobre el 7o Aniversario",
-    "ctaSecondary": "Ver charlas anteriores",
+    "ctaSecondary": "Ver próximo evento",
     "sticker": "GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR · ",
     "scrollCue": "Desliza"
   },
@@ -55,14 +55,19 @@
     "h2": "Meetups tech en Manzanillo — cada dos meses.",
     "soonTag": "Próximo encuentro",
     "cardTitle": "Septiembre 2026",
-    "cardBody": "Estamos preparando la próxima sesión. Síguenos en redes para enterarte de más detalles.",
+    "cardBody": "Entrada libre. Gracias a nuestro sponsor SpaceFit.",
     "details": [
-      { "label": "Fecha", "value": "Sáb 17 sept 2026" },
-      { "label": "Hora", "value": "8:00 a 10:00 p. m." },
-      { "label": "Lugar", "value": "rootDevLab" }
+      { "label": "Fecha", "value": "Jue 17 sept 2026" },
+      { "label": "Hora", "value": "8:00 pm" },
+      { "label": "Lugar", "value": "Terraza SpaceFit" },
+      { "label": "Dirección", "value": "Av. Manzanillo 380, La Joya, Manzanillo, Col.", "url": "https://maps.app.goo.gl/fT4ag9tVLvWkiHLUA" }
     ],
     "cta": "Próximamente",
-    "ctaHref": "#eventos"
+    "viewFlyer": "Ver el flyer del evento en tamaño completo",
+    "close": "Cerrar",
+    "ctaHref": "#eventos",
+    "videosCta": "Ver charlas anteriores",
+    "videosCtaHref": "#videos"
   },
   "editionsTimeline": {
     "pill": "La historia",
@@ -483,3 +488,4 @@
     }
   }
 }
+
