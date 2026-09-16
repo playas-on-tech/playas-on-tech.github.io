@@ -4,7 +4,7 @@
     "h1b": "frente al mar.",
     "sub": "Meetup gratuito de desarrolladores, diseñadores y founders del Pacífico mexicano. Cada dos meses, frente al mar de Colima. Sin corbatas. Con olas.",
     "ctaPrimary": "Ver todo sobre el 7o Aniversario",
-    "ctaSecondary": "Ver charlas anteriores",
+    "ctaSecondary": "Ver próximo evento",
     "sticker": "GRATIS · CADA 2 MESES · MANZANILLO · FRENTE AL MAR · ",
     "scrollCue": "Desliza"
   },
@@ -65,7 +65,9 @@
     "cta": "Próximamente",
     "viewFlyer": "Ver el flyer del evento en tamaño completo",
     "close": "Cerrar",
-    "ctaHref": "#eventos"
+    "ctaHref": "#eventos",
+    "videosCta": "Ver charlas anteriores",
+    "videosCtaHref": "#videos"
   },
   "editionsTimeline": {
     "pill": "La historia",
@@ -486,3 +488,4 @@
     }
   }
 }
+

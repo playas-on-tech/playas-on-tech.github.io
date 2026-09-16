@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, MapPin } from "./Icons";
+import { ArrowRight, ArrowUpRight, MapPin } from "./Icons";
 import { useTranslation } from "react-i18next";
 import AnivCta from "./AnivCta";
 import Lightbox from "./Lightbox";
@@ -86,6 +86,18 @@ export default function Eventos() {
                 ))}
             </div>
           </div>
+        </div>
+
+        <div className="reveal mt-10 flex justify-center">
+          <Link
+            href={t("eventos.videosCtaHref")}
+            className="group inline-flex items-center gap-2.5 rounded-full border border-navy/15 bg-white py-2 pl-6 pr-2 text-[15px] font-semibold text-navy transition hover:bg-navy hover:text-white"
+          >
+            {t("eventos.videosCta")}
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-navy text-white transition group-hover:translate-x-0.5 shrink-0">
+              <ArrowRight size={15} />
+            </span>
+          </Link>
         </div>
       </div>
 
