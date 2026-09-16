@@ -147,3 +147,11 @@ export function Gift(props: IconProps) {
     </StrokeIcon>
   );
 }
+
+export function Close({ size = 20, className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" className={className} aria-hidden="true">
+      <path d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  );
+}

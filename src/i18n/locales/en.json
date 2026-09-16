@@ -55,13 +55,16 @@
     "h2": "Tech meetups in Manzanillo — every two months.",
     "soonTag": "Upcoming",
     "cardTitle": "September 2026",
-    "cardBody": "We're preparing the next session. Follow us on social media for more details.",
+    "cardBody": "Free entry. Courtesy of our sponsor SpaceFit.",
     "details": [
-      { "label": "Date", "value": "Sat, Sep 17, 2026" },
-      { "label": "Time", "value": "8:00 PM to 10:00 PM" },
-      { "label": "Venue", "value": "rootDevLab" }
+      { "label": "Date", "value": "Thu, Sep 17, 2026" },
+      { "label": "Time", "value": "8:00 PM" },
+      { "label": "Venue", "value": "Terraza SpaceFit" },
+      { "label": "Address", "value": "Av. Manzanillo 380, La Joya, Manzanillo, Col.", "url": "https://maps.app.goo.gl/fT4ag9tVLvWkiHLUA" }
     ],
     "cta": "Coming soon",
+    "viewFlyer": "View the event flyer at full size",
+    "close": "Close",
     "ctaHref": "#eventos"
   },
   "editionsTimeline": {
