@@ -13,6 +13,7 @@ import Organizadores from "@/components/Organizadores";
 import SobreNosotros from "@/components/SobreNosotros";
 import FAQ from "@/components/FAQ";
 import Donaciones from "@/components/Donaciones";
+import Merch from "@/components/Merch";
 import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
@@ -67,6 +68,7 @@ export default function Home() {
         <SobreNosotros />
         <FAQ />
         <Donaciones />
+        <Merch />
         <Contacto />
       </main>
       <Footer />

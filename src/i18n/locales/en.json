@@ -472,6 +472,10 @@
     "reserve": "Reserve my seat"
   },
   "merch": {
+    "home": {
+      "h2": "Get the official PlayasOnTech merch.",
+      "cta": "See merch"
+    },
     "header": {
       "ctaLabel": "7th Anniversary",
       "ctaHref": "/aniversario"

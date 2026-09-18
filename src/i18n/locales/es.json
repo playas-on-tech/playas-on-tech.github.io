@@ -472,6 +472,10 @@
     "reserve": "Reservar mi lugar"
   },
   "merch": {
+    "home": {
+      "h2": "Llévate el merch oficial de PlayasOnTech.",
+      "cta": "Ver merch"
+    },
     "header": {
       "ctaLabel": "7º Aniversario",
       "ctaHref": "/aniversario"
