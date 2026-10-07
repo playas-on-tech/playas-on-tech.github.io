@@ -18,40 +18,15 @@ import Contacto from "@/components/Contacto";
 import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
 import JsonLd from "@/components/JsonLd";
-import esTranslations from "@/i18n/locales/es.json";
-import enTranslations from "@/i18n/locales/en.json";
-
-const faqPageSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: esTranslations.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
-
-const faqPageSchemaEn = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: enTranslations.faq.items.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
-};
+import { faqSchema } from "@/lib/schema";
+import es from "@/i18n/locales/es.json";
+import en from "@/i18n/locales/en.json";
 
 export default function Home() {
   return (
     <>
-      <JsonLd data={faqPageSchema} />
-      <JsonLd data={faqPageSchemaEn} />
+      <JsonLd data={faqSchema(es.faq.items)} />
+      <JsonLd data={faqSchema(en.faq.items)} />
       <Header />
       <main>
         <Hero />

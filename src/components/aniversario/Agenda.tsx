@@ -1,10 +1,11 @@
 "use client";
-import { useTranslation } from "react-i18next";
+
 import Image from "next/image";
+import { useLang } from "@/lib/lang";
 import agendaData from "@/data/agenda.json";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 type Photo = { src: string; position?: string };
-
 type ScheduleItem = {
   time: string;
   label: string;
@@ -13,45 +14,51 @@ type ScheduleItem = {
   type: "sunset" | "ocean" | "keynote" | "panel" | "comida" | "after";
 };
 
-// ponytail: static content extracted to src/data/agenda.json for easier maintenance
-const typeStyles = {
+const TYPE_STYLES: Record<ScheduleItem["type"], string> = {
   sunset: "bg-sunset text-white",
   ocean: "bg-ocean text-white",
   keynote: "bg-keynote text-white",
   panel: "bg-panel text-white",
   comida: "bg-comida text-navy",
   after: "bg-navy text-white",
-} as Record<string, string>;
+};
+
+const TALL_TYPES: ScheduleItem["type"][] = ["after", "comida"];
 
 export default function Agenda() {
-  const { t } = useTranslation();
-  const schedule = agendaData;
+  const { t } = useLang();
+  const schedule = agendaData as ScheduleItem[];
 
   return (
     <section id="programa" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[820px]">
-        <div className="reveal mb-14 text-center">
-          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t("aniversario.agenda.pill")}
-          </span>
-          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            {t("aniversario.agenda.h2")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-[46ch] text-lg leading-relaxed text-navy/60">{t("aniversario.agenda.sub")}</p>
-        </div>
+        <SectionHeader
+          pill={t("aniversario.agenda.pill")}
+          title={t("aniversario.agenda.h2")}
+          sub={t("aniversario.agenda.sub")}
+          layout="stack"
+          subClass="mt-4 max-w-[46ch]"
+          className="reveal mb-14 max-w-[640px]"
+        />
 
         <div className="reveal relative ml-4 sm:ml-0">
           <div className="absolute left-0 top-3 bottom-3 w-0.5 bg-navy/10 sm:left-3" />
+
           {schedule.map((item, i) => (
             <div key={i} className="relative pl-8 sm:pl-14 pb-8 last:pb-0">
               <div className="absolute left-[-3px] top-3.5 h-2.5 w-2.5 rounded-full bg-navy/20 ring-4 ring-cream sm:left-[9px]" />
-              <div className={`rounded-xl px-5 py-4 shadow-sm font-medium ${typeStyles[item.type]} ${["after", "comida"].includes(item.type) ? "min-h-[8rem] pt-8" : ""}`}>
+
+              <div
+                className={`rounded-xl px-5 py-4 shadow-sm font-medium ${TYPE_STYLES[item.type]} ${
+                  TALL_TYPES.includes(item.type) ? "min-h-[8rem] pt-8" : ""
+                }`}
+              >
                 <div className="flex items-center gap-4">
                   {item.photos.length > 0 && (
                     <div className="flex -space-x-3">
-                      {item.photos.map((photo, idx) => (
+                      {item.photos.map((photo, j) => (
                         <div
-                          key={idx}
+                          key={j}
                           className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-white/40"
                         >
                           <Image
@@ -59,13 +66,14 @@ export default function Agenda() {
                             alt={item.label}
                             fill
                             className="object-cover"
-                            style={{ objectPosition: (photo as Photo).position || "center" }}
+                            style={{ objectPosition: photo.position || "center" }}
                             sizes="56px"
                           />
                         </div>
                       ))}
                     </div>
                   )}
+
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                       <span className="text-lg">{item.label}</span>

@@ -1,9 +1,10 @@
 "use client";
-import Link from "next/link";
-import { ArrowUpRight } from "./Icons";
-import { useTranslation } from "react-i18next";
 
-const organizers = [
+import { useLang } from "@/lib/lang";
+import Cta from "@/components/ui/Cta";
+import SectionHeader from "@/components/ui/SectionHeader";
+
+const ORGANIZERS = [
   { name: "Edson", img: "/assets/staff/edson.png" },
   { name: "H", img: "/assets/staff/h.png" },
   { name: "Juaneque", img: "/assets/staff/juaneque.png" },
@@ -15,23 +16,24 @@ const organizers = [
 ];
 
 export default function Organizadores() {
-  const { t } = useTranslation();
+  const { t } = useLang();
+
   return (
     <section id="organizadores" className="bg-cream-100 px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
-        <div className="reveal mx-auto max-w-[640px] text-center">
-          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t("organizadores.pill")}
-          </span>
-          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            {t("organizadores.h2")}
-          </h2>
-          <p className="mx-auto mt-4 text-lg leading-relaxed text-navy/60">{t("organizadores.sub")}</p>
-        </div>
+        <SectionHeader
+          pill={t("organizadores.pill")}
+          title={t("organizadores.h2")}
+          sub={t("organizadores.sub")}
+          layout="stack"
+          align="center"
+          subClass="mt-4"
+          className="reveal max-w-[640px]"
+        />
 
         <div className="reveal mt-14">
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-10 sm:gap-x-16 max-w-2xl mx-auto justify-items-center">
-            {organizers.map((person) => (
+            {ORGANIZERS.map((person) => (
               <li key={person.name} className="flex flex-col items-center text-center w-24">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -51,15 +53,9 @@ export default function Organizadores() {
             <h3 className="text-2xl font-semibold tracking-tight">{t("organizadores.ctaH3")}</h3>
             <p className="mx-auto mt-2 max-w-[52ch] text-white/70">{t("organizadores.ctaBody")}</p>
           </div>
-          <Link
-            href={t("organizadores.ctaHref")}
-            className="group inline-flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
-          >
+          <Cta href={t("organizadores.ctaHref")} shadow="" dot="bg-white text-navy">
             {t("organizadores.cta")}
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
-              <ArrowUpRight size={16} />
-            </span>
-          </Link>
+          </Cta>
         </div>
       </div>
     </section>

@@ -11,34 +11,23 @@ import Footer from "@/components/Footer";
 import SiteEffects from "@/components/SiteEffects";
 import JsonLd from "@/components/JsonLd";
 import AniversarioGate from "@/components/AniversarioGate";
+import { EVENT } from "@/lib/event";
+import { breadcrumb } from "@/lib/schema";
+import { pageMetadata } from "@/lib/metadata";
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://playasontech.com/" },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "7º Aniversario",
-      item: "https://playasontech.com/aniversario",
-    },
-  ],
-};
-
-const eventSchema = {
+const EVENT_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Event",
   name: "PlayasOnTech — 7º Aniversario",
   description:
     "7º Aniversario de la comunidad tech de Manzanillo: charlas, networking y brindis frente al mar.",
-  startDate: "2026-07-18T10:00:00-06:00",
+  startDate: EVENT.dateISO,
   endDate: "2026-07-18T18:00:00-06:00",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   location: {
     "@type": "Place",
-    name: "Hotel Marbella",
+    name: EVENT.venue,
     address: {
       "@type": "PostalAddress",
       streetAddress: "Marbella 7, Playa Azul Salagua",
@@ -54,57 +43,30 @@ const eventSchema = {
     price: "0",
     priceCurrency: "MXN",
     availability: "https://schema.org/LimitedAvailability",
-    url: "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315",
+    // The structured data keeps the plain eventbrite URL; the affiliate tag is only for links.
+    url: EVENT.eventbriteUrl.split("?")[0],
     validFrom: "2026-05-01T00:00:00-06:00",
   },
-  organizer: {
-    "@type": "Organization",
-    name: "PlayasOnTech",
-    url: "https://playasontech.com",
-  },
+  organizer: { "@type": "Organization", name: "PlayasOnTech", url: "https://playasontech.com" },
 };
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "7º Aniversario · PlayasOnTech — Meetup tech en Manzanillo, 18 julio 2026",
   description:
     "Celebra el 7º aniversario de PlayasOnTech, la comunidad tech de Manzanillo, Colima. Sábado 18 de julio de 2026 en el Hotel Marbella: charlas, networking y brindis frente al mar. Cupo limitado.",
-  alternates: {
-    canonical: "/aniversario",
-    languages: {
-      "x-default": "https://playasontech.com/aniversario",
-      "es-MX": "https://playasontech.com/aniversario",
-      en: "https://playasontech.com/aniversario",
-    },
-  },
-  openGraph: {
-    title: "7º Aniversario · PlayasOnTech",
-    description:
-      "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un evento para celebrar 7 años frente al mar con charlas, networking y brindis. Cupo limitado — reserva tu lugar.",
-    locale: "es_MX",
-    type: "website",
-    images: [
-      {
-        url: "https://playasontech.com/assets/metadata/og-aniversario.jpg",
-        width: 1200,
-        height: 630,
-        alt: "7º Aniversario PlayasOnTech",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "7º Aniversario · PlayasOnTech",
-    description:
-      "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un evento para celebrar 7 años frente al mar con charlas, networking y brindis. Cupo limitado — reserva tu lugar.",
-    images: ["https://playasontech.com/assets/metadata/og-aniversario.jpg"],
-  },
-};
+  ogTitle: "7º Aniversario · PlayasOnTech",
+  ogDescription:
+    "Sábado 18 de julio, 2026 · Hotel Marbella, Manzanillo. Un evento para celebrar 7 años frente al mar con charlas, networking y brindis. Cupo limitado — reserva tu lugar.",
+  image: "/assets/metadata/og-aniversario.jpg",
+  alt: "7º Aniversario PlayasOnTech",
+  path: "/aniversario",
+});
 
 export default function AniversarioPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema} />
-      <JsonLd data={eventSchema} />
+      <JsonLd data={breadcrumb([["Inicio", "/"], ["7º Aniversario", "/aniversario"]])} />
+      <JsonLd data={EVENT_SCHEMA} />
       <AniversarioGate>
         <AnivHeader />
         <main>

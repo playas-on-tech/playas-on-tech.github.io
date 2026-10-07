@@ -1,14 +1,14 @@
 "use client";
 
-import Navbar from "../Navbar";
-import { useTranslation } from "react-i18next";
+import { useLang } from "@/lib/lang";
+import Navbar, { type NavItem } from "@/components/Navbar";
 
 export default function AnivHeader() {
-  const { t } = useTranslation();
+  const { t } = useLang();
 
   return (
     <Navbar
-      navLinks={t("aniversario.nav", { returnObjects: true }) as Array<{ href: string; label: string }>}
+      navLinks={t("aniversario.nav", { returnObjects: true }) as NavItem[]}
       ctaLabel={t("aniversario.header.reserve")}
       ctaHref={t("aniversario.header.registroHref")}
     />

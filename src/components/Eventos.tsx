@@ -1,10 +1,13 @@
 "use client";
+
 import { useState } from "react";
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, MapPin } from "./Icons";
-import { useTranslation } from "react-i18next";
-import AnivCta from "./AnivCta";
-import Lightbox from "./Lightbox";
+import { useLang } from "@/lib/lang";
+import { ArrowRight, ArrowUpRight, MapPin } from "@/components/Icons";
+import AnivCta from "@/components/AnivCta";
+import Cta from "@/components/ui/Cta";
+import Lightbox from "@/components/ui/Lightbox";
+import Pill from "@/components/ui/Pill";
+import SmartLink from "@/components/ui/SmartLink";
 
 type Detail = { label: string; value: string; url?: string };
 
@@ -13,27 +16,24 @@ const FLYER = "/assets/meetup-sep2026-speakers.jpg";
 // Maps-share link shared by the desktop chips and the mobile pill below the flyer.
 function MapLink({ detail }: { detail: Detail }) {
   return (
-    <a
-      href={detail.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <SmartLink
+      href={detail.url ?? ""}
       className="inline-flex items-center gap-1.5 font-semibold text-white underline decoration-white/40 decoration-2 underline-offset-4 transition hover:decoration-ocean-400"
     >
       <MapPin /> {detail.value} <ArrowUpRight size={16} />
-    </a>
+    </SmartLink>
   );
 }
 
 export default function Eventos() {
-  const { t } = useTranslation();
+  const { t } = useLang();
   const [zoom, setZoom] = useState(false);
+  const details = t("eventos.details", { returnObjects: true }) as Detail[];
 
   return (
     <section id="eventos" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
-        <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-          {t("eventos.pill")}
-        </span>
+        <Pill>{t("eventos.pill")}</Pill>
         <h2 className="mt-5 max-w-[20ch] text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
           {t("eventos.h2")}
         </h2>
@@ -50,7 +50,7 @@ export default function Eventos() {
               </h3>
               <p className="mt-4 hidden max-w-[42ch] leading-relaxed text-white/70 md:block">{t("eventos.cardBody")}</p>
               <div className="mt-8 hidden flex-wrap gap-6 text-sm md:flex">
-                {(t("eventos.details", { returnObjects: true }) as Detail[]).map((detail) => (
+                {details.map((detail) => (
                   <div key={detail.label}>
                     <div className="text-white/50">{detail.label}</div>
                     <div className="mt-1">{detail.url ? <MapLink detail={detail} /> : detail.value}</div>
@@ -58,17 +58,12 @@ export default function Eventos() {
                 ))}
               </div>
               <AnivCta>
-                <Link
-                  href={t("eventos.ctaHref")}
-                  className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-sunset-400 active:scale-[0.98]"
-                >
+                <Cta href={t("eventos.ctaHref")} size="sm" shadow="" dot="bg-white text-navy" className="mt-9">
                   {t("eventos.cta")}
-                  <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
-                    <ArrowUpRight size={15} />
-                  </span>
-                </Link>
+                </Cta>
               </AnivCta>
             </div>
+
             <button
               type="button"
               onClick={() => setZoom(true)}
@@ -78,26 +73,19 @@ export default function Eventos() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={FLYER} alt="" className="block h-auto w-full transition duration-300 hover:brightness-110" />
             </button>
+
             <div className="flex justify-center px-6 pb-6 pt-4 md:hidden">
-              {(t("eventos.details", { returnObjects: true }) as Detail[])
-                .filter((d) => d.url)
-                .map((detail) => (
-                  <MapLink key={detail.label} detail={detail} />
-                ))}
+              {details.filter((d) => d.url).map((detail) => (
+                <MapLink key={detail.label} detail={detail} />
+              ))}
             </div>
           </div>
         </div>
 
         <div className="reveal mt-10 flex justify-center">
-          <Link
-            href={t("eventos.videosCtaHref")}
-            className="group inline-flex items-center gap-2.5 rounded-full border border-navy/15 bg-white py-2 pl-6 pr-2 text-[15px] font-semibold text-navy transition hover:bg-navy hover:text-white"
-          >
+          <Cta href={t("eventos.videosCtaHref")} tone="outline" arrow="right" size="sm">
             {t("eventos.videosCta")}
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-navy text-white transition group-hover:translate-x-0.5 shrink-0">
-              <ArrowRight size={15} />
-            </span>
-          </Link>
+          </Cta>
         </div>
       </div>
 
@@ -105,7 +93,7 @@ export default function Eventos() {
         <Lightbox
           src={FLYER}
           alt={t("eventos.cardTitle")}
-          closeLabel={t("eventos.close")}
+          labels={{ close: t("eventos.close") }}
           onClose={() => setZoom(false)}
         />
       )}

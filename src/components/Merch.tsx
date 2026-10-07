@@ -1,10 +1,12 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useLang } from "@/lib/lang";
 
 export default function Merch() {
-  const { t } = useTranslation();
+  const { t } = useLang();
+
   return (
     <section id="merch" className="px-6 py-20 text-center">
       <div className="reveal mx-auto max-w-[680px]">

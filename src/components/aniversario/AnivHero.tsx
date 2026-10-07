@@ -1,33 +1,28 @@
 "use client";
-import { useTranslation } from "react-i18next";
-import type { Lang } from "@/i18n/lang";
 
-import { ArrowUpRight, ArrowRight, Calendar, Clock, MapPin } from "../Icons";
-import { anivEvent } from "./event";
+import { useLang } from "@/lib/lang";
+import { EVENT } from "@/lib/event";
+import { Calendar, Clock, MapPin } from "@/components/Icons";
+import Blobs from "@/components/ui/Blobs";
+import Cta from "@/components/ui/Cta";
+import WaveDivider from "@/components/ui/WaveDivider";
 import Countdown from "./Countdown";
 
 export default function AnivHero() {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language as Lang;
-  const ev = anivEvent(lang);
+  const { t } = useLang();
   const facts = [
-    { icon: Calendar, text: ev.dateLabel },
-    { icon: Clock, text: ev.timeLabel },
-    { icon: MapPin, text: `${ev.venue}, ${ev.venueCity}` },
+    { Icon: Calendar, text: t("aniversario.event.dateLabel") },
+    { Icon: Clock, text: t("aniversario.event.timeLabel") },
+    { Icon: MapPin, text: `${EVENT.venue}, ${t("aniversario.event.venueCity")}` },
   ];
+
   return (
     <section id="top" className="mesh-hero grain relative overflow-hidden">
-      <div className="blobs cine-field">
-        <span className="blob blob-teal" />
-        <span className="blob blob-ocean" />
-        <span className="blob blob-aqua" />
-        <span className="blob blob-sunset" />
-      </div>
+      <Blobs />
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-[1100px] flex-col items-center justify-center px-6 pb-40 pt-28 min-[360px]:pt-32 text-center">
         <h1 className="cine cine-1 max-w-[16ch] text-[clamp(2.2rem,7vw,6rem)] font-semibold leading-[0.98] tracking-tightest text-white">
-          {t("aniversario.hero.h1a")}{" "}
-          <span className="text-ocean-300">{t("aniversario.hero.h1b")}</span>
+          {t("aniversario.hero.h1a")} <span className="text-ocean-300">{t("aniversario.hero.h1b")}</span>
         </h1>
 
         <p className="cine cine-2 mt-7 max-w-[48ch] text-base sm:text-lg leading-relaxed text-white/80 md:text-xl">
@@ -35,36 +30,22 @@ export default function AnivHero() {
         </p>
 
         <div className="cine cine-2 mt-8 flex flex-wrap items-center justify-center gap-3">
-          {facts.map((fact) => (
+          {facts.map(({ Icon, text }) => (
             <span
-              key={fact.text}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 glass"
+              key={text}
+              className="glass inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/85"
             >
-              <fact.icon size={16} className="text-ocean-300" />
-              {fact.text}
+              <Icon size={16} className="text-ocean-300" />
+              {text}
             </span>
           ))}
         </div>
 
         <div className="cine cine-3 mt-10 flex flex-col items-center gap-3 sm:flex-row">
-          <a
-            href="#registro"
-            className="group flex items-center gap-2.5 rounded-full bg-sunset py-2 pl-6 pr-2 text-[16px] font-semibold text-white shadow-xl shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98]"
-          >
-            {t("aniversario.hero.ctaReserve")}
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-white/95 text-navy transition group-hover:rotate-45 shrink-0">
-              <ArrowUpRight size={16} />
-            </span>
-          </a>
-          <a
-            href="#programa"
-            className="group flex items-center gap-2.5 rounded-full border border-white/30 bg-white/5 py-2 pl-6 pr-2 text-[16px] font-semibold text-white glass transition hover:bg-white/10"
-          >
+          <Cta href="#registro">{t("aniversario.hero.ctaReserve")}</Cta>
+          <Cta href="#programa" tone="glass" arrow="right" dot="bg-ocean text-white">
             {t("aniversario.hero.ctaProgram")}
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-ocean text-white transition group-hover:translate-x-0.5 shrink-0">
-              <ArrowRight size={16} />
-            </span>
-          </a>
+          </Cta>
         </div>
 
         <div className="cine cine-4 mt-14 w-full">
@@ -75,17 +56,7 @@ export default function AnivHero() {
         </div>
       </div>
 
-      <svg
-        className="wave-divider absolute inset-x-0 bottom-[-1px] z-[5]"
-        viewBox="0 0 1440 130"
-        preserveAspectRatio="none"
-        fill="none"
-      >
-        <path
-          d="M-120,70 C140,130 380,8 620,52 C880,100 1140,132 1380,74 C1460,56 1520,62 1560,72 L1560,131 L-120,131 Z"
-          fill="#FBF6EE"
-        />
-      </svg>
+      <WaveDivider />
     </section>
   );
 }

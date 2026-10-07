@@ -5,7 +5,9 @@ import { usePathname } from "next/navigation";
 import posthog from "posthog-js";
 import { PostHogProvider as PHProvider } from "posthog-js/react";
 
-// Initialize PostHog globally on the client side at module load — skip in dev to avoid polluting production analytics.
+// Initialize PostHog globally on the client side at module load — skip in dev to avoid
+// polluting production analytics. In tests the key is a mock and every request is
+// answered locally, so the real service is never reached.
 if (typeof window !== "undefined") {
   const key = process.env.NEXT_PUBLIC_POSTHOG_KEY;
   const host = process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com";
