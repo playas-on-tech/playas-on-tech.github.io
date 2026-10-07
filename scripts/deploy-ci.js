@@ -53,11 +53,21 @@ console.log(`📍 Current Branch: ${branch}`);
 console.log(`🔢 Target Commit SHA: ${headSha.substring(0, 7)}`);
 
 console.log("\n🔍 Checking for unpushed commits...");
-if (runGit(`git cherry -v origin/${branch}`)) {
+
+// A branch that is not on the remote yet has nothing to cherry-pick, so it must be pushed too.
+const remoteBranch = runGit(`git rev-parse --verify origin/${branch}`);
+const unpushed = remoteBranch ? runGit(`git cherry -v origin/${branch}`) : "";
+
+if (!remoteBranch) {
+  console.log(`⚠️  origin/${branch} does not exist yet.`);
+} else if (unpushed) {
   console.log("⚠️  Found local commits that are not on the remote repository.");
+}
+
+if (!remoteBranch || unpushed) {
   console.log("Pumping commits to origin so GitHub Actions can see the latest changes...");
   try {
-    execSync(`git push origin ${branch}`, { stdio: "inherit" });
+    execSync(`git push -u origin ${branch}`, { stdio: "inherit" });
     console.log("✅ Successfully pushed commits to GitHub.");
   } catch {
     console.error("❌ Error: Failed to push commits to remote. Please push manually or check your connection.");
