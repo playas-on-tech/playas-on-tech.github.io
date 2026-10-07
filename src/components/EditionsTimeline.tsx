@@ -1,37 +1,32 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
-import { ArrowUpRight, Play } from "./Icons";
-import { useTranslation } from "react-i18next";
-import AnivCta from "./AnivCta";
+import { useLang } from "@/lib/lang";
+import { ArrowUpRight, Play } from "@/components/Icons";
+import AnivCta from "@/components/AnivCta";
+import SectionHeader from "@/components/ui/SectionHeader";
+import SmartLink from "@/components/ui/SmartLink";
 
-type Edition = {
-  n: number;
-  date: string;
-  title: string;
-  video?: string;
-  next?: boolean;
-};
+type Edition = { n: number; date: string; title: string; video?: string; next?: boolean };
 
 export default function EditionsTimeline() {
-  const { t } = useTranslation();
-  const ref = useRef<HTMLDivElement>(null);
+  const { t } = useLang();
+  const timelineRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const editions = t("editionsTimeline.editions", { returnObjects: true }) as Edition[];
 
   useEffect(() => {
-    const el = ref.current;
+    const el = timelineRef.current;
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          io.disconnect();
-        }
+        if (!entry.isIntersecting) return;
+        setInView(true);
+        io.disconnect();
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     io.observe(el);
     return () => io.disconnect();
@@ -41,111 +36,84 @@ export default function EditionsTimeline() {
     const slider = scrollRef.current;
     if (!slider) return;
 
-    // Smooth auto-scroll to end after layout is complete
-    const timer = setTimeout(() => {
-      slider.scrollTo({
-        left: slider.scrollWidth,
-        behavior: "smooth",
-      });
-    }, 100);
+    // Smooth auto-scroll to the end once the layout is complete.
+    const timer = setTimeout(() => slider.scrollTo({ left: slider.scrollWidth, behavior: "smooth" }), 100);
 
-// ponytail: PointerEvent covers touch+mouse for modern browsers; older browser support is not a concern for this static site
     let isDown = false;
     let startX = 0;
     let scrollLeft = 0;
 
-    const handleDragStart = (e: MouseEvent) => {
+    const start = (e: MouseEvent) => {
       isDown = true;
       startX = e.pageX - slider.offsetLeft;
       scrollLeft = slider.scrollLeft;
-      slider.style.userSelect = "none";
+      setDragging(true);
     };
 
-    const handleDragMove = (e: MouseEvent) => {
-      if (!isDown) return;
-      const walk = (e.pageX - startX) * 1.5;
-
-      if (Math.abs(e.pageX - startX) > 5) {
-        slider.classList.add("active", "cursor-grabbing", "select-none");
-        e.preventDefault();
-        slider.scrollLeft = scrollLeft - walk;
-      }
+    const move = (e: MouseEvent) => {
+      if (!isDown || Math.abs(e.pageX - startX) <= 5) return;
+      e.preventDefault();
+      slider.scrollLeft = scrollLeft - (e.pageX - startX) * 1.5;
     };
 
-    const handleDragEnd = () => {
-      isDown = false;
-      slider.style.userSelect = "";
-      slider.classList.remove("active", "cursor-grabbing", "select-none");
-    };
+    const end = () => setDragging(false);
 
-    slider.addEventListener("mousedown", handleDragStart);
-    document.addEventListener("mousemove", handleDragMove);
-    document.addEventListener("mouseup", handleDragEnd);
+    slider.addEventListener("mousedown", start);
+    document.addEventListener("mousemove", move);
+    document.addEventListener("mouseup", end);
 
     return () => {
       clearTimeout(timer);
-      slider.removeEventListener("mousedown", handleDragStart);
-      document.removeEventListener("mousemove", handleDragMove);
-      document.removeEventListener("mouseup", handleDragEnd);
+      slider.removeEventListener("mousedown", start);
+      document.removeEventListener("mousemove", move);
+      document.removeEventListener("mouseup", end);
     };
   }, []);
-
-  const editions = t("editionsTimeline.editions", { returnObjects: true }) as Edition[];
 
   return (
     <section id="ediciones" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto max-w-[1200px]">
-        <div className="reveal max-w-[640px]">
-          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t("editionsTimeline.pill")}
-          </span>
-          <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            {t("editionsTimeline.h2")}
-          </h2>
-          <p className="mt-4 text-lg leading-relaxed text-navy/60">{t("editionsTimeline.sub")}</p>
-        </div>
+        <SectionHeader
+          pill={t("editionsTimeline.pill")}
+          title={t("editionsTimeline.h2")}
+          sub={t("editionsTimeline.sub")}
+          layout="stack"
+          subClass="mt-4"
+          className="reveal max-w-[640px]"
+        />
 
-        <div ref={ref} className={`edition-timeline mt-16 ${inView ? "is-in" : ""}`}>
-          <div
-            ref={scrollRef}
-            className={`edition-scroll ${
-              isDragging ? "active cursor-grabbing select-none" : "cursor-grab"
-            }`}
-          >
+        <div ref={timelineRef} className={`edition-timeline mt-16 ${inView ? "is-in" : ""}`}>
+          <div ref={scrollRef} className={`edition-scroll ${dragging ? "active select-none" : "cursor-grab"}`}>
             <ol className="edition-track">
-              {editions.map((ed, i) => (
+              {editions.map((edition, i) => (
                 <li
-                  key={ed.n}
-                  className={`edition-node ${ed.next ? "edition-node--next" : ""}`}
+                  key={edition.n}
+                  className={`edition-node ${edition.next ? "edition-node--next" : ""}`}
                   style={{ "--i": i } as React.CSSProperties}
                 >
                   <span className="edition-dot" />
                   <div className="mt-6">
-                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-ocean">
-                      {ed.date}
-                    </div>
-                    <p className="mt-1 leading-snug text-navy/60">{ed.title}</p>
+                    <div className="text-xs font-semibold uppercase tracking-[0.18em] text-ocean">{edition.date}</div>
+                    <p className="mt-1 leading-snug text-navy/60">{edition.title}</p>
 
-                    {ed.video && (
-                      <a
-                        href={`https://www.youtube.com/watch?v=${ed.video}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    {edition.video && (
+                      <SmartLink
+                        href={`https://www.youtube.com/watch?v=${edition.video}`}
                         className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-navy/70 transition hover:text-ocean"
                       >
                         <Play size={13} />
                         {t("editionsTimeline.watchSession")}
-                      </a>
+                      </SmartLink>
                     )}
-                    {ed.next && (
+
+                    {edition.next && (
                       <AnivCta>
-                        <Link
+                        <SmartLink
                           href={t("editionsTimeline.reserveHref")}
                           className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-sunset transition hover:text-sunset-400"
                         >
                           {t("editionsTimeline.reserve")}
-                          <ArrowUpRight size={13} className="transition group-hover:rotate-45" />
-                        </Link>
+                        </SmartLink>
                       </AnivCta>
                     )}
                   </div>

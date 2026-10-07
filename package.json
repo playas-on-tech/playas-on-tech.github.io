@@ -2,12 +2,14 @@
   "name": "playas-on-tech-site",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.9.0",
   "description": "Web oficial de PlayasOnTech — la comunidad tech de Manzanillo, Colima.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "node scripts/test.js",
     "deploy-ci": "node scripts/deploy-ci.js"
   },
   "dependencies": {

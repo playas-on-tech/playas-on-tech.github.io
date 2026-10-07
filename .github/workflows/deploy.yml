@@ -15,8 +15,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
-        with:
-          version: 9
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -33,6 +31,14 @@ jobs:
           NEXT_PUBLIC_WEB3FORMS_KEY: ${{ secrets.NEXT_PUBLIC_WEB3FORMS_KEY }}
           NEXT_PUBLIC_POSTHOG_KEY: ${{ secrets.NEXT_PUBLIC_POSTHOG_KEY }}
           NEXT_PUBLIC_POSTHOG_HOST: ${{ secrets.NEXT_PUBLIC_POSTHOG_HOST }}
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      # This build carries the real key, but tests/helpers.ts answers every PostHog request
+      # locally and blocks anything else, so the real service is never contacted.
+      - name: Run behaviour tests against the export
+        run: pnpm exec playwright test
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

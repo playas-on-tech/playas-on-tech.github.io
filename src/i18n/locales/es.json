@@ -250,20 +250,13 @@
       "h2": "Construido por la comunidad.",
       "sub": "Diecisiete comunidades tech de todo México se unen al 7º aniversario para celebrar juntos frente al mar."
     },
-    "patrocinadoresCta": {
-      "pill": "Patrocinadores",
-      "h2": "Lleva tu marca al 7º aniversario.",
-      "sub": "Paquetes desde $5,000 MXN — ayúdanos a hacer de esta edición de aniversario una noche memorable.",
-      "tiers": ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"],
-      "cta": "Ver paquetes de patrocinio",
-      "href": "/patrocinadores"
-    },
     "patrocinadores": {
       "pill": "Patrocinadores",
       "h2": "Celebremos juntos.",
       "sub": "Tu marca frente a la comunidad tech del Pacífico mexicano. Elige un paquete y ayúdanos a hacer del 7º aniversario una noche memorable.",
       "morePopular": "Más popular",
       "chooseLabel": "Elegir",
+      "diamondCta": "Conversemos sobre Diamond",
       "singleSponsor": "Solo 1 patrocinador con este paquete por edición.",
       "keynoteLabel": "Incluye keynote de 15 min",
       "attendeeListLabel": "Lista de asistentes",
@@ -406,17 +399,33 @@
       { "href": "/aniversario#ubicacion", "label": "Ubicación" }
     ],
     "event": {
-      "edition": "7º Aniversario",
-      "editionTag": "Edición especial · 7ª edición",
-      "dateISO": "2026-07-18T10:00:00-06:00",
       "dateLabel": "Sábado 18 de julio, 2026",
       "timeLabel": "10:00 a 18:00 hrs",
-      "venue": "Hotel Marbella",
-      "venueCity": "Manzanillo, Colima",
-      "venueAddress": "Marbella 7, Playa Azul Salagua, 28218 Manzanillo, Col.",
-      "mapQuery": "Hotel Marbella Manzanillo Colima",
-      "eventbriteEventId": "1990496734315",
-      "eventbriteUrl": "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315?aff=oddtdtcreator"
+      "venueCity": "Manzanillo, Colima"
+    },
+    "thankYou": {
+      "heroPill": "7º Aniversario · 18 julio 2026",
+      "heroTitle": "¡Gracias por celebrar con nosotros!",
+      "heroBody1": "Este 7º aniversario fue posible gracias a ustedes: el equipo de voluntarios, los patrocinadores que creyeron en nosotros y cada persona que asistió.",
+      "heroBody2": "La comunidad tech del Pacífico mexicano sigue creciendo, y cada meetup nos acerca un poco más.",
+      "galleryPill": "Galería",
+      "galleryTitle": "Revive la celebración.",
+      "gallerySub": "Los mejores momentos del 7º Aniversario en el Hotel Marbella, Manzanillo.",
+      "photoAlt": "Foto {{n}} del 7º Aniversario de Playas on Tech",
+      "openPhoto": "Ampliar foto {{n}}",
+      "merchPill": "Merch oficial",
+      "merchTitle": "Llévate la playera del 7º Aniversario.",
+      "merchBody": "Apoya a la comunidad comprando la playera oficial del evento.",
+      "merchCta": "Comprar merch",
+      "invitePill": "Nos vemos pronto",
+      "inviteTitle": "8º Aniversario · Julio 2027.",
+      "inviteBody": "La comunidad sigue activa todo el año: meetups, charlas y networking frente al mar.",
+      "inviteCta": "Volver al inicio",
+      "close": "Cerrar galería",
+      "prev": "Foto anterior",
+      "next": "Foto siguiente",
+      "download": "Descargar foto",
+      "counter": "{{n}} de {{total}}"
     }
   },
   "codigoConducta": {

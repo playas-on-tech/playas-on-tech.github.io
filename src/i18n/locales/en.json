@@ -114,7 +114,7 @@
     "ctaH3": "Want to join the team?",
     "ctaBody": "We're looking for hands to organize, give talks, find venues and much more. No experience required, just the will to give back to the community.",
     "cta": "I want to volunteer",
-    "ctaHref": "/en?category=Staff#contacto"
+    "ctaHref": "/?category=Staff#contacto"
   },
   "sobreNosotros": {
     "pill": "About us",
@@ -250,20 +250,13 @@
       "h2": "Built by the community.",
       "sub": "Seventeen tech communities from across Mexico join the 7th anniversary to celebrate together by the sea."
     },
-    "patrocinadoresCta": {
-      "pill": "Sponsors",
-      "h2": "Bring your brand to the 7th anniversary.",
-      "sub": "Packages from $5,000 MXN — help us make this anniversary edition a memorable night.",
-      "tiers": ["Silver · $5,000", "Gold · $10,000", "Platinum · $20,000", "Media partners"],
-      "cta": "See sponsorship packages",
-      "href": "/patrocinadores"
-    },
     "patrocinadores": {
       "pill": "Sponsors",
       "h2": "Let's celebrate together.",
       "sub": "Your brand in front of the Mexican Pacific tech community. Pick a package and help us make the 7th anniversary a memorable night.",
       "morePopular": "Most popular",
       "chooseLabel": "Choose",
+      "diamondCta": "Let's talk about Diamond",
       "singleSponsor": "Only 1 sponsor with this package per edition.",
       "keynoteLabel": "Includes 15 min keynote",
       "attendeeListLabel": "Attendee list",
@@ -287,7 +280,7 @@
       "customPrefix": "Only the anniversary has this structure. For bi-monthly editions we have another track with packages starting at $500 MXN — ",
       "customLink": "write to us",
       "customSuffix": " to learn about it.",
-      "homePath": "/en",
+      "homePath": "/",
       "tiers": [
         {
           "name": "Silver",
@@ -406,17 +399,33 @@
       { "href": "/aniversario#ubicacion", "label": "Location" }
     ],
     "event": {
-      "edition": "7th Anniversary",
-      "editionTag": "Special edition · 7th meetup",
-      "dateISO": "2026-07-18T10:00:00-06:00",
       "dateLabel": "Saturday, July 18, 2026",
       "timeLabel": "10:00 to 18:00",
-      "venue": "Hotel Marbella",
-      "venueCity": "Manzanillo, Colima",
-      "venueAddress": "Marbella 7, Playa Azul Salagua, 28218 Manzanillo, Col.",
-      "mapQuery": "Hotel Marbella Manzanillo Colima",
-      "eventbriteEventId": "1990496734315",
-      "eventbriteUrl": "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315?aff=oddtdtcreator"
+      "venueCity": "Manzanillo, Colima"
+    },
+    "thankYou": {
+      "heroPill": "7th Anniversary · July 18, 2026",
+      "heroTitle": "Thank you for celebrating with us!",
+      "heroBody1": "This 7th anniversary was possible thanks to you: the team of volunteers, the sponsors who believed in us, and everyone who attended.",
+      "heroBody2": "The tech community of the Mexican Pacific keeps growing, and every meetup brings us a little closer.",
+      "galleryPill": "Gallery",
+      "galleryTitle": "Relive the celebration.",
+      "gallerySub": "The best moments of the 7th Anniversary at Hotel Marbella, Manzanillo.",
+      "photoAlt": "Photo {{n}} of the Playas on Tech 7th Anniversary",
+      "openPhoto": "Enlarge photo {{n}}",
+      "merchPill": "Official merch",
+      "merchTitle": "Get the 7th Anniversary t-shirt.",
+      "merchBody": "Support the community by buying the official event t-shirt.",
+      "merchCta": "Buy merch",
+      "invitePill": "See you soon",
+      "inviteTitle": "8th Anniversary · July 2027.",
+      "inviteBody": "The community stays active all year: meetups, talks, and networking by the sea.",
+      "inviteCta": "Back to home",
+      "close": "Close gallery",
+      "prev": "Previous photo",
+      "next": "Next photo",
+      "download": "Download photo",
+      "counter": "{{n}} of {{total}}"
     }
   },
   "codigoConducta": {

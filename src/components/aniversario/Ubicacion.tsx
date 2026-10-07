@@ -1,59 +1,39 @@
 "use client";
-import { useTranslation } from "react-i18next";
-import type { Lang } from "@/i18n/lang";
 
-import { ArrowUpRight, Check, MapPin } from "../Icons";
-import { anivEvent } from "./event";
+import { useLang } from "@/lib/lang";
+import { EVENT, mapsEmbed, mapsShare } from "@/lib/event";
+import { MapPin } from "@/components/Icons";
+import CheckList from "@/components/ui/CheckList";
+import Cta from "@/components/ui/Cta";
+import Pill from "@/components/ui/Pill";
 
 export default function Ubicacion() {
-  const { t, i18n } = useTranslation();
-  const lang = i18n.language as Lang;
-  const ev = anivEvent(lang);
-  const mapEmbed = `https://www.google.com/maps?q=${encodeURIComponent(ev.mapQuery)}&output=embed`;
-  const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.mapQuery)}`;
+  const { t } = useLang();
   const amenities = t("aniversario.ubicacion.amenities", { returnObjects: true }) as string[];
+
   return (
     <section id="ubicacion" className="bg-cream px-6 py-28 lg:py-36">
       <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2">
         <div className="reveal">
-          <span className="inline-block rounded-full bg-navy px-3.5 py-1.5 text-[13px] font-semibold text-white">
-            {t("aniversario.ubicacion.pill")}
-          </span>
+          <Pill>{t("aniversario.ubicacion.pill")}</Pill>
           <h2 className="mt-5 text-[clamp(2rem,4vw,3.2rem)] font-semibold leading-[1.05] tracking-tightest">
-            {ev.venue}.
+            {EVENT.venue}.
           </h2>
           <p className="mt-3 flex items-start gap-2 text-lg text-navy/60">
             <MapPin size={18} className="mt-1 shrink-0 text-ocean" />
-            {ev.venueAddress}
+            {EVENT.venueAddress}
           </p>
           <p className="mt-5 max-w-[44ch] text-lg leading-relaxed text-navy/60">{t("aniversario.ubicacion.body")}</p>
-          <ul className="mt-8 space-y-3 text-navy/70">
-            {amenities.map((item) => (
-              <li key={item} className="flex items-center gap-3">
-                <span className="grid h-7 w-7 place-items-center rounded-full bg-ocean/15 text-ocean">
-                  <Check size={14} />
-                </span>{" "}
-                {item}
-              </li>
-            ))}
-          </ul>
-          <a
-            href={mapLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-9 inline-flex items-center gap-2.5 rounded-full bg-navy py-2 pl-6 pr-2 text-[15px] font-semibold text-white transition hover:bg-navy-700"
-          >
+          <CheckList items={amenities} />
+          <Cta href={mapsShare(EVENT.mapQuery)} tone="navy" size="sm" shadow="" className="mt-9">
             {t("aniversario.ubicacion.cta")}
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-ocean text-white transition group-hover:rotate-45">
-              <ArrowUpRight size={15} />
-            </span>
-          </a>
+          </Cta>
         </div>
 
         <div className="reveal relative overflow-hidden rounded-[2rem] border border-navy/10 shadow-xl shadow-navy/5">
           <iframe
-            title={`${t("aniversario.ubicacion.mapTitlePrefix")} — ${ev.venue}, ${ev.venueCity}`}
-            src={mapEmbed}
+            title={`${t("aniversario.ubicacion.mapTitlePrefix")} — ${EVENT.venue}, ${t("aniversario.event.venueCity")}`}
+            src={mapsEmbed(EVENT.mapQuery)}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             className="h-[360px] w-full lg:h-[440px]"

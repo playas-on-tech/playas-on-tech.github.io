@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "./Icons";
-import { useLang } from "@/lib/LangProvider";
-import AnivCta from "./AnivCta";
+import { ArrowUpRight } from "@/components/Icons";
+import { useLang } from "@/lib/lang";
+import AnivCta from "@/components/AnivCta";
 
 export type NavItem = { href: string; label: string };
 
@@ -28,6 +28,7 @@ export default function Navbar({
 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const scrolledRef = useRef(false);
+  const { lang, setLang } = useLang();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,20 +43,19 @@ export default function Navbar({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const { lang, setLang } = useLang();
-
   const cta = (
     <Link
       href={ctaHref}
       className="group flex items-center gap-1.5 sm:gap-2 rounded-full bg-sunset py-1 sm:py-1.5 pl-3 sm:pl-4 pr-1 sm:pr-1.5 text-xs sm:text-[15px] font-semibold text-white shadow-lg shadow-sunset/30 transition hover:bg-sunset-400 active:scale-[0.98] whitespace-nowrap"
     >
-      {ctaMobileLabel && (
+      {ctaMobileLabel ? (
         <>
           <span className="hidden sm:inline">{ctaLabel}</span>
           <span className="sm:hidden">{ctaMobileLabel}</span>
         </>
+      ) : (
+        ctaLabel
       )}
-      {!ctaMobileLabel && ctaLabel}
       <span className="grid h-6 w-6 sm:h-7 sm:w-7 place-items-center rounded-full bg-white text-navy transition group-hover:rotate-45 shrink-0">
         <ArrowUpRight size={12} className="sm:hidden" />
         <ArrowUpRight size={14} className="hidden sm:block" />
