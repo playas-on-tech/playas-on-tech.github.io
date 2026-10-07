@@ -3,23 +3,24 @@
 Official site for **PlayasOnTech**, the tech community of Manzanillo, Colima
 that meets every two months, frente al mar. 🌊
 
-Built with **Next.js 15** (App Router) + **TypeScript** + **Tailwind CSS**,
+Built with **Next.js 16** (App Router) + **TypeScript** + **Tailwind CSS**,
 exported as a **fully static site** and hosted on **GitHub Pages**.
 Bilingual (`es` / `en`) — Spanish default, English added in parallel.
 
 ## Getting started
 
 ```bash
-npm install
-npm run dev        # http://localhost:3000
+pnpm install
+pnpm run dev        # http://localhost:3000
 ```
 
 ## Scripts
 
 ```bash
-npm run build      # static export → ./out (type-checks + lints)
-npm run lint       # ESLint
-npm run deploy-ci  # build + deploy via GitHub Actions CI (on-demand)
+pnpm run build      # static export → ./out (type-checks + lints)
+pnpm run lint       # ESLint
+pnpm test           # build + Playwright behaviour tests against ./out
+pnpm run deploy-ci  # build + deploy via GitHub Actions CI (on-demand)
 ```
 
 ## Structure
@@ -27,22 +28,37 @@ npm run deploy-ci  # build + deploy via GitHub Actions CI (on-demand)
 ```
 src/
 ├── app/          # App Router pages (home, aniversario, codigo-conducta, etc.)
-├── components/   # Section components + aniversario/ subfolder
-├── i18n/         # Lang type & constants
-└── lib/          # LangProvider (client-side lang context)
+├── components/   # Section components, aniversario/ subfolder, ui/ shared primitives
+├── data/         # agenda, speakers, sponsors
+├── i18n/         # locales/es.json + en.json, Lang type
+└── lib/          # lang context, metadata, schema, event data, pure helpers
+tests/            # Playwright behaviour tests
+scripts/          # deploy-ci.js + serve.js (static server for the tests)
 public/           # Static assets, CNAME, .nojekyll
 ```
 
 ## i18n
 
-The site is bilingual (`es` / `en`) with Spanish as the default. Every visible
-string lives in a `COPY = { es: ..., en: ... }` constant inside each section
-component and is consumed via the `useLang()` hook from `LangProvider`.
+Every visible string lives in `src/i18n/locales/es.json` and `en.json`. Spanish
+is canonical and both dictionaries must hold the same keys — a test enforces it.
+Components read copy through `useLang()`, which returns `{ lang, t, setLang }`.
 
-Language is detected synchronously before paint via an inline `<head>` script
-that reads the `playasontech_lang` cookie, falls back to `navigator.languages`,
-then defaults to `"es"` — no flash, no loading state. See
-[AGENTS.md](./AGENTS.md) for full architecture details.
+`LangProvider` reads the `playasontech_lang` cookie on mount, writes it when the
+visitor switches language, and keeps `<html lang>` in sync.
+
+## Testing
+
+`pnpm test` builds the static export and runs Playwright against it through
+`scripts/serve.js`. Tests assert behaviour, not implementation: language toggle
+and cookie persistence, lightbox navigation, contact form validation and
+submission, the anniversary feature-flag gate, and locale key parity.
+
+CI runs the whole suite on every push to `main` and on pull requests
+(`.github/workflows/test.yml`), and the deploy workflow runs it against the
+export before publishing, so a failing spec blocks the deploy. PostHog is mocked
+in tests: `tests/helpers.ts` answers every PostHog request locally, so the real
+service is never reached and the anniversary flag can be turned on to test the
+gated components.
 
 ## Deploying
 
@@ -50,7 +66,7 @@ The live site is served from the `gh-pages` branch. We build and deploy the
 site using a GitHub Actions workflow on-demand via the following command:
 
 ```bash
-npm run deploy-ci
+pnpm run deploy-ci
 ```
 
 This triggers the remote workflow using your GitHub Secrets for environment
@@ -68,5 +84,3 @@ site once complete to verify it is online.
 > [!NOTE]
 > Merging to `main` does not change the live site on its own; you must
 > trigger a deployment using the command above.
-
-
