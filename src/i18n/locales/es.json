@@ -69,24 +69,6 @@
     "videosCta": "Ver charlas anteriores",
     "videosCtaHref": "#videos"
   },
-  "editionsTimeline": {
-    "pill": "La historia",
-    "h2": "Cada meetup desde el primero, en 2025.",
-    "sub": "Cada dos meses, sin falta, frente al mar. Este es el camino que nos trajo hasta aquí.",
-    "watchSession": "Ver sesión",
-    "reserve": "Reservar lugar",
-    "reserveHref": "https://www.eventbrite.com.mx/e/sesion-noviembre-2026-playasontech-tickets-2004596114942?aff=playasontech",
-    "editions": [
-      { "date": "Jul 2025", "title": "El primer encuentro" },
-      { "date": "Sep 2025", "title": "Comunidad y código" },
-      { "date": "Nov 2025", "title": "Open source en la costa" },
-      { "date": "Ene 2026", "title": "Animación web con GSAP", "video": "preXoZ6zFuc" },
-      { "date": "Mar 2026", "title": "IA y autenticación", "video": "V2vlUPn-v5Y" },
-      { "date": "May 2026", "title": "Builders frente al mar", "video": "C0U9Z_jO-0o" },
-      { "date": "18 Jul 2026", "title": "7º Aniversario" },
-      { "date": "12 Nov 2026", "title": "Rust, MVPs y conservación", "next": true }
-    ]
-  },
   "venue": {
     "pill": "Venue",
     "h2": "Donde sucede la magia.",
