@@ -3,11 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "@/lib/lang";
 import { ArrowUpRight, Play } from "@/components/Icons";
-import AnivCta from "@/components/AnivCta";
 import SectionHeader from "@/components/ui/SectionHeader";
 import SmartLink from "@/components/ui/SmartLink";
 
-type Edition = { n: number; date: string; title: string; video?: string; next?: boolean };
+type Edition = { date: string; title: string; video?: string; next?: boolean };
 
 export default function EditionsTimeline() {
   const { t } = useLang();
@@ -87,7 +86,7 @@ export default function EditionsTimeline() {
             <ol className="edition-track">
               {editions.map((edition, i) => (
                 <li
-                  key={edition.n}
+                  key={edition.title}
                   className={`edition-node ${edition.next ? "edition-node--next" : ""}`}
                   style={{ "--i": i } as React.CSSProperties}
                 >
@@ -107,14 +106,12 @@ export default function EditionsTimeline() {
                     )}
 
                     {edition.next && (
-                      <AnivCta>
-                        <SmartLink
-                          href={t("editionsTimeline.reserveHref")}
-                          className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-sunset transition hover:text-sunset-400"
-                        >
-                          {t("editionsTimeline.reserve")}
-                        </SmartLink>
-                      </AnivCta>
+                      <SmartLink
+                        href={t("editionsTimeline.reserveHref")}
+                        className="group mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-sunset transition hover:text-sunset-400"
+                      >
+                        {t("editionsTimeline.reserve")}
+                      </SmartLink>
                     )}
                   </div>
                 </li>

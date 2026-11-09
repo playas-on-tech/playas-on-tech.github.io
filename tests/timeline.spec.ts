@@ -17,8 +17,10 @@ test("the timeline lists every edition and links to its recording", async ({ pag
     await expect(links.nth(index)).toHaveAttribute("href", `https://www.youtube.com/watch?v=${edition.video}`);
   }
 
-  // The reserve link is gated behind the anniversary flag.
-  await expect(page.getByRole("link", { name: "Reservar lugar" })).toHaveCount(0);
+  // The upcoming meetup links to its Eventbrite registration.
+  const reserve = page.getByRole("link", { name: "Reservar lugar" });
+  await expect(reserve).toHaveCount(1);
+  await expect(reserve).toHaveAttribute("href", "https://www.eventbrite.com.mx/e/sesion-noviembre-2026-playasontech-tickets-2004596114942?aff=playasontech");
 });
 
 test("the timeline scrolls when it is dragged", async ({ page }) => {
