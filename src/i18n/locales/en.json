@@ -54,18 +54,18 @@
     "pill": "Events · Meetups",
     "h2": "Tech meetups in Manzanillo — every two months.",
     "soonTag": "Upcoming",
-    "cardTitle": "September 2026",
-    "cardBody": "Free entry. Courtesy of our sponsor SpaceFit.",
+    "cardTitle": "November 2026",
+    "cardBody": "Free entry. Courtesy of our sponsor Quilombo Bar.",
     "details": [
-      { "label": "Date", "value": "Thu, Sep 17, 2026" },
+      { "label": "Date", "value": "Thu, Nov 12, 2026" },
       { "label": "Time", "value": "8:00 PM" },
-      { "label": "Venue", "value": "Terraza SpaceFit" },
-      { "label": "Address", "value": "Av. Manzanillo 380, La Joya, Manzanillo, Col.", "url": "https://maps.app.goo.gl/fT4ag9tVLvWkiHLUA" }
+      { "label": "Venue", "value": "Quilombo Bar" },
+      { "label": "Address", "value": "Av. Paseo de Las Gaviotas 251, Manzanillo, Col.", "url": "https://www.google.com/maps/search/?api=1&query=Quilombo%20Bar%20Av.%20Paseo%20de%20Las%20Gaviotas%20251%20Manzanillo%20Colima" }
     ],
-    "cta": "Coming soon",
+    "cta": "Register on Eventbrite",
     "viewFlyer": "View the event flyer at full size",
     "close": "Close",
-    "ctaHref": "#eventos",
+    "ctaHref": "https://www.eventbrite.com.mx/e/sesion-noviembre-2026-playasontech-tickets-2004596114942?aff=playasontech",
     "videosCta": "Watch past talks",
     "videosCtaHref": "#videos"
   },

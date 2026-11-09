@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useLang } from "@/lib/lang";
 import { ArrowRight, ArrowUpRight, MapPin } from "@/components/Icons";
-import AnivCta from "@/components/AnivCta";
 import Cta from "@/components/ui/Cta";
 import Lightbox from "@/components/ui/Lightbox";
 import Pill from "@/components/ui/Pill";
@@ -11,7 +10,9 @@ import SmartLink from "@/components/ui/SmartLink";
 
 type Detail = { label: string; value: string; url?: string };
 
-const FLYER = "/assets/meetup-sep2026-speakers.jpg";
+const FLYER = "/assets/meetup-nov2026-speakers.png";
+// Vertical cut, readable on narrow screens.
+const FLYER_MOBILE = "/assets/meetup-nov2026-speakers-mobile.png";
 
 // Maps-share link shared by the desktop chips and the mobile pill below the flyer.
 function MapLink({ detail }: { detail: Detail }) {
@@ -27,7 +28,7 @@ function MapLink({ detail }: { detail: Detail }) {
 
 export default function Eventos() {
   const { t } = useLang();
-  const [zoom, setZoom] = useState(false);
+  const [zoom, setZoom] = useState<string | null>(null);
   const details = t("eventos.details", { returnObjects: true }) as Detail[];
 
   return (
@@ -57,21 +58,21 @@ export default function Eventos() {
                   </div>
                 ))}
               </div>
-              <AnivCta>
-                <Cta href={t("eventos.ctaHref")} size="sm" shadow="" dot="bg-white text-navy" className="mt-9">
-                  {t("eventos.cta")}
-                </Cta>
-              </AnivCta>
+              <Cta href={t("eventos.ctaHref")} size="sm" shadow="" dot="bg-white text-navy" className="mt-9">
+                {t("eventos.cta")}
+              </Cta>
             </div>
 
             <button
               type="button"
-              onClick={() => setZoom(true)}
+              onClick={() => setZoom(window.matchMedia("(min-width: 768px)").matches ? FLYER : FLYER_MOBILE)}
               aria-label={t("eventos.viewFlyer")}
               className="block cursor-zoom-in overflow-hidden md:border-l md:border-white/10"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={FLYER} alt="" className="block h-auto w-full transition duration-300 hover:brightness-110" />
+              <img src={FLYER} alt="" className="hidden h-auto w-full transition duration-300 hover:brightness-110 md:block" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={FLYER_MOBILE} alt="" className="block h-auto w-full transition duration-300 hover:brightness-110 md:hidden" />
             </button>
 
             <div className="flex justify-center px-6 pb-6 pt-4 md:hidden">
@@ -91,10 +92,10 @@ export default function Eventos() {
 
       {zoom && (
         <Lightbox
-          src={FLYER}
+          src={zoom}
           alt={t("eventos.cardTitle")}
           labels={{ close: t("eventos.close") }}
-          onClose={() => setZoom(false)}
+          onClose={() => setZoom(null)}
         />
       )}
     </section>
