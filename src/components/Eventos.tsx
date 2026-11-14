@@ -67,9 +67,11 @@ export default function Eventos() {
                   </div>
                 ))}
               </div>
-              <Cta href={t("eventos.ctaHref")} size="sm" shadow="" dot="bg-white text-navy" className="mt-9">
-                {t("eventos.cta")}
-              </Cta>
+              {!past && (
+                <Cta href={t("eventos.ctaHref")} size="sm" shadow="" dot="bg-white text-navy" className="mt-9">
+                  {t("eventos.cta")}
+                </Cta>
+              )}
             </div>
 
             <button
