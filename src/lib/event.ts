@@ -9,6 +9,10 @@ export const EVENT = {
     "https://www.eventbrite.com.mx/e/7o-aniversario-playasontech-tickets-1990496734315?aff=oddtdtcreator",
 } as const;
 
+// Date of the meetup shown on the homepage's next-event card. Update it
+// together with the card copy in the locale dictionaries.
+export const MEETUP = { dateISO: "2026-11-12T20:00:00-06:00" } as const;
+
 // Public ticket — symbolic donation that funds the operation of the community.
 // Sponsor courtesy tickets do NOT charge this price but DO include the same shirt.
 export const CONTACT_EMAIL = "contacto@playasontech.com";

@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLang } from "@/lib/lang";
+import { MEETUP } from "@/lib/event";
 import { ArrowRight, ArrowUpRight, MapPin } from "@/components/Icons";
 import Cta from "@/components/ui/Cta";
 import Lightbox from "@/components/ui/Lightbox";
@@ -29,7 +30,15 @@ function MapLink({ detail }: { detail: Detail }) {
 export default function Eventos() {
   const { t } = useLang();
   const [zoom, setZoom] = useState<string | null>(null);
+  const [past, setPast] = useState(false);
   const details = t("eventos.details", { returnObjects: true }) as Detail[];
+
+  useEffect(() => {
+    // The badge flips on the client, so it self-corrects even if the site isn't
+    // rebuilt the day the meetup passes. SSR always renders the upcoming tag.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setPast(Date.now() >= new Date(MEETUP.dateISO).getTime());
+  }, []);
 
   return (
     <section id="eventos" className="bg-cream px-6 py-28 lg:py-36">
@@ -44,7 +53,7 @@ export default function Eventos() {
           <div className="grid md:grid-cols-[1.1fr_0.9fr]">
             <div className="p-9 lg:p-12">
               <span className="inline-flex items-center gap-2 rounded-full bg-ocean/20 px-3 py-1 text-[13px] font-semibold text-ocean-300">
-                <span className="h-1.5 w-1.5 rounded-full bg-ocean-400" /> {t("eventos.soonTag")}
+                <span className="h-1.5 w-1.5 rounded-full bg-ocean-400" /> {past ? t("eventos.pastTag") : t("eventos.soonTag")}
               </span>
               <h3 className="mt-6 text-[clamp(1.8rem,3vw,2.6rem)] font-semibold leading-tight tracking-tight">
                 {t("eventos.cardTitle")}
