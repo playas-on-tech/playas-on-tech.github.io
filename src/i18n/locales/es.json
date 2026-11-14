@@ -85,9 +85,9 @@
     "h2": "¿Te lo perdiste?",
     "seeAll": "Ver todas",
     "videos": [
+      { "id": "mvzBd7QNGLE", "title": "Sesión Noviembre 2026", "meta": "Sesión completa · 1h 38m" },
       { "id": "C0U9Z_jO-0o", "title": "Sesión Mayo 2026", "meta": "Sesión completa · 2h 11m" },
-      { "id": "V2vlUPn-v5Y", "title": "Sesión Marzo 2026", "meta": "Sesión completa · 1h 56m" },
-      { "id": "preXoZ6zFuc", "title": "Sesión Enero 2026", "meta": "Sesión completa · 1h 18m" }
+      { "id": "V2vlUPn-v5Y", "title": "Sesión Marzo 2026", "meta": "Sesión completa · 1h 56m" }
     ]
   },
   "organizadores": {
